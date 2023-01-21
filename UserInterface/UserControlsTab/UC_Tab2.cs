@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DataReferenceLibrary.DataAccess;
+using DataReferenceLibrary.Models;
+using DataReferenceLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataReferenceLibrary.StoredProcs;
 
 namespace UserInterface.UserControlsTab
 {
@@ -29,6 +33,79 @@ namespace UserInterface.UserControlsTab
         public UC_Tab2()
         {
             InitializeComponent();
+            PrepareDataGridView();
         }
+
+
+        private void PrepareDataGridView()
+        {
+            // Create columns for the DataGridView
+            List<string> months = new List<string>() { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+            for (int i = 1; i <= 12; i++)
+            {
+                dgv_tab2_PriceHistory.Columns.Add(i.ToString(), months[i - 1]);
+            }
+
+            // Create rows for the DataGridView
+            for (int i = 1; i <= 31; i++)
+            {
+                dgv_tab2_PriceHistory.Rows.Add();
+                dgv_tab2_PriceHistory.Rows[i - 1].HeaderCell.Value = i.ToString();
+            }
+
+            // Set sizes for the DataGridView
+
+        }
+
+
+        private void btn_tab2_Display_Click(object sender, EventArgs e)
+        {
+
+            foreach (IDataConnection db in GlobalConfig.Connections)
+            {
+                int YearRequest = Convert.ToInt32(tbox_tab2_Year.Text);
+                string ASXCode = tbox_tab2_ASXShare.Text;
+
+                var output = db.QueryPriceForOneYear(ASXCode, YearRequest);
+                MessageBox.Show(output.Count.ToString());
+                PopulateGridViewTab2(output);
+            }     
+        }
+
+
+
+        private void PopulateGridViewTab2(List<spQueryASXSharePricesForOneYear> output)
+        {
+            {
+                /*
+                // Create columns for the DataGridView
+                List<string> months = new List<string>() { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+                for (int i = 1; i <= 12; i++)
+                {
+                    dgv_tab2_PriceHistory.Columns.Add(i.ToString(), months[i-1]);
+                }
+
+                // Create rows for the DataGridView
+                for (int i = 1; i <= 31; i++)
+                {
+                    dgv_tab2_PriceHistory.Rows.Add();
+                    dgv_tab2_PriceHistory.Rows[i - 1].HeaderCell.Value = i.ToString();
+                }
+                */
+
+                // Input the query result into the datagridview
+                foreach (spQueryASXSharePricesForOneYear result in output)
+                {
+                    int x = (int)result.DayInt - 1;
+                    int y = (int)result.MonthInt - 1;
+                    dgv_tab2_PriceHistory[y, (x)].Value = result.PriceClose.ToString();
+                }
+            }
+        }
+
+
+        // Code for getting ASX query into data table
+
+
     }
 }

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dapper;
 using DataReferenceLibrary.Models;
+using DataReferenceLibrary.StoredProcs;
 
 namespace DataReferenceLibrary.DataAccess
 {
@@ -17,6 +18,32 @@ namespace DataReferenceLibrary.DataAccess
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
+
+
+        public List<spQueryASXSharePricesForOneYear> QueryPriceForOneYear(string ASXCode, int YearInput)
+        {
+            List<spQueryASXSharePricesForOneYear> output;
+
+            //int SecondYear = FirstYear += 1;
+
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
+            {
+
+                //var p = new DynamicParameters();
+               // p.Add("@in_ASXCode", model.ASXCode);
+                //p.Add("@in_FirstYear", 2021);
+
+                // var output = connection.Execute("dbo.spQueryASXSharePricesForTwoYears", p, commandType: CommandType.StoredProcedure).ToList();
+
+                output = connection.Query<spQueryASXSharePricesForOneYear>("dbo.spQueryASXSharePricesForOneYear @ASXCode, @Year", new { ASXCode = ASXCode, Year = YearInput }).ToList();
+
+            }
+
+
+                return output;
+        }
+
+
 
         public ShareTransactionTypeModel CreateTransactionType(ShareTransactionTypeModel model)
         {

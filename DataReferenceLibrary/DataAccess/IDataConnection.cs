@@ -1,4 +1,5 @@
 ﻿using DataReferenceLibrary.Models;
+using DataReferenceLibrary.StoredProcs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,11 @@ namespace DataReferenceLibrary.DataAccess
 {
     public interface IDataConnection
     {
-       ShareTransactionTypeModel CreateTransactionType(ShareTransactionTypeModel model);
+
+        List<spQueryASXSharePricesForOneYear> QueryPriceForOneYear(string ASXCode, int InputYear);
+        //public List<ASXPriceModel> QueryPriceBetweenTwoYears()
+
+        ShareTransactionTypeModel CreateTransactionType(ShareTransactionTypeModel model);
+        //public ShareTransactionTypeModel CreateTransactionType(ShareTransactionTypeModel model)
     }
 }
