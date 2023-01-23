@@ -35,6 +35,8 @@
             this.lbl_tab2_ASXShare = new System.Windows.Forms.Label();
             this.lbl_tab2_Year = new System.Windows.Forms.Label();
             this.tbox_tab2_Year = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbox_tab2_PriceType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tab2_PriceHistory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,10 +100,34 @@
             this.tbox_tab2_Year.Size = new System.Drawing.Size(100, 20);
             this.tbox_tab2_Year.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 247);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "PriceType";
+            // 
+            // cbox_tab2_PriceType
+            // 
+            this.cbox_tab2_PriceType.FormattingEnabled = true;
+            this.cbox_tab2_PriceType.Items.AddRange(new object[] {
+            "Open",
+            "Close",
+            "High",
+            "Low"});
+            this.cbox_tab2_PriceType.Location = new System.Drawing.Point(18, 264);
+            this.cbox_tab2_PriceType.Name = "cbox_tab2_PriceType";
+            this.cbox_tab2_PriceType.Size = new System.Drawing.Size(121, 21);
+            this.cbox_tab2_PriceType.TabIndex = 8;
+            // 
             // UC_Tab2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbox_tab2_PriceType);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tbox_tab2_Year);
             this.Controls.Add(this.lbl_tab2_Year);
             this.Controls.Add(this.lbl_tab2_ASXShare);
@@ -126,5 +152,7 @@
         private System.Windows.Forms.Label lbl_tab2_ASXShare;
         private System.Windows.Forms.Label lbl_tab2_Year;
         private System.Windows.Forms.TextBox tbox_tab2_Year;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbox_tab2_PriceType;
     }
 }

@@ -11,10 +11,16 @@ namespace DataReferenceLibrary.DataAccess
     public interface IDataConnection
     {
 
-        List<spQueryASXSharePricesForOneYear> QueryPriceForOneYear(string ASXCode, int InputYear);
-        //public List<ASXPriceModel> QueryPriceBetweenTwoYears()
+        //List<spQueryASXSharePricesForOneYear> QueryPriceForOneYear(string ASXCode, int InputYear);
 
+        List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceOpen(string ASXCode, int InputYear);
+        List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceClose(string ASXCode, int InputYear);
+        List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceHigh(string ASXCode, int InputYear);
+        List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceLow(string ASXCode, int InputYear);
         ShareTransactionTypeModel CreateTransactionType(ShareTransactionTypeModel model);
-        //public ShareTransactionTypeModel CreateTransactionType(ShareTransactionTypeModel model)
     }
 }
+
+
+
+

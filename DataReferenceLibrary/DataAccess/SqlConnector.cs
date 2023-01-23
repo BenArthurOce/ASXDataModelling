@@ -20,27 +20,44 @@ namespace DataReferenceLibrary.DataAccess
         /// <returns></returns>
 
 
-        public List<spQueryASXSharePricesForOneYear> QueryPriceForOneYear(string ASXCode, int YearInput)
+        public List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceOpen(string ASXCode, int YearInput)
         {
             List<spQueryASXSharePricesForOneYear> output;
-
-            //int SecondYear = FirstYear += 1;
-
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
             {
-
-                //var p = new DynamicParameters();
-               // p.Add("@in_ASXCode", model.ASXCode);
-                //p.Add("@in_FirstYear", 2021);
-
-                // var output = connection.Execute("dbo.spQueryASXSharePricesForTwoYears", p, commandType: CommandType.StoredProcedure).ToList();
-
-                output = connection.Query<spQueryASXSharePricesForOneYear>("dbo.spQueryASXSharePricesForOneYear @ASXCode, @Year", new { ASXCode = ASXCode, Year = YearInput }).ToList();
-
+                output = connection.Query<spQueryASXSharePricesForOneYear>("dbo.spQueryASXSharePricesForOneYear_PriceOpen @ASXCode, @Year", new { ASXCode = ASXCode, Year = YearInput }).ToList();
             }
+            return output;
+        }
 
+        public List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceClose(string ASXCode, int YearInput)
+        {
+            List<spQueryASXSharePricesForOneYear> output;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
+            {
+                output = connection.Query<spQueryASXSharePricesForOneYear>("dbo.spQueryASXSharePricesForOneYear_PriceClose @ASXCode, @Year", new { ASXCode = ASXCode, Year = YearInput }).ToList();
+            }
+            return output;
+        }
 
-                return output;
+        public List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceHigh(string ASXCode, int YearInput)
+        {
+            List<spQueryASXSharePricesForOneYear> output;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
+            {
+                output = connection.Query<spQueryASXSharePricesForOneYear>("dbo.spQueryASXSharePricesForOneYear_PriceHigh @ASXCode, @Year", new { ASXCode = ASXCode, Year = YearInput }).ToList();
+            }
+            return output;
+        }
+
+        public List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceLow(string ASXCode, int YearInput)
+        {
+            List<spQueryASXSharePricesForOneYear> output;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
+            {
+                output = connection.Query<spQueryASXSharePricesForOneYear>("dbo.spQueryASXSharePricesForOneYear_PriceLow @ASXCode, @Year", new { ASXCode = ASXCode, Year = YearInput }).ToList();
+            }
+            return output;
         }
 
 

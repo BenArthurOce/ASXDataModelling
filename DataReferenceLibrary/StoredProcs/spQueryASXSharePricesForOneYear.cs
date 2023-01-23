@@ -16,6 +16,6 @@ namespace DataReferenceLibrary.StoredProcs
 
         public long YearCalendar { get; set; }
 
-        public double? PriceClose { get; set; }
+        public double? Price { get; set; }
     }
 }
