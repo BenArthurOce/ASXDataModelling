@@ -58,6 +58,12 @@
     <Compile Include="CreateNewTransactionType.Designer.cs">
       <DependentUpon>CreateNewTransactionType.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAssets\RadioButtonTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FormAssets\TableCellPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShareDashboardForm.cs">
@@ -108,6 +114,9 @@
     <EmbeddedResource Include="UserControlsTab\UC_Tab2.resx">
       <DependentUpon>UC_Tab2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsTab\UC_Tab3.resx">
+      <DependentUpon>UC_Tab3.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -128,5 +137,6 @@
       <Name>DataReferenceLibrary</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
