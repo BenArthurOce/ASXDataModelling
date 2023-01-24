@@ -64,7 +64,7 @@
             this.dgvPriceHistory1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPriceHistory1.Location = new System.Drawing.Point(17, 86);
             this.dgvPriceHistory1.Name = "dgvPriceHistory1";
-            this.dgvPriceHistory1.Size = new System.Drawing.Size(606, 345);
+            this.dgvPriceHistory1.Size = new System.Drawing.Size(606, 486);
             this.dgvPriceHistory1.TabIndex = 3;
             // 
             // lbl_tab1_ASXShare
@@ -120,7 +120,7 @@
             this.dgvPriceHistory2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPriceHistory2.Location = new System.Drawing.Point(629, 86);
             this.dgvPriceHistory2.Name = "dgvPriceHistory2";
-            this.dgvPriceHistory2.Size = new System.Drawing.Size(606, 345);
+            this.dgvPriceHistory2.Size = new System.Drawing.Size(606, 486);
             this.dgvPriceHistory2.TabIndex = 9;
             // 
             // UC_Tab1

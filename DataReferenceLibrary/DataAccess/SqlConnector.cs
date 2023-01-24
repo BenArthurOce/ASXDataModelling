@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,6 +61,17 @@ namespace DataReferenceLibrary.DataAccess
             return output;
         }
 
+
+        public List<ASXPriceModel> spINSERT_NotepadFile(DataTable dt)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@data", dt, DbType.Object);
+                connection.Execute("dbo.spINSERT_NotepadFile", p, commandType: CommandType.StoredProcedure);
+            }
+            return null;
+        }
 
 
         public ShareTransactionTypeModel CreateTransactionType(ShareTransactionTypeModel model)
