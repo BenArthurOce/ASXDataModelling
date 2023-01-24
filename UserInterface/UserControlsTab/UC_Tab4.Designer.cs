@@ -32,12 +32,11 @@
             // 
             // UC_Tab4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "UC_Tab4";
-            this.Size = new System.Drawing.Size(1272, 468);
+            this.Size = new System.Drawing.Size(1262, 640);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

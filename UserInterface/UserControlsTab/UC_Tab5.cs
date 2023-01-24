@@ -10,23 +10,23 @@ using System.Windows.Forms;
 
 namespace UserInterface.UserControlsTab
 {
-    public partial class UC_Tab2 : UserControl
+    public partial class UC_Tab5 : UserControl
     {
-        private static UC_Tab2 _instance;
+        private static UC_Tab5 _instance;
 
-        public static UC_Tab2 Instance
+        public static UC_Tab5 Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new UC_Tab2();
+                    _instance = new UC_Tab5();
                 return _instance;
             }
         }
 
 
 
-        public UC_Tab2()
+        public UC_Tab5()
         {
             InitializeComponent();
         }

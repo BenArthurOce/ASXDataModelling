@@ -10,9 +10,6 @@ namespace DataReferenceLibrary.DataAccess
 {
     public interface IDataConnection
     {
-
-        //List<spQueryASXSharePricesForOneYear> QueryPriceForOneYear(string ASXCode, int InputYear);
-
         List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceOpen(string ASXCode, int InputYear);
         List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceClose(string ASXCode, int InputYear);
         List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceHigh(string ASXCode, int InputYear);

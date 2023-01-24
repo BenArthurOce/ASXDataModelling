@@ -30,7 +30,7 @@ namespace UserInterface
             userControl.BringToFront();
         }
 
-        private void gBtn_tab1_Click(object sender, EventArgs e)
+        private void tabBtn_tab1_MouseClick(object sender, MouseEventArgs e)
         {
             if (!panelContainer.Controls.Contains(UC_Tab1.Instance))
             {
@@ -41,8 +41,7 @@ namespace UserInterface
             else
                 UC_Tab1.Instance.BringToFront();
         }
-
-        private void gBtn_tab2_Click(object sender, EventArgs e)
+        private void tabBtn_tab2_MouseClick(object sender, MouseEventArgs e)
         {
             if (!panelContainer.Controls.Contains(UC_Tab2.Instance))
             {
@@ -54,7 +53,7 @@ namespace UserInterface
                 UC_Tab2.Instance.BringToFront();
         }
 
-        private void gBtn_tab3_Click(object sender, EventArgs e)
+        private void tabBtn_tab3_MouseClick(object sender, MouseEventArgs e)
         {
             if (!panelContainer.Controls.Contains(UC_Tab3.Instance))
             {
@@ -66,7 +65,7 @@ namespace UserInterface
                 UC_Tab3.Instance.BringToFront();
         }
 
-        private void gBtn_tab4_Click(object sender, EventArgs e)
+        private void tabBtn_tab4_MouseClick(object sender, MouseEventArgs e)
         {
             if (!panelContainer.Controls.Contains(UC_Tab4.Instance))
             {
@@ -76,6 +75,18 @@ namespace UserInterface
             }
             else
                 UC_Tab4.Instance.BringToFront();
+        }
+
+        private void tabBtn_tab5_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (!panelContainer.Controls.Contains(UC_Tab5.Instance))
+            {
+                panelContainer.Controls.Add(UC_Tab5.Instance);
+                UC_Tab5.Instance.Dock = DockStyle.Fill;
+                UC_Tab5.Instance.BringToFront();
+            }
+            else
+                UC_Tab5.Instance.BringToFront();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace UserInterface.UserControlsTab
 {
-    partial class UC_Tab2
+    partial class UC_Tab5
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,11 +30,11 @@
         {
             this.SuspendLayout();
             // 
-            // UC_Tab2
+            // UC_Tab5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "UC_Tab2";
+            this.Name = "UC_Tab5";
             this.Size = new System.Drawing.Size(1272, 468);
             this.ResumeLayout(false);
             this.PerformLayout();
