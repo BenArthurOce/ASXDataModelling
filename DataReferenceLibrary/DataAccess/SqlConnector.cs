@@ -61,6 +61,18 @@ namespace DataReferenceLibrary.DataAccess
             return output;
         }
 
+
+        public List<spQueryAllShareTransactions> spQueryAllShareTransactions()
+        {
+            List<spQueryAllShareTransactions> output;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
+            {
+                output = connection.Query<spQueryAllShareTransactions>("dbo.spQueryAllShareTransactions").ToList();
+            }
+            return output;
+        }
+
+
         public List<ASXPriceModel> spINSERT_NotepadFile(DataTable dt)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DataReferenceLibrary.DataAccess;
+using DataReferenceLibrary;
+using DataReferenceLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,9 +11,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UserInterface.FormAssets;
+using DataReferenceLibrary.StoredProcs;
 
 namespace UserInterface.UserControlsTab
 {
+
+
+
     public partial class UC_Tab3 : UserControl
     {
         private static UC_Tab3 _instance;
@@ -27,46 +34,74 @@ namespace UserInterface.UserControlsTab
 
 
 
+
+
         public UC_Tab3()
         {
             InitializeComponent();
         }
 
+
+
         private void button1_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 4; i++)
+            //PrepareTableLayoutPanel();
+
+            // Generate a List of Data Transactions
+            
+
+            foreach (IDataConnection db in GlobalConfig.Connections)
             {
-                for (int j = 0; j < 4; j++)
-                {
-                    TableCellPanel tile = new TableCellPanel();
-                    tile.BackColor = Color.Blue;
-                    tile.Dock = DockStyle.Fill;
+                List<spQueryAllShareTransactions> output;
+                output = db.spQueryAllShareTransactions();
 
-                    Label title = new Label();
-                    title.Text = "Tile Title";
-                    title.Dock = DockStyle.Top;
-                    tile.Controls.Add(title);
+                PrepareTableLayoutPanel(output);
+            }
+        }
 
-                    Label description = new Label();
-                    description.Text = "Tile Description";
-                    description.Dock = DockStyle.Bottom;
-                    tile.Controls.Add(description);
 
-                    tableLayoutPanel1.Controls.Add(tile, i, j);
-                }
+
+        private void PrepareTableLayoutPanel(List<spQueryAllShareTransactions> output)
+        {
+
+            foreach (spQueryAllShareTransactions TransLine in output)
+            {
+                TableCellPanel myControl = new TableCellPanel();
+                myControl.Width = fpnlShareTransactions.Width;
+                //myControl.Text = "Control " + (i + 1);
+
+
+
+                myControl.lblFooterTransactionNum.Text = 0.ToString();
+                myControl.lblFooterASXCode.Text = TransLine.ASXCode.ToString();
+                myControl.lblFooterTransactionType.Text = TransLine.Type.ToString();
+                myControl.lblFooterTransactionTotal.Text = TransLine.TotalValue.ToString();
+
+
+                fpnlShareTransactions.Controls.Add(myControl);
             }
 
+            /*
             for (int i = 0; i < 10; i++)
             {
                 // Create a new instance of the custom control
                 TableCellPanel myControl = new TableCellPanel();
-
-                // Set properties of the control
+                myControl.Width = fpnlShareTransactions.Width;
                 myControl.Text = "Control " + (i + 1);
 
-                // Add the control to the FlowLayoutPanel
-                flowLayoutPanel1.Controls.Add(myControl);
+
+                myControl.lblFooterASXCode.Text = "hello";
+
+                fpnlShareTransactions.Controls.Add(myControl);
+
+                //myControl.CustomLabel3= new Label();
+                //MessageBox.Show(CustomLabel3.Text);
             }
+            */
         }
+
+
+
+
     }
 }

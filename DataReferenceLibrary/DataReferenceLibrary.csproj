@@ -55,6 +55,7 @@
     <Compile Include="Models\ShareTransactionsModel.cs" />
     <Compile Include="Models\ShareTransactionTypeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StoredProcs\spQueryAllShareTransactions.cs" />
     <Compile Include="StoredProcs\spQueryASXSharePricesForOneYear.cs" />
   </ItemGroup>
   <ItemGroup>

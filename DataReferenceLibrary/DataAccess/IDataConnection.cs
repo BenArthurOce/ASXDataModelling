@@ -18,6 +18,8 @@ namespace DataReferenceLibrary.DataAccess
 
         List<ASXPriceModel> spINSERT_NotepadFile(DataTable dt);
 
+        List<spQueryAllShareTransactions> spQueryAllShareTransactions();
+
         DocumentUploadHistoryModel CreateNewDocumentUploadRecord(DocumentUploadHistoryModel model);
 
         ShareTransactionTypeModel CreateTransactionType(ShareTransactionTypeModel model);
