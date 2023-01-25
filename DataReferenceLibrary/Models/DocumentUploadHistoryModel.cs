@@ -8,6 +8,8 @@ namespace DataReferenceLibrary.Models
 {
     public class DocumentUploadHistoryModel
     {
+        public Guid Id { get; set; }
+
         public string FilePath { get; set; }
 
         public string FileName { get; set; }

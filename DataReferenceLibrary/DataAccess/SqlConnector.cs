@@ -61,7 +61,6 @@ namespace DataReferenceLibrary.DataAccess
             return output;
         }
 
-
         public List<ASXPriceModel> spINSERT_NotepadFile(DataTable dt)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
@@ -73,6 +72,22 @@ namespace DataReferenceLibrary.DataAccess
             return null;
         }
 
+        public DocumentUploadHistoryModel CreateNewDocumentUploadRecord(DocumentUploadHistoryModel model)
+        {
+            model.Id = Guid.NewGuid();
+
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@in_FilePath", model.FilePath);
+                p.Add("@in_FileName", model.FileName);
+                p.Add("@in_DateTimeUpload", model.DateTimeUploaded);
+                p.Add("@in_FileSizeBytes", model.FileSizeBytes);
+                p.Add("@in_RowsInFile", model.RowsInFile);
+                connection.Execute("dbo.spINSERT_DocumentUploadRecord", p, commandType: CommandType.StoredProcedure);
+            }
+            return model;
+        }
 
         public ShareTransactionTypeModel CreateTransactionType(ShareTransactionTypeModel model)
         {
@@ -80,26 +95,12 @@ namespace DataReferenceLibrary.DataAccess
 
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
             {
-
-                string LookupId = "CBA";
-                var output = connection.Query<ASXPriceModel>("dbo.spQueryASXSharePricesBetweenDates @ASXCode, @StartDate, @EndDate", new { ASXCode = LookupId, StartDate = 20220101, EndDate = 20220630 }).ToList();
-
-
-
                 var p = new DynamicParameters();
                 p.Add("@in_TransType", model.Type);
-
                 connection.Execute("dbo.spINSERT_ShareTransactionType", p, commandType: CommandType.StoredProcedure);
-
-
-
-                //var output = connection.Query<ShareTransactionTypeModel>("dbo.spQueryASXSharePricesBetweenDates @ASXCode, @StartDate, @EndDate", new { ASXCode = LookupId, StartDate = 20220101, EndDate = 20220630 }).ToList();
-                //return output;
             }
-
-
-
-                return model;
+            return model;
         }
+
     }
 }

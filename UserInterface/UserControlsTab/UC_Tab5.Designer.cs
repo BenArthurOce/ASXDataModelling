@@ -37,6 +37,7 @@
             this.DateUploaded = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FileSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RowCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lBoxDocumentUploadLog = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocumentsQueued)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,10 +111,19 @@
             this.RowCount.HeaderText = "Row Count";
             this.RowCount.Name = "RowCount";
             // 
+            // lBoxDocumentUploadLog
+            // 
+            this.lBoxDocumentUploadLog.FormattingEnabled = true;
+            this.lBoxDocumentUploadLog.Location = new System.Drawing.Point(811, 75);
+            this.lBoxDocumentUploadLog.Name = "lBoxDocumentUploadLog";
+            this.lBoxDocumentUploadLog.Size = new System.Drawing.Size(257, 355);
+            this.lBoxDocumentUploadLog.TabIndex = 4;
+            // 
             // UC_Tab5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lBoxDocumentUploadLog);
             this.Controls.Add(this.btnSubmitFiles);
             this.Controls.Add(this.btnFindFiles);
             this.Controls.Add(this.dgvDocumentsQueued);
@@ -137,5 +147,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DateUploaded;
         private System.Windows.Forms.DataGridViewTextBoxColumn FileSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn RowCount;
+        private System.Windows.Forms.ListBox lBoxDocumentUploadLog;
     }
 }

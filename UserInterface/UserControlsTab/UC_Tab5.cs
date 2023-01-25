@@ -14,6 +14,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.LinkLabel;
+using System.Web.UI.WebControls;
+using System.Xml.Linq;
 
 namespace UserInterface.UserControlsTab
 {
@@ -45,8 +47,6 @@ namespace UserInterface.UserControlsTab
         {
             PopulateDataTable();
         }
-
-
 
 
         private void PopulateDataTable()
@@ -81,7 +81,7 @@ namespace UserInterface.UserControlsTab
 
                     // Document Properties
                     OneDocument.FilePath = fileInfo.FullName;
-                    OneDocument.FileName = fileInfo.FullName;
+                    OneDocument.FileName = fileInfo.Name.ToLower();
                     OneDocument.DateTimeUploaded = DateTime.Now;
                     OneDocument.FileSizeBytes = fileInfo.Length;
 
@@ -135,6 +135,13 @@ namespace UserInterface.UserControlsTab
             return dt;
         }
 
+        private void ImportASingleTextFile(DataTable dt)
+        {
+            foreach (IDataConnection db in GlobalConfig.Connections)
+                db.spINSERT_NotepadFile(dt);
+        }
+
+
         private void btnSubmitFiles_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in dgvDocumentsQueued.Rows)
@@ -143,36 +150,27 @@ namespace UserInterface.UserControlsTab
                 DataTable dt = new DataTable();
                 dt = CreateDataTableFromNotePad(filePath);
                 ImportASingleTextFile(dt);
-                //AddEntryToDocumentTable();
+
+                DocumentUploadHistoryModel model = new DocumentUploadHistoryModel();
+                model.FilePath = row.Cells[0].Value.ToString();
+                model.FileName = row.Cells[1].Value.ToString();
+                model.DateTimeUploaded = DateTime.Now;
+                model.FileSizeBytes = (long)row.Cells[3].Value;
+                model.RowsInFile = (long)row.Cells[4].Value;
+
+                AddEntryToDocumentTable(model);
             }
+            dgvDocumentsQueued.Rows.Clear();
         }
 
 
-        private void ImportASingleTextFile(DataTable dt)
+
+        private void AddEntryToDocumentTable(DocumentUploadHistoryModel model)
         {
             foreach (IDataConnection db in GlobalConfig.Connections)
-                db.spINSERT_NotepadFile(dt);
-        }
-
-
-        private void AddEntryToDocumentTable()
-        {
-
-            DataTable dt = new DataTable();
-            dt = (DataTable)dgvDocumentsQueued.DataSource;
-
-            string connectionString = "Data Source = BENSQLTRAININGM;Initial Catalog=BENASXDATABASE;Integrated Security=true";
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                using (SqlBulkCopy sqlBulkCopy = new SqlBulkCopy(con))
-                {
-                    //Set the database table name
-                    sqlBulkCopy.DestinationTableName = "[dbo].[DocumentUploadHistory]";
-                    // sqlBulkCopy.DestinationTableName = "[dbo].[ASXSharePrices3]";
-                    con.Open();
-                    sqlBulkCopy.WriteToServer(dt);
-                    con.Close();
-                }
+            { 
+                db.CreateNewDocumentUploadRecord(model);
+                lBoxDocumentUploadLog.Items.Add($"Document: {model.FileName} was added to the database");
             }
         }
 
