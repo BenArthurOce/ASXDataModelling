@@ -42,8 +42,6 @@ namespace UserInterface.FormAssets
         private Color inactiveColor = Color.Pink;
 
         private bool isHovered;
-        private Label label1;
-        private Label label2;
 
 
         private Label lblHeaderTransactionNum;
@@ -55,11 +53,6 @@ namespace UserInterface.FormAssets
         private Label _lblFooterTransactionType;
         private Label _lblFooterASXCode;
         private Label _lblFooterTransactionTotal;
-
-        //private Label label3 = new Label();
-        //private Label label4 = new Label();
-        private Label label3;
-        private Label label4;
 
 
         public Label lblFooterTransactionNum
@@ -87,31 +80,7 @@ namespace UserInterface.FormAssets
         }
 
 
-        public Label CustomLabel3
-        { 
-            get {   return label3; }
-            set {   Label label3 = new Label();
-                    label3.Text = "I am Label One";
-                    label3.Location = new System.Drawing.Point(50, 50);
-                    label3.Name = "label1";
-                    label3.BackColor = Color.Blue;
-                    MessageBox.Show("hi");
-            }
-        }
-
-        public Label CustomLabel4
-        {
-            get { return label4; }
-            set
-            {
-                Label label4 = new Label();
-                label4.Text = "I am Label Two";
-                label4.Location = new System.Drawing.Point(90, 90);
-                label4.Name = "label2";
-                label4.BackColor = Color.Blue;
-            }
-        }
-        
+       
         public String DisplayText
         {
             get { return text; }
@@ -202,17 +171,6 @@ namespace UserInterface.FormAssets
         }
         public TableCellPanel()
         {
-            //this.ForeColor = Color.White;
-            //this.CustomLabel1 = CustomLabel1;
-            //this.CustomLabel2 = CustomLabel2;
-            //this.Controls.Add(this.label1);
-            //this.Controls.Add(this.label2);
-
-
-            //private Label lblHeaderTransactionNum;
-            //private Label lblHeaderTransactionType;
-            //private Label lblHeaderASXCode;
-            //private Label lblHeaderTransactionTotal;
 
             this.lblHeaderTransactionNum = new Label();
             this.lblHeaderTransactionType = new Label();
@@ -268,41 +226,6 @@ namespace UserInterface.FormAssets
             this.Controls.Add(this.lblFooterTransactionTotal);
 
 
-
-
-
-
-
-
-
-
-
-            //private Label _lblFooterTransactionNum;
-            //private Label _lblFooterTransactionType;
-            //private Label _lblFooterASXCode;
-            //private Label _lblFooterTransactionTotal;
-
-
-
-            /*
-            this.label1 = new Label();
-            this.label2 = new Label();
-
-            this.label1.Text = "Label 1";
-            this.label1.Location = new System.Drawing.Point(10, 10);
-            this.label1.Size = new System.Drawing.Size(100, 20);
-
-            this.label2.Text = "Label 2";
-            this.label2.Location = new System.Drawing.Point(10, 40);
-            this.label2.Size = new System.Drawing.Size(100, 20);
-
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
-
-            */
-
-
-
         }
         protected override void OnMouseEnter(EventArgs e)
         {
@@ -348,49 +271,6 @@ namespace UserInterface.FormAssets
                 //pe.Graphics.FillRectangle(b, ClientRectangle);
             }
 
-
-
-
-            
-            
-            /*
-            {
-                Color c1 = Color.FromArgb(color1Transparent, hoverColor);
-                Color c2 = Color.FromArgb(color2Transparent, hoverColor);
-                Brush b = new System.Drawing.Drawing2D.LinearGradientBrush(ClientRectangle, c1, c2, angle);
-                SolidBrush frcolor = new SolidBrush(this.ForeColor);
-                e.Graphics.FillRectangle(b, ClientRectangle);
-                //e.Graphics.DrawString(text, this.Font, frcolor, new Point(textX, textY));
-                //Rectangle rc = new Rectangle(boxlocatx, boxlocaty, boxsize, boxsize);
-                //ControlPaint.DrawRadioButtonTab(e.Graphics, rc, this.Checked ? ButtonState.Checked : ButtonState.Normal);
-                b.Dispose();
-            }
-            */
-
-
         }
-        /*
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            if (Checked)
-            {
-                MessageBox.Show("Checked");
-                MessageBox.Show(text);
-            }
-
-            base.OnPaint(e);
-            this.AutoSize = false;
-            text = this.Text;
-            Color c1 = Color.FromArgb(color1Transparent, color1);
-            Color c2 = Color.FromArgb(color2Transparent, color2);
-            Brush b = new System.Drawing.Drawing2D.LinearGradientBrush(ClientRectangle, c1, c2, angle);
-            SolidBrush frcolor = new SolidBrush(this.ForeColor);
-            e.Graphics.FillRectangle(b, ClientRectangle);
-            e.Graphics.DrawString(text, this.Font, frcolor, new Point(textX, textY));
-            Rectangle rc = new Rectangle(boxlocatx, boxlocaty, boxsize, boxsize);
-            ControlPaint.DrawRadioButtonTab(e.Graphics, rc, this.Checked ? ButtonState.Checked : ButtonState.Normal);
-            b.Dispose();
-        }
-        */
     }
 }

@@ -1,6 +1,6 @@
 ﻿using DataReferenceLibrary.DataAccess;
-using DataReferenceLibrary.StoredProcs;
 using DataReferenceLibrary;
+using DataReferenceLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,31 +11,37 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UserInterface.FormAssets;
+using DataReferenceLibrary.StoredProcs;
 
 namespace UserInterface.UserControlsTab
 {
-    public partial class UC_Tab3 : UserControl
-    {
-        private static UC_Tab3 _instance;
 
-        public static UC_Tab3 Instance
+
+
+    public partial class UC_Tab3old : UserControl
+    {
+        private static UC_Tab3old _instance;
+
+        public static UC_Tab3old Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new UC_Tab3();
+                    _instance = new UC_Tab3old();
                 return _instance;
             }
         }
 
 
 
-        public UC_Tab3()
+        public UC_Tab3old()
         {
             InitializeComponent();
         }
 
-        private void btnGenerate_Click(object sender, EventArgs e)
+
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
             foreach (IDataConnection db in GlobalConfig.Connections)
@@ -46,6 +52,8 @@ namespace UserInterface.UserControlsTab
                 PrepareTableLayoutPanel(output);
             }
         }
+
+
 
         private void PrepareTableLayoutPanel(List<spQueryAllShareTransactions> output)
         {

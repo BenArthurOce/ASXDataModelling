@@ -1,6 +1,6 @@
 ﻿namespace UserInterface.UserControlsTab
 {
-    partial class UC_Tab3
+    partial class UC_Tab3old
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,88 +29,62 @@
         private void InitializeComponent()
         {
             this.pnlHeaderShareTransactions = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.lblHeaderShareTransactions = new System.Windows.Forms.Label();
-            this.pnlFilter = new System.Windows.Forms.Panel();
-            this.lblFilters = new System.Windows.Forms.Label();
             this.fpnlShareTransactions = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnGenerate = new System.Windows.Forms.Button();
             this.pnlHeaderShareTransactions.SuspendLayout();
-            this.pnlFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlHeaderShareTransactions
             // 
             this.pnlHeaderShareTransactions.BackColor = System.Drawing.Color.White;
+            this.pnlHeaderShareTransactions.Controls.Add(this.button1);
             this.pnlHeaderShareTransactions.Controls.Add(this.lblHeaderShareTransactions);
             this.pnlHeaderShareTransactions.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeaderShareTransactions.Location = new System.Drawing.Point(0, 0);
             this.pnlHeaderShareTransactions.Name = "pnlHeaderShareTransactions";
-            this.pnlHeaderShareTransactions.Size = new System.Drawing.Size(1248, 65);
-            this.pnlHeaderShareTransactions.TabIndex = 6;
+            this.pnlHeaderShareTransactions.Size = new System.Drawing.Size(1262, 65);
+            this.pnlHeaderShareTransactions.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(118, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblHeaderShareTransactions
             // 
             this.lblHeaderShareTransactions.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblHeaderShareTransactions.AutoSize = true;
             this.lblHeaderShareTransactions.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeaderShareTransactions.Location = new System.Drawing.Point(530, 21);
+            this.lblHeaderShareTransactions.Location = new System.Drawing.Point(537, 21);
             this.lblHeaderShareTransactions.Name = "lblHeaderShareTransactions";
             this.lblHeaderShareTransactions.Size = new System.Drawing.Size(183, 25);
             this.lblHeaderShareTransactions.TabIndex = 0;
             this.lblHeaderShareTransactions.Text = "Share Transactions";
             // 
-            // pnlFilter
-            // 
-            this.pnlFilter.Controls.Add(this.btnGenerate);
-            this.pnlFilter.Controls.Add(this.lblFilters);
-            this.pnlFilter.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFilter.Location = new System.Drawing.Point(0, 65);
-            this.pnlFilter.Name = "pnlFilter";
-            this.pnlFilter.Size = new System.Drawing.Size(1248, 69);
-            this.pnlFilter.TabIndex = 7;
-            // 
-            // lblFilters
-            // 
-            this.lblFilters.AutoSize = true;
-            this.lblFilters.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFilters.Location = new System.Drawing.Point(21, 13);
-            this.lblFilters.Name = "lblFilters";
-            this.lblFilters.Size = new System.Drawing.Size(56, 20);
-            this.lblFilters.TabIndex = 0;
-            this.lblFilters.Text = "Filters:";
-            // 
             // fpnlShareTransactions
             // 
-            this.fpnlShareTransactions.AutoScroll = true;
             this.fpnlShareTransactions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpnlShareTransactions.Location = new System.Drawing.Point(0, 134);
+            this.fpnlShareTransactions.Location = new System.Drawing.Point(0, 65);
             this.fpnlShareTransactions.Name = "fpnlShareTransactions";
-            this.fpnlShareTransactions.Size = new System.Drawing.Size(1248, 506);
-            this.fpnlShareTransactions.TabIndex = 8;
+            this.fpnlShareTransactions.Size = new System.Drawing.Size(1262, 575);
+            this.fpnlShareTransactions.TabIndex = 1;
             // 
-            // btnGenerate
-            // 
-            this.btnGenerate.Location = new System.Drawing.Point(1146, 9);
-            this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(75, 23);
-            this.btnGenerate.TabIndex = 1;
-            this.btnGenerate.Text = "Generate";
-            this.btnGenerate.UseVisualStyleBackColor = true;
-            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
-            // 
-            // UC_Tab3
+            // UC_Tab3old
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.fpnlShareTransactions);
-            this.Controls.Add(this.pnlFilter);
             this.Controls.Add(this.pnlHeaderShareTransactions);
-            this.Name = "UC_Tab3";
-            this.Size = new System.Drawing.Size(1248, 640);
+            this.Name = "UC_Tab3old";
+            this.Size = new System.Drawing.Size(1262, 640);
             this.pnlHeaderShareTransactions.ResumeLayout(false);
             this.pnlHeaderShareTransactions.PerformLayout();
-            this.pnlFilter.ResumeLayout(false);
-            this.pnlFilter.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -119,9 +93,7 @@
 
         private System.Windows.Forms.Panel pnlHeaderShareTransactions;
         private System.Windows.Forms.Label lblHeaderShareTransactions;
-        private System.Windows.Forms.Panel pnlFilter;
-        private System.Windows.Forms.Button btnGenerate;
-        private System.Windows.Forms.Label lblFilters;
         private System.Windows.Forms.FlowLayoutPanel fpnlShareTransactions;
+        private System.Windows.Forms.Button button1;
     }
 }

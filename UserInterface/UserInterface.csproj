@@ -78,11 +78,29 @@
     <Compile Include="UserControlsTab\UC_Tab1.Designer.cs">
       <DependentUpon>UC_Tab1.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlsTab\UC_Tab6.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsTab\UC_Tab6.Designer.cs">
+      <DependentUpon>UC_Tab6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsTab\UC_Tab4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsTab\UC_Tab4.Designer.cs">
+      <DependentUpon>UC_Tab4.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlsTab\UC_Tab3.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControlsTab\UC_Tab3.Designer.cs">
       <DependentUpon>UC_Tab3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsTab\UC_Tab3%28old%29.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsTab\UC_Tab3%28old%29.Designer.cs">
+      <DependentUpon>UC_Tab3%28old%29.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlsTab\UC_Tab2.cs">
       <SubType>UserControl</SubType>
@@ -96,14 +114,11 @@
     <Compile Include="UserControlsTab\UC_Tab5.Designer.cs">
       <DependentUpon>UC_Tab5.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlsTab\UC_Tab4.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlsTab\UC_Tab4.Designer.cs">
-      <DependentUpon>UC_Tab4.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="CreateNewTransactionType.resx">
       <DependentUpon>CreateNewTransactionType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAssets\RadioButtonTab.resx">
+      <DependentUpon>RadioButtonTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -120,17 +135,23 @@
     <EmbeddedResource Include="UserControlsTab\UC_Tab1.resx">
       <DependentUpon>UC_Tab1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsTab\UC_Tab6.resx">
+      <DependentUpon>UC_Tab6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsTab\UC_Tab4.resx">
+      <DependentUpon>UC_Tab4.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlsTab\UC_Tab3.resx">
       <DependentUpon>UC_Tab3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsTab\UC_Tab3%28old%29.resx">
+      <DependentUpon>UC_Tab3%28old%29.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlsTab\UC_Tab2.resx">
       <DependentUpon>UC_Tab2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlsTab\UC_Tab5.resx">
       <DependentUpon>UC_Tab5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlsTab\UC_Tab4.resx">
-      <DependentUpon>UC_Tab4.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
