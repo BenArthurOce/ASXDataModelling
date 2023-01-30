@@ -1,7 +1,4 @@
-﻿using DataReferenceLibrary;
-using DataReferenceLibrary.DataAccess;
-using DataReferenceLibrary.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,12 +8,50 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+namespace UserInterface.Forms
+{
+    public partial class CreateNewTransactionForm : Form
+    {
 
+        ICreateTransactionRequester callingForm;
+
+        public CreateNewTransactionForm(ICreateTransactionRequester caller)
+        {
+            InitializeComponent();
+
+            callingForm = caller;
+        }
+
+
+        private bool ValidateForm()
+        {
+            return true;
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+
+            if (ValidateForm())
+            {
+                //callingForm.CreateTransactionComplete(model);
+            }
+        }
+    }
+
+
+
+
+
+}
+
+
+
+/*
 namespace UserInterface
 {
-    public partial class CreateNewTransactionType : Form
+    public partial class CreateNewTransactionForm : Form
     {
-        public CreateNewTransactionType()
+        public CreateNewTransactionForm(UserControlsTab.UC_Tab3 uC_Tab3)
         {
             InitializeComponent();
         }
@@ -45,3 +80,4 @@ namespace UserInterface
 
     }
 }
+*/

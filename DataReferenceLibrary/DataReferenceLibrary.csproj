@@ -52,7 +52,7 @@
     <Compile Include="DataAccess\IDataConnection.cs" />
     <Compile Include="Models\ASXPriceModel.cs" />
     <Compile Include="Models\DocumentUploadHistoryModel.cs" />
-    <Compile Include="Models\ShareTransactionsModel.cs" />
+    <Compile Include="Models\ShareTransactionModel.cs" />
     <Compile Include="Models\ShareTransactionTypeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StoredProcs\spQueryAllShareTransactions.cs" />

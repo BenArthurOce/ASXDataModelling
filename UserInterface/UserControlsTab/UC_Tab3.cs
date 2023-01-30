@@ -11,10 +11,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UserInterface.FormAssets;
+using DataReferenceLibrary.Models;
+using UserInterface.Forms;
 
 namespace UserInterface.UserControlsTab
 {
-    public partial class UC_Tab3 : UserControl
+    public partial class UC_Tab3 : UserControl, ICreateTransactionRequester
     {
         private static UC_Tab3 _instance;
 
@@ -52,19 +54,28 @@ namespace UserInterface.UserControlsTab
 
             foreach (spQueryAllShareTransactions TransLine in output)
             {
-                TableCellPanel myControl = new TableCellPanel();
-                myControl.Width = fpnlShareTransactions.Width;
 
-                myControl.lblFooterTransactionNum.Text = 0.ToString();
-                myControl.lblFooterASXCode.Text = TransLine.ASXCode.ToString();
-                myControl.lblFooterTransactionType.Text = TransLine.Type.ToString();
-                myControl.lblFooterTransactionTotal.Text = TransLine.TotalValue.ToString();
+                CustomPanel newCustomPanel = new CustomPanel();
+                newCustomPanel.Width = fpnlShareTransactions.Width;
+                newCustomPanel.lblTransNum.Text = 0.ToString();
+                newCustomPanel.lblTransType.Text = TransLine.Type.ToString();
+                newCustomPanel.lblTransCode.Text = TransLine.ASXCode.ToString();
+                newCustomPanel.lblTransCostTotal.Text = TransLine.TotalValue.ToString();
 
-
-                fpnlShareTransactions.Controls.Add(myControl);
+                fpnlShareTransactions.Controls.Add(newCustomPanel);
             }
         }
 
+        private void btnNewTransaction_Click(object sender, EventArgs e)
+        {
+            // Call the CreateNewTransactionForm
+            CreateNewTransactionForm form = new CreateNewTransactionForm(this);
+            form.Show();
+        }
 
+        public void CreateTransactionComplete(ShareTransactionModel model)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

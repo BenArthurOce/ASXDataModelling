@@ -31,9 +31,10 @@
             this.pnlHeaderShareTransactions = new System.Windows.Forms.Panel();
             this.lblHeaderShareTransactions = new System.Windows.Forms.Label();
             this.pnlFilter = new System.Windows.Forms.Panel();
+            this.btnGenerate = new System.Windows.Forms.Button();
             this.lblFilters = new System.Windows.Forms.Label();
             this.fpnlShareTransactions = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnGenerate = new System.Windows.Forms.Button();
+            this.btnNewTransaction = new System.Windows.Forms.Button();
             this.pnlHeaderShareTransactions.SuspendLayout();
             this.pnlFilter.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +62,7 @@
             // 
             // pnlFilter
             // 
+            this.pnlFilter.Controls.Add(this.btnNewTransaction);
             this.pnlFilter.Controls.Add(this.btnGenerate);
             this.pnlFilter.Controls.Add(this.lblFilters);
             this.pnlFilter.Dock = System.Windows.Forms.DockStyle.Top;
@@ -68,6 +70,16 @@
             this.pnlFilter.Name = "pnlFilter";
             this.pnlFilter.Size = new System.Drawing.Size(1248, 69);
             this.pnlFilter.TabIndex = 7;
+            // 
+            // btnGenerate
+            // 
+            this.btnGenerate.Location = new System.Drawing.Point(1146, 9);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(75, 23);
+            this.btnGenerate.TabIndex = 1;
+            this.btnGenerate.Text = "Generate";
+            this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
             // lblFilters
             // 
@@ -88,15 +100,15 @@
             this.fpnlShareTransactions.Size = new System.Drawing.Size(1248, 506);
             this.fpnlShareTransactions.TabIndex = 8;
             // 
-            // btnGenerate
+            // btnNewTransaction
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(1146, 9);
-            this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(75, 23);
-            this.btnGenerate.TabIndex = 1;
-            this.btnGenerate.Text = "Generate";
-            this.btnGenerate.UseVisualStyleBackColor = true;
-            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
+            this.btnNewTransaction.Location = new System.Drawing.Point(1028, 13);
+            this.btnNewTransaction.Name = "btnNewTransaction";
+            this.btnNewTransaction.Size = new System.Drawing.Size(75, 23);
+            this.btnNewTransaction.TabIndex = 2;
+            this.btnNewTransaction.Text = "Add";
+            this.btnNewTransaction.UseVisualStyleBackColor = true;
+            this.btnNewTransaction.Click += new System.EventHandler(this.btnNewTransaction_Click);
             // 
             // UC_Tab3
             // 
@@ -123,5 +135,6 @@
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.Label lblFilters;
         private System.Windows.Forms.FlowLayoutPanel fpnlShareTransactions;
+        private System.Windows.Forms.Button btnNewTransaction;
     }
 }

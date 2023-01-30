@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace DataReferenceLibrary.Models
 {
-    public class ShareTransactionsModel
+    public class ShareTransactionModel
     {
         public Guid Id { get; set; }
+
+        public int SequenceNumber { get; set; }
 
         public int? ContractNote { get; set; }
 
@@ -31,8 +33,6 @@ namespace DataReferenceLibrary.Models
         public decimal TotalValue { get; set; }
 
         public bool IsIncrease { get; set; }
-
-        public bool IsDecrease { get; set; }
 
     }
 }
