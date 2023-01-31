@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using UserInterface.FormAssets;
 using DataReferenceLibrary.Models;
 using UserInterface.Forms;
+using System.Globalization;
 
 namespace UserInterface.UserControlsTab
 {
@@ -56,12 +57,16 @@ namespace UserInterface.UserControlsTab
             {
 
                 CustomPanel newCustomPanel = new CustomPanel();
-                newCustomPanel.lblTransNum.Text = 0.ToString();
+                //newCustomPanel.TransNumber.Text = 0.ToString();
+                newCustomPanel.lblTransDate.Text = DateTime.ParseExact(TransLine.Date.ToString(), "yyyyMMdd", CultureInfo.InvariantCulture).ToString();
                 newCustomPanel.lblTransType.Text = TransLine.Type.ToString();
-                newCustomPanel.lblTransCode.Text = TransLine.ASXCode.ToString();
+                newCustomPanel.lblTransShareCode.Text = TransLine.ASXCode.ToString();
+                newCustomPanel.lblTransQuantity.Text = TransLine.Quantity.ToString();
+                newCustomPanel.lblTransUnitPrice.Text = TransLine.UnitPrice.ToString();
                 newCustomPanel.lblTransCostTotal.Text = TransLine.TotalValue.ToString();
 
                 fpnlShareTransactions.Controls.Add(newCustomPanel);
+
             }
         }
 

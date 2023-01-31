@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,7 +37,118 @@ namespace UserInterface.Forms
                 //callingForm.CreateTransactionComplete(model);
             }
         }
+
+        private void tBoxQuantity_TextChanged(object sender, EventArgs e)
+        {
+            if (tBoxQuantity.Text.EndsWith(".")) { return; } else { CheckFormBlanksAndApplyMath(); }
+        }
+
+        private void tBoxUnitPrice_TextChanged(object sender, EventArgs e)
+        {
+            if (tBoxUnitPrice.Text.EndsWith(".")) { return; } else { CheckFormBlanksAndApplyMath(); }
+        }
+
+        private void tBoxTradeValue_TextChanged(object sender, EventArgs e)
+        {
+            if (tBoxTradeValue.Text.EndsWith(".")) { return; } else { CheckFormBlanksAndApplyMath(); }
+        }
+
+        private void tBoxBrokerage_TextChanged(object sender, EventArgs e)
+        {
+            if (tBoxBrokerage.Text.EndsWith(".")) { return; } else { CheckFormBlanksAndApplyMath(); }
+        }
+
+
+        private void CheckFormBlanksAndApplyMath()
+        {
+            float TradeValue = 0;
+            float TotalValue = 0;
+
+            // If "UnitPrice or Quantity are blank or null, this code is to be skipped
+            if (string.IsNullOrWhiteSpace(tBoxQuantity.Text) == true || string.IsNullOrWhiteSpace(tBoxUnitPrice.Text) == true)
+            {
+                tBoxTradeValue.Text = null;
+                tBoxTotalValue.Text = null;
+                return;     // Leave the method
+            }
+            else
+            {   // Calculate the Trade value and apply it to textbox
+                TradeValue = float.Parse(tBoxQuantity.Text) * float.Parse(tBoxUnitPrice.Text);
+                tBoxTradeValue.Text = TradeValue.ToString();
+            }
+
+            // If Brokerage is empty
+            if (string.IsNullOrWhiteSpace(tBoxBrokerage.Text) == true)
+            {
+                // Then calculate Total Value without brokerage
+                TotalValue = float.Parse(tBoxTradeValue.Text);
+                tBoxTotalValue.Text = TotalValue.ToString();
+            }
+
+            // If Brokerage is not empty
+            else
+            {
+                // Then calculate Total Value with brokerage
+                TotalValue = float.Parse(tBoxTradeValue.Text) + float.Parse(tBoxBrokerage.Text);
+                tBoxTotalValue.Text = TotalValue.ToString();
+            }
+        }
+
+        private void tBoxQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void tBoxUnitPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!isNumber(e.KeyChar, tBoxUnitPrice.Text))
+                e.Handled = true;
+        }
+
+        private void tBoxTradeValue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!isNumber(e.KeyChar, tBoxTradeValue.Text))
+                e.Handled = true;
+        }
+
+        private void tBoxBrokerage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!isNumber(e.KeyChar, tBoxBrokerage.Text))
+                e.Handled = true;
+        }
+
+
+        public bool isNumber(char ch, string text)
+        {
+            bool res = true;
+            char decimalChar = Convert.ToChar(CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator);
+
+            //check if it´s a decimal separator and if doesn´t already have one in the text string
+            if (ch == decimalChar && text.IndexOf(decimalChar) != -1)
+            {
+                res = false;
+                return res;
+            }
+
+            //check if it´s a digit, decimal separator and backspace
+            if (!Char.IsDigit(ch) && ch != decimalChar && ch != (char)Keys.Back)
+                res = false;
+
+            return res;
+        }
+
+
+
+
+
+
+
     }
+
+
+
+
+
 
 
 

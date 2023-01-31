@@ -55,12 +55,12 @@ namespace UserInterface.UserControlsTab
                 CustomPanel newCustomPanel = new CustomPanel();
                 newCustomPanel.Width = fpnlTesting.Width;
                 newCustomPanel.DefaultWidth = fpnlTesting.Width;
-                newCustomPanel.lblTransNum.Text = i.ToString();
+                newCustomPanel.lblTransNumber.Text = i.ToString();
                 newCustomPanel.lblTransType.Text = "Buy";
-                newCustomPanel.lblTransCode.Text = "CBA";
+                newCustomPanel.lblTransShareCode.Text = "CBA";
                 newCustomPanel.lblTransCostTotal.Text = "$0";
 
-                newCustomPanel.TestWideInt = 450;
+                //newCustomPanel.TestWideInt = 450;
                 
                 //newCustomPanel.DefaultWidth = fpnlTesting.Width;
 

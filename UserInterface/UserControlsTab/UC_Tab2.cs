@@ -28,12 +28,10 @@ namespace UserInterface.UserControlsTab
             }
         }
 
-
-
         public UC_Tab2()
         {
             InitializeComponent();
-            tBoxPortfolioName.Text = "Ben Portfolio Account 1";
+            tBoxPortfolioName.Text = "Dummy Portfolio 3";
             tBoxPortfolioStartDate.Text = "20200101";
             tBoxPortfolioEndDate.Text = "20230101";
         }
