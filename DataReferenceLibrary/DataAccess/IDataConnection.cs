@@ -16,6 +16,9 @@ namespace DataReferenceLibrary.DataAccess
         List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceHigh(string ASXCode, int InputYear);
         List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceLow(string ASXCode, int InputYear);
 
+        List<spQueryPortfolioItemsForCertainDate> spQueryPortfolioItemsForCertainDate(string InputPortfolioName, int InputStartDate, int InputEndDate);
+
+
         List<ASXPriceModel> spINSERT_NotepadFile(DataTable dt);
 
         List<spQueryAllShareTransactions> spQueryAllShareTransactions();

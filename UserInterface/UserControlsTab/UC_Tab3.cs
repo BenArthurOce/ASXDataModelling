@@ -56,7 +56,6 @@ namespace UserInterface.UserControlsTab
             {
 
                 CustomPanel newCustomPanel = new CustomPanel();
-                newCustomPanel.Width = fpnlShareTransactions.Width;
                 newCustomPanel.lblTransNum.Text = 0.ToString();
                 newCustomPanel.lblTransType.Text = TransLine.Type.ToString();
                 newCustomPanel.lblTransCode.Text = TransLine.ASXCode.ToString();

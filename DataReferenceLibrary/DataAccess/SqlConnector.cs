@@ -73,6 +73,19 @@ namespace DataReferenceLibrary.DataAccess
         }
 
 
+        public List<spQueryPortfolioItemsForCertainDate> spQueryPortfolioItemsForCertainDate(string InputPortfolioName, int InputStartDate, int InputEndDate)
+        {
+            List<spQueryPortfolioItemsForCertainDate> output;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
+            {
+                output = connection.Query<spQueryPortfolioItemsForCertainDate>("dbo.spQueryPortfolioItemsForCertainDate @in_PortfolioName, @in_StartDate, @in_EndDate", new { in_PortfolioName = InputPortfolioName, in_StartDate = InputStartDate, in_EndDate = InputEndDate }).ToList();
+            }
+            return output;
+        }
+
+
+
+
         public List<ASXPriceModel> spINSERT_NotepadFile(DataTable dt)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))

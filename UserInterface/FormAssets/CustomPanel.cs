@@ -11,29 +11,36 @@ namespace UserInterface.FormAssets
 {
     class CustomPanel : Panel
     {
+        public Label lblTransNum;
+        public Label lblTransType;
+        public Label lblTransCode;
+        public Label lblTransCostTotal;
+
+        private Color _baseColor = Color.Red;
 
         private bool _isClicked;
 
-        private int _minimumHeight;
-        private int _maximumHeight;
+        private int _minimumHeight = 30;
+        private int _maximumHeight = 90;
         private int _defaultWidth;
 
-        private Label _lblTransNum;
-        private Label _lblTransType;
-        private Label _lblTransCode;
-        private Label _lblTransCostTotal;
+        private string _TransNumber;
+        private string _TransType;
+        private string _TransCode;
+        private string _TransCostTotal;
 
         private int x20;
         private int x40;
         private int x60;
         private int x80;
 
+        public int _TestWideInt;
+
         public bool IsClicked
         {
             get { return _isClicked; }
             set { _isClicked = value; Invalidate(); }
         }
-
 
         public int MinimumHeight
         {
@@ -53,35 +60,50 @@ namespace UserInterface.FormAssets
             set { _defaultWidth = value; Invalidate(); }
         }
 
-        public Label lblTransNum
+        public string TransNumber
         {
-            get { return _lblTransNum; }
-            set { _lblTransNum = value; Invalidate(); }
+            get { return _TransNumber; }
+            set { _TransNumber = value; Invalidate(); }
         }
 
-        public Label lblTransType
+        public string TransType
         {
-            get { return _lblTransType;  }
-            set { _lblTransType = value; Invalidate(); }
+            get { return _TransType; }
+            set { _TransType = value; Invalidate(); }
         }
 
-        public Label lblTransCode
+        public string TransCode
         {
-            get { return _lblTransCode; }
-            set { _lblTransCode = value; Invalidate(); }
+            get { return _TransCode; }
+            set { _TransCode = value; Invalidate(); }
         }
 
-        public Label lblTransCostTotal
+        public string TransCostTotal
         {
-            get { return _lblTransCostTotal; }
-            set { _lblTransCostTotal = value; Invalidate(); }
+            get { return _TransCostTotal; }
+            set { _TransCostTotal = value; Invalidate(); }
+        }
+
+        public int TestWideInt
+        {
+            get { return _TestWideInt; }
+            set { _TestWideInt = value; Invalidate(); }
         }
 
         public CustomPanel()
         {
-            this.MinimumHeight = 30;
-            this.MaximumHeight = 90;
-            this.DefaultWidth = 300;
+            //this.DefaultWidth = DefaultWidth;
+            //MessageBox.Show(DefaultWidth.ToString();
+            this.DefaultWidth = 1248;        // CHANGE THIS DEPENDING ON TAB FOR NOW
+
+            //MessageBox.Show(TestWideInt.ToString());
+
+            this.TransNumber = _TransNumber;
+            this.TransType = _TransType;
+            this.TransCode = _TransCode;
+            this.TransCostTotal = _TransCostTotal;
+
+
             this.MinimumSize = new Size(DefaultWidth, MinimumHeight);
             this.MaximumSize = new Size(DefaultWidth, MaximumHeight);
             this.Size = new Size(DefaultWidth, MinimumHeight);
@@ -95,38 +117,47 @@ namespace UserInterface.FormAssets
 
             lblTransNum = new Label
             {
+                AutoEllipsis = true,
                 BackColor = Color.Yellow,
                 Location = new System.Drawing.Point(this.x20, 10),
                 Size = new System.Drawing.Size(50, 20),
-                Text = "TransNum",
+                Text = this.TransNumber,
+                UseMnemonic = false,
             };
 
 
             lblTransType = new Label
             {
+                AutoEllipsis = true,
                 BackColor = Color.Yellow,
                 Location = new System.Drawing.Point(this.x40, 10),
                 Size = new System.Drawing.Size(50, 20),
-                Text = "Trans Type",
+                Text = this.TransType,
+                UseMnemonic = false,
             };
 
 
             lblTransCode = new Label
             {
+                AutoEllipsis = true,
                 BackColor = Color.Yellow,
                 Location = new System.Drawing.Point(this.x60, 10),
                 Size = new System.Drawing.Size(50, 20),
-                Text = "Code",
+                Text = this.TransCode,
+                UseMnemonic = false,
             };
 
 
             lblTransCostTotal = new Label
             {
+                AutoEllipsis = true,
                 BackColor = Color.Yellow,
                 Location = new System.Drawing.Point(this.x80, 10),
                 Size = new System.Drawing.Size(50, 20),
-                Text = "TotalCost"
+                Text = this.TransCostTotal,
+                UseMnemonic = false,
             };
+
 
             this.Controls.Add(lblTransNum);
             this.Controls.Add(lblTransType);
@@ -134,10 +165,24 @@ namespace UserInterface.FormAssets
             this.Controls.Add(lblTransCostTotal);
 
 
-            this.BackColor = Color.Red;
+            // Set all the labels in each custom panel to expand the panel
+            foreach (Control control in this.Controls)
+            {
+                if (control is Label)
+                {
+                    control.Click += Label_Click;
+                }
+            }
+
+
+            this.BackColor = _baseColor;
             this.Click += PanelClicked;
         }
 
+        private void Label_Click(object sender, EventArgs e)
+        {
+            PanelClicked(this, e);
+        }
 
         private void PanelClicked(object sender, EventArgs e)
         {
@@ -159,6 +204,7 @@ namespace UserInterface.FormAssets
             panel.IsClicked = true;
             panel.Size = this.MaximumSize;
         }
+    
 
         /*
         protected override void OnPaint(PaintEventArgs pe)

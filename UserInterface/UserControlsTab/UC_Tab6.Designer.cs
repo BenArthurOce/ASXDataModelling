@@ -93,7 +93,7 @@
             this.fpnlTesting.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.fpnlTesting.Location = new System.Drawing.Point(68, 161);
             this.fpnlTesting.Name = "fpnlTesting";
-            this.fpnlTesting.Size = new System.Drawing.Size(300, 400);
+            this.fpnlTesting.Size = new System.Drawing.Size(450, 400);
             this.fpnlTesting.TabIndex = 12;
             // 
             // UC_Tab6

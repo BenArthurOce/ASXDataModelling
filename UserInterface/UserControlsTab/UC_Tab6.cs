@@ -37,14 +37,56 @@ namespace UserInterface.UserControlsTab
         {
             for (int i = 0; i < 5; i++)
             {
+                /*
+                CustomPanel newCustomPanel1;
+                newCustomPanel1 = new CustomPanel
+                {
+                    DefaultWidth = 450,
+                    Width = 450,
+                    TransNumber = i.ToString(),
+                    TransType = "Buy",
+                    TransCode = "CBA",
+                    TransCostTotal = "$0"
+                };
+                fpnlTesting.Controls.Add(newCustomPanel1);
+                */
+
+                //MessageBox.Show(fpnlTesting.Width.ToString());
                 CustomPanel newCustomPanel = new CustomPanel();
                 newCustomPanel.Width = fpnlTesting.Width;
+                newCustomPanel.DefaultWidth = fpnlTesting.Width;
+                newCustomPanel.lblTransNum.Text = i.ToString();
+                newCustomPanel.lblTransType.Text = "Buy";
+                newCustomPanel.lblTransCode.Text = "CBA";
+                newCustomPanel.lblTransCostTotal.Text = "$0";
+
+                newCustomPanel.TestWideInt = 450;
+                
+                //newCustomPanel.DefaultWidth = fpnlTesting.Width;
+
+                // MessageBox.Show(fpnlTesting.Width.ToString());
+                //newCustomPanel.DefaultWidth = fpnlTesting.Width;
+                //newCustomPanel.TransNumber = i.ToString();
+                //newCustomPanel.TransType = "Buy";
+                //newCustomPanel.TransCode = "CBA";
+                //newCustomPanel.TransCostTotal = "$0";
+                fpnlTesting.Controls.Add(newCustomPanel);
+
+
+
+                /*
+                CustomPanel newCustomPanel = new CustomPanel();
+                newCustomPanel.Width = fpnlTesting.Width;
+                //newCustomPanel.DefaultWidth = fpnlTesting.Width;
+
+               // MessageBox.Show(fpnlTesting.Width.ToString());
+                //newCustomPanel.DefaultWidth = fpnlTesting.Width;
                 newCustomPanel.lblTransNum.Text = i.ToString();
                 newCustomPanel.lblTransType.Text = "Buy";
                 newCustomPanel.lblTransCode.Text = "CBA";
                 newCustomPanel.lblTransCostTotal.Text = "$0";
                 fpnlTesting.Controls.Add(newCustomPanel);
-
+                */
             }
         }
 
