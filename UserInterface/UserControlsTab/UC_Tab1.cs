@@ -34,6 +34,9 @@ namespace UserInterface.UserControlsTab
         {
             InitializeComponent();
             PrepareDataGridView();
+            tboxYear.Text = "2021";
+            tboxASXShare.Text = "CBA";
+            cboxPriceType.Text = "Open";
         }
 
 
@@ -43,19 +46,21 @@ namespace UserInterface.UserControlsTab
             List<string> months = new List<string>() { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
             for (int i = 1; i <= 12; i++)
             {
-                dgvPriceHistory1.Columns.Add(i.ToString(), months[i - 1]);
-                dgvPriceHistory2.Columns.Add(i.ToString(), months[i - 1]);
+                //dgvPriceHistory1.Columns.Add(i.ToString(), months[i - 1]);
+                //dgvPriceHistory2.Columns.Add(i.ToString(), months[i - 1]);
             }
 
             // Create rows for the DataGridView
             for (int i = 1; i <= 31; i++)
             {
-                dgvPriceHistory1.Rows.Add();
-                dgvPriceHistory1.Rows[i - 1].HeaderCell.Value = i.ToString();
-                dgvPriceHistory2.Rows.Add();
-                dgvPriceHistory2.Rows[i - 1].HeaderCell.Value = i.ToString();
+                dgvAllSharePrices.Rows.Add();
+                dgvAllSharePrices.Rows[i - 1].HeaderCell.Value = i.ToString();
             }
+            // Expand the first column in the DataGridView
+            //dgvAllSharePrices.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            //dgvAllSharePrices.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
+    
 
 
         private void btn_tab2_Display_Click(object sender, EventArgs e)
@@ -63,9 +68,9 @@ namespace UserInterface.UserControlsTab
 
             foreach (IDataConnection db in GlobalConfig.Connections)
             {
-                int YearRequest = Convert.ToInt32(tbox_tab1_Year.Text);
-                string ASXCode = tbox_tab1_ASXShare.Text;
-                string PriceType = cbox_tab1_PriceType.Text;
+                int YearRequest = Convert.ToInt32(tboxYear.Text);
+                string ASXCode = tboxASXShare.Text;
+                string PriceType = cboxPriceType.Text;
                 List<spQueryASXSharePricesForOneYear> output1;
                 List<spQueryASXSharePricesForOneYear> output2;
 
@@ -93,7 +98,7 @@ namespace UserInterface.UserControlsTab
                         break;
                 }
                 PopulateFirstPriceGrid(output1);
-                PopulateSecondPriceGrid(output2);
+                //PopulateSecondPriceGrid(output2);
             }     
         }
 
@@ -105,7 +110,7 @@ namespace UserInterface.UserControlsTab
                 {
                     int x = (int)result.DayInt - 1;
                     int y = (int)result.MonthInt - 1;
-                    dgvPriceHistory1[y, (x)].Value = result.Price.ToString();
+                    dgvAllSharePrices[y, (x)].Value = result.Price.ToString();
                 }
             }
         }
@@ -118,7 +123,7 @@ namespace UserInterface.UserControlsTab
                 {
                     int x = (int)result.DayInt - 1;
                     int y = (int)result.MonthInt - 1;
-                    dgvPriceHistory2[y, (x)].Value = result.Price.ToString();
+                    //dgvPriceHistory2[y, (x)].Value = result.Price.ToString();
                 }
             }
         }
