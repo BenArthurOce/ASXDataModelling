@@ -35,59 +35,31 @@ namespace UserInterface.UserControlsTab
 
         private void button1_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 5; i++)
-            {
-                /*
-                CustomPanel newCustomPanel1;
-                newCustomPanel1 = new CustomPanel
-                {
-                    DefaultWidth = 450,
-                    Width = 450,
-                    TransNumber = i.ToString(),
-                    TransType = "Buy",
-                    TransCode = "CBA",
-                    TransCostTotal = "$0"
-                };
-                fpnlTesting.Controls.Add(newCustomPanel1);
-                */
+            tpnlTesting.RowCount = tpnlTesting.RowCount + 1;
 
-                //MessageBox.Show(fpnlTesting.Width.ToString());
-                CustomPanel newCustomPanel = new CustomPanel();
-                newCustomPanel.Width = fpnlTesting.Width;
-                newCustomPanel.DefaultWidth = fpnlTesting.Width;
-                newCustomPanel.lblTransNumber.Text = i.ToString();
-                newCustomPanel.lblTransType.Text = "Buy";
-                newCustomPanel.lblTransShareCode.Text = "CBA";
-                newCustomPanel.lblTransCostTotal.Text = "$0";
-
-                //newCustomPanel.TestWideInt = 450;
-                
-                //newCustomPanel.DefaultWidth = fpnlTesting.Width;
-
-                // MessageBox.Show(fpnlTesting.Width.ToString());
-                //newCustomPanel.DefaultWidth = fpnlTesting.Width;
-                //newCustomPanel.TransNumber = i.ToString();
-                //newCustomPanel.TransType = "Buy";
-                //newCustomPanel.TransCode = "CBA";
-                //newCustomPanel.TransCostTotal = "$0";
-                fpnlTesting.Controls.Add(newCustomPanel);
+            //CustomRowOfLabels newRow = new CustomRowOfLabels();
+            //newRow.MinimumSize = new Size(1045, 50);
+            //newRow.BackColor = Color.Pink;
+            //newRow.DistanceBetweenLabels = 130;
+            //tpnlTesting.Controls.Add(newRow, 1, 0);
 
 
 
-                /*
-                CustomPanel newCustomPanel = new CustomPanel();
-                newCustomPanel.Width = fpnlTesting.Width;
-                //newCustomPanel.DefaultWidth = fpnlTesting.Width;
+            CustomExpandableRow customRow = new CustomExpandableRow();
+            //customRow.InnerPanel.Controls.Add(new Label { Text = "Additional Data" });
 
-               // MessageBox.Show(fpnlTesting.Width.ToString());
-                //newCustomPanel.DefaultWidth = fpnlTesting.Width;
-                newCustomPanel.lblTransNum.Text = i.ToString();
-                newCustomPanel.lblTransType.Text = "Buy";
-                newCustomPanel.lblTransCode.Text = "CBA";
-                newCustomPanel.lblTransCostTotal.Text = "$0";
-                fpnlTesting.Controls.Add(newCustomPanel);
-                */
-            }
+            //customRow.InnerPanel.Controls.Add(new CustomRowOfLabels { DistanceBetweenLabels = 130 });
+            customRow.MinimumSize = new Size(1045, 50);
+            tpnlTesting.Controls.Add(customRow, 1, 0);
+
+
+            // TableLayoutPanel panel = new TableLayoutPanel();
+            // panel.RowCount = 2;
+            // panel.ColumnCount = 2;
+
+
+
+
         }
 
         private void btnCollapseAll_Click(object sender, EventArgs e)
@@ -97,10 +69,10 @@ namespace UserInterface.UserControlsTab
 
         private void btnTestExpand_Click(object sender, EventArgs e)
         {
-            foreach (CustomPanel panel in fpnlTesting.Controls)
-            {
-                if (panel.IsClicked == true) { panel.Size = new Size(300, 90); }
-                else { panel.Size = new Size(300, 30); }
+         //   foreach (CustomPanel panel in fpnlTesting.Controls)
+        //    {
+        //        if (panel.IsClicked == true) { panel.Size = new Size(300, 90); }
+        //        else { panel.Size = new Size(300, 30); }
 
                 //if (panel.IsClicked == true) { panel.Size = this.MaximumSize; }
                 //else { panel.Size = this.MinimumSize; }
@@ -110,9 +82,9 @@ namespace UserInterface.UserControlsTab
 
 
 
-        private void fpnlTesting_SizeChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show("The panel itself was clicked");
-        }
+      //  private void fpnlTesting_SizeChanged(object sender, EventArgs e)
+      //  {
+      //      MessageBox.Show("The panel itself was clicked");
+      //  }
     }
-}
+

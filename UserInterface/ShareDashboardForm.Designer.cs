@@ -33,13 +33,14 @@ namespace UserInterface
             this.panel_Header = new System.Windows.Forms.Panel();
             this.lblHeader = new System.Windows.Forms.Label();
             this.panel_tab1 = new System.Windows.Forms.Panel();
+            this.radioButtonTab7 = new UserInterface.FormAssets.RadioButtonTab();
+            this.radioButtonTab6 = new UserInterface.FormAssets.RadioButtonTab();
             this.radioButtonTab5 = new UserInterface.FormAssets.RadioButtonTab();
             this.radioButtonTab4 = new UserInterface.FormAssets.RadioButtonTab();
             this.radioButtonTab3 = new UserInterface.FormAssets.RadioButtonTab();
             this.radioButtonTab2 = new UserInterface.FormAssets.RadioButtonTab();
             this.radioButtonTab1 = new UserInterface.FormAssets.RadioButtonTab();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.radioButtonTab6 = new UserInterface.FormAssets.RadioButtonTab();
             this.panel_Header.SuspendLayout();
             this.panel_tab1.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +52,7 @@ namespace UserInterface
             this.panel_Header.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Header.Location = new System.Drawing.Point(0, 0);
             this.panel_Header.Name = "panel_Header";
-            this.panel_Header.Size = new System.Drawing.Size(1358, 61);
+            this.panel_Header.Size = new System.Drawing.Size(1160, 61);
             this.panel_Header.TabIndex = 0;
             // 
             // lblHeader
@@ -68,6 +69,7 @@ namespace UserInterface
             // panel_tab1
             // 
             this.panel_tab1.BackColor = System.Drawing.Color.White;
+            this.panel_tab1.Controls.Add(this.radioButtonTab7);
             this.panel_tab1.Controls.Add(this.radioButtonTab6);
             this.panel_tab1.Controls.Add(this.radioButtonTab5);
             this.panel_tab1.Controls.Add(this.radioButtonTab4);
@@ -79,6 +81,62 @@ namespace UserInterface
             this.panel_tab1.Name = "panel_tab1";
             this.panel_tab1.Size = new System.Drawing.Size(110, 640);
             this.panel_tab1.TabIndex = 1;
+            // 
+            // radioButtonTab7
+            // 
+            this.radioButtonTab7.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonTab7.AutoSize = true;
+            this.radioButtonTab7.ColorMouseHovorOff = System.Drawing.Color.LightBlue;
+            this.radioButtonTab7.ColorMouseHovorOn = System.Drawing.Color.LightGray;
+            this.radioButtonTab7.ColourMouseClick = System.Drawing.Color.SteelBlue;
+            this.radioButtonTab7.DefaultBoarderColor = System.Drawing.Color.Red;
+            this.radioButtonTab7.DefaultBoarderWidth = 90;
+            this.radioButtonTab7.DefaultMinHeight = 70;
+            this.radioButtonTab7.DefaultMinWidth = 90;
+            this.radioButtonTab7.DisplayText = "Tab 7 (Blank for Testing)";
+            this.radioButtonTab7.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.radioButtonTab7.FlatAppearance.BorderSize = 90;
+            this.radioButtonTab7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.radioButtonTab7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.radioButtonTab7.Location = new System.Drawing.Point(3, 462);
+            this.radioButtonTab7.MinimumSize = new System.Drawing.Size(90, 70);
+            this.radioButtonTab7.Name = "radioButtonTab7";
+            this.radioButtonTab7.Size = new System.Drawing.Size(96, 70);
+            this.radioButtonTab7.TabIndex = 6;
+            this.radioButtonTab7.TabStop = true;
+            this.radioButtonTab7.Text = "radioButtonTab7";
+            this.radioButtonTab7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButtonTab7.TextForeColor = System.Drawing.Color.Black;
+            this.radioButtonTab7.UseVisualStyleBackColor = true;
+            this.radioButtonTab7.MouseClick += new System.Windows.Forms.MouseEventHandler(this.radioButtonTab7_MouseClick);
+            // 
+            // radioButtonTab6
+            // 
+            this.radioButtonTab6.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonTab6.AutoSize = true;
+            this.radioButtonTab6.ColorMouseHovorOff = System.Drawing.Color.LightBlue;
+            this.radioButtonTab6.ColorMouseHovorOn = System.Drawing.Color.LightGray;
+            this.radioButtonTab6.ColourMouseClick = System.Drawing.Color.SteelBlue;
+            this.radioButtonTab6.DefaultBoarderColor = System.Drawing.Color.Red;
+            this.radioButtonTab6.DefaultBoarderWidth = 90;
+            this.radioButtonTab6.DefaultMinHeight = 70;
+            this.radioButtonTab6.DefaultMinWidth = 90;
+            this.radioButtonTab6.DisplayText = "Tab 6 (Blank for Testing)";
+            this.radioButtonTab6.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.radioButtonTab6.FlatAppearance.BorderSize = 90;
+            this.radioButtonTab6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.radioButtonTab6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.radioButtonTab6.Location = new System.Drawing.Point(3, 386);
+            this.radioButtonTab6.MinimumSize = new System.Drawing.Size(90, 70);
+            this.radioButtonTab6.Name = "radioButtonTab6";
+            this.radioButtonTab6.Size = new System.Drawing.Size(96, 70);
+            this.radioButtonTab6.TabIndex = 5;
+            this.radioButtonTab6.TabStop = true;
+            this.radioButtonTab6.Text = "radioButtonTab6";
+            this.radioButtonTab6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButtonTab6.TextForeColor = System.Drawing.Color.Black;
+            this.radioButtonTab6.UseVisualStyleBackColor = true;
+            this.radioButtonTab6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.radioButtonTab6_MouseClick);
             // 
             // radioButtonTab5
             // 
@@ -225,42 +283,14 @@ namespace UserInterface
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(110, 61);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1248, 640);
+            this.panelContainer.Size = new System.Drawing.Size(1050, 640);
             this.panelContainer.TabIndex = 2;
-            // 
-            // radioButtonTab6
-            // 
-            this.radioButtonTab6.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButtonTab6.AutoSize = true;
-            this.radioButtonTab6.ColorMouseHovorOff = System.Drawing.Color.LightBlue;
-            this.radioButtonTab6.ColorMouseHovorOn = System.Drawing.Color.LightGray;
-            this.radioButtonTab6.ColourMouseClick = System.Drawing.Color.SteelBlue;
-            this.radioButtonTab6.DefaultBoarderColor = System.Drawing.Color.Red;
-            this.radioButtonTab6.DefaultBoarderWidth = 90;
-            this.radioButtonTab6.DefaultMinHeight = 70;
-            this.radioButtonTab6.DefaultMinWidth = 90;
-            this.radioButtonTab6.DisplayText = "Tab 6 (Blank for Testing)";
-            this.radioButtonTab6.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.radioButtonTab6.FlatAppearance.BorderSize = 90;
-            this.radioButtonTab6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.radioButtonTab6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.radioButtonTab6.Location = new System.Drawing.Point(3, 386);
-            this.radioButtonTab6.MinimumSize = new System.Drawing.Size(90, 70);
-            this.radioButtonTab6.Name = "radioButtonTab6";
-            this.radioButtonTab6.Size = new System.Drawing.Size(96, 70);
-            this.radioButtonTab6.TabIndex = 5;
-            this.radioButtonTab6.TabStop = true;
-            this.radioButtonTab6.Text = "radioButtonTab6";
-            this.radioButtonTab6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButtonTab6.TextForeColor = System.Drawing.Color.Black;
-            this.radioButtonTab6.UseVisualStyleBackColor = true;
-            this.radioButtonTab6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.radioButtonTab6_MouseClick);
             // 
             // ShareDashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1358, 701);
+            this.ClientSize = new System.Drawing.Size(1160, 701);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panel_tab1);
             this.Controls.Add(this.panel_Header);
@@ -287,5 +317,6 @@ namespace UserInterface
         private FormAssets.RadioButtonTab radioButtonTab2;
         private FormAssets.RadioButtonTab radioButtonTab1;
         private FormAssets.RadioButtonTab radioButtonTab6;
+        private FormAssets.RadioButtonTab radioButtonTab7;
     }
 }

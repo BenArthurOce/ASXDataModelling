@@ -103,5 +103,17 @@ namespace UserInterface
             else
                 UC_Tab6.Instance.BringToFront();
         }
+
+        private void radioButtonTab7_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (!panelContainer.Controls.Contains(UC_Tab7.Instance))
+            {
+                panelContainer.Controls.Add(UC_Tab7.Instance);
+                UC_Tab7.Instance.Dock = DockStyle.Fill;
+                UC_Tab7.Instance.BringToFront();
+            }
+            else
+                UC_Tab7.Instance.BringToFront();
+        }
     }
 }

@@ -129,7 +129,7 @@
             this.pnlHeaderUploadPriceData.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeaderUploadPriceData.Location = new System.Drawing.Point(0, 0);
             this.pnlHeaderUploadPriceData.Name = "pnlHeaderUploadPriceData";
-            this.pnlHeaderUploadPriceData.Size = new System.Drawing.Size(1248, 65);
+            this.pnlHeaderUploadPriceData.Size = new System.Drawing.Size(1050, 65);
             this.pnlHeaderUploadPriceData.TabIndex = 5;
             // 
             // lblHeaderUploadPriceData
@@ -137,7 +137,7 @@
             this.lblHeaderUploadPriceData.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblHeaderUploadPriceData.AutoSize = true;
             this.lblHeaderUploadPriceData.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeaderUploadPriceData.Location = new System.Drawing.Point(530, 21);
+            this.lblHeaderUploadPriceData.Location = new System.Drawing.Point(431, 21);
             this.lblHeaderUploadPriceData.Name = "lblHeaderUploadPriceData";
             this.lblHeaderUploadPriceData.Size = new System.Drawing.Size(169, 25);
             this.lblHeaderUploadPriceData.TabIndex = 0;
@@ -154,7 +154,7 @@
             this.Controls.Add(this.dgvDocumentsQueued);
             this.Controls.Add(this.lblFilesQueuedForImport);
             this.Name = "UC_Tab5";
-            this.Size = new System.Drawing.Size(1248, 640);
+            this.Size = new System.Drawing.Size(1050, 640);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocumentsQueued)).EndInit();
             this.pnlHeaderUploadPriceData.ResumeLayout(false);
             this.pnlHeaderUploadPriceData.PerformLayout();

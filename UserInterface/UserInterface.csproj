@@ -58,10 +58,22 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControl1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl1.Designer.cs">
+      <DependentUpon>CustomControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAssets\CustomExpandableRow.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FormAssets\CustomFlowPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="FormAssets\CustomPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FormAssets\CustomRowOfLabels.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="FormAssets\RadioButtonTab.cs">
@@ -81,6 +93,12 @@
     </Compile>
     <Compile Include="ShareDashboardForm.Designer.cs">
       <DependentUpon>ShareDashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsTab\UC_Tab7.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsTab\UC_Tab7.Designer.cs">
+      <DependentUpon>UC_Tab7.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlsTab\UC_Tab1.cs">
       <SubType>UserControl</SubType>
@@ -118,6 +136,12 @@
     <Compile Include="UserControlsTab\UC_Tab5.Designer.cs">
       <DependentUpon>UC_Tab5.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CustomControl1.resx">
+      <DependentUpon>CustomControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAssets\CustomExpandableRow.resx">
+      <DependentUpon>CustomExpandableRow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAssets\RadioButtonTab.resx">
       <DependentUpon>RadioButtonTab.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +159,9 @@
     </Compile>
     <EmbeddedResource Include="ShareDashboardForm.resx">
       <DependentUpon>ShareDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsTab\UC_Tab7.resx">
+      <DependentUpon>UC_Tab7.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlsTab\UC_Tab1.resx">
       <DependentUpon>UC_Tab1.cs</DependentUpon>
