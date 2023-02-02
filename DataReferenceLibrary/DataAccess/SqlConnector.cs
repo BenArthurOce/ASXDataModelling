@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Linq.Mapping;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
@@ -21,6 +22,9 @@ namespace DataReferenceLibrary.DataAccess
         /// <returns></returns>
 
 
+        ///////////////////////////////
+        ///////TAB - PRICE QUERY///////
+        ///////////////////////////////
         public List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceOpen(string ASXCode, int YearInput)
         {
             List<spQueryASXSharePricesForOneYear> output;
@@ -62,16 +66,9 @@ namespace DataReferenceLibrary.DataAccess
         }
 
 
-        public List<spQueryAllShareTransactions> spQueryAllShareTransactions()
-        {
-            List<spQueryAllShareTransactions> output;
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
-            {
-                output = connection.Query<spQueryAllShareTransactions>("dbo.spQueryAllShareTransactions").ToList();
-            }
-            return output;
-        }
-
+        /////////////////////////////////////
+        ///////TAB - PORTFILIO ON DAY///////
+        ////////////////////////////////////
 
         public List<spQueryPortfolioItemsForCertainDate> spQueryPortfolioItemsForCertainDate(string InputPortfolioName, int InputStartDate, int InputEndDate)
         {
@@ -84,7 +81,49 @@ namespace DataReferenceLibrary.DataAccess
         }
 
 
+        ///////////////////////////////////////
+        ///////TAB - SHARE TRANSACTIONS///////
+        //////////////////////////////////////
+        public List<spQueryAllShareTransactions> spQueryAllShareTransactions()
+        {
+            List<spQueryAllShareTransactions> output;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
+            {
+                output = connection.Query<spQueryAllShareTransactions>("dbo.spQueryAllShareTransactions").ToList();
+            }
+            return output;
+        }
 
+        public ShareTransactionModel spInsertNewShareTransaction(string PortfolioName, ShareTransactionModel model)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@in_PortfolioOwner", PortfolioName);
+                p.Add("@in_ContractNote", model.ContractNote);
+                p.Add("@in_ASXCode", model.ASXCode);
+                p.Add("@in_Date", model.Date);
+                p.Add("@in_Type", model.Type);
+                p.Add("@in_Quantity", model.Quantity);
+                p.Add("@in_UnitPrice", model.UnitPrice);
+                p.Add("@in_TradeValue", model.TradeValue);
+                p.Add("@in_Brokerage", model.Brokerage);
+                p.Add("@in_TotalValue", model.TotalValue);
+                connection.Execute("dbo.spInsertNewShareTransaction", p, commandType: CommandType.StoredProcedure);
+            }
+            return model;
+        }
+
+
+        ///////////////////////////////////////
+        ///////TAB - PORTFOLIO MOVEMENTS///////
+        //////////////////////////////////////
+
+
+
+        //////////////////////////////////
+        ///////TAB - NOTEPAD UPLOAD///////
+        //////////////////////////////////
 
         public List<ASXPriceModel> spINSERT_NotepadFile(DataTable dt)
         {
@@ -113,6 +152,7 @@ namespace DataReferenceLibrary.DataAccess
             }
             return model;
         }
+
 
         public ShareTransactionTypeModel CreateTransactionType(ShareTransactionTypeModel model)
         {

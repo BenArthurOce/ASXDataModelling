@@ -27,7 +27,9 @@ namespace UserInterface.UserControlsTab
                 return _instance;
             }
         }
-
+        //TODO - DropDown box for the portfilio
+        //TODO - Clear out the date
+        //TODO - Format Cells based on profit/loss
         public UC_Tab2()
         {
             InitializeComponent();

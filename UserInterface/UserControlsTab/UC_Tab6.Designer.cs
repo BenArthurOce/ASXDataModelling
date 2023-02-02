@@ -32,7 +32,8 @@
             this.lblHeaderTab6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tpnlTesting = new System.Windows.Forms.TableLayoutPanel();
-            this.customRowPanelData1 = new UserInterface.FormAssets.CustomRowOfLabels();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.customRowPanelData1 = new UserInterface.FormAssets.CustomRowOfLabelsNotExpand();
             this.pnlHeaderTab6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,15 +74,25 @@
             this.tpnlTesting.BackColor = System.Drawing.Color.Yellow;
             this.tpnlTesting.ColumnCount = 1;
             this.tpnlTesting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tpnlTesting.Location = new System.Drawing.Point(28, 146);
+            this.tpnlTesting.Location = new System.Drawing.Point(28, 514);
             this.tpnlTesting.Name = "tpnlTesting";
             this.tpnlTesting.RowCount = 4;
             this.tpnlTesting.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tpnlTesting.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tpnlTesting.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tpnlTesting.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tpnlTesting.Size = new System.Drawing.Size(1045, 391);
+            this.tpnlTesting.Size = new System.Drawing.Size(1045, 56);
             this.tpnlTesting.TabIndex = 18;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoSize = true;
+            this.panel1.Location = new System.Drawing.Point(28, 150);
+            this.panel1.MaximumSize = new System.Drawing.Size(979, 344);
+            this.panel1.MinimumSize = new System.Drawing.Size(979, 344);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(979, 344);
+            this.panel1.TabIndex = 20;
             // 
             // customRowPanelData1
             // 
@@ -107,6 +118,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.customRowPanelData1);
             this.Controls.Add(this.tpnlTesting);
             this.Controls.Add(this.button1);
@@ -116,6 +128,7 @@
             this.pnlHeaderTab6.ResumeLayout(false);
             this.pnlHeaderTab6.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -125,6 +138,7 @@
         private System.Windows.Forms.Label lblHeaderTab6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TableLayoutPanel tpnlTesting;
-        private FormAssets.CustomRowOfLabels customRowPanelData1;
+        private FormAssets.CustomRowOfLabelsNotExpand customRowPanelData1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

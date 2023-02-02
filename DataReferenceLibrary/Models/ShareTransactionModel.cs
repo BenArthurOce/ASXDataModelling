@@ -20,7 +20,9 @@ namespace DataReferenceLibrary.Models
 
         // public Guid TypeId { get; set; }
         // public ICollection<ShareTransactionTypeModel> ShareTransactionTypeId { get; set; }
-        public ShareTransactionTypeModel ShareTransactionTypeId { get; set; }
+        //public ShareTransactionTypeModel Type { get; set; }
+
+        public string Type { get; set; }
 
         public int Quantity { get; set; }
 

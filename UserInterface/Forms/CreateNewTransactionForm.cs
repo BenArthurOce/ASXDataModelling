@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DataReferenceLibrary;
+using DataReferenceLibrary.DataAccess;
+using DataReferenceLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,9 +26,22 @@ namespace UserInterface.Forms
             callingForm = caller;
         }
 
+        //TODO - Introduce "Clear" button to remove all data from fields
+        //TODO - Find way to make date bar more presentable
+
 
         private bool ValidateForm()
         {
+            if (cBoxPortfolio.Text == null) { return false; }
+            if (tBoxContractNote.Text == null) { return false; }
+            if (tBoxASXCode.Text == null) { return false; }
+            if (dtpDate.Text == null) { return false; }
+            if (cboxType.Text == null) { return false; }
+            if (tBoxQuantity.Text == null) { return false; }
+            if (tBoxUnitPrice.Text == null) { return false; }
+            if (tBoxTradeValue.Text == null) { return false; }
+            if (tBoxBrokerage.Text == null) { return false; }
+            if (tBoxTotalValue.Text == null) { return false; }
             return true;
         }
 
@@ -35,6 +51,30 @@ namespace UserInterface.Forms
             if (ValidateForm())
             {
                 //callingForm.CreateTransactionComplete(model);
+
+                
+                ShareTransactionModel newTrans = new ShareTransactionModel();
+                string portfolioName = cBoxPortfolio.Text;
+                newTrans.ContractNote = int.Parse(tBoxContractNote.Text);
+                newTrans.ASXCode = tBoxASXCode.Text;
+
+                DateTime date = dtpDate.Value;
+                newTrans.Date = date.Year * 10000 + date.Month * 100 + date.Day;
+                newTrans.Type = cboxType.Text;
+                newTrans.Quantity = int.Parse(tBoxQuantity.Text);
+                newTrans.UnitPrice = (decimal)float.Parse(tBoxUnitPrice.Text);
+                newTrans.TradeValue = (decimal)float.Parse(tBoxTradeValue.Text);
+                newTrans.Brokerage = (decimal)float.Parse(tBoxBrokerage.Text);
+                newTrans.TotalValue = (decimal)float.Parse(tBoxTotalValue.Text);
+
+                foreach (IDataConnection db in GlobalConfig.Connections)
+                {
+                    db.spInsertNewShareTransaction(portfolioName, newTrans);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error Missing, data not inputted");
             }
         }
 
@@ -137,12 +177,19 @@ namespace UserInterface.Forms
             return res;
         }
 
-
-
-
-
-
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cBoxPortfolio.Text = "Dummy Portfolio 3";
+            tBoxContractNote.Text = 00000001.ToString();
+            tBoxASXCode.Text = "CBA";
+            //dtpDate.Text = ;
+            cboxType.Text = "Buy";
+            tBoxQuantity.Text = 50.ToString();
+            tBoxUnitPrice.Text = 99.99.ToString();
+            //tBoxTradeValue.Text = ;
+            //tBoxBrokerage.Text = ;
+            //tBoxTotalValue.Text = ;
+        }
     }
 
 

@@ -28,7 +28,9 @@ namespace UserInterface.UserControlsTab
             }
         }
 
-
+        //TODO - Add data validation
+        //TODO - Include some 52 week high, low data etc
+        //TODO - Colour Cells based on percentile
 
         public UC_Tab1()
         {
@@ -39,26 +41,14 @@ namespace UserInterface.UserControlsTab
             cboxPriceType.Text = "Open";
         }
 
-
         private void PrepareDataGridView()
         {
-            // Create columns for the DataGridView
-            List<string> months = new List<string>() { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
-            for (int i = 1; i <= 12; i++)
-            {
-                //dgvPriceHistory1.Columns.Add(i.ToString(), months[i - 1]);
-                //dgvPriceHistory2.Columns.Add(i.ToString(), months[i - 1]);
-            }
-
             // Create rows for the DataGridView
             for (int i = 1; i <= 31; i++)
             {
                 dgvAllSharePrices.Rows.Add();
                 dgvAllSharePrices.Rows[i - 1].HeaderCell.Value = i.ToString();
             }
-            // Expand the first column in the DataGridView
-            //dgvAllSharePrices.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            //dgvAllSharePrices.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
     
 
@@ -78,31 +68,25 @@ namespace UserInterface.UserControlsTab
                 {
                     case "Open":
                         output1 = db.spQueryASXSharePricesForOneYear_PriceOpen(ASXCode, YearRequest);
-                        output2 = db.spQueryASXSharePricesForOneYear_PriceOpen(ASXCode, YearRequest+1);
                         break;
                     case "Close":
                         output1 = db.spQueryASXSharePricesForOneYear_PriceClose(ASXCode, YearRequest);
-                        output2 = db.spQueryASXSharePricesForOneYear_PriceOpen(ASXCode, YearRequest + 1);
                         break;
                     case "High":
                         output1 = db.spQueryASXSharePricesForOneYear_PriceHigh(ASXCode, YearRequest);
-                        output2 = db.spQueryASXSharePricesForOneYear_PriceOpen(ASXCode, YearRequest + 1);
                         break;
                     case "Low":
                         output1 = db.spQueryASXSharePricesForOneYear_PriceLow(ASXCode, YearRequest);
-                        output2 = db.spQueryASXSharePricesForOneYear_PriceOpen(ASXCode, YearRequest + 1);
                         break;
                     default:
                         output1 = new List<spQueryASXSharePricesForOneYear>();
-                        output2 = new List<spQueryASXSharePricesForOneYear>();
                         break;
                 }
-                PopulateFirstPriceGrid(output1);
-                //PopulateSecondPriceGrid(output2);
+                PopulateGrid(output1);
             }     
         }
 
-        private void PopulateFirstPriceGrid(List<spQueryASXSharePricesForOneYear> output)
+        private void PopulateGrid(List<spQueryASXSharePricesForOneYear> output)
         {
             {
                 // Input the query result into the datagridview
@@ -111,19 +95,6 @@ namespace UserInterface.UserControlsTab
                     int x = (int)result.DayInt - 1;
                     int y = (int)result.MonthInt - 1;
                     dgvAllSharePrices[y, (x)].Value = result.Price.ToString();
-                }
-            }
-        }
-
-        private void PopulateSecondPriceGrid(List<spQueryASXSharePricesForOneYear> output)
-        {
-            {
-                // Input the query result into the datagridview
-                foreach (spQueryASXSharePricesForOneYear result in output)
-                {
-                    int x = (int)result.DayInt - 1;
-                    int y = (int)result.MonthInt - 1;
-                    //dgvPriceHistory2[y, (x)].Value = result.Price.ToString();
                 }
             }
         }

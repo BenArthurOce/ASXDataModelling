@@ -31,6 +31,7 @@ namespace UserInterface.UserControlsTab
         public UC_Tab6()
         {
             InitializeComponent();
+            //panel1.Controls.Add(new CustomRowOfLabelsExpanded());
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,12 +46,26 @@ namespace UserInterface.UserControlsTab
 
 
 
-            CustomExpandableRow customRow = new CustomExpandableRow();
+            //CustomRowOfLabelsExpanded test2 = new CustomRowOfLabelsExpanded { GridCols= 7, GridRows = 4 };
+            //panel1.Controls.Add(new CustomRowOfLabelsExpanded());
+
+            //CustomRowOfLabelsExpanded test2 = new CustomRowOfLabelsExpanded { _gridCols = 7, _gridRows = 4 };
+            //panel1.Controls.Add(test2);
+
+            //CustomRowOfLabelsExpanded test3 = new CustomRowOfLabelsExpanded(7,4);
+
+
+            CustomRowOfLabelsExpanded myControl = new CustomRowOfLabelsExpanded(7, 5);
+            //myControl.GridCols = 7;
+            //myControl.GridRows = 5;
+            panel1.Controls.Add(myControl);
+
+            //CustomExpandableRow customRow = new CustomExpandableRow();
             //customRow.InnerPanel.Controls.Add(new Label { Text = "Additional Data" });
 
             //customRow.InnerPanel.Controls.Add(new CustomRowOfLabels { DistanceBetweenLabels = 130 });
-            customRow.MinimumSize = new Size(1045, 50);
-            tpnlTesting.Controls.Add(customRow, 1, 0);
+            //customRow.MinimumSize = new Size(1045, 50);
+            //tpnlTesting.Controls.Add(customRow, 1, 0);
 
 
             // TableLayoutPanel panel = new TableLayoutPanel();

@@ -73,7 +73,10 @@
     <Compile Include="FormAssets\CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FormAssets\CustomRowOfLabels.cs">
+    <Compile Include="FormAssets\CustomRowOfLabelsExpanded.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FormAssets\CustomRowOfLabelsNotExpand.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="FormAssets\RadioButtonTab.cs">

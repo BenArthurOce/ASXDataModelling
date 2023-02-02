@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataReferenceLibrary;
+using UserInterface.Forms;
 
 namespace UserInterface
 {
@@ -18,11 +19,17 @@ namespace UserInterface
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            
+
 
             // Start the Reference Library
             DataReferenceLibrary.GlobalConfig.InitializeConnections(true, false);
 
+            //TODO - Create SQL lists for forms (Transaction Types, Portfolio Names)
+
             Application.Run(new ShareDashboardForm());
+
+
         }
     }
 }

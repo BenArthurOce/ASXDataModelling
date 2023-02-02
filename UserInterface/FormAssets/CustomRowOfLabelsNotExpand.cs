@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace UserInterface.FormAssets
 {
-    class CustomRowOfLabels : Panel
+    class CustomRowOfLabelsNotExpand : Panel
     {
         private Label lblCol1;
         private Label lblCol2;
@@ -21,7 +21,7 @@ namespace UserInterface.FormAssets
         private int _distanceBetween;
         private int _distanceIndent;
 
-        public CustomRowOfLabels()
+        public CustomRowOfLabelsNotExpand()
         {
             lblCol1 = new Label();
             lblCol2 = new Label();

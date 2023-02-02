@@ -19,7 +19,7 @@ namespace UserInterface.FormAssets
         private bool isExpanded = false;
         private bool isClicked = false;
 
-        private CustomRowOfLabels _rowdata;
+        private CustomRowOfLabelsNotExpand _rowdata;
 
         private int expandedHeight = 100;
 
@@ -42,14 +42,14 @@ namespace UserInterface.FormAssets
         public Control RowData
         {
             get { return _rowdata; }
-            set { _rowdata = (CustomRowOfLabels)value; }
+            set { _rowdata = (CustomRowOfLabelsNotExpand)value; }
         }
 
 
         public CustomExpandableRow()
         {
 
-            CustomRowOfLabels newRow = new CustomRowOfLabels();
+            CustomRowOfLabelsNotExpand newRow = new CustomRowOfLabelsNotExpand();
             newRow.MinimumSize = new Size(1045, 50);
             newRow.BackColor = Color.Pink;
             newRow.DistanceBetweenLabels = 130;
@@ -92,7 +92,7 @@ namespace UserInterface.FormAssets
             // Set all the labels in each custom panel to expand the panel
             foreach (Control control in this.Controls)
             {
-                if (control is CustomRowOfLabels)
+                if (control is CustomRowOfLabelsNotExpand)
                 {
                     control.Click += CustomExpandableRow_Click;
                 }
