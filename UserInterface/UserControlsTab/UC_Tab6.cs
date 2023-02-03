@@ -36,7 +36,18 @@ namespace UserInterface.UserControlsTab
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tpnlTesting.RowCount = tpnlTesting.RowCount + 1;
+
+            //GridRow newRow = new GridRow();
+            //newRow.String2 = "bb";
+            //newRow.Width = 1000;
+            //flowLayoutPanel1.Controls.Add(newRow);
+
+            RowGridInactive newPanel = new RowGridInactive("a", "b", "c", "d", "e", "f", "g", "h");
+            //TransactionPanel newPanel = new TransactionPanel("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k");
+            newPanel.Width = 1000;
+            flowLayoutPanel1.Controls.Add(newPanel);
+
+            //tpnlTesting.RowCount = tpnlTesting.RowCount + 1;
 
             //CustomRowOfLabels newRow = new CustomRowOfLabels();
             //newRow.MinimumSize = new Size(1045, 50);
@@ -55,10 +66,11 @@ namespace UserInterface.UserControlsTab
             //CustomRowOfLabelsExpanded test3 = new CustomRowOfLabelsExpanded(7,4);
 
 
-            CustomRowOfLabelsExpanded myControl = new CustomRowOfLabelsExpanded(7, 5);
+            //CustomRowOfLabelsExpanded myControl = new CustomRowOfLabelsExpanded(7, 5);
             //myControl.GridCols = 7;
             //myControl.GridRows = 5;
-            panel1.Controls.Add(myControl);
+            //myControl.lblx0x0.Text = "hi";
+            //panel1.Controls.Add(myControl);
 
             //CustomExpandableRow customRow = new CustomExpandableRow();
             //customRow.InnerPanel.Controls.Add(new Label { Text = "Additional Data" });
@@ -93,7 +105,19 @@ namespace UserInterface.UserControlsTab
                 //else { panel.Size = this.MinimumSize; }
 
             }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CustomTableLayoutPanel newPanel = new CustomTableLayoutPanel();
+            newPanel.Width = 1000;
+            flowLayoutPanel1.Controls.Add(newPanel);
         }
+
+        private void transactionPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
 
 
 

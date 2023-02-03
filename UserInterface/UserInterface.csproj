@@ -64,6 +64,12 @@
     <Compile Include="CustomControl1.Designer.cs">
       <DependentUpon>CustomControl1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAssets\CustomTableLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FormAssets\RowGridActive.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FormAssets\CustomExpandableRow.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -79,7 +85,13 @@
     <Compile Include="FormAssets\CustomRowOfLabelsNotExpand.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FormAssets\RowGridInactive.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FormAssets\RadioButtonTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FormAssets\TransactionPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\CreateNewTransactionForm.cs">

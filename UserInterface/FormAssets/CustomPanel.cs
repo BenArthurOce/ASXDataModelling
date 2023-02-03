@@ -33,6 +33,8 @@ namespace UserInterface.FormAssets
         private Label lblHeaderTransBrokerage;
         private Label lblHeaderTransCostTotal;
 
+        private Button btnEdit;
+
         private Color _DefaultColor = Color.LightGray;
         private Color _ActiveColor = Color.SteelBlue;
 
@@ -166,6 +168,12 @@ namespace UserInterface.FormAssets
 
             //MessageBox.Show(TestWideInt.ToString());
 
+            this.btnEdit = new Button();
+            btnEdit.Text = "Edit";
+            btnEdit.Location = new System.Drawing.Point(500, 50);
+            btnEdit.Visible = false;
+            this.Controls.Add(btnEdit);
+
             this.TransNumber = _TransNumber;
             this.TransDate = _TransDate;
             this.TransType = _TransType;
@@ -182,6 +190,7 @@ namespace UserInterface.FormAssets
             this.MaximumSize = new Size(DefaultWidth, MaximumHeight);
             this.Size = new Size(DefaultWidth, MinimumHeight);
             this.AutoSize = false;
+
 
             x20 = this.DefaultWidth / 5 * 1;    // 20% Mark of the Panel
             x40 = this.DefaultWidth / 5 * 2;    // 40% Mark of the Panel
@@ -515,6 +524,8 @@ namespace UserInterface.FormAssets
                 this.Controls.Add(lblHeaderTransTradeValue);
                 this.Controls.Add(lblHeaderTransBrokerage);
                 this.Controls.Add(lblHeaderTransCostTotal);
+
+                btnEdit.Visible = true;
             }
             else
             {
@@ -542,6 +553,8 @@ namespace UserInterface.FormAssets
                 this.Controls.Add(lblTransQuantity);
                 this.Controls.Add(lblTransUnitPrice);
                 this.Controls.Add(lblTransCostTotal);
+
+                btnEdit.Visible = false;
             }
 
         }

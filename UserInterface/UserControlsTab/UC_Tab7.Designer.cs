@@ -53,9 +53,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pnlInputsCol1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlHeaderSinglePriceData.SuspendLayout();
             this.pnlContainerSinglePriceData.SuspendLayout();
             this.tpnlOutputsSinglePriceData.SuspendLayout();
+            this.pnlOutputsCol2.SuspendLayout();
             this.tpnlInputsSinglePriceData.SuspendLayout();
             this.pnlInputsCol8.SuspendLayout();
             this.pnlInputsCol5.SuspendLayout();
@@ -128,6 +130,7 @@
             // 
             // pnlOutputsCol2
             // 
+            this.pnlOutputsCol2.Controls.Add(this.flowLayoutPanel1);
             this.pnlOutputsCol2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlOutputsCol2.Location = new System.Drawing.Point(81, 30);
             this.pnlOutputsCol2.Margin = new System.Windows.Forms.Padding(30);
@@ -198,6 +201,7 @@
             this.button2.TabIndex = 0;
             this.button2.Text = "Generate";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pnlInputsCol7
             // 
@@ -343,6 +347,15 @@
             this.label1.Text = "Filters:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(867, 391);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
             // UC_Tab7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,6 +368,7 @@
             this.pnlHeaderSinglePriceData.PerformLayout();
             this.pnlContainerSinglePriceData.ResumeLayout(false);
             this.tpnlOutputsSinglePriceData.ResumeLayout(false);
+            this.pnlOutputsCol2.ResumeLayout(false);
             this.tpnlInputsSinglePriceData.ResumeLayout(false);
             this.pnlInputsCol8.ResumeLayout(false);
             this.pnlInputsCol5.ResumeLayout(false);
@@ -392,5 +406,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

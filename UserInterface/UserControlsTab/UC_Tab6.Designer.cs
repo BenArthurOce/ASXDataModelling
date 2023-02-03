@@ -31,9 +31,8 @@
             this.pnlHeaderTab6 = new System.Windows.Forms.Panel();
             this.lblHeaderTab6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.tpnlTesting = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.customRowPanelData1 = new UserInterface.FormAssets.CustomRowOfLabelsNotExpand();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button2 = new System.Windows.Forms.Button();
             this.pnlHeaderTab6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +59,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(998, 93);
+            this.button1.Location = new System.Drawing.Point(962, 71);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 11;
@@ -68,59 +67,29 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // tpnlTesting
+            // flowLayoutPanel1
             // 
-            this.tpnlTesting.AutoScroll = true;
-            this.tpnlTesting.BackColor = System.Drawing.Color.Yellow;
-            this.tpnlTesting.ColumnCount = 1;
-            this.tpnlTesting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tpnlTesting.Location = new System.Drawing.Point(28, 514);
-            this.tpnlTesting.Name = "tpnlTesting";
-            this.tpnlTesting.RowCount = 4;
-            this.tpnlTesting.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tpnlTesting.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tpnlTesting.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tpnlTesting.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tpnlTesting.Size = new System.Drawing.Size(1045, 56);
-            this.tpnlTesting.TabIndex = 18;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(37, 100);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1000, 400);
+            this.flowLayoutPanel1.TabIndex = 21;
             // 
-            // panel1
+            // button2
             // 
-            this.panel1.AutoSize = true;
-            this.panel1.Location = new System.Drawing.Point(28, 150);
-            this.panel1.MaximumSize = new System.Drawing.Size(979, 344);
-            this.panel1.MinimumSize = new System.Drawing.Size(979, 344);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(979, 344);
-            this.panel1.TabIndex = 20;
-            // 
-            // customRowPanelData1
-            // 
-            this.customRowPanelData1.Column1Text = "1a";
-            this.customRowPanelData1.Column2Text = "2b";
-            this.customRowPanelData1.Column3Text = "3c";
-            this.customRowPanelData1.Column4Text = "d4";
-            this.customRowPanelData1.Column5Text = "e5";
-            this.customRowPanelData1.Column6Text = "f6";
-            this.customRowPanelData1.Column7Text = "g7";
-            this.customRowPanelData1.DistanceBetweenLabels = 130;
-            this.customRowPanelData1.DistanceIndent = 0;
-            this.customRowPanelData1.Font = new System.Drawing.Font("Arial", 11F);
-            this.customRowPanelData1.Location = new System.Drawing.Point(28, 93);
-            this.customRowPanelData1.Margin = new System.Windows.Forms.Padding(0);
-            this.customRowPanelData1.Name = "customRowPanelData1";
-            this.customRowPanelData1.Padding = new System.Windows.Forms.Padding(5);
-            this.customRowPanelData1.Size = new System.Drawing.Size(826, 23);
-            this.customRowPanelData1.TabIndex = 19;
-            this.customRowPanelData1.Text = "customRowPanelData1";
+            this.button2.Location = new System.Drawing.Point(26, 71);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // UC_Tab6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.customRowPanelData1);
-            this.Controls.Add(this.tpnlTesting);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pnlHeaderTab6);
             this.Name = "UC_Tab6";
@@ -128,7 +97,6 @@
             this.pnlHeaderTab6.ResumeLayout(false);
             this.pnlHeaderTab6.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -137,8 +105,7 @@
         private System.Windows.Forms.Panel pnlHeaderTab6;
         private System.Windows.Forms.Label lblHeaderTab6;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TableLayoutPanel tpnlTesting;
-        private FormAssets.CustomRowOfLabelsNotExpand customRowPanelData1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button button2;
     }
 }
