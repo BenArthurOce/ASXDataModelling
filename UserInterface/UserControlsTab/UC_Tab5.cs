@@ -137,8 +137,7 @@ namespace UserInterface.UserControlsTab
 
         private void ImportASingleTextFile(DataTable dt)
         {
-            foreach (IDataConnection db in GlobalConfig.Connections)
-                db.spINSERT_NotepadFile(dt);
+            GlobalConfig.Connection.spINSERT_NotepadFile(dt);
         }
 
 
@@ -167,16 +166,9 @@ namespace UserInterface.UserControlsTab
 
         private void AddEntryToDocumentTable(DocumentUploadHistoryModel model)
         {
-            foreach (IDataConnection db in GlobalConfig.Connections)
-            { 
-                db.CreateNewDocumentUploadRecord(model);
-                lBoxDocumentUploadLog.Items.Add($"Document: {model.FileName} was added to the database");
-            }
+            GlobalConfig.Connection.CreateNewDocumentUploadRecord(model);
+            lBoxDocumentUploadLog.Items.Add($"Document: {model.FileName} was added to the database");
         }
-
-
-
-
 
     }  
 }

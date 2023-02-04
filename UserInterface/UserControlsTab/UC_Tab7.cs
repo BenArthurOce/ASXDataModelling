@@ -40,14 +40,11 @@ namespace UserInterface.UserControlsTab
 
         private void button2_Click(object sender, EventArgs e)
         {
-            foreach (IDataConnection db in GlobalConfig.Connections)
-            {
-                List<spQueryAllShareTransactions> output;
-                output = db.spQueryAllShareTransactions();
-
-                PrepareTableLayoutPanel(output);
-            }
+            List<spQueryAllShareTransactions> output;
+            output = GlobalConfig.Connection.spQueryAllShareTransactions();
+            PrepareTableLayoutPanel(output);
         }
+
         private void PrepareTableLayoutPanel(List<spQueryAllShareTransactions> output)
         {
 

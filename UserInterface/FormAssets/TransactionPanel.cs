@@ -142,15 +142,16 @@ namespace UserInterface.FormAssets
             this._ActiveGridRow = new RowGridActive
             {
                 Width = 867,
-                Height = 80,
+                Height = 150,
                 Visible = false,
                 Location = new System.Drawing.Point(0,0),
                 Margin = new Padding(0),
-                BackColor = Color.Green,
+                BackColor = Color.SteelBlue,
                 ForeColor = Color.Black,
             };
 
             //this._InactiveGridRow = new RowGridInactive("a", "b", "c", "d", "e", "f", "g", "h");
+
 
 
             this._InactiveGridRow = new RowGridInactive(TransDate, TransType, TransShareCode, TransQuantity, TransUnitPrice, TransBrokerage, TransCostTotal, "");
@@ -160,7 +161,7 @@ namespace UserInterface.FormAssets
             _InactiveGridRow.Visible = false;
             _InactiveGridRow.Location = new System.Drawing.Point(0, 0);
             _InactiveGridRow.Margin = new Padding(0);
-            _InactiveGridRow.BackColor = Color.Red;
+            _InactiveGridRow.BackColor = Color.LightGray;
             _InactiveGridRow.ForeColor = Color.Black;
             _InactiveGridRow.String1 = TransDate;
             _InactiveGridRow.String2 = TransType;
@@ -171,28 +172,6 @@ namespace UserInterface.FormAssets
             _InactiveGridRow.String7 = TransCostTotal;
             _InactiveGridRow.String8 = "";
 
-            /*
-            this._InactiveGridRow = new RowGridInactive()
-            {
-                Width = 1000,
-                Height = 40,
-                Visible = false,
-                Location = new System.Drawing.Point(0, 0),
-                Margin = new Padding(0),
-                BackColor = Color.Red,
-                ForeColor = Color.Black,
-                String1 = TransDate,
-                String2 = TransType,
-                String3 = TransShareCode,
-                String4 = TransQuantity,
-                String5 = TransUnitPrice,
-                String6 = TransBrokerage,
-                String7 = TransCostTotal,
-                String8 = "",
-            };
-            */
-            _InactiveGridRow.String4 = "44";
-            _InactiveGridRow.String5 = "55";
 
             this.Controls.Add(_ActiveGridRow);
             this.Controls.Add(_InactiveGridRow);
@@ -220,7 +199,7 @@ namespace UserInterface.FormAssets
 
             _InactiveGridRow.Visible = true;
             _ActiveGridRow.Visible = false;
-             this.BackColor = Color.Purple;
+             //this.BackColor = Color.Purple;
             this.Click += TransactionPanel_Clicked;
 
         }

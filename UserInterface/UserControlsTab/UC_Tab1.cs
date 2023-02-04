@@ -56,34 +56,31 @@ namespace UserInterface.UserControlsTab
         private void btn_tab2_Display_Click(object sender, EventArgs e)
         {
 
-            foreach (IDataConnection db in GlobalConfig.Connections)
-            {
-                int YearRequest = Convert.ToInt32(tboxYear.Text);
-                string ASXCode = tboxASXShare.Text;
-                string PriceType = cboxPriceType.Text;
-                List<spQueryASXSharePricesForOneYear> output1;
-                List<spQueryASXSharePricesForOneYear> output2;
+            int YearRequest = Convert.ToInt32(tboxYear.Text);
+            string ASXCode = tboxASXShare.Text;
+            string PriceType = cboxPriceType.Text;
+            List<spQueryASXSharePricesForOneYear> output;
 
-                switch (PriceType)
-                {
-                    case "Open":
-                        output1 = db.spQueryASXSharePricesForOneYear_PriceOpen(ASXCode, YearRequest);
-                        break;
-                    case "Close":
-                        output1 = db.spQueryASXSharePricesForOneYear_PriceClose(ASXCode, YearRequest);
-                        break;
-                    case "High":
-                        output1 = db.spQueryASXSharePricesForOneYear_PriceHigh(ASXCode, YearRequest);
-                        break;
-                    case "Low":
-                        output1 = db.spQueryASXSharePricesForOneYear_PriceLow(ASXCode, YearRequest);
-                        break;
-                    default:
-                        output1 = new List<spQueryASXSharePricesForOneYear>();
-                        break;
-                }
-                PopulateGrid(output1);
-            }     
+            switch (PriceType)
+            {
+                case "Open":
+                    output = GlobalConfig.Connection.spQueryASXSharePricesForOneYear_PriceOpen(ASXCode, YearRequest);
+                    break;
+                case "Close":
+                    output = GlobalConfig.Connection.spQueryASXSharePricesForOneYear_PriceClose(ASXCode, YearRequest);
+                    break;
+                case "High":
+                    output = GlobalConfig.Connection.spQueryASXSharePricesForOneYear_PriceHigh(ASXCode, YearRequest);
+                    break;
+                case "Low":
+                    output = GlobalConfig.Connection.spQueryASXSharePricesForOneYear_PriceLow(ASXCode, YearRequest);
+                    break;
+                default:
+                    output = new List<spQueryASXSharePricesForOneYear>();
+                    break;
+            }
+            PopulateGrid(output);
+  
         }
 
         private void PopulateGrid(List<spQueryASXSharePricesForOneYear> output)

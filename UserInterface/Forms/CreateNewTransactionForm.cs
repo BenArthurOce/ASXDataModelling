@@ -16,6 +16,11 @@ namespace UserInterface.Forms
 {
     public partial class CreateNewTransactionForm : Form
     {
+        private List<PortfolioModel> availablePortfolios = GlobalConfig.Connection.spQueryPortfolios();
+        private List<ShareTransactionTypeModel> availableTransactionTypes = GlobalConfig.Connection.spQueryTransactionTypes();
+
+
+
 
         ICreateTransactionRequester callingForm;
 
@@ -24,10 +29,31 @@ namespace UserInterface.Forms
             InitializeComponent();
 
             callingForm = caller;
+
+            //CreateSampleData();
+            WireUpLists();
+
+        }
+
+        private void CreateSampleData()
+        {
+            availablePortfolios.Add(new PortfolioModel { Name = "Ben" });
+            availablePortfolios.Add(new PortfolioModel { Name = "Ben2" });
+        }
+
+        private void WireUpLists()
+        {
+            cBoxPortfolio.DataSource = availablePortfolios;
+            cBoxPortfolio.DisplayMember = "DropDownBoxDisplay";
+
+            cboxType.DataSource = availableTransactionTypes;
+            cboxType.DisplayMember = "DropDownBoxDisplay";
+
         }
 
         //TODO - Introduce "Clear" button to remove all data from fields
         //TODO - Find way to make date bar more presentable
+        //TODO - Need a checkbox for contract note
 
 
         private bool ValidateForm()
@@ -51,26 +77,20 @@ namespace UserInterface.Forms
             if (ValidateForm())
             {
                 //callingForm.CreateTransactionComplete(model);
-
-                
-                ShareTransactionModel newTrans = new ShareTransactionModel();
                 string portfolioName = cBoxPortfolio.Text;
-                newTrans.ContractNote = int.Parse(tBoxContractNote.Text);
-                newTrans.ASXCode = tBoxASXCode.Text;
+                ShareTransactionModel newTrans = new ShareTransactionModel(
+                    tBoxContractNote.Text,
+                    tBoxASXCode.Text,
+                    "20201010",
+                    cboxType.Text,
+                    tBoxQuantity.Text,
+                    tBoxUnitPrice.Text,
+                    tBoxTradeValue.Text,
+                    tBoxBrokerage.Text,
+                    tBoxTotalValue.Text,
+                    "false");
 
-                DateTime date = dtpDate.Value;
-                newTrans.Date = date.Year * 10000 + date.Month * 100 + date.Day;
-                newTrans.Type = cboxType.Text;
-                newTrans.Quantity = int.Parse(tBoxQuantity.Text);
-                newTrans.UnitPrice = (decimal)float.Parse(tBoxUnitPrice.Text);
-                newTrans.TradeValue = (decimal)float.Parse(tBoxTradeValue.Text);
-                newTrans.Brokerage = (decimal)float.Parse(tBoxBrokerage.Text);
-                newTrans.TotalValue = (decimal)float.Parse(tBoxTotalValue.Text);
-
-                foreach (IDataConnection db in GlobalConfig.Connections)
-                {
-                    db.spInsertNewShareTransaction(portfolioName, newTrans);
-                }
+                GlobalConfig.Connection.spInsertNewShareTransaction(portfolioName, newTrans);
             }
             else
             {

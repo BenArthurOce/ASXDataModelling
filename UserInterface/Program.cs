@@ -23,7 +23,7 @@ namespace UserInterface
 
 
             // Start the Reference Library
-            DataReferenceLibrary.GlobalConfig.InitializeConnections(true, false);
+            DataReferenceLibrary.GlobalConfig.InitializeConnections(DatabaseType.Sql);
 
             //TODO - Create SQL lists for forms (Transaction Types, Portfolio Names)
 

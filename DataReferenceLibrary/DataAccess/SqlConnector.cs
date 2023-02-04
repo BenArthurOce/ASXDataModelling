@@ -14,12 +14,32 @@ namespace DataReferenceLibrary.DataAccess
 {
     public class SqlConnector : IDataConnection
     {
+        private const string db = "AppConfigAccess1";
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
+
+
+        ///////////////////////////////
+        /////// DROP DOWN BOXES ///////
+        ///////////////////////////////
+        public List<PortfolioModel> spQueryPortfolios()
+        {
+            List<PortfolioModel> output;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                output = connection.Query<PortfolioModel>("dbo.spQueryPortfolios").ToList();
+            }
+            return output;
+        }
+
+        public List<ShareTransactionTypeModel> spQueryTransactionTypes()
+        {
+            List<ShareTransactionTypeModel> output;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                output = connection.Query<ShareTransactionTypeModel>("dbo.spQueryTransactionTypes").ToList();
+            }
+            return output;
+        }
 
 
         ///////////////////////////////
@@ -28,7 +48,7 @@ namespace DataReferenceLibrary.DataAccess
         public List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceOpen(string ASXCode, int YearInput)
         {
             List<spQueryASXSharePricesForOneYear> output;
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 output = connection.Query<spQueryASXSharePricesForOneYear>("dbo.spQueryASXSharePricesForOneYear_PriceOpen @ASXCode, @Year", new { ASXCode = ASXCode, Year = YearInput }).ToList();
             }
@@ -38,7 +58,7 @@ namespace DataReferenceLibrary.DataAccess
         public List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceClose(string ASXCode, int YearInput)
         {
             List<spQueryASXSharePricesForOneYear> output;
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 output = connection.Query<spQueryASXSharePricesForOneYear>("dbo.spQueryASXSharePricesForOneYear_PriceClose @ASXCode, @Year", new { ASXCode = ASXCode, Year = YearInput }).ToList();
             }
@@ -48,7 +68,7 @@ namespace DataReferenceLibrary.DataAccess
         public List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceHigh(string ASXCode, int YearInput)
         {
             List<spQueryASXSharePricesForOneYear> output;
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 output = connection.Query<spQueryASXSharePricesForOneYear>("dbo.spQueryASXSharePricesForOneYear_PriceHigh @ASXCode, @Year", new { ASXCode = ASXCode, Year = YearInput }).ToList();
             }
@@ -58,7 +78,7 @@ namespace DataReferenceLibrary.DataAccess
         public List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceLow(string ASXCode, int YearInput)
         {
             List<spQueryASXSharePricesForOneYear> output;
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 output = connection.Query<spQueryASXSharePricesForOneYear>("dbo.spQueryASXSharePricesForOneYear_PriceLow @ASXCode, @Year", new { ASXCode = ASXCode, Year = YearInput }).ToList();
             }
@@ -73,7 +93,7 @@ namespace DataReferenceLibrary.DataAccess
         public List<spQueryPortfolioItemsForCertainDate> spQueryPortfolioItemsForCertainDate(string InputPortfolioName, int InputStartDate, int InputEndDate)
         {
             List<spQueryPortfolioItemsForCertainDate> output;
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 output = connection.Query<spQueryPortfolioItemsForCertainDate>("dbo.spQueryPortfolioItemsForCertainDate @in_PortfolioName, @in_StartDate, @in_EndDate", new { in_PortfolioName = InputPortfolioName, in_StartDate = InputStartDate, in_EndDate = InputEndDate }).ToList();
             }
@@ -87,7 +107,7 @@ namespace DataReferenceLibrary.DataAccess
         public List<spQueryAllShareTransactions> spQueryAllShareTransactions()
         {
             List<spQueryAllShareTransactions> output;
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 output = connection.Query<spQueryAllShareTransactions>("dbo.spQueryAllShareTransactions").ToList();
             }
@@ -96,7 +116,7 @@ namespace DataReferenceLibrary.DataAccess
 
         public ShareTransactionModel spInsertNewShareTransaction(string PortfolioName, ShareTransactionModel model)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 var p = new DynamicParameters();
                 p.Add("@in_PortfolioOwner", PortfolioName);
@@ -127,7 +147,7 @@ namespace DataReferenceLibrary.DataAccess
 
         public List<ASXPriceModel> spINSERT_NotepadFile(DataTable dt)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 var p = new DynamicParameters();
                 p.Add("@data", dt, DbType.Object);
@@ -140,7 +160,7 @@ namespace DataReferenceLibrary.DataAccess
         {
             model.Id = Guid.NewGuid();
 
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 var p = new DynamicParameters();
                 p.Add("@in_FilePath", model.FilePath);
@@ -158,10 +178,10 @@ namespace DataReferenceLibrary.DataAccess
         {
             model.Id = Guid.NewGuid();
 
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("AppConfigAccess1")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 var p = new DynamicParameters();
-                p.Add("@in_TransType", model.Type);
+                p.Add("@in_TransType", model.Name);
                 connection.Execute("dbo.spINSERT_ShareTransactionType", p, commandType: CommandType.StoredProcedure);
             }
             return model;

@@ -40,16 +40,12 @@ namespace UserInterface.UserControlsTab
 
         private void btnPortfolioGenerate_Click(object sender, EventArgs e)
         {
-            foreach (IDataConnection db in GlobalConfig.Connections)
-            {
-                string InputPortfolioName = tBoxPortfolioName.Text;
-                int InputStartDate = Convert.ToInt32(tBoxPortfolioStartDate.Text);
-                int InputEndDate = Convert.ToInt32(tBoxPortfolioEndDate.Text);
-                List<spQueryPortfolioItemsForCertainDate> output;
-                output = db.spQueryPortfolioItemsForCertainDate(InputPortfolioName, InputStartDate, InputEndDate);
-
-                PopulatePortfolioGrid(output);
-            }
+            string InputPortfolioName = tBoxPortfolioName.Text;
+            int InputStartDate = Convert.ToInt32(tBoxPortfolioStartDate.Text);
+            int InputEndDate = Convert.ToInt32(tBoxPortfolioEndDate.Text);
+            List<spQueryPortfolioItemsForCertainDate> output;
+            output = GlobalConfig.Connection.spQueryPortfolioItemsForCertainDate(InputPortfolioName, InputStartDate, InputEndDate);
+            PopulatePortfolioGrid(output);          
         }
 
         private void PopulatePortfolioGrid(List<spQueryPortfolioItemsForCertainDate> output)

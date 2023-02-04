@@ -88,7 +88,6 @@ namespace UserInterface.FormAssets
             this.ColumnCount = columns;
             this.RowCount = rows;
             this.Margin = new Padding(0);
-            this.BackColor = Color.Aqua;
 
 
             List<string> listStrings = new List<string>() { this.String1, this.String2, this.String3, this.String4, this.String5, this.String6, this.String7, this.String8 };
@@ -111,7 +110,6 @@ namespace UserInterface.FormAssets
                 {
                     Dock = DockStyle.Fill,
                     TextAlign = ContentAlignment.MiddleCenter,
-                    BackColor = Color.Red,
                     Text = listStrings[i],
                 };
                 this.Controls.Add(label, i % columns, i / columns);

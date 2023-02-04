@@ -13,6 +13,13 @@ namespace DataReferenceLibrary.DataAccess
     {
 
         ///////////////////////////////
+        /////// DROP DOWN BOXES ///////
+        ///////////////////////////////
+        List<PortfolioModel> spQueryPortfolios();
+
+        List<ShareTransactionTypeModel> spQueryTransactionTypes();
+
+        ///////////////////////////////
         ///////TAB - PRICE QUERY///////
         ///////////////////////////////
         List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceOpen(string ASXCode, int InputYear);

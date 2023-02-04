@@ -12,7 +12,7 @@ namespace DataReferenceLibrary.Models
 
         public int SequenceNumber { get; set; }
 
-        public int? ContractNote { get; set; }
+        public int ContractNote { get; set; }
 
         public string ASXCode { get; set; }
 
@@ -36,5 +36,52 @@ namespace DataReferenceLibrary.Models
 
         public bool IsIncrease { get; set; }
 
+
+        public ShareTransactionModel()
+        { }
+
+
+        public ShareTransactionModel(string _ContractNote, string _ASXCode, string _Date, string _Type, string _Quantity, string _UnitPrice, string _TradeValue, string _Brokerage, string _TotalValue, string _IsIncrease)
+        {
+            int ContractNoteValue = 0;
+            int.TryParse(_ContractNote, out ContractNoteValue);
+            ContractNote = ContractNoteValue;
+
+            ASXCode = _ASXCode;
+            
+            int DateValue = 0;
+            int.TryParse(_Date, out DateValue);
+            Date = DateValue;
+
+            Type = _Type;
+
+            int QuantityValue = 0;
+            int.TryParse(_Quantity, out QuantityValue);
+            Quantity = QuantityValue;
+        
+            decimal UnitPriceValue = 0;
+            decimal.TryParse(_UnitPrice, out UnitPriceValue);
+            UnitPrice = UnitPriceValue;
+
+            decimal TradeValueValue = 0;
+            decimal.TryParse(_TradeValue, out TradeValueValue);
+            TradeValue = TradeValueValue;
+
+            decimal BrokerageValue = 0;
+            decimal.TryParse(_Brokerage, out BrokerageValue);
+            Brokerage = BrokerageValue;
+
+
+            decimal TotalValueValue = 0;
+            decimal.TryParse(_TotalValue, out TotalValueValue);
+            TotalValue = TotalValueValue;
+
+            if (_Type == "Buy" || _Type == "DRP")  { IsIncrease = true; } else { IsIncrease = false; }
+
+        }
+
+
     }
+
+
 }
