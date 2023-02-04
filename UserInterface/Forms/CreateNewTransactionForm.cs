@@ -19,26 +19,13 @@ namespace UserInterface.Forms
         private List<PortfolioModel> availablePortfolios = GlobalConfig.Connection.spQueryPortfolios();
         private List<ShareTransactionTypeModel> availableTransactionTypes = GlobalConfig.Connection.spQueryTransactionTypes();
 
-
-
-
         ICreateTransactionRequester callingForm;
 
         public CreateNewTransactionForm(ICreateTransactionRequester caller)
         {
             InitializeComponent();
-
-            callingForm = caller;
-
-            //CreateSampleData();
             WireUpLists();
-
-        }
-
-        private void CreateSampleData()
-        {
-            availablePortfolios.Add(new PortfolioModel { Name = "Ben" });
-            availablePortfolios.Add(new PortfolioModel { Name = "Ben2" });
+            callingForm = caller;
         }
 
         private void WireUpLists()
@@ -48,7 +35,6 @@ namespace UserInterface.Forms
 
             cboxType.DataSource = availableTransactionTypes;
             cboxType.DisplayMember = "DropDownBoxDisplay";
-
         }
 
         //TODO - Introduce "Clear" button to remove all data from fields
@@ -90,7 +76,16 @@ namespace UserInterface.Forms
                     tBoxTotalValue.Text,
                     "false");
 
+
+
+
                 GlobalConfig.Connection.spInsertNewShareTransaction(portfolioName, newTrans);
+
+                //callingform.CreateTransactionComplete();
+
+                this.Close();
+
+                //TODO - Reset textboxes and notify user that success
             }
             else
             {
@@ -211,52 +206,4 @@ namespace UserInterface.Forms
             //tBoxTotalValue.Text = ;
         }
     }
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
-/*
-namespace UserInterface
-{
-    public partial class CreateNewTransactionForm : Form
-    {
-        public CreateNewTransactionForm(UserControlsTab.UC_Tab3 uC_Tab3)
-        {
-            InitializeComponent();
-        }
-
-        private void btn_Submit_Click(object sender, EventArgs e)
-        {
-            ShareTransactionTypeModel model = new ShareTransactionTypeModel();
-            //model.Id = new Guid();
-            model.Id = Guid.NewGuid();
-            model.Type = tbox_TransType.Text;
-            model.IsDeleted = false;
-
-
-            foreach (IDataConnection db in GlobalConfig.Connections)
-            {
-                db.CreateTransactionType(model);
-            }
-        }
-
-        private bool ValidateForm()
-        {
-            // TODO - Add More to validate form
-            bool output = true;
-            return output;
-        }
-
-    }
-}
-*/

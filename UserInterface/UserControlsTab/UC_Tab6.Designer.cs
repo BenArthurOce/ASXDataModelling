@@ -31,8 +31,6 @@
             this.pnlHeaderTab6 = new System.Windows.Forms.Panel();
             this.lblHeaderTab6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
             this.pnlHeaderTab6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,37 +57,18 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(962, 71);
+            this.button1.Location = new System.Drawing.Point(759, 112);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
+            this.button1.TabIndex = 7;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(37, 100);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1000, 400);
-            this.flowLayoutPanel1.TabIndex = 21;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(26, 71);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // UC_Tab6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pnlHeaderTab6);
             this.Name = "UC_Tab6";
@@ -105,7 +84,5 @@
         private System.Windows.Forms.Panel pnlHeaderTab6;
         private System.Windows.Forms.Label lblHeaderTab6;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button2;
     }
 }

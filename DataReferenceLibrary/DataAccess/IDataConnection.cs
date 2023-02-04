@@ -37,7 +37,7 @@ namespace DataReferenceLibrary.DataAccess
         ///////////////////////////////////////
         ///////TAB - SHARE TRANSACTIONS///////
         //////////////////////////////////////
-        List<spQueryAllShareTransactions> spQueryAllShareTransactions();
+        List<spQueryShareTransactionsForPortfolio> spQueryAllShareTransactions(string InputPortfolioName);
 
         ShareTransactionModel spInsertNewShareTransaction(string PortfolioName, ShareTransactionModel model);
 

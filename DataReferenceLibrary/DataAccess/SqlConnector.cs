@@ -104,12 +104,12 @@ namespace DataReferenceLibrary.DataAccess
         ///////////////////////////////////////
         ///////TAB - SHARE TRANSACTIONS///////
         //////////////////////////////////////
-        public List<spQueryAllShareTransactions> spQueryAllShareTransactions()
+        public List<spQueryShareTransactionsForPortfolio> spQueryAllShareTransactions(string InputPortfolioName)
         {
-            List<spQueryAllShareTransactions> output;
+            List<spQueryShareTransactionsForPortfolio> output;
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
-                output = connection.Query<spQueryAllShareTransactions>("dbo.spQueryAllShareTransactions").ToList();
+                output = connection.Query<spQueryShareTransactionsForPortfolio>("dbo.spQueryShareTransactionsForPortfolio @in_PortfolioName", new { in_PortfolioName = InputPortfolioName }).ToList();
             }
             return output;
         }

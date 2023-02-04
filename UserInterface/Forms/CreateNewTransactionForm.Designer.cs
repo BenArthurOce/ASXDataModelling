@@ -233,11 +233,6 @@
             // 
             this.cboxType.Dock = System.Windows.Forms.DockStyle.Top;
             this.cboxType.FormattingEnabled = true;
-            this.cboxType.Items.AddRange(new object[] {
-            "Buy",
-            "Sell",
-            "Drp",
-            "Other"});
             this.cboxType.Location = new System.Drawing.Point(0, 0);
             this.cboxType.Name = "cboxType";
             this.cboxType.Size = new System.Drawing.Size(99, 21);
@@ -700,13 +695,6 @@
             // 
             this.cBoxPortfolio.Dock = System.Windows.Forms.DockStyle.Top;
             this.cBoxPortfolio.FormattingEnabled = true;
-            this.cBoxPortfolio.Items.AddRange(new object[] {
-            "Ben Portfolio Account 1",
-            "Dummy Portfolio 2",
-            "Dummy Portfolio 3",
-            "Dummy Portfolio 4",
-            "Dummy Portfolio 5",
-            "Dummy Portfolio 6"});
             this.cBoxPortfolio.Location = new System.Drawing.Point(0, 0);
             this.cBoxPortfolio.Name = "cBoxPortfolio";
             this.cBoxPortfolio.Size = new System.Drawing.Size(99, 21);

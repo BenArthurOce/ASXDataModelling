@@ -40,15 +40,15 @@ namespace UserInterface.UserControlsTab
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            List<spQueryAllShareTransactions> output;
-            output = GlobalConfig.Connection.spQueryAllShareTransactions();
-            PrepareTableLayoutPanel(output);
+          //  List<spQueryShareTransactionsForPortfolio> output;
+          //  output = GlobalConfig.Connection.spQueryAllShareTransactions();
+          //  PrepareTableLayoutPanel(output);
         }
 
-        private void PrepareTableLayoutPanel(List<spQueryAllShareTransactions> output)
+        private void PrepareTableLayoutPanel(List<spQueryShareTransactionsForPortfolio> output)
         {
 
-            foreach (spQueryAllShareTransactions TransLine in output)
+            foreach (spQueryShareTransactionsForPortfolio TransLine in output)
             {
                 /*
                 CustomRowPanelData customrow = new CustomRowPanelData();
@@ -65,8 +65,9 @@ namespace UserInterface.UserControlsTab
                 */
 
                 
-                CustomPanel newCustomPanel = new CustomPanel();
+                //CustomPanel newCustomPanel = new CustomPanel();
                 //newCustomPanel.TransNumber.Text = 0.ToString();
+                /*
                 newCustomPanel.lblTransDate.Text = DateTime.ParseExact(TransLine.Date.ToString(), "yyyyMMdd", CultureInfo.InvariantCulture).ToString();
                 newCustomPanel.lblTransType.Text = TransLine.Type.ToString();
                 newCustomPanel.lblTransShareCode.Text = TransLine.ASXCode.ToString();
@@ -75,6 +76,7 @@ namespace UserInterface.UserControlsTab
                 newCustomPanel.lblTransCostTotal.Text = TransLine.TotalValue.ToString();
 
                 fpnlShareTransactions.Controls.Add(newCustomPanel);
+                */
                 
 
             }

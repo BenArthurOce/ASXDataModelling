@@ -40,16 +40,19 @@ namespace UserInterface.UserControlsTab
 
         private void button2_Click(object sender, EventArgs e)
         {
-            List<spQueryAllShareTransactions> output;
-            output = GlobalConfig.Connection.spQueryAllShareTransactions();
+            string InputPortfolioName = "Ben Portfolio Account 1";
+            List<spQueryShareTransactionsForPortfolio> output;
+            output = GlobalConfig.Connection.spQueryAllShareTransactions(InputPortfolioName);
             PrepareTableLayoutPanel(output);
         }
 
-        private void PrepareTableLayoutPanel(List<spQueryAllShareTransactions> output)
+        private void PrepareTableLayoutPanel(List<spQueryShareTransactionsForPortfolio> output)
         {
 
-            foreach (spQueryAllShareTransactions TransLine in output)
+            foreach (spQueryShareTransactionsForPortfolio TransLine in output)
             {
+
+                
 
                 // Adjust Date
                 int input = TransLine.Date; ;
@@ -81,7 +84,7 @@ namespace UserInterface.UserControlsTab
                     TradeValueOutput,
                     TransLine.Brokerage.ToString(),
                     //TransLine.TotalValue.ToString()
-                    TotalValueOutput
+                    TotalValueOutput, ""
                 );
 
 

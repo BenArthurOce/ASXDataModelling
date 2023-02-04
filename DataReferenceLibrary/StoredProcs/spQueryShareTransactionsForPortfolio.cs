@@ -1,20 +1,23 @@
-﻿using System;
+﻿using DataReferenceLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataReferenceLibrary.Models
+namespace DataReferenceLibrary.StoredProcs
 {
-    public class ShareTransactionModel
+    public class spQueryShareTransactionsForPortfolio
     {
         public Guid Id { get; set; }
-
-        public int SequenceNumber { get; set; }
 
         public int ContractNote { get; set; }
 
         public string ASXCode { get; set; }
+
+        public string CompanyName { get; set; }
+
+        public string CompanySector { get; set; }
 
         public int Date { get; set; }
 
@@ -33,18 +36,21 @@ namespace DataReferenceLibrary.Models
         public bool IsIncrease { get; set; }
 
 
-        public ShareTransactionModel()
+
+        public spQueryShareTransactionsForPortfolio()
         { }
 
 
-        public ShareTransactionModel(string _ContractNote, string _ASXCode, string _Date, string _Type, string _Quantity, string _UnitPrice, string _TradeValue, string _Brokerage, string _TotalValue, string _IsIncrease)
+        public spQueryShareTransactionsForPortfolio(string _ContractNote, string _ASXCode, string _CompanyName, string _CompanySector, string _Date, string _Type, string _Quantity, string _UnitPrice, string _TradeValue, string _Brokerage, string _TotalValue, string _IsIncrease)
         {
             int ContractNoteValue = 0;
             int.TryParse(_ContractNote, out ContractNoteValue);
             ContractNote = ContractNoteValue;
 
             ASXCode = _ASXCode;
-            
+            CompanyName = _CompanyName;
+            CompanySector = _CompanySector;
+
             int DateValue = 0;
             int.TryParse(_Date, out DateValue);
             Date = DateValue;
@@ -54,7 +60,7 @@ namespace DataReferenceLibrary.Models
             int QuantityValue = 0;
             int.TryParse(_Quantity, out QuantityValue);
             Quantity = QuantityValue;
-        
+
             decimal UnitPriceValue = 0;
             decimal.TryParse(_UnitPrice, out UnitPriceValue);
             UnitPrice = UnitPriceValue;
@@ -72,7 +78,7 @@ namespace DataReferenceLibrary.Models
             decimal.TryParse(_TotalValue, out TotalValueValue);
             TotalValue = TotalValueValue;
 
-            if (_Type == "Buy" || _Type == "DRP")  { IsIncrease = true; } else { IsIncrease = false; }
+            if (_Type == "Buy" || _Type == "DRP") { IsIncrease = true; } else { IsIncrease = false; }
 
         }
 

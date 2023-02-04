@@ -14,6 +14,8 @@ namespace DataReferenceLibrary.Models
 
         public bool IsDeleted { get; set; }
 
+        public ICollection<ShareTransactionModel> ShareTransactions { get; set; }
+
 
         public string DropDownBoxDisplay
         {

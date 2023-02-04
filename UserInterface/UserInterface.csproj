@@ -64,25 +64,7 @@
     <Compile Include="CustomControl1.Designer.cs">
       <DependentUpon>CustomControl1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\CustomTableLayoutPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="FormAssets\RowGridActive.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="FormAssets\CustomExpandableRow.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="FormAssets\CustomFlowPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="FormAssets\CustomPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="FormAssets\CustomRowOfLabelsExpanded.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="FormAssets\CustomRowOfLabelsNotExpand.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="FormAssets\RowGridInactive.cs">
@@ -153,9 +135,6 @@
     </Compile>
     <EmbeddedResource Include="CustomControl1.resx">
       <DependentUpon>CustomControl1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormAssets\CustomExpandableRow.resx">
-      <DependentUpon>CustomExpandableRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAssets\RadioButtonTab.resx">
       <DependentUpon>RadioButtonTab.cs</DependentUpon>

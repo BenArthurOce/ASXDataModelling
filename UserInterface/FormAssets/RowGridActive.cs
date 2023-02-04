@@ -28,6 +28,7 @@ namespace UserInterface.FormAssets
         private string _string9;
         private string _string10;
         private string _string11;
+        private string _string12;
 
         public string String1
         {
@@ -95,10 +96,28 @@ namespace UserInterface.FormAssets
             set { _string11 = value; Invalidate(); }
         }
 
-        //public RowGridInactive(string _string1, string _string2, string _string3, string _string4, string _string5, string _string6, string _string7, string _string8)
-        //public RowGridActive(string _string1, string _string2, string _string3, string _string4, string _string5, string _string6, string _string7, string _string8, string _string9, string _string10, string _string11)
-        public RowGridActive()
+        public string String12
         {
+            get { return _string12; }
+            set { _string12 = value; Invalidate(); }
+        }
+
+        //public RowGridInactive(string _string1, string _string2, string _string3, string _string4, string _string5, string _string6, string _string7, string _string8)
+        public RowGridActive(string _string1, string _string2, string _string3, string _string4, string _string5, string _string6, string _string7, string _string8, string _string9, string _string10)
+        //public RowGridActive()
+        {
+            this.String1 = _string1;
+            this.String2 = _string2;
+            this.String3 = _string3;
+            this.String4 = _string4;
+            this.String5 = _string5;
+            this.String6 = _string6;
+            this.String7 = _string7;
+            this.String8 = _string8;
+            this.String9 = _string9;
+            this.String10 = _string10;
+            //this.String11 = _string11;
+            //this.String12 = _string12;
 
             // Define the number of columns and rows
             int columns = 8;
@@ -219,7 +238,7 @@ namespace UserInterface.FormAssets
             {
                 Dock = DockStyle.Fill,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Text = "a"
+                Text = String1
             };
             //
             // lblFooter_TransContractNote
