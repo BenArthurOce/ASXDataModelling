@@ -12,74 +12,97 @@ namespace UserInterface.FormAssets
 {
     class RowGridInactive : TableLayoutPanel
     {
-        private string _string1;
-        private string _string2;
-        private string _string3;
-        private string _string4;
-        private string _string5;
-        private string _string6;
-        private string _string7;
-        private string _string8;
+        private string _TransDate;
+        private string _TransContractNote;
+        private string _TransType;
+        private string _TransShareCode;
+        private string _TransShareName;
+        private string _TransShareSector;
+        private string _TransQuantity;
+        private string _TransUnitPrice;
+        private string _TransTradeValue;
+        private string _TransBrokerage;
+        private string _TransCostTotal;
 
-        public string String1
+        public string TransDate
         {
-            get { return _string1; }
-            set { _string1 = value; Invalidate(); }
+            get { return _TransDate; }
+            set { _TransDate = value; Invalidate(); }
         }
 
-        public string String2
+        public string TransContractNote
         {
-            get { return _string2; }
-            set { _string2 = value; Invalidate(); }
+            get { return _TransContractNote; }
+            set { _TransContractNote = value; Invalidate(); }
         }
 
-        public string String3
+        public string TransType
         {
-            get { return _string3; }
-            set { _string3 = value; Invalidate(); }
+            get { return _TransType; }
+            set { _TransType = value; Invalidate(); }
         }
 
-        public string String4
+        public string TransShareCode
         {
-            get { return _string4; }
-            set { _string4 = value; Invalidate(); }
+            get { return _TransShareCode; }
+            set { _TransShareCode = value; Invalidate(); }
         }
 
-        public string String5
+        public string TransShareName
         {
-            get { return _string5; }
-            set { _string5 = value; Invalidate(); }
+            get { return _TransShareName; }
+            set { _TransShareName = value; Invalidate(); }
+        }
+        public string TransShareSector
+        {
+            get { return _TransShareSector; }
+            set { _TransShareSector = value; Invalidate(); }
         }
 
-        public string String6
+        public string TransQuantity
         {
-            get { return _string6; }
-            set { _string6 = value; Invalidate(); }
+            get { return _TransQuantity; }
+            set { _TransQuantity = value; Invalidate(); }
         }
 
-        public string String7
+        public string TransUnitPrice
         {
-            get { return _string7; }
-            set { _string7 = value; Invalidate(); }
+            get { return _TransUnitPrice; }
+            set { _TransUnitPrice = value; Invalidate(); }
         }
 
-        public string String8
+        public string TransTradeValue
         {
-            get { return _string8; }
-            set { _string8 = value; Invalidate(); }
+            get { return _TransTradeValue; }
+            set { _TransTradeValue = value; Invalidate(); }
         }
 
-        public RowGridInactive(string _string1, string _string2, string _string3, string _string4, string _string5, string _string6, string _string7, string _string8)
+        public string TransBrokerage
         {
+            get { return _TransBrokerage; }
+            set { _TransBrokerage = value; Invalidate(); }
+        }
 
-            this.String1 = _string1;
-            this.String2 = _string2;
-            this.String3 = _string3;
-            this.String4 = _string4;
-            this.String5 = _string5;
-            this.String6 = _string6;
-            this.String7 = _string7;
-            this.String8 = _string8;
+        public string TransCostTotal
+        {
+            get { return _TransCostTotal; }
+            set { _TransCostTotal = value; Invalidate(); }
+        }
+
+        public RowGridInactive(string _TransDate, string _TransContractNote, string _TransType, string _TransShareCode, string _TransShareName, string _TransShareSector, string _TransQuantity, string _TransUnitPrice, string _TransTradeValue, string _TransBrokerage, string _TransCostTotal)
+        {
+            this.TransDate = _TransDate;
+            this.TransContractNote = _TransContractNote; ;
+            this.TransType = _TransType;
+            this.TransShareCode = _TransShareCode;
+            this.TransShareName = _TransShareName;
+            this.TransShareSector = _TransShareSector;
+            this.TransQuantity = _TransQuantity;
+            this.TransUnitPrice = _TransUnitPrice;
+            this.TransTradeValue = _TransTradeValue;
+            this.TransBrokerage = _TransBrokerage;
+            this.TransCostTotal = _TransCostTotal;
+
             // Define the number of columns and rows
             int columns = 8;
             int rows = 1;
@@ -90,7 +113,7 @@ namespace UserInterface.FormAssets
             this.Margin = new Padding(0);
 
 
-            List<string> listStrings = new List<string>() { this.String1, this.String2, this.String3, this.String4, this.String5, this.String6, this.String7, this.String8 };
+            List<string> listStrings = new List<string>() { this.TransDate, this.TransType, this.TransShareCode, this.TransQuantity, this.TransUnitPrice, this.TransBrokerage, this.TransCostTotal, "" };
 
 
             //Add Columns to the Control

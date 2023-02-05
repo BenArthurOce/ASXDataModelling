@@ -71,58 +71,31 @@ namespace UserInterface.UserControlsTab
 
                 TransactionPanel newCustomPanel = new TransactionPanel
                 (
+                    // _TransPortfolio
                     "",
+                    //_TransContractNote
                     TransLine.ContractNote.ToString(),
+                    //_TransDate
                     DateAdjust,
-                    //DateTime.ParseExact(TransLine.Date.ToString(), "yyyyMMdd", CultureInfo.InvariantCulture).ToString(),
+                    //_TransType, 
                     TransLine.Type.ToString(),
+                    //_TransShareCode
                     TransLine.ASXCode.ToString(),
-                    "",
+                    //_TransShareName
+                    TransLine.CompanyName,
+                    //_TransShareSector
+                    TransLine.CompanySector,
+                    //_TransQuantity
                     TransLine.Quantity.ToString(),
+                    //_TransUnitPrice, 
                     TransLine.UnitPrice.ToString(),
-                    //TransLine.TradeValue.ToString(),
+                    //_TransTradeValue,
                     TradeValueOutput,
+                    //_TransBrokerage
                     TransLine.Brokerage.ToString(),
-                    //TransLine.TotalValue.ToString()
-                    TotalValueOutput, ""
+                    //_TransCostTotal
+                    TotalValueOutput
                 );
-
-
-
-                /*
-                TransactionPanel newCustomPanel = new TransactionPanel()
-                {
-                    _TransPortfolio = "",
-                    _TransContractNote = TransLine.ContractNote.ToString(),
-                    _TransDate = DateTime.ParseExact(TransLine.Date.ToString(), "yyyyMMdd", CultureInfo.InvariantCulture).ToString(),
-                    _TransType = TransLine.Type.ToString(),
-                    _TransShareCode = TransLine.ASXCode.ToString(),
-                    _TransShareName = "",
-                    _TransQuantity = TransLine.Quantity.ToString(),
-                    _TransUnitPrice = TransLine.UnitPrice.ToString(),
-                    _TransTradeValue = TransLine.TradeValue.ToString(),
-                    _TransBrokerage = TransLine.Brokerage.ToString(),
-                    _TransCostTotal = TransLine.TotalValue.ToString(),
-                };
-
-                */
-
-                //TransactionPanel newCustomPanel = new TransactionPanel("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k");
-
-
-                /*
-                newCustomPanel.TransPortfolio = "";
-                newCustomPanel.TransContractNote = TransLine.ContractNote.ToString();
-                newCustomPanel.TransDate = DateTime.ParseExact(TransLine.Date.ToString(), "yyyyMMdd", CultureInfo.InvariantCulture).ToString();
-                newCustomPanel.TransType = TransLine.Type.ToString();
-                newCustomPanel.TransShareCode = TransLine.ASXCode.ToString();
-                newCustomPanel.TransShareName = "";
-                newCustomPanel.TransQuantity = TransLine.Quantity.ToString();
-                newCustomPanel.TransUnitPrice = TransLine.UnitPrice.ToString();
-                newCustomPanel.TransTradeValue = TransLine.TradeValue.ToString();
-                newCustomPanel.TransBrokerage = TransLine.Brokerage.ToString();
-                newCustomPanel.TransCostTotal = TransLine.TotalValue.ToString();
-                */
 
 
                 flowLayoutPanel1.Controls.Add(newCustomPanel);
@@ -130,7 +103,5 @@ namespace UserInterface.UserControlsTab
 
             }
         }
-
-
     }
 }

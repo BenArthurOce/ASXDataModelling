@@ -58,12 +58,6 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomControl1.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CustomControl1.Designer.cs">
-      <DependentUpon>CustomControl1.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormAssets\RowGridActive.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -133,9 +127,6 @@
     <Compile Include="UserControlsTab\UC_Tab5.Designer.cs">
       <DependentUpon>UC_Tab5.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CustomControl1.resx">
-      <DependentUpon>CustomControl1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormAssets\RadioButtonTab.resx">
       <DependentUpon>RadioButtonTab.cs</DependentUpon>
     </EmbeddedResource>

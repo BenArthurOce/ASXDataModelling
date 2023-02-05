@@ -50,35 +50,7 @@ namespace UserInterface.UserControlsTab
 
             foreach (spQueryShareTransactionsForPortfolio TransLine in output)
             {
-                /*
-                CustomRowPanelData customrow = new CustomRowPanelData();
-                customrow.Column1Text = DateTime.ParseExact(TransLine.Date.ToString(), "yyyyMMdd", CultureInfo.InvariantCulture).ToString();
-                customrow.Column2Text = TransLine.Type.ToString();
-                customrow.Column3Text = TransLine.ASXCode.ToString();
-                customrow.Column4Text = TransLine.Quantity.ToString();
-                customrow.Column5Text = TransLine.Quantity.ToString();
-                customrow.Column6Text = TransLine.UnitPrice.ToString();
-                customrow.Column7Text = TransLine.TotalValue.ToString();
-
-                customrow.DistanceBetweenLabels = 130;
-                fpnlShareTransactions.Controls.Add(customrow);
-                */
-
-                
-                //CustomPanel newCustomPanel = new CustomPanel();
-                //newCustomPanel.TransNumber.Text = 0.ToString();
-                /*
-                newCustomPanel.lblTransDate.Text = DateTime.ParseExact(TransLine.Date.ToString(), "yyyyMMdd", CultureInfo.InvariantCulture).ToString();
-                newCustomPanel.lblTransType.Text = TransLine.Type.ToString();
-                newCustomPanel.lblTransShareCode.Text = TransLine.ASXCode.ToString();
-                newCustomPanel.lblTransQuantity.Text = TransLine.Quantity.ToString();
-                newCustomPanel.lblTransUnitPrice.Text = TransLine.UnitPrice.ToString();
-                newCustomPanel.lblTransCostTotal.Text = TransLine.TotalValue.ToString();
-
-                fpnlShareTransactions.Controls.Add(newCustomPanel);
-                */
-                
-
+    
             }
         }
 

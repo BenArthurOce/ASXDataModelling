@@ -15,109 +15,96 @@ namespace UserInterface.FormAssets
 
     class RowGridActive : TableLayoutPanel
     {
+        private string _TransDate;
+        private string _TransContractNote;
+        private string _TransType;
+        private string _TransShareCode;
+        private string _TransShareName;
+        private string _TransShareSector;
+        private string _TransQuantity;
+        private string _TransUnitPrice;
+        private string _TransTradeValue;
+        private string _TransBrokerage;
+        private string _TransCostTotal;
 
-
-        private string _string1;
-        private string _string2;
-        private string _string3;
-        private string _string4;
-        private string _string5;
-        private string _string6;
-        private string _string7;
-        private string _string8;
-        private string _string9;
-        private string _string10;
-        private string _string11;
-        private string _string12;
-
-        public string String1
+        public string TransDate
         {
-            get { return _string1; }
-            set { _string1 = value; Invalidate(); }
+            get { return _TransDate; }
+            set { _TransDate = value; Invalidate(); }
         }
 
-        public string String2
+        public string TransContractNote
         {
-            get { return _string2; }
-            set { _string2 = value; Invalidate(); }
+            get { return _TransContractNote; }
+            set { _TransContractNote = value; Invalidate(); }
         }
 
-        public string String3
+        public string TransType
         {
-            get { return _string3; }
-            set { _string3 = value; Invalidate(); }
+            get { return _TransType; }
+            set { _TransType = value; Invalidate(); }
         }
 
-        public string String4
+        public string TransShareCode
         {
-            get { return _string4; }
-            set { _string4 = value; Invalidate(); }
+            get { return _TransShareCode; }
+            set { _TransShareCode = value; Invalidate(); }
         }
 
-        public string String5
+        public string TransShareName
         {
-            get { return _string5; }
-            set { _string5 = value; Invalidate(); }
+            get { return _TransShareName; }
+            set { _TransShareName = value; Invalidate(); }
+        }
+        public string TransShareSector
+        {
+            get { return _TransShareSector; }
+            set { _TransShareSector = value; Invalidate(); }
         }
 
-        public string String6
+        public string TransQuantity
         {
-            get { return _string6; }
-            set { _string6 = value; Invalidate(); }
+            get { return _TransQuantity; }
+            set { _TransQuantity = value; Invalidate(); }
         }
 
-        public string String7
+        public string TransUnitPrice
         {
-            get { return _string7; }
-            set { _string7 = value; Invalidate(); }
+            get { return _TransUnitPrice; }
+            set { _TransUnitPrice = value; Invalidate(); }
         }
 
-        public string String8
+        public string TransTradeValue
         {
-            get { return _string8; }
-            set { _string8 = value; Invalidate(); }
+            get { return _TransTradeValue; }
+            set { _TransTradeValue = value; Invalidate(); }
         }
 
-        public string String9
+        public string TransBrokerage
         {
-            get { return _string9; }
-            set { _string9 = value; Invalidate(); }
+            get { return _TransBrokerage; }
+            set { _TransBrokerage = value; Invalidate(); }
         }
 
-        public string String10
+        public string TransCostTotal
         {
-            get { return _string10; }
-            set { _string10 = value; Invalidate(); }
+            get { return _TransCostTotal; }
+            set { _TransCostTotal = value; Invalidate(); }
         }
 
-        public string String11
+        public RowGridActive(string _TransDate, string _TransContractNote, string _TransType, string _TransShareCode, string _TransShareName, string _TransShareSector, string _TransQuantity, string _TransUnitPrice, string _TransTradeValue, string _TransBrokerage, string _TransCostTotal)
         {
-            get { return _string11; }
-            set { _string11 = value; Invalidate(); }
-        }
-
-        public string String12
-        {
-            get { return _string12; }
-            set { _string12 = value; Invalidate(); }
-        }
-
-        //public RowGridInactive(string _string1, string _string2, string _string3, string _string4, string _string5, string _string6, string _string7, string _string8)
-        public RowGridActive(string _string1, string _string2, string _string3, string _string4, string _string5, string _string6, string _string7, string _string8, string _string9, string _string10)
-        //public RowGridActive()
-        {
-            this.String1 = _string1;
-            this.String2 = _string2;
-            this.String3 = _string3;
-            this.String4 = _string4;
-            this.String5 = _string5;
-            this.String6 = _string6;
-            this.String7 = _string7;
-            this.String8 = _string8;
-            this.String9 = _string9;
-            this.String10 = _string10;
-            //this.String11 = _string11;
-            //this.String12 = _string12;
+            this.TransDate = _TransDate;
+            this.TransContractNote = _TransContractNote;;
+            this.TransType = _TransType;
+            this.TransShareCode = _TransShareCode;
+            this.TransShareName = _TransShareName;
+            this.TransShareSector = _TransShareSector;
+            this.TransQuantity = _TransQuantity;
+            this.TransUnitPrice = _TransUnitPrice;
+            this.TransTradeValue = _TransTradeValue;
+            this.TransBrokerage = _TransBrokerage;
+            this.TransCostTotal = _TransCostTotal;
 
             // Define the number of columns and rows
             int columns = 8;
@@ -169,22 +156,22 @@ namespace UserInterface.FormAssets
                 Text = "Type:"
             };
             //
-            // lblHeader_TransShareCode
+            // lblHeader_TransSector
             //
-            Label lblHeader_TransShareCode = new Label
+            Label lblHeader_TransSector = new Label
             {
                 Dock = DockStyle.Fill,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Text = "ASX Code:"
+                Text = "Sector:"
             };
             //
-            // lblHeader_TransShareName
+            // lblHeader_TransASXCodeAndName
             //
-            Label lblHeader_TransShareName = new Label
+            Label lblHeader_TransASXCodeAndName = new Label
             {
                 Dock = DockStyle.Fill,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Text = "ASX Name:"
+                Text = "Company:"
             };
             //
             // lblHeader_TransQuantity
@@ -238,7 +225,7 @@ namespace UserInterface.FormAssets
             {
                 Dock = DockStyle.Fill,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Text = String1
+                Text = TransDate
             };
             //
             // lblFooter_TransContractNote
@@ -247,7 +234,7 @@ namespace UserInterface.FormAssets
             {
                 Dock = DockStyle.Fill,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Text = "b"
+                Text = TransContractNote
             };
             //
             // lblFooter_TransType
@@ -256,25 +243,25 @@ namespace UserInterface.FormAssets
             {
                 Dock = DockStyle.Fill,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Text = "c"
+                Text = TransType
             };
             //
-            // lblFooter_TransShareCode
+            // lblFooter_TransSector
             //
-            Label lblFooter_TransShareCode = new Label
+            Label lblFooter_TransSector = new Label
             {
                 Dock = DockStyle.Fill,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Text = "d"
+                Text = TransShareSector
             };
             //
-            // lblFooter_TransShareName
+            // lblFooter_TransASXCodeAndName
             //
-            Label lblFooter_TransShareName = new Label
+            Label lblFooter_TransASXCodeAndName = new Label
             {
                 Dock = DockStyle.Fill,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Text = "e"
+                Text =  "(" + TransShareCode + ")" + " " + TransShareName
             };
             //
             // lblFooter_TransQuantity
@@ -283,7 +270,7 @@ namespace UserInterface.FormAssets
             {
                 Dock = DockStyle.Fill,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Text = "f"
+                Text = TransQuantity
             };
             //
             // lblFooter_TransUnitPrice
@@ -292,7 +279,7 @@ namespace UserInterface.FormAssets
             {
                 Dock = DockStyle.Fill,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Text = "g"
+                Text = TransUnitPrice
             };
             //
             // lblFooter_TransTradeValue
@@ -301,7 +288,7 @@ namespace UserInterface.FormAssets
             {
                 Dock = DockStyle.Fill,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Text = "h"
+                Text = TransTradeValue
             };
             //
             // lblFooter_TransBrokerage
@@ -310,7 +297,7 @@ namespace UserInterface.FormAssets
             {
                 Dock = DockStyle.Fill,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Text = "i"
+                Text = TransBrokerage
             };
             //
             // lblFooter_TransCostTotal
@@ -319,7 +306,7 @@ namespace UserInterface.FormAssets
             {
                 Dock = DockStyle.Fill,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Text = "j"
+                Text = TransCostTotal
             };
             //
             // btnEdit
@@ -351,8 +338,8 @@ namespace UserInterface.FormAssets
             this.Controls.Add(lblHeader_TransDate, 0, 0);
             this.Controls.Add(lblHeader_TransContractNote, 0, 1);
             this.Controls.Add(lblHeader_TransType, 0, 2);
-            this.Controls.Add(lblHeader_TransShareCode, 0, 3);
-            this.Controls.Add(lblHeader_TransShareName, 0, 4);
+            this.Controls.Add(lblHeader_TransSector, 0, 3);
+            this.Controls.Add(lblHeader_TransASXCodeAndName, 0, 4); this.SetRowSpan(lblHeader_TransASXCodeAndName, 2);
             this.Controls.Add(lblHeader_TransQuantity, 3, 0);
             this.Controls.Add(lblHeader_TransUnitPrice, 3, 1);
             this.Controls.Add(lblHeader_TransTradeValue, 3, 2);
@@ -362,32 +349,22 @@ namespace UserInterface.FormAssets
             this.Controls.Add(lblFooter_TransDate, 1, 0);
             this.Controls.Add(lblFooter_TransContractNote, 1, 1);
             this.Controls.Add(lblFooter_TransType, 1, 2);
-            this.Controls.Add(lblFooter_TransShareCode, 1, 3);
-            this.Controls.Add(lblFooter_TransShareName, 1, 4);
+            this.Controls.Add(lblFooter_TransSector, 1, 3);
+            this.Controls.Add(lblFooter_TransASXCodeAndName, 1, 4); this.SetRowSpan(lblFooter_TransASXCodeAndName, 2);
             this.Controls.Add(lblFooter_TransQuantity, 4, 0);
             this.Controls.Add(lblFooter_TransUnitPrice, 4, 1);
             this.Controls.Add(lblFooter_TransTradeValue, 4, 2);
             this.Controls.Add(lblFooter_TransBrokerage, 4, 3);
             this.Controls.Add(lblFooter_TransCostTotal, 4, 4);
 
+
+
             this.Controls.Add(btnEdit, 6, 1);
             this.SetRowSpan(btnEdit, 2);
 
             this.Controls.Add(btnDelete, 6, 3);
             this.SetRowSpan(btnDelete, 2);
-            /*
-            for (int i = 0; i < columns * rows; i++)
-            {
-                Label label = new Label
-                {
-                    Dock = DockStyle.Fill,
-                    TextAlign = ContentAlignment.MiddleCenter,
-                    BackColor = Color.Green,
-                    Text = "aa"
-                };
-                this.Controls.Add(label, i % columns, i / columns);
-            }
-            */
+
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

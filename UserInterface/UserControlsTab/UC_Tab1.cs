@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataReferenceLibrary.StoredProcs;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
+using System.Data.Common;
 
 namespace UserInterface.UserControlsTab
 {
@@ -80,7 +82,22 @@ namespace UserInterface.UserControlsTab
                     break;
             }
             PopulateGrid(output);
-  
+            //ColorCells(dgvAllSharePrices);
+
+            double? average = 0;
+            double average2 = 0;
+            int count = 0;
+            foreach (spQueryASXSharePricesForOneYear singleResult in output)
+            {
+                if (singleResult.Price != null)
+                {
+                    count += 1;
+                    average += singleResult.Price;
+                }
+            }
+            average /= count;
+            average2 = Convert.ToDouble(average);
+            ColorCells(average2);
         }
 
         private void PopulateGrid(List<spQueryASXSharePricesForOneYear> output)
@@ -95,6 +112,32 @@ namespace UserInterface.UserControlsTab
                 }
             }
         }
+
+
+        private void ColorCells(double averagePrice)
+        {
+            int columnIndex = 1;
+
+            // Loop through each cell
+            foreach (DataGridViewRow row in dgvAllSharePrices.Rows)
+            {
+                DataGridViewCell cell = row.Cells[columnIndex];
+                if (cell.Value != null)
+                {
+                    // Calculate deviation from the average
+                    double deviation = Math.Abs(Convert.ToDouble(cell.Value) - averagePrice);
+                    int red = (int)(255 * deviation / averagePrice);
+                    int green = 255 - red;
+                    red = Math.Min(red, 255);
+                    green = Math.Min(green, 255);
+                    cell.Style.BackColor = Color.FromArgb(red, green, 0);
+                }
+            }
+        }
+
+
+
+
 
     }
 }

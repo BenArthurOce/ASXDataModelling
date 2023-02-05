@@ -22,8 +22,8 @@ namespace UserInterface.FormAssets
         [RefreshProperties(System.ComponentModel.RefreshProperties.All)]
 
         private string _TransPortfolio;
-        private string _TransContractNote;
         private string _TransDate;
+        private string _TransContractNote;
         private string _TransType;
         private string _TransShareCode;
         private string _TransShareName;
@@ -40,20 +40,17 @@ namespace UserInterface.FormAssets
             get { return _TransPortfolio; }
             set { _TransPortfolio = value; Invalidate(); }
         }
-
-
-        public string TransContractNote
-        {
-            get { return _TransContractNote; }
-            set { _TransContractNote = value; Invalidate(); }
-        }
-
         public string TransDate
         {
             get { return _TransDate; }
             set { _TransDate = value; Invalidate(); }
         }
 
+        public string TransContractNote
+        {
+            get { return _TransContractNote; }
+            set { _TransContractNote = value; Invalidate(); }
+        }
 
         public string TransType
         {
@@ -146,7 +143,7 @@ namespace UserInterface.FormAssets
             // When Inactive - Shows the Control "GridRow" which has the Transactions but in a standard format
             // The purpose of this control is to switch between the two, depending on active state
 
-            this._ActiveGridRow = new RowGridActive(TransDate, TransContractNote, TransType, TransShareCode, TransShareName, TransShareSector, TransQuantity, TransUnitPrice, TransBrokerage, TransCostTotal);
+            this._ActiveGridRow = new RowGridActive(TransDate, TransContractNote, TransType, TransShareCode, TransShareName, TransShareSector, TransQuantity, TransUnitPrice, TransTradeValue, TransBrokerage, TransCostTotal);
             _ActiveGridRow.Width = 867;
             _ActiveGridRow.Height = 150;
             _ActiveGridRow.Visible = false;
@@ -156,7 +153,7 @@ namespace UserInterface.FormAssets
             _ActiveGridRow.ForeColor = Color.Black;
 
 
-            this._InactiveGridRow = new RowGridInactive(TransDate, TransType, TransShareCode, TransQuantity, TransUnitPrice, TransBrokerage, TransCostTotal, "");
+            this._InactiveGridRow = new RowGridInactive(TransDate, TransContractNote, TransType, TransShareCode, TransShareName, TransShareSector, TransQuantity, TransUnitPrice, TransTradeValue, TransBrokerage, TransCostTotal);
             _InactiveGridRow.Width = 867;
             _InactiveGridRow.Height = 40;
             _InactiveGridRow.Visible = false;
@@ -164,15 +161,6 @@ namespace UserInterface.FormAssets
             _InactiveGridRow.Margin = new Padding(0);
             _InactiveGridRow.BackColor = Color.LightGray;
             _InactiveGridRow.ForeColor = Color.Black;
-            _InactiveGridRow.String1 = TransDate;
-            _InactiveGridRow.String2 = TransType;
-            _InactiveGridRow.String3 = TransShareCode;
-            _InactiveGridRow.String4 = TransQuantity;
-            _InactiveGridRow.String5 = TransUnitPrice;
-            _InactiveGridRow.String6 = TransBrokerage;
-            _InactiveGridRow.String7 = TransCostTotal;
-            _InactiveGridRow.String8 = "";
-
 
             this.Controls.Add(_ActiveGridRow);
             this.Controls.Add(_InactiveGridRow);
