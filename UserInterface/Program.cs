@@ -27,7 +27,8 @@ namespace UserInterface
 
             //TODO - Create SQL lists for forms (Transaction Types, Portfolio Names)
 
-            Application.Run(new ShareDashboardForm());
+            //Application.Run(new ShareDashboardForm());
+            Application.Run(new TransactionFilterForm());
 
 
         }
