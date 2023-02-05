@@ -34,6 +34,7 @@
             this.pnlContainerSinglePriceData = new System.Windows.Forms.Panel();
             this.tpnlOutputsSinglePriceData = new System.Windows.Forms.TableLayoutPanel();
             this.pnlOutputsCol2 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlOutputsCol1 = new System.Windows.Forms.Panel();
             this.pnlOutputsCol3 = new System.Windows.Forms.Panel();
             this.tpnlInputsSinglePriceData = new System.Windows.Forms.TableLayoutPanel();
@@ -49,11 +50,10 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.pnlInputsCol2 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cBoxPortfolio = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlInputsCol1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlHeaderSinglePriceData.SuspendLayout();
             this.pnlContainerSinglePriceData.SuspendLayout();
             this.tpnlOutputsSinglePriceData.SuspendLayout();
@@ -137,6 +137,15 @@
             this.pnlOutputsCol2.Name = "pnlOutputsCol2";
             this.pnlOutputsCol2.Size = new System.Drawing.Size(867, 391);
             this.pnlOutputsCol2.TabIndex = 12;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(867, 391);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // pnlOutputsCol1
             // 
@@ -291,7 +300,7 @@
             // 
             // pnlInputsCol2
             // 
-            this.pnlInputsCol2.Controls.Add(this.comboBox2);
+            this.pnlInputsCol2.Controls.Add(this.cBoxPortfolio);
             this.pnlInputsCol2.Controls.Add(this.label2);
             this.pnlInputsCol2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlInputsCol2.Location = new System.Drawing.Point(138, 10);
@@ -300,19 +309,19 @@
             this.pnlInputsCol2.Size = new System.Drawing.Size(108, 50);
             this.pnlInputsCol2.TabIndex = 2;
             // 
-            // comboBox2
+            // cBoxPortfolio
             // 
-            this.comboBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cBoxPortfolio.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cBoxPortfolio.FormattingEnabled = true;
+            this.cBoxPortfolio.Items.AddRange(new object[] {
             "Open",
             "Close",
             "High",
             "Low"});
-            this.comboBox2.Location = new System.Drawing.Point(0, 29);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(108, 21);
-            this.comboBox2.TabIndex = 7;
+            this.cBoxPortfolio.Location = new System.Drawing.Point(0, 29);
+            this.cBoxPortfolio.Name = "cBoxPortfolio";
+            this.cBoxPortfolio.Size = new System.Drawing.Size(108, 21);
+            this.cBoxPortfolio.TabIndex = 7;
             // 
             // label2
             // 
@@ -346,15 +355,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Filters:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(867, 391);
-            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // UC_Tab7
             // 
@@ -404,7 +404,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cBoxPortfolio;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }

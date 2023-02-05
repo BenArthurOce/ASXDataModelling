@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlHeaderSinglePriceData = new System.Windows.Forms.Panel();
             this.lblHeaderSinglePriceData = new System.Windows.Forms.Label();
             this.btnDisplay = new System.Windows.Forms.Button();
@@ -68,12 +68,18 @@
             this.pnlInputsCol3 = new System.Windows.Forms.Panel();
             this.pnlInputsCol2 = new System.Windows.Forms.Panel();
             this.pnlInputsCol1 = new System.Windows.Forms.Panel();
+            this.lblHeaderLowestPrice = new System.Windows.Forms.Label();
+            this.lblHeaderHighestPrice = new System.Windows.Forms.Label();
+            this.lblFooterHighestPrice = new System.Windows.Forms.Label();
+            this.lblFooterLowestPrice = new System.Windows.Forms.Label();
             this.pnlHeaderSinglePriceData.SuspendLayout();
             this.pnlContainerSinglePriceData.SuspendLayout();
             this.tpnlOutputsSinglePriceData.SuspendLayout();
             this.pnlOutputsCol2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllSharePrices)).BeginInit();
             this.tpnlInputsSinglePriceData.SuspendLayout();
+            this.pnlInputsCol8.SuspendLayout();
+            this.pnlInputsCol7.SuspendLayout();
             this.pnlInputsCol6.SuspendLayout();
             this.pnlInputsCol5.SuspendLayout();
             this.pnlInputsCol4.SuspendLayout();
@@ -221,14 +227,14 @@
             this.dgvAllSharePrices.AllowUserToAddRows = false;
             this.dgvAllSharePrices.AllowUserToDeleteRows = false;
             this.dgvAllSharePrices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAllSharePrices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAllSharePrices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvAllSharePrices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAllSharePrices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Jan,
@@ -243,30 +249,30 @@
             this.Oct,
             this.Nov,
             this.Dec});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAllSharePrices.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAllSharePrices.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvAllSharePrices.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAllSharePrices.Location = new System.Drawing.Point(0, 0);
             this.dgvAllSharePrices.Margin = new System.Windows.Forms.Padding(0);
             this.dgvAllSharePrices.Name = "dgvAllSharePrices";
             this.dgvAllSharePrices.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAllSharePrices.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAllSharePrices.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvAllSharePrices.RowHeadersWidth = 50;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvAllSharePrices.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvAllSharePrices.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvAllSharePrices.Size = new System.Drawing.Size(867, 391);
             this.dgvAllSharePrices.TabIndex = 11;
             // 
@@ -389,6 +395,8 @@
             // 
             // pnlInputsCol8
             // 
+            this.pnlInputsCol8.Controls.Add(this.lblFooterHighestPrice);
+            this.pnlInputsCol8.Controls.Add(this.lblFooterLowestPrice);
             this.pnlInputsCol8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlInputsCol8.Location = new System.Drawing.Point(906, 10);
             this.pnlInputsCol8.Margin = new System.Windows.Forms.Padding(10);
@@ -398,6 +406,8 @@
             // 
             // pnlInputsCol7
             // 
+            this.pnlInputsCol7.Controls.Add(this.lblHeaderHighestPrice);
+            this.pnlInputsCol7.Controls.Add(this.lblHeaderLowestPrice);
             this.pnlInputsCol7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlInputsCol7.Location = new System.Drawing.Point(778, 10);
             this.pnlInputsCol7.Margin = new System.Windows.Forms.Padding(10);
@@ -466,6 +476,50 @@
             this.pnlInputsCol1.Size = new System.Drawing.Size(108, 50);
             this.pnlInputsCol1.TabIndex = 1;
             // 
+            // lblHeaderLowestPrice
+            // 
+            this.lblHeaderLowestPrice.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblHeaderLowestPrice.Location = new System.Drawing.Point(0, 0);
+            this.lblHeaderLowestPrice.Margin = new System.Windows.Forms.Padding(3);
+            this.lblHeaderLowestPrice.Name = "lblHeaderLowestPrice";
+            this.lblHeaderLowestPrice.Size = new System.Drawing.Size(108, 23);
+            this.lblHeaderLowestPrice.TabIndex = 8;
+            this.lblHeaderLowestPrice.Text = "Lowest:";
+            this.lblHeaderLowestPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblHeaderHighestPrice
+            // 
+            this.lblHeaderHighestPrice.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblHeaderHighestPrice.Location = new System.Drawing.Point(0, 27);
+            this.lblHeaderHighestPrice.Margin = new System.Windows.Forms.Padding(3);
+            this.lblHeaderHighestPrice.Name = "lblHeaderHighestPrice";
+            this.lblHeaderHighestPrice.Size = new System.Drawing.Size(108, 23);
+            this.lblHeaderHighestPrice.TabIndex = 9;
+            this.lblHeaderHighestPrice.Text = "Highest:";
+            this.lblHeaderHighestPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblFooterHighestPrice
+            // 
+            this.lblFooterHighestPrice.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblFooterHighestPrice.Location = new System.Drawing.Point(0, 27);
+            this.lblFooterHighestPrice.Margin = new System.Windows.Forms.Padding(3);
+            this.lblFooterHighestPrice.Name = "lblFooterHighestPrice";
+            this.lblFooterHighestPrice.Size = new System.Drawing.Size(114, 23);
+            this.lblFooterHighestPrice.TabIndex = 11;
+            this.lblFooterHighestPrice.Text = "0";
+            this.lblFooterHighestPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblFooterLowestPrice
+            // 
+            this.lblFooterLowestPrice.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblFooterLowestPrice.Location = new System.Drawing.Point(0, 0);
+            this.lblFooterLowestPrice.Margin = new System.Windows.Forms.Padding(3);
+            this.lblFooterLowestPrice.Name = "lblFooterLowestPrice";
+            this.lblFooterLowestPrice.Size = new System.Drawing.Size(114, 23);
+            this.lblFooterLowestPrice.TabIndex = 10;
+            this.lblFooterLowestPrice.Text = "0";
+            this.lblFooterLowestPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UC_Tab1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -481,6 +535,8 @@
             this.pnlOutputsCol2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllSharePrices)).EndInit();
             this.tpnlInputsSinglePriceData.ResumeLayout(false);
+            this.pnlInputsCol8.ResumeLayout(false);
+            this.pnlInputsCol7.ResumeLayout(false);
             this.pnlInputsCol6.ResumeLayout(false);
             this.pnlInputsCol5.ResumeLayout(false);
             this.pnlInputsCol4.ResumeLayout(false);
@@ -528,5 +584,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Oct;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nov;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dec;
+        private System.Windows.Forms.Label lblFooterHighestPrice;
+        private System.Windows.Forms.Label lblFooterLowestPrice;
+        private System.Windows.Forms.Label lblHeaderHighestPrice;
+        private System.Windows.Forms.Label lblHeaderLowestPrice;
     }
 }

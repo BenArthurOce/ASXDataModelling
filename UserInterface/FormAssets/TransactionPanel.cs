@@ -166,6 +166,7 @@ namespace UserInterface.FormAssets
             this.Controls.Add(_InactiveGridRow);
 
 
+            // Set an event whenever a panel is clicked
             foreach (Control control in this.Controls)
             {
                 
@@ -184,22 +185,15 @@ namespace UserInterface.FormAssets
 
             }
 
-            // Set all the labels in each custom panel to expand the panel
-
             _InactiveGridRow.Visible = true;
             _ActiveGridRow.Visible = false;
-             //this.BackColor = Color.Purple;
             this.Click += TransactionPanel_Clicked;
-
         }
 
         private void APanelWasClicked(object sender, EventArgs e)
         {
             TransactionPanel_Clicked(this, e);
         }
-
-
-
 
         private void TransactionPanel_Clicked(object sender, EventArgs e)
         {

@@ -13,6 +13,9 @@ using System.Windows.Forms;
 using DataReferenceLibrary.StoredProcs;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 using System.Data.Common;
+using System.Security.Claims;
+using TheArtOfDevHtmlRenderer.Adapters;
+using System.Windows.Media.Effects;
 
 namespace UserInterface.UserControlsTab
 {
@@ -52,7 +55,7 @@ namespace UserInterface.UserControlsTab
                 dgvAllSharePrices.Rows[i - 1].HeaderCell.Value = i.ToString();
             }
         }
-    
+
 
 
         private void btn_tab2_Display_Click(object sender, EventArgs e)
@@ -82,22 +85,33 @@ namespace UserInterface.UserControlsTab
                     break;
             }
             PopulateGrid(output);
-            //ColorCells(dgvAllSharePrices);
 
-            double? average = 0;
-            double average2 = 0;
-            int count = 0;
-            foreach (spQueryASXSharePricesForOneYear singleResult in output)
+            // Put all Numbers into a List and calculate the Standard Deviation of the number set
+            List<double> allValueList = new List<double>();
+            foreach (DataGridViewRow row in dgvAllSharePrices.Rows)
             {
-                if (singleResult.Price != null)
+                foreach (DataGridViewCell cell in row.Cells)
                 {
-                    count += 1;
-                    average += singleResult.Price;
+                    if (cell.Value == null || cell.Value == "")
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        allValueList.Add(Convert.ToDouble(cell.Value));
+                    }
                 }
             }
-            average /= count;
-            average2 = Convert.ToDouble(average);
-            ColorCells(average2);
+            double AverageMean = allValueList.Average();
+            double StandardDeviation = Math.Sqrt(allValueList.Average(v => Math.Pow(v - AverageMean, 2)));
+
+            //Populate the Highest and Lowest Prices from the datagridview
+            lblFooterLowestPrice.Text = "$ " + allValueList.Min().ToString();
+            lblFooterHighestPrice.Text = "$ " + allValueList.Max().ToString();
+
+            // Colour Cells in the datagridview based on their relation to the average of all numbers
+            ColourCells(AverageMean, StandardDeviation);
+
         }
 
         private void PopulateGrid(List<spQueryASXSharePricesForOneYear> output)
@@ -113,31 +127,40 @@ namespace UserInterface.UserControlsTab
             }
         }
 
-
-        private void ColorCells(double averagePrice)
+        private void ColourCells(double AverageMean, double StandardDeviation)
         {
-            int columnIndex = 1;
-
-            // Loop through each cell
             foreach (DataGridViewRow row in dgvAllSharePrices.Rows)
             {
-                DataGridViewCell cell = row.Cells[columnIndex];
-                if (cell.Value != null)
+                foreach (DataGridViewCell cell in row.Cells)
                 {
-                    // Calculate deviation from the average
-                    double deviation = Math.Abs(Convert.ToDouble(cell.Value) - averagePrice);
-                    int red = (int)(255 * deviation / averagePrice);
-                    int green = 255 - red;
-                    red = Math.Min(red, 255);
-                    green = Math.Min(green, 255);
-                    cell.Style.BackColor = Color.FromArgb(red, green, 0);
+                    if (cell.Value == null || cell.Value == "")
+                    {
+                        cell.Style.BackColor = Color.FromArgb(255, 255, 255);
+                        continue;
+                    }
+                    else
+                    {
+                        // Get the Value of the cell
+                        double cellValue = Convert.ToDouble(cell.Value);
+
+                        // Get the Z Score of the cell
+                        double zScore = (cellValue - AverageMean) / StandardDeviation;
+
+                        // Normalize the Z-score between 0 and 1
+                        double normalizedZScore = (zScore - (-3)) / (3 - (-3));
+
+                        // Modify RGB values based on the Z score
+                        int red = Math.Min(255, (int)(255 * (1 - normalizedZScore)));
+                        int green = Math.Min(255, (int)(255 * normalizedZScore));
+                        int blue = 0;
+
+                        cell.Style.BackColor = Color.FromArgb(red, green, blue);
+
+
+                    }
                 }
             }
         }
-
-
-
-
-
     }
 }
+ 

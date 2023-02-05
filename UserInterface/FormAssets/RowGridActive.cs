@@ -113,11 +113,6 @@ namespace UserInterface.FormAssets
             this.ColumnCount = columns;
             this.RowCount = rows;
 
-
-
-            //List<string> listStrings = new List<string>() { this.String1, this.String2, this.String3, this.String4, this.String5, this.String6, this.String7, this.String8 };
-
-
             //Add Columns to the Control
             for (int i = 0; i < 8; i++)
             {
