@@ -54,8 +54,11 @@
             this.lblHeaderFilterAmount = new System.Windows.Forms.Label();
             this.pnlHeaderRow8 = new System.Windows.Forms.Panel();
             this.pnlFooterFilterAmountStart = new System.Windows.Forms.Panel();
+            this.ntboxFilterAmountStart = new UserInterface.FormAssets.NumericTextBox();
             this.pnlFooterFilterAmountEnd = new System.Windows.Forms.Panel();
+            this.ntboxFilterAmountEnd = new UserInterface.FormAssets.NumericTextBox();
             this.pnlFooterRow8 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.fpnlCurrentFilters = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlButtonFilterType = new System.Windows.Forms.Panel();
             this.btnFilterAddType = new System.Windows.Forms.Button();
@@ -68,9 +71,7 @@
             this.pnlButtonFilterAmount = new System.Windows.Forms.Panel();
             this.btnFilterAddAmount = new System.Windows.Forms.Button();
             this.pnlButtonRow8 = new System.Windows.Forms.Panel();
-            this.ntboxFilterAmountStart = new UserInterface.FormAssets.NumericTextBox();
-            this.ntboxFilterAmountEnd = new UserInterface.FormAssets.NumericTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.pnlHeader.SuspendLayout();
             this.pnlContainerTransactionFilters.SuspendLayout();
             this.tlpnlTransactionFilters.SuspendLayout();
@@ -152,6 +153,7 @@
             this.tlpnlTransactionFilters.Controls.Add(this.pnlButtonFilterDate, 5, 4);
             this.tlpnlTransactionFilters.Controls.Add(this.pnlButtonFilterAmount, 5, 6);
             this.tlpnlTransactionFilters.Controls.Add(this.pnlButtonRow8, 5, 8);
+            this.tlpnlTransactionFilters.Controls.Add(this.button2, 3, 9);
             this.tlpnlTransactionFilters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpnlTransactionFilters.Location = new System.Drawing.Point(10, 10);
             this.tlpnlTransactionFilters.Name = "tlpnlTransactionFilters";
@@ -382,6 +384,15 @@
             this.pnlFooterFilterAmountStart.Size = new System.Drawing.Size(150, 20);
             this.pnlFooterFilterAmountStart.TabIndex = 14;
             // 
+            // ntboxFilterAmountStart
+            // 
+            this.ntboxFilterAmountStart.AllowsDecimals = true;
+            this.ntboxFilterAmountStart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ntboxFilterAmountStart.Location = new System.Drawing.Point(0, 0);
+            this.ntboxFilterAmountStart.Name = "ntboxFilterAmountStart";
+            this.ntboxFilterAmountStart.Size = new System.Drawing.Size(150, 20);
+            this.ntboxFilterAmountStart.TabIndex = 0;
+            // 
             // pnlFooterFilterAmountEnd
             // 
             this.pnlFooterFilterAmountEnd.Controls.Add(this.ntboxFilterAmountEnd);
@@ -392,6 +403,15 @@
             this.pnlFooterFilterAmountEnd.Size = new System.Drawing.Size(150, 20);
             this.pnlFooterFilterAmountEnd.TabIndex = 15;
             // 
+            // ntboxFilterAmountEnd
+            // 
+            this.ntboxFilterAmountEnd.AllowsDecimals = true;
+            this.ntboxFilterAmountEnd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ntboxFilterAmountEnd.Location = new System.Drawing.Point(0, 0);
+            this.ntboxFilterAmountEnd.Name = "ntboxFilterAmountEnd";
+            this.ntboxFilterAmountEnd.Size = new System.Drawing.Size(150, 20);
+            this.ntboxFilterAmountEnd.TabIndex = 0;
+            // 
             // pnlFooterRow8
             // 
             this.pnlFooterRow8.Controls.Add(this.button1);
@@ -401,6 +421,16 @@
             this.pnlFooterRow8.Name = "pnlFooterRow8";
             this.pnlFooterRow8.Size = new System.Drawing.Size(150, 20);
             this.pnlFooterRow8.TabIndex = 16;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(53, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // fpnlCurrentFilters
             // 
@@ -535,33 +565,15 @@
             this.pnlButtonRow8.Size = new System.Drawing.Size(68, 20);
             this.pnlButtonRow8.TabIndex = 25;
             // 
-            // ntboxFilterAmountStart
+            // button2
             // 
-            this.ntboxFilterAmountStart.AllowsDecimals = true;
-            this.ntboxFilterAmountStart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ntboxFilterAmountStart.Location = new System.Drawing.Point(0, 0);
-            this.ntboxFilterAmountStart.Name = "ntboxFilterAmountStart";
-            this.ntboxFilterAmountStart.Size = new System.Drawing.Size(150, 20);
-            this.ntboxFilterAmountStart.TabIndex = 0;
-            // 
-            // ntboxFilterAmountEnd
-            // 
-            this.ntboxFilterAmountEnd.AllowsDecimals = true;
-            this.ntboxFilterAmountEnd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ntboxFilterAmountEnd.Location = new System.Drawing.Point(0, 0);
-            this.ntboxFilterAmountEnd.Name = "ntboxFilterAmountEnd";
-            this.ntboxFilterAmountEnd.Size = new System.Drawing.Size(150, 20);
-            this.ntboxFilterAmountEnd.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(53, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button2.Location = new System.Drawing.Point(428, 344);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 18);
+            this.button2.TabIndex = 26;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // TransactionFilterForm
             // 
@@ -652,5 +664,6 @@
         private FormAssets.NumericTextBox ntboxFilterAmountStart;
         private FormAssets.NumericTextBox ntboxFilterAmountEnd;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

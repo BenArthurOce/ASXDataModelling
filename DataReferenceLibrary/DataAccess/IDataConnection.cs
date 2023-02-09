@@ -1,4 +1,5 @@
 ﻿using DataReferenceLibrary.Models;
+using DataReferenceLibrary.Models2;
 using DataReferenceLibrary.StoredProcs;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,11 @@ namespace DataReferenceLibrary.DataAccess
 {
     public interface IDataConnection
     {
+        IEnumerable<FullPortfolioModel> PopulatePortfolioModel();
+        IEnumerable<FullShareTransactionModel> spQueryDummyAllInformation2();
+        IEnumerable<NewShareTransactionModel> spQueryDummyAllInformation();
+
+        IEnumerable<NewShareTransactionModel> spQueryDummyTransactions();
 
         ///////////////////////////////
         /////// DROP DOWN BOXES ///////

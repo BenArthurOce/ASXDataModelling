@@ -63,6 +63,15 @@
     <Compile Include="Filters\FilterExample.cs" />
     <Compile Include="GlobalConfig.cs" />
     <Compile Include="DataAccess\IDataConnection.cs" />
+    <Compile Include="Models2\FullPortfolioModel.cs" />
+    <Compile Include="Models2\FullShareTransactionModel.cs" />
+    <Compile Include="Models2\NewConnectorPortfolioIndividualModel.cs" />
+    <Compile Include="Models2\NewIndividualModel.cs" />
+    <Compile Include="Models2\NewPortfolioModel.cs" />
+    <Compile Include="Models2\NewTradingCompanyModel.cs" />
+    <Compile Include="Models2\NewTradingSectorModel.cs" />
+    <Compile Include="Models2\NewShareTransactionModel.cs" />
+    <Compile Include="Models2\NewShareTransactionTypeModel.cs" />
     <Compile Include="Models\ASXPriceModel.cs" />
     <Compile Include="Models\DocumentUploadHistoryModel.cs" />
     <Compile Include="Models\PortfolioModel.cs" />

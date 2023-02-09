@@ -1,11 +1,13 @@
 ﻿using DataReferenceLibrary;
 using DataReferenceLibrary.Filters;
+using DataReferenceLibrary.Models2;
 using DataReferenceLibrary.StoredProcs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -305,6 +307,19 @@ namespace UserInterface.Forms
             {
                 MessageBox.Show(transaction.ASXCode + transaction.Date.ToString());
             }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //IEnumerable<NewShareTransactionModel> output;
+            //output = GlobalConfig.Connection.spQueryDummyTransactions();
+
+            IEnumerable<FullPortfolioModel> output2;
+            output2 = GlobalConfig.Connection.PopulatePortfolioModel();
+
+
+            //var output 
 
         }
     }
