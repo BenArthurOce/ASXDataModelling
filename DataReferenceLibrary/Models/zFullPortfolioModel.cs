@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataReferenceLibrary.Models2
 {
-    public class FullPortfolioModel
+    public class zFullPortfolioModel
     {
         public Guid Id { get; set; }
 
@@ -18,6 +18,6 @@ namespace DataReferenceLibrary.Models2
 
         public List<IndividualModel> Individuals { get; set; }
 
-        public List<FullShareTransactionModel> Transactions { get; set; }
+        public List<TradingTransactionModel> Transactions { get; set; }
     }
 }

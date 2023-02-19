@@ -65,18 +65,17 @@
     <Compile Include="Filters\IFilter.cs" />
     <Compile Include="GlobalConfig.cs" />
     <Compile Include="DataAccess\IDataConnection.cs" />
-    <Compile Include="Models2\FullPortfolioModel.cs" />
-    <Compile Include="Models2\FullShareTransactionModel.cs" />
-    <Compile Include="Models2\ConnectorIndividualsPortfolios.cs" />
-    <Compile Include="Models2\DatesModel.cs" />
-    <Compile Include="Models2\IndividualModel.cs" />
-    <Compile Include="Models2\PortfolioModel.cs" />
-    <Compile Include="Models2\TradingEntityModel.cs" />
-    <Compile Include="Models2\TradingSectorModel.cs" />
-    <Compile Include="Models2\TradingTransactionModel.cs" />
-    <Compile Include="Models2\TradingTransactionTypeModel.cs" />
-    <Compile Include="Models2\ASXEODPriceModel.cs" />
-    <Compile Include="Models2\DocumentUploadHistoryModel.cs" />
+    <Compile Include="Models\zFullPortfolioModel.cs" />
+    <Compile Include="Models\ConnectorIndividualsPortfolios.cs" />
+    <Compile Include="Models\DatesModel.cs" />
+    <Compile Include="Models\IndividualModel.cs" />
+    <Compile Include="Models\PortfolioModel.cs" />
+    <Compile Include="Models\TradingEntityModel.cs" />
+    <Compile Include="Models\TradingSectorModel.cs" />
+    <Compile Include="Models\TradingTransactionModel.cs" />
+    <Compile Include="Models\TradingTransactionTypeModel.cs" />
+    <Compile Include="Models\ASXEODPriceModel.cs" />
+    <Compile Include="Models\DocumentUploadHistoryModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StoredProcs\spQueryShareTransactionsForPortfolio.cs" />
     <Compile Include="StoredProcs\spQueryASXSharePricesForOneYear.cs" />
@@ -86,9 +85,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -18,7 +18,7 @@ namespace UserInterface.Forms
     public partial class CreateNewTransactionForm : Form
     {
         private List<PortfolioModel> availablePortfolios = GlobalConfig.Connection.spGETLIST_Portfolios();
-        private List<TradingTransactionTypeModel> availableTransactionTypes = GlobalConfig.Connection.spQueryTransactionTypes();
+        private List<TradingTransactionTypeModel> availableTransactionTypes = GlobalConfig.Connection.spGETLIST_TransactionTypes();
 
         ICreateTransactionRequester callingForm;
 

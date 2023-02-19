@@ -12,7 +12,7 @@ namespace DataReferenceLibrary.Models2
 
         public int SequenceNumber { get; set; }
 
-        public int ContractNote { get; set; }
+        public string ContractNote { get; set; }
 
         public PortfolioModel PortfolioId { get; set; }
 
@@ -24,13 +24,13 @@ namespace DataReferenceLibrary.Models2
 
         public int Quantity { get; set; }
 
-        public decimal UnitPrice { get; set; }
+        public double UnitPrice { get; set; }
 
-        public decimal TradeValue { get; set; }
+        public double TradeValue { get; set; }
 
-        public decimal Brokerage { get; set; }
+        public double Brokerage { get; set; }
 
-        public decimal TotalValue { get; set; }
+        public double TotalValue { get; set; }
 
         public bool IsDeleted { get; set; }
 
@@ -41,9 +41,9 @@ namespace DataReferenceLibrary.Models2
 
         public TradingTransactionModel(string _ContractNote, string _ASXCode, string _Date, string _Type, string _Quantity, string _UnitPrice, string _TradeValue, string _Brokerage, string _TotalValue, string _IsIncrease)
         {
-            int ContractNoteValue = 0;
-            int.TryParse(_ContractNote, out ContractNoteValue);
-            ContractNote = ContractNoteValue;
+            //int ContractNoteValue = 0;
+            //int.TryParse(_ContractNote, out ContractNoteValue);
+            //ContractNote = ContractNoteValue;
 
             //ASXCode = _ASXCode;
 
@@ -57,9 +57,9 @@ namespace DataReferenceLibrary.Models2
             int.TryParse(_Quantity, out QuantityValue);
             Quantity = QuantityValue;
 
-            decimal UnitPriceValue = 0;
-            decimal.TryParse(_UnitPrice, out UnitPriceValue);
-            UnitPrice = UnitPriceValue;
+            //decimal UnitPriceValue = 0;
+            //decimal.TryParse(_UnitPrice, out UnitPriceValue);
+            //UnitPrice = UnitPriceValue;
 
             decimal TradeValueValue = 0;
             decimal.TryParse(_TradeValue, out TradeValueValue);

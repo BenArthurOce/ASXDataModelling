@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataReferenceLibrary.Filters
 {
-    public class Filter2 : IFilter<FullShareTransactionModel>
+    public class Filter2 : IFilter<TradingTransactionModel>
     {
 
         private TradingTransactionTypeModel _transactionType;
@@ -46,7 +46,7 @@ namespace DataReferenceLibrary.Filters
             _maxTradeValue = maxTradeValue;
         }
 
-        public bool Filtering(FullShareTransactionModel model) 
+        public bool Filtering(TradingTransactionModel model) 
         {
             return model.TotalValue >= _minTradeValue && model.TotalValue <= _maxTradeValue;
         }

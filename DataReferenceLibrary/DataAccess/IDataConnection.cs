@@ -13,18 +13,15 @@ namespace DataReferenceLibrary.DataAccess
     public interface IDataConnection
     {
 
-        IEnumerable<FullPortfolioModel> PopulatePortfolioModel();
-        IEnumerable<FullShareTransactionModel> spQueryDummyAllInformation2();
-        IEnumerable<TradingTransactionModel> spQueryDummyAllInformation();
+        IEnumerable<zFullPortfolioModel> PopulatePortfolioModel();
 
-        IEnumerable<TradingTransactionModel> spQueryDummyTransactions();
 
         ///////////////////////////////
         /////// DROP DOWN BOXES ///////
         ///////////////////////////////
         List<PortfolioModel> spGETLIST_Portfolios();
 
-        List<TradingTransactionTypeModel> spQueryTransactionTypes();
+        List<TradingTransactionTypeModel> spGETLIST_TransactionTypes();
 
         ///////////////////////////////
         ///////TAB - PRICE QUERY///////

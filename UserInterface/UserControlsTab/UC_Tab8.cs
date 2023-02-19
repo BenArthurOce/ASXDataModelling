@@ -57,10 +57,10 @@ namespace UserInterface.UserControlsTab
             flowLayoutPanel1.Controls.Clear();
 
 
-            IEnumerable<FullPortfolioModel> output2;
+            IEnumerable<zFullPortfolioModel> output2;
             output2 = GlobalConfig.Connection.PopulatePortfolioModel();
 
-            foreach (FullPortfolioModel portfolio in output2)
+            foreach (zFullPortfolioModel portfolio in output2)
             {
                 if (portfolio.Name == cBoxPortfolio.Text)
                 {
@@ -94,13 +94,13 @@ namespace UserInterface.UserControlsTab
                             //_TransDate
                             DateAdjust,
                             //_TransType, 
-                            transaction.TypeId.Name,
+                            transaction.TradingTransactionTypeId.Name,
                             //_TransShareCode
-                            transaction.CompanyId.ASXCode,
+                            transaction.TradingEntityId.ASXCode,
                             //_TransShareName
-                            transaction.CompanyId.Name,
+                            transaction.TradingEntityId.Name,
                             //_TransShareSector
-                            transaction.CompanyId.TradingSectorId.SectorName,
+                            transaction.TradingEntityId.TradingSectorId.SectorName,
                             //_TransQuantity
                             transaction.Quantity.ToString(),
                             //_TransUnitPrice, 

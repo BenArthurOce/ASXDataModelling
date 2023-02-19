@@ -19,24 +19,24 @@ namespace DataReferenceLibrary.DataAccess
 
 
 
-        public IEnumerable<FullPortfolioModel> PopulatePortfolioModel()
+        public IEnumerable<zFullPortfolioModel> PopulatePortfolioModel()
         {
 
-            var transaction_list = new List<FullShareTransactionModel>();
-            var portfolio_list = new List<FullPortfolioModel>();
+            var transaction_list = new List<TradingTransactionModel>();
+            var portfolio_list = new List<zFullPortfolioModel>();
 
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
 
 
-                var output_portfolios = connection.Query<FullPortfolioModel, ConnectorIndividualsPortfolios, IndividualModel, FullShareTransactionModel, TradingTransactionTypeModel, TradingEntityModel, TradingSectorModel, FullPortfolioModel>
+                var output_portfolios = connection.Query<zFullPortfolioModel, ConnectorIndividualsPortfolios, IndividualModel, TradingTransactionModel, TradingTransactionTypeModel, TradingEntityModel, TradingSectorModel, zFullPortfolioModel>
                     ("dbo.spQUERY_PortfoliosIndividualsTransactions",
                     (portfolio, connector, individual, transaction, transtype, company, sector) =>
                     {
 
                         // Moodel the transaction information into one single "part" of data
-                        transaction.TypeId = transtype;
-                        transaction.CompanyId = company;
+                        transaction.TradingTransactionTypeId = transtype;
+                        transaction.TradingEntityId = company;
                         company.TradingSectorId = sector;
 
 
@@ -74,7 +74,7 @@ namespace DataReferenceLibrary.DataAccess
 
 
                         // if there is no list for individuals, instantiate it
-                        port.Transactions = port.Transactions ?? new List<FullShareTransactionModel>();
+                        port.Transactions = port.Transactions ?? new List<TradingTransactionModel>();
 
 
                         //====================================
@@ -109,209 +109,6 @@ namespace DataReferenceLibrary.DataAccess
            
         }
 
-        public IEnumerable<FullShareTransactionModel> spQueryDummyAllInformation2()
-        {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
-            {
-                var output = connection.Query<FullShareTransactionModel, TradingTransactionTypeModel, TradingEntityModel, TradingSectorModel, FullShareTransactionModel>
-                    ("dbo.spQueryDummyTransactions2",
-                    (trans0, type0, company0, sector0) => {
-
-                        trans0.TypeId = type0;
-                        trans0.CompanyId = company0;
-                        company0.TradingSectorId = sector0;
-                        return trans0;
-                    }, splitOn: "Id");
-
-
-                foreach (var p in output)
-                {
-
-
-                    //string resultString = $"FirstName:{o.IndividualId.FirstName} LastName:{o.IndividualId.LastName}";
-                    string resultString = $"Date:{p.Date} UnitPrice:{p.UnitPrice} TotalAmount:{p.TotalValue} Type:{p.TypeId.Name} CompanyName: {p.CompanyId.Name} Sector:{p.CompanyId.TradingSectorId.SectorName}";
-                    Console.WriteLine(resultString);
-
-
-                }
-                return output;
-            }
-        }
-
-
-        public IEnumerable<TradingTransactionModel> spQueryDummyAllInformation()
-        {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
-            {
-
-
-                
-                var output = connection.Query<PortfolioModel, ConnectorIndividualsPortfolios, IndividualModel, TradingTransactionModel, TradingTransactionTypeModel, TradingEntityModel, TradingSectorModel, TradingTransactionModel>
-                    ("dbo.spQueryDummyAllInformation",
-                    (portfolio1, conn1, indiv1, trans1, type1, company1, sector1) => {
-
-                        conn1.IndividualId = indiv1;
-                        //conn1.PortfolioId = portfolio1;
-                        //trans1.PortfolioId = portfolio1;
-                        //trans1.TradingTransactionTypeId = type1;
-                        //trans1.TradingEntityId = company1;
-                        company1.TradingSectorId = sector1;
-                        return trans1;
-                    }, splitOn: "Id");
-
-
-                foreach (var c in output)
-                {
-                    //string resultString = $"FirstName:{c.IndividualId.FirstName} LastName:{c.IndividualId.LastName}";
-                    //Console.WriteLine(resultString);
-                }
-                
-
-
-
-                /*
-                var output2 = connection.Query<NewPortfolioModel, NewConnectorPortfolioIndividualModel, NewIndividualModel, NewShareTransactionModel, NewShareTransactionTypeModel, NewTradingCompanyModel, NewTradingSectorModel, NewShareTransactionModel>
-                    ("dbo.spQueryDummyAllInformation",
-                    (portfolio, conn, indiv, trans, type, company, sector) => {
-
-                        conn.IndividualId = indiv;
-                        conn.PortfolioId = portfolio;
-                        trans.PortfolioId = portfolio;
-                        trans.TypeId = type;
-                        trans.CompanyId = company;
-                        company.TradingSectorId = sector;
-                        return trans;
-                    }, splitOn: "Id");
-
-
-                foreach (var o in output2)
-                {
-                    if(o.PortfolioId.Name == "Bens Stock Portfolio")
-                    {
-                        //string resultString = $"FirstName:{o.IndividualId.FirstName} LastName:{o.IndividualId.LastName}";
-
-                        string resultString = $"Date:{o.Date} Type:{o.TypeId.Name} Cost:{o.TradeValue}";
-                        Console.WriteLine(resultString);
-                    }
-
-                }
-                */
-
-                /*
-                var output3 = connection.Query<NewPortfolioModel, NewConnectorPortfolioIndividualModel, NewIndividualModel, NewShareTransactionModel, NewShareTransactionTypeModel, NewTradingCompanyModel, NewTradingSectorModel, NewPortfolioModel>
-                    ("dbo.spQueryDummyAllInformation",
-                    (portfolio, conn, indiv, trans, type, company, sector) => {
-
-
-                        //Match the 1 to 1 Fields
-                        trans.TypeId = type;
-                        trans.CompanyId = company;
-                        company.TradingSectorId = sector;
-                        //company.TradingIssuer = issuer
-
-                        conn.IndividualId = indiv;
-                        conn.PortfolioId = portfolio;
-                        //trans.PortfolioId = portfolio;
-                        
-                        // Add transaction to portfolio
-                        if (portfolio.ShareTransactions == null)
-                            portfolio.ShareTransactions = new List<NewShareTransactionModel>();
-
-                        portfolio.ShareTransactions.Add(trans);
-
-                        // Add Portfolio Owner to portfolio
-                        if (portfolio.Individuals == null)
-                            portfolio.Individuals = new List<NewIndividualModel>();
-
-                        portfolio.Individuals.Add(indiv);
-
-                        return portfolio;
-
-                    }, splitOn: "Id");
-
-                
-
-
-
-
-
-                //portfolio.ShareTransactions.Add(trans);
-                foreach (var o in output3)
-                {
-                    //if (o.PortfolioId.Name == "Bens Stock Portfolio")
-                   // {
-                        //string resultString = $"FirstName:{o.IndividualId.FirstName} LastName:{o.IndividualId.LastName}";
-
-                        //string resultString = $"Date:{o.Date} Type:{o.TypeId.Name} Cost:{o.TradeValue}";
-                        //string resultString = $"{}";
-                        //Console.WriteLine(resultString);
-                   // }
-
-                }
-
-                */
-
-
-
-
-                var output4 = connection.Query<FullShareTransactionModel, TradingTransactionTypeModel, TradingEntityModel, TradingSectorModel, FullShareTransactionModel>
-                    ("dbo.spQueryDummyTransactions2",
-                    (trans0, type0, company0, sector0) => {
-
-                        trans0.TypeId = type0;
-                        trans0.CompanyId = company0;
-                        company0.TradingSectorId = sector0;
-                        return trans0;
-                    }, splitOn: "Id");
-
-
-                foreach (var p in output4)
-                {
-
-
-                    //string resultString = $"FirstName:{o.IndividualId.FirstName} LastName:{o.IndividualId.LastName}";
-                    string resultString = $"Date:{p.Date} UnitPrice:{p.UnitPrice} TotalAmount:{p.TotalValue} Type:{p.TypeId.Name} CompanyName: {p.CompanyId.Name} Sector:{p.CompanyId.TradingSectorId.SectorName}";
-                    Console.WriteLine(resultString);
-
-
-                }
-
-
-
-
-
-                return output;
-            }
-        }
-
-
-
-
-        public IEnumerable<TradingTransactionModel> spQueryDummyTransactions()
-        {
-
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
-            {
-
-                // THIS CODE WORKS. DO NOT DELETE
-                
-                var output2 = connection.Query<TradingTransactionModel, TradingTransactionTypeModel, PortfolioModel, TradingEntityModel, TradingSectorModel, TradingTransactionModel>
-                    ("dbo.spQueryDummyTransactions2", 
-                    (trans, type, portfolio, company, sector) => {  trans.TradingTransactionTypeId = type; 
-                                                                    trans.PortfolioId = portfolio; 
-                                                                    trans.TradingEntityId = company; 
-                                                                    company.TradingSectorId = sector;  
-                                                                    return trans; }, splitOn: "Id");
-                
-                foreach (var t2 in output2)
-                {
-                    //string resultString = $"Date:{t2.Date} UnitPrice:{t2.UnitPrice} TotalAmount:{t2.TotalValue} Type:{t2.TypeId.Name} CompanyName: {t2.CompanyId.Name} Sector:{t2.CompanyId.TradingSectorId.SectorName}";
-                    //Console.WriteLine(resultString);
-                }
-                
-                return output2;
-            }
-        }
 
 
         ///////////////////////////////
@@ -327,7 +124,7 @@ namespace DataReferenceLibrary.DataAccess
             return output;
         }
 
-        public List<TradingTransactionTypeModel> spQueryTransactionTypes()
+        public List<TradingTransactionTypeModel> spGETLIST_TransactionTypes()
         {
             List<TradingTransactionTypeModel> output;
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
