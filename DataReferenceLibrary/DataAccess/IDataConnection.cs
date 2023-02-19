@@ -12,18 +12,19 @@ namespace DataReferenceLibrary.DataAccess
 {
     public interface IDataConnection
     {
+
         IEnumerable<FullPortfolioModel> PopulatePortfolioModel();
         IEnumerable<FullShareTransactionModel> spQueryDummyAllInformation2();
-        IEnumerable<NewShareTransactionModel> spQueryDummyAllInformation();
+        IEnumerable<TradingTransactionModel> spQueryDummyAllInformation();
 
-        IEnumerable<NewShareTransactionModel> spQueryDummyTransactions();
+        IEnumerable<TradingTransactionModel> spQueryDummyTransactions();
 
         ///////////////////////////////
         /////// DROP DOWN BOXES ///////
         ///////////////////////////////
-        List<PortfolioModel> spQueryPortfolios();
+        List<PortfolioModel> spGETLIST_Portfolios();
 
-        List<ShareTransactionTypeModel> spQueryTransactionTypes();
+        List<TradingTransactionTypeModel> spQueryTransactionTypes();
 
         ///////////////////////////////
         ///////TAB - PRICE QUERY///////
@@ -37,7 +38,7 @@ namespace DataReferenceLibrary.DataAccess
         /////////////////////////////////////
         ///////TAB - PORTFILIO ON DAY///////
         ////////////////////////////////////
-        List<spQueryPortfolioItemsForCertainDate> spQueryPortfolioItemsForCertainDate(string InputPortfolioName, int InputStartDate, int InputEndDate);
+        List<spQueryPortfolioItemsForCertainDate> spQUERY_PortfolioValue(string InputPortfolioName, int InputEndDate);
 
 
         ///////////////////////////////////////
@@ -45,7 +46,7 @@ namespace DataReferenceLibrary.DataAccess
         //////////////////////////////////////
         List<spQueryShareTransactionsForPortfolio> spQueryAllShareTransactions(string InputPortfolioName);
 
-        ShareTransactionModel spInsertNewShareTransaction(string PortfolioName, ShareTransactionModel model);
+        TradingTransactionModel spInsertNewShareTransaction(string PortfolioName, TradingTransactionModel model);
 
         ///////////////////////////////////////
         ///////TAB - PORTFOLIO MOVEMENTS///////
@@ -55,13 +56,13 @@ namespace DataReferenceLibrary.DataAccess
         //////////////////////////////////
         ///////TAB - NOTEPAD UPLOAD///////
         //////////////////////////////////
-        List<ASXPriceModel> spINSERT_NotepadFile(DataTable dt);
+        List<ASXEODPriceModel> spINSERT_NotepadFile(DataTable dt);
         DocumentUploadHistoryModel CreateNewDocumentUploadRecord(DocumentUploadHistoryModel model);
 
 
 
 
-        ShareTransactionTypeModel CreateTransactionType(ShareTransactionTypeModel model);
+        TradingTransactionTypeModel CreateTransactionType(TradingTransactionTypeModel model);
     }
 }
 

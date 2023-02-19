@@ -10,13 +10,13 @@ namespace DataReferenceLibrary.Models2
     {
         public Guid Id { get; set; }
 
-        public NewShareTransactionTypeModel TypeId { get; set; }
+        public TradingTransactionTypeModel TypeId { get; set; }
 
-        public NewTradingCompanyModel CompanyId { get; set; }
+        public TradingEntityModel CompanyId { get; set; }
 
         public int SequenceNumber { get; set; }
 
-        public int ContractNote { get; set; }
+        public string ContractNote { get; set; }
 
         public int Date { get; set; }
 

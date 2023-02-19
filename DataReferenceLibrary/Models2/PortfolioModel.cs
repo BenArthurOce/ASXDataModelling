@@ -4,18 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataReferenceLibrary.Models
+namespace DataReferenceLibrary.Models2
 {
     public class PortfolioModel
     {
         public Guid Id { get; set; }
 
+        public int PortfolioCustomerNumber { get; set; }
+
         public string Name { get; set; }
 
-        public bool IsDeleted { get; set; }
+        public bool isDeleted { get; set; }
 
-        public ICollection<ShareTransactionModel> ShareTransactions { get; set; }
+        public List <TradingTransactionModel> ShareTransactions { get; set; }
 
+        public List <IndividualModel> Individuals { get; set; }
 
         public string DropDownBoxDisplay
         {
@@ -25,6 +28,4 @@ namespace DataReferenceLibrary.Models
             }
         }
     }
-
-
 }

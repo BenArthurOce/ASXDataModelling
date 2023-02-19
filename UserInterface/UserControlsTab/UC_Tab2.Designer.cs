@@ -32,8 +32,6 @@
             this.pnlHeaderPortfolioSummary = new System.Windows.Forms.Panel();
             this.lblHeaderPortfolioSummary = new System.Windows.Forms.Label();
             this.dgvPortfolioItems = new System.Windows.Forms.DataGridView();
-            this.tBoxPortfolioName = new System.Windows.Forms.TextBox();
-            this.tBoxPortfolioStartDate = new System.Windows.Forms.TextBox();
             this.tBoxPortfolioEndDate = new System.Windows.Forms.TextBox();
             this.btnPortfolioGenerate = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -47,12 +45,12 @@
             this.pnlInputsCol3 = new System.Windows.Forms.Panel();
             this.lblPortfolioName = new System.Windows.Forms.Label();
             this.pnlInputsCol4 = new System.Windows.Forms.Panel();
-            this.lblStartDate = new System.Windows.Forms.Label();
             this.pnlInputsCol5 = new System.Windows.Forms.Panel();
             this.lblEndDate = new System.Windows.Forms.Label();
             this.pnlInputsCol6 = new System.Windows.Forms.Panel();
             this.pnlInputsCol7 = new System.Windows.Forms.Panel();
             this.pnlInputsCol8 = new System.Windows.Forms.Panel();
+            this.cBoxPortfolio = new System.Windows.Forms.ComboBox();
             this.pnlHeaderPortfolioSummary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPortfolioItems)).BeginInit();
             this.panel1.SuspendLayout();
@@ -60,7 +58,6 @@
             this.pnlOutputsCol2.SuspendLayout();
             this.tpnlInputsPortfolioSummary.SuspendLayout();
             this.pnlInputsCol3.SuspendLayout();
-            this.pnlInputsCol4.SuspendLayout();
             this.pnlInputsCol5.SuspendLayout();
             this.pnlInputsCol6.SuspendLayout();
             this.SuspendLayout();
@@ -88,6 +85,7 @@
             // 
             // dgvPortfolioItems
             // 
+            this.dgvPortfolioItems.AllowUserToAddRows = false;
             this.dgvPortfolioItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -103,24 +101,6 @@
             this.dgvPortfolioItems.Name = "dgvPortfolioItems";
             this.dgvPortfolioItems.Size = new System.Drawing.Size(867, 391);
             this.dgvPortfolioItems.TabIndex = 7;
-            // 
-            // tBoxPortfolioName
-            // 
-            this.tBoxPortfolioName.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tBoxPortfolioName.Location = new System.Drawing.Point(0, 30);
-            this.tBoxPortfolioName.Name = "tBoxPortfolioName";
-            this.tBoxPortfolioName.Size = new System.Drawing.Size(108, 20);
-            this.tBoxPortfolioName.TabIndex = 8;
-            this.tBoxPortfolioName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tBoxPortfolioStartDate
-            // 
-            this.tBoxPortfolioStartDate.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tBoxPortfolioStartDate.Location = new System.Drawing.Point(0, 30);
-            this.tBoxPortfolioStartDate.Name = "tBoxPortfolioStartDate";
-            this.tBoxPortfolioStartDate.Size = new System.Drawing.Size(108, 20);
-            this.tBoxPortfolioStartDate.TabIndex = 9;
-            this.tBoxPortfolioStartDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tBoxPortfolioEndDate
             // 
@@ -224,6 +204,7 @@
             this.tpnlInputsPortfolioSummary.Name = "tpnlInputsPortfolioSummary";
             this.tpnlInputsPortfolioSummary.RowCount = 1;
             this.tpnlInputsPortfolioSummary.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tpnlInputsPortfolioSummary.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tpnlInputsPortfolioSummary.Size = new System.Drawing.Size(1030, 70);
             this.tpnlInputsPortfolioSummary.TabIndex = 2;
             // 
@@ -247,8 +228,8 @@
             // 
             // pnlInputsCol3
             // 
+            this.pnlInputsCol3.Controls.Add(this.cBoxPortfolio);
             this.pnlInputsCol3.Controls.Add(this.lblPortfolioName);
-            this.pnlInputsCol3.Controls.Add(this.tBoxPortfolioName);
             this.pnlInputsCol3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlInputsCol3.Location = new System.Drawing.Point(266, 10);
             this.pnlInputsCol3.Margin = new System.Windows.Forms.Padding(10);
@@ -268,24 +249,12 @@
             // 
             // pnlInputsCol4
             // 
-            this.pnlInputsCol4.Controls.Add(this.lblStartDate);
-            this.pnlInputsCol4.Controls.Add(this.tBoxPortfolioStartDate);
             this.pnlInputsCol4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlInputsCol4.Location = new System.Drawing.Point(394, 10);
             this.pnlInputsCol4.Margin = new System.Windows.Forms.Padding(10);
             this.pnlInputsCol4.Name = "pnlInputsCol4";
             this.pnlInputsCol4.Size = new System.Drawing.Size(108, 50);
             this.pnlInputsCol4.TabIndex = 4;
-            // 
-            // lblStartDate
-            // 
-            this.lblStartDate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblStartDate.Location = new System.Drawing.Point(0, 0);
-            this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(108, 23);
-            this.lblStartDate.TabIndex = 0;
-            this.lblStartDate.Text = "Start Date?";
-            this.lblStartDate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // pnlInputsCol5
             // 
@@ -336,6 +305,15 @@
             this.pnlInputsCol8.Size = new System.Drawing.Size(114, 50);
             this.pnlInputsCol8.TabIndex = 8;
             // 
+            // cBoxPortfolio
+            // 
+            this.cBoxPortfolio.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cBoxPortfolio.FormattingEnabled = true;
+            this.cBoxPortfolio.Location = new System.Drawing.Point(0, 29);
+            this.cBoxPortfolio.Name = "cBoxPortfolio";
+            this.cBoxPortfolio.Size = new System.Drawing.Size(108, 21);
+            this.cBoxPortfolio.TabIndex = 1;
+            // 
             // UC_Tab2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,9 +330,6 @@
             this.pnlOutputsCol2.ResumeLayout(false);
             this.tpnlInputsPortfolioSummary.ResumeLayout(false);
             this.pnlInputsCol3.ResumeLayout(false);
-            this.pnlInputsCol3.PerformLayout();
-            this.pnlInputsCol4.ResumeLayout(false);
-            this.pnlInputsCol4.PerformLayout();
             this.pnlInputsCol5.ResumeLayout(false);
             this.pnlInputsCol5.PerformLayout();
             this.pnlInputsCol6.ResumeLayout(false);
@@ -367,8 +342,6 @@
         private System.Windows.Forms.Panel pnlHeaderPortfolioSummary;
         private System.Windows.Forms.Label lblHeaderPortfolioSummary;
         private System.Windows.Forms.DataGridView dgvPortfolioItems;
-        private System.Windows.Forms.TextBox tBoxPortfolioName;
-        private System.Windows.Forms.TextBox tBoxPortfolioStartDate;
         private System.Windows.Forms.TextBox tBoxPortfolioEndDate;
         private System.Windows.Forms.Button btnPortfolioGenerate;
         private System.Windows.Forms.Panel panel1;
@@ -382,11 +355,11 @@
         private System.Windows.Forms.Panel pnlInputsCol7;
         private System.Windows.Forms.Panel pnlInputsCol8;
         private System.Windows.Forms.Label lblPortfolioName;
-        private System.Windows.Forms.Label lblStartDate;
         private System.Windows.Forms.Label lblEndDate;
         private System.Windows.Forms.TableLayoutPanel tpnlOutputsPortfolioSummary;
         private System.Windows.Forms.Panel pnlOutputsCol1;
         private System.Windows.Forms.Panel pnlOutputsCol2;
         private System.Windows.Forms.Panel pnlOutputsCol3;
+        private System.Windows.Forms.ComboBox cBoxPortfolio;
     }
 }

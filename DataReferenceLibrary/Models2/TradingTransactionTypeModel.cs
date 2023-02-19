@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace DataReferenceLibrary.Models2
 {
-    public class NewShareTransactionTypeModel
+    public class TradingTransactionTypeModel
     {
-
-        //public NewShareTransactionTypeModel Id { get; set; }
 
         public Guid Id { get; set; }
 
@@ -17,5 +15,16 @@ namespace DataReferenceLibrary.Models2
 
         public bool IsDeleted { get; set; }
 
+        public bool isIncrease { get; set; }
+
+        public bool isDecrease { get; set; }
+
+        public string DropDownBoxDisplay
+        {
+            get
+            {
+                return $"{Name}";
+            }
+        }
     }
 }

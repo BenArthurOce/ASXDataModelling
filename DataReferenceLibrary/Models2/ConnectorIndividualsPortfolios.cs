@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace DataReferenceLibrary.Models2
 {
-    public class NewConnectorPortfolioIndividualModel
+    public class ConnectorIndividualsPortfolios
     {
-        //public Guid Id { get; set; }
 
-        public NewIndividualModel IndividualId { get; set; }
+        public IndividualModel IndividualId { get; set; }
 
         public FullPortfolioModel PortfolioId { get; set; }
     }

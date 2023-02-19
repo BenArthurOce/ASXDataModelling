@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataReferenceLibrary.Models;
+using DataReferenceLibrary.Models2;
 
 namespace UserInterface
 {
@@ -14,6 +15,6 @@ namespace UserInterface
     // We need to know this outside different form scopes. "Loose Coupling"
     public interface ICreateTransactionRequester
     {
-        void CreateTransactionComplete(ShareTransactionModel model);
+        void CreateTransactionComplete(TradingTransactionModel model);
     }
 }

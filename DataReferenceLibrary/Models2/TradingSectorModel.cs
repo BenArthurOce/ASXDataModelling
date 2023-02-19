@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataReferenceLibrary.Models
+namespace DataReferenceLibrary.Models2
 {
     public class TradingSectorModel
     {
         public Guid Id { get; set; }
-        public string Name { get; set; }
+
+        public string SectorName { get; set; }
     }
 }

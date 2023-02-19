@@ -60,25 +60,23 @@
     <Compile Include="DataAccess\SqlConnector.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Filters\Filter.cs" />
+    <Compile Include="Filters\Filter2.cs" />
     <Compile Include="Filters\FilterExample.cs" />
+    <Compile Include="Filters\IFilter.cs" />
     <Compile Include="GlobalConfig.cs" />
     <Compile Include="DataAccess\IDataConnection.cs" />
     <Compile Include="Models2\FullPortfolioModel.cs" />
     <Compile Include="Models2\FullShareTransactionModel.cs" />
-    <Compile Include="Models2\NewConnectorPortfolioIndividualModel.cs" />
-    <Compile Include="Models2\NewIndividualModel.cs" />
-    <Compile Include="Models2\NewPortfolioModel.cs" />
-    <Compile Include="Models2\NewTradingCompanyModel.cs" />
-    <Compile Include="Models2\NewTradingSectorModel.cs" />
-    <Compile Include="Models2\NewShareTransactionModel.cs" />
-    <Compile Include="Models2\NewShareTransactionTypeModel.cs" />
-    <Compile Include="Models\ASXPriceModel.cs" />
-    <Compile Include="Models\DocumentUploadHistoryModel.cs" />
-    <Compile Include="Models\PortfolioModel.cs" />
-    <Compile Include="Models\ShareTransactionModel.cs" />
-    <Compile Include="Models\ShareTransactionTypeModel.cs" />
-    <Compile Include="Models\TradingCompanyModel.cs" />
-    <Compile Include="Models\TradingSectorModel.cs" />
+    <Compile Include="Models2\ConnectorIndividualsPortfolios.cs" />
+    <Compile Include="Models2\DatesModel.cs" />
+    <Compile Include="Models2\IndividualModel.cs" />
+    <Compile Include="Models2\PortfolioModel.cs" />
+    <Compile Include="Models2\TradingEntityModel.cs" />
+    <Compile Include="Models2\TradingSectorModel.cs" />
+    <Compile Include="Models2\TradingTransactionModel.cs" />
+    <Compile Include="Models2\TradingTransactionTypeModel.cs" />
+    <Compile Include="Models2\ASXEODPriceModel.cs" />
+    <Compile Include="Models2\DocumentUploadHistoryModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StoredProcs\spQueryShareTransactionsForPortfolio.cs" />
     <Compile Include="StoredProcs\spQueryASXSharePricesForOneYear.cs" />
@@ -87,6 +85,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

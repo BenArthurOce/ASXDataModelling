@@ -41,6 +41,7 @@ namespace UserInterface
             this.radioButtonTab2 = new UserInterface.FormAssets.RadioButtonTab();
             this.radioButtonTab1 = new UserInterface.FormAssets.RadioButtonTab();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.radioButtonTab8 = new UserInterface.FormAssets.RadioButtonTab();
             this.panel_Header.SuspendLayout();
             this.panel_tab1.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +70,7 @@ namespace UserInterface
             // panel_tab1
             // 
             this.panel_tab1.BackColor = System.Drawing.Color.White;
+            this.panel_tab1.Controls.Add(this.radioButtonTab8);
             this.panel_tab1.Controls.Add(this.radioButtonTab7);
             this.panel_tab1.Controls.Add(this.radioButtonTab6);
             this.panel_tab1.Controls.Add(this.radioButtonTab5);
@@ -286,6 +288,34 @@ namespace UserInterface
             this.panelContainer.Size = new System.Drawing.Size(1050, 640);
             this.panelContainer.TabIndex = 2;
             // 
+            // radioButtonTab8
+            // 
+            this.radioButtonTab8.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonTab8.AutoSize = true;
+            this.radioButtonTab8.ColorMouseHovorOff = System.Drawing.Color.LightBlue;
+            this.radioButtonTab8.ColorMouseHovorOn = System.Drawing.Color.LightGray;
+            this.radioButtonTab8.ColourMouseClick = System.Drawing.Color.SteelBlue;
+            this.radioButtonTab8.DefaultBoarderColor = System.Drawing.Color.Red;
+            this.radioButtonTab8.DefaultBoarderWidth = 90;
+            this.radioButtonTab8.DefaultMinHeight = 70;
+            this.radioButtonTab8.DefaultMinWidth = 90;
+            this.radioButtonTab8.DisplayText = "Tab 8 (Blank for Testing)";
+            this.radioButtonTab8.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.radioButtonTab8.FlatAppearance.BorderSize = 90;
+            this.radioButtonTab8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.radioButtonTab8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.radioButtonTab8.Location = new System.Drawing.Point(3, 538);
+            this.radioButtonTab8.MinimumSize = new System.Drawing.Size(90, 70);
+            this.radioButtonTab8.Name = "radioButtonTab8";
+            this.radioButtonTab8.Size = new System.Drawing.Size(96, 70);
+            this.radioButtonTab8.TabIndex = 7;
+            this.radioButtonTab8.TabStop = true;
+            this.radioButtonTab8.Text = "radioButtonTab8";
+            this.radioButtonTab8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButtonTab8.TextForeColor = System.Drawing.Color.Black;
+            this.radioButtonTab8.UseVisualStyleBackColor = true;
+            this.radioButtonTab8.MouseClick += new System.Windows.Forms.MouseEventHandler(this.radioButtonTab8_MouseClick);
+            // 
             // ShareDashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,5 +348,6 @@ namespace UserInterface
         private FormAssets.RadioButtonTab radioButtonTab1;
         private FormAssets.RadioButtonTab radioButtonTab6;
         private FormAssets.RadioButtonTab radioButtonTab7;
+        private FormAssets.RadioButtonTab radioButtonTab8;
     }
 }

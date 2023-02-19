@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataReferenceLibrary.Models
 {
-    public class ASXPriceModel
+    public class ASXEODPriceModel
     {
 
 
@@ -17,20 +17,19 @@ namespace DataReferenceLibrary.Models
         /// The unique identifier for the ASX day summary
         /// </summary>
         public Guid Id { get; set; }
-        public long RecordNum { get; set; }
         public string ASXCode { get; set; }
-        public long? ASXDate { get; set; }
-        public double? PriceOpen { get; set; }
-        public double? PriceHigh { get; set; }
-        public double? PriceLow { get; set; }
-        public double? PriceClose { get; set; }
-        public long? VolumeTraded { get; set; }
+        public int Date { get; set; }
+        public decimal PriceOpen { get; set; }
+        public decimal PriceHigh { get; set; }
+        public decimal PriceLow { get; set; }
+        public decimal PriceClose { get; set; }
+        public int VolumeTraded { get; set; }
 
         public string FullInfo
         {
             get
             {
-                return $"{Id}, {RecordNum}, {ASXCode}, {ASXDate}, {PriceOpen} ";
+                return $"{Id}, {ASXCode}, {Date}, {PriceOpen} ";
             }
         }
 

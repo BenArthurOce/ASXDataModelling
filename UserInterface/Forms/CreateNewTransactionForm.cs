@@ -1,6 +1,7 @@
 ﻿using DataReferenceLibrary;
 using DataReferenceLibrary.DataAccess;
 using DataReferenceLibrary.Models;
+using DataReferenceLibrary.Models2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,8 +17,8 @@ namespace UserInterface.Forms
 {
     public partial class CreateNewTransactionForm : Form
     {
-        private List<PortfolioModel> availablePortfolios = GlobalConfig.Connection.spQueryPortfolios();
-        private List<ShareTransactionTypeModel> availableTransactionTypes = GlobalConfig.Connection.spQueryTransactionTypes();
+        private List<PortfolioModel> availablePortfolios = GlobalConfig.Connection.spGETLIST_Portfolios();
+        private List<TradingTransactionTypeModel> availableTransactionTypes = GlobalConfig.Connection.spQueryTransactionTypes();
 
         ICreateTransactionRequester callingForm;
 
@@ -64,7 +65,8 @@ namespace UserInterface.Forms
             {
                 //callingForm.CreateTransactionComplete(model);
                 string portfolioName = cBoxPortfolio.Text;
-                ShareTransactionModel newTrans = new ShareTransactionModel(
+
+                TradingTransactionModel newTrans = new TradingTransactionModel(
                     tBoxContractNote.Text,
                     tBoxASXCode.Text,
                     "20201010",
@@ -76,12 +78,10 @@ namespace UserInterface.Forms
                     tBoxTotalValue.Text,
                     "false");
 
-
-
-
+                
                 GlobalConfig.Connection.spInsertNewShareTransaction(portfolioName, newTrans);
 
-                //callingform.CreateTransactionComplete();
+                callingForm.CreateTransactionComplete(newTrans);
 
                 this.Close();
 

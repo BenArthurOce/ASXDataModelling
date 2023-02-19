@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataReferenceLibrary.StoredProcs;
+using DataReferenceLibrary.Models;
+using DataReferenceLibrary.Models2;
 
 namespace UserInterface.UserControlsTab
 {
@@ -27,24 +29,29 @@ namespace UserInterface.UserControlsTab
                 return _instance;
             }
         }
-        //TODO - DropDown box for the portfilio
-        //TODO - Clear out the date
+        //TODO - Introduce a date time picker and create code to convert to YYYYMMDD int
         //TODO - Format Cells based on profit/loss
+        //TODO - Introduce a new tab that can query multiple prices at once
+
+        private List<PortfolioModel> availablePortfolios = GlobalConfig.Connection.spGETLIST_Portfolios();
+
         public UC_Tab2()
         {
             InitializeComponent();
-            tBoxPortfolioName.Text = "Dummy Portfolio 3";
-            tBoxPortfolioStartDate.Text = "20200101";
-            tBoxPortfolioEndDate.Text = "20230101";
+            WireUpLists();
+        }
+        private void WireUpLists()
+        {
+            cBoxPortfolio.DataSource = availablePortfolios;
+            cBoxPortfolio.DisplayMember = "DropDownBoxDisplay";
         }
 
-        private void btnPortfolioGenerate_Click(object sender, EventArgs e)
+            private void btnPortfolioGenerate_Click(object sender, EventArgs e)
         {
-            string InputPortfolioName = tBoxPortfolioName.Text;
-            int InputStartDate = Convert.ToInt32(tBoxPortfolioStartDate.Text);
+            string InputPortfolioName = cBoxPortfolio.Text;
             int InputEndDate = Convert.ToInt32(tBoxPortfolioEndDate.Text);
             List<spQueryPortfolioItemsForCertainDate> output;
-            output = GlobalConfig.Connection.spQueryPortfolioItemsForCertainDate(InputPortfolioName, InputStartDate, InputEndDate);
+            output = GlobalConfig.Connection.spQUERY_PortfolioValue(InputPortfolioName, InputEndDate);
             PopulatePortfolioGrid(output);          
         }
 

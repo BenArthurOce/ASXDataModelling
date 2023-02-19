@@ -97,6 +97,12 @@
     <Compile Include="ShareDashboardForm.Designer.cs">
       <DependentUpon>ShareDashboardForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlsTab\UC_Tab8.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsTab\UC_Tab8.Designer.cs">
+      <DependentUpon>UC_Tab8.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlsTab\UC_Tab7.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </Compile>
     <EmbeddedResource Include="ShareDashboardForm.resx">
       <DependentUpon>ShareDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsTab\UC_Tab8.resx">
+      <DependentUpon>UC_Tab8.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlsTab\UC_Tab7.resx">
       <DependentUpon>UC_Tab7.cs</DependentUpon>

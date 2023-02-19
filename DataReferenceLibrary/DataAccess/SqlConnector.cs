@@ -28,34 +28,9 @@ namespace DataReferenceLibrary.DataAccess
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
 
-                /*
-                var output_portfolios = connection.Query<FullPortfolioModel, NewConnectorPortfolioIndividualModel, NewIndividualModel, FullPortfolioModel >
-                    ("dbo.spQueryDummyPortfolioInformation2",
-                    (portfolio, connector, individual) =>
-                    {
 
-                        // get from lookup (if any)
-                        var port = portfolio_list.FirstOrDefault(s => s.Id == portfolio.Id);
-
-                        // if its not there, add
-                        if (port == null)
-                        {
-                            portfolio_list.Add(portfolio);
-                            port = portfolio;
-                        }
-
-                        // if there is no list for individuals, instantiate it
-                        port.Individuals = port.Individuals ?? new List<NewIndividualModel>();
-
-                        // add the individual from this row
-                        port.Individuals.Add(individual);
-                        return null;
-                    }, splitOn: "Id");
-                */
-
-
-                var output_portfolios = connection.Query<FullPortfolioModel, NewConnectorPortfolioIndividualModel, NewIndividualModel, FullShareTransactionModel, NewShareTransactionTypeModel, NewTradingCompanyModel, NewTradingSectorModel, FullPortfolioModel>
-                    ("dbo.spQueryDummyPortfolioInformation",
+                var output_portfolios = connection.Query<FullPortfolioModel, ConnectorIndividualsPortfolios, IndividualModel, FullShareTransactionModel, TradingTransactionTypeModel, TradingEntityModel, TradingSectorModel, FullPortfolioModel>
+                    ("dbo.spQUERY_PortfoliosIndividualsTransactions",
                     (portfolio, connector, individual, transaction, transtype, company, sector) =>
                     {
 
@@ -77,7 +52,10 @@ namespace DataReferenceLibrary.DataAccess
                         }
 
                         // if there is no list for individuals, instantiate it
-                        port.Individuals = port.Individuals ?? new List<NewIndividualModel>();
+                        port.Individuals = port.Individuals ?? new List<IndividualModel>();
+
+
+
 
                         //====================================
                         // get from lookup (if any)
@@ -91,8 +69,23 @@ namespace DataReferenceLibrary.DataAccess
                         }
 
                         // Add the transaction for every line (no checks need to be made for duplicates like Portfolios or individuals)
+                        //port.Transactions = port.Transactions ?? new List<FullShareTransactionModel>();
+                        //port.Transactions.Add(transaction);
+
+
+                        // if there is no list for individuals, instantiate it
                         port.Transactions = port.Transactions ?? new List<FullShareTransactionModel>();
-                        port.Transactions.Add(transaction);
+
+
+                        //====================================
+                        // get from lookup (if any)
+                        var trans = port.Transactions.FirstOrDefault(s => s.Id == transaction.Id);
+                        if (trans == null)
+                        {
+                            port.Transactions.Add(transaction);
+                            trans = transaction;
+                        }
+
 
                         return null;
                     }, splitOn: "Id");
@@ -111,7 +104,7 @@ namespace DataReferenceLibrary.DataAccess
                 // Each Portfolio has 13 or 26 individuals
 
 
-                return output_portfolios;
+                return portfolio_list;
             }
            
         }
@@ -120,7 +113,7 @@ namespace DataReferenceLibrary.DataAccess
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
-                var output = connection.Query<FullShareTransactionModel, NewShareTransactionTypeModel, NewTradingCompanyModel, NewTradingSectorModel, FullShareTransactionModel>
+                var output = connection.Query<FullShareTransactionModel, TradingTransactionTypeModel, TradingEntityModel, TradingSectorModel, FullShareTransactionModel>
                     ("dbo.spQueryDummyTransactions2",
                     (trans0, type0, company0, sector0) => {
 
@@ -146,22 +139,22 @@ namespace DataReferenceLibrary.DataAccess
         }
 
 
-        public IEnumerable<NewShareTransactionModel> spQueryDummyAllInformation()
+        public IEnumerable<TradingTransactionModel> spQueryDummyAllInformation()
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
 
 
                 
-                var output = connection.Query<NewPortfolioModel, NewConnectorPortfolioIndividualModel, NewIndividualModel, NewShareTransactionModel, NewShareTransactionTypeModel, NewTradingCompanyModel, NewTradingSectorModel, NewShareTransactionModel>
+                var output = connection.Query<PortfolioModel, ConnectorIndividualsPortfolios, IndividualModel, TradingTransactionModel, TradingTransactionTypeModel, TradingEntityModel, TradingSectorModel, TradingTransactionModel>
                     ("dbo.spQueryDummyAllInformation",
                     (portfolio1, conn1, indiv1, trans1, type1, company1, sector1) => {
 
                         conn1.IndividualId = indiv1;
                         //conn1.PortfolioId = portfolio1;
                         //trans1.PortfolioId = portfolio1;
-                        trans1.TypeId = type1;
-                        trans1.CompanyId = company1;
+                        //trans1.TradingTransactionTypeId = type1;
+                        //trans1.TradingEntityId = company1;
                         company1.TradingSectorId = sector1;
                         return trans1;
                     }, splitOn: "Id");
@@ -261,7 +254,7 @@ namespace DataReferenceLibrary.DataAccess
 
 
 
-                var output4 = connection.Query<FullShareTransactionModel, NewShareTransactionTypeModel, NewTradingCompanyModel, NewTradingSectorModel, FullShareTransactionModel>
+                var output4 = connection.Query<FullShareTransactionModel, TradingTransactionTypeModel, TradingEntityModel, TradingSectorModel, FullShareTransactionModel>
                     ("dbo.spQueryDummyTransactions2",
                     (trans0, type0, company0, sector0) => {
 
@@ -294,7 +287,7 @@ namespace DataReferenceLibrary.DataAccess
 
 
 
-        public IEnumerable<NewShareTransactionModel> spQueryDummyTransactions()
+        public IEnumerable<TradingTransactionModel> spQueryDummyTransactions()
         {
 
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
@@ -302,18 +295,18 @@ namespace DataReferenceLibrary.DataAccess
 
                 // THIS CODE WORKS. DO NOT DELETE
                 
-                var output2 = connection.Query<NewShareTransactionModel, NewShareTransactionTypeModel, NewPortfolioModel, NewTradingCompanyModel, NewTradingSectorModel, NewShareTransactionModel>
+                var output2 = connection.Query<TradingTransactionModel, TradingTransactionTypeModel, PortfolioModel, TradingEntityModel, TradingSectorModel, TradingTransactionModel>
                     ("dbo.spQueryDummyTransactions2", 
-                    (trans, type, portfolio, company, sector) => {  trans.TypeId = type; 
+                    (trans, type, portfolio, company, sector) => {  trans.TradingTransactionTypeId = type; 
                                                                     trans.PortfolioId = portfolio; 
-                                                                    trans.CompanyId = company; 
+                                                                    trans.TradingEntityId = company; 
                                                                     company.TradingSectorId = sector;  
                                                                     return trans; }, splitOn: "Id");
                 
                 foreach (var t2 in output2)
                 {
-                    string resultString = $"Date:{t2.Date} UnitPrice:{t2.UnitPrice} TotalAmount:{t2.TotalValue} Type:{t2.TypeId.Name} CompanyName: {t2.CompanyId.Name} Sector:{t2.CompanyId.TradingSectorId.SectorName}";
-                    Console.WriteLine(resultString);
+                    //string resultString = $"Date:{t2.Date} UnitPrice:{t2.UnitPrice} TotalAmount:{t2.TotalValue} Type:{t2.TypeId.Name} CompanyName: {t2.CompanyId.Name} Sector:{t2.CompanyId.TradingSectorId.SectorName}";
+                    //Console.WriteLine(resultString);
                 }
                 
                 return output2;
@@ -324,22 +317,22 @@ namespace DataReferenceLibrary.DataAccess
         ///////////////////////////////
         /////// DROP DOWN BOXES ///////
         ///////////////////////////////
-        public List<PortfolioModel> spQueryPortfolios()
+        public List<PortfolioModel> spGETLIST_Portfolios()
         {
             List<PortfolioModel> output;
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
-                output = connection.Query<PortfolioModel>("dbo.spQueryPortfolios").ToList();
+                output = connection.Query<PortfolioModel>("dbo.spGETLIST_Portfolios").ToList();
             }
             return output;
         }
 
-        public List<ShareTransactionTypeModel> spQueryTransactionTypes()
+        public List<TradingTransactionTypeModel> spQueryTransactionTypes()
         {
-            List<ShareTransactionTypeModel> output;
+            List<TradingTransactionTypeModel> output;
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
-                output = connection.Query<ShareTransactionTypeModel>("dbo.spQueryTransactionTypes").ToList();
+                output = connection.Query<TradingTransactionTypeModel>("dbo.spGETLIST_TransactionTypes").ToList();
             }
             return output;
         }
@@ -393,12 +386,12 @@ namespace DataReferenceLibrary.DataAccess
         ///////TAB - PORTFILIO ON DAY///////
         ////////////////////////////////////
 
-        public List<spQueryPortfolioItemsForCertainDate> spQueryPortfolioItemsForCertainDate(string InputPortfolioName, int InputStartDate, int InputEndDate)
+        public List<spQueryPortfolioItemsForCertainDate> spQUERY_PortfolioValue(string InputPortfolioName, int InputEndDate)
         {
             List<spQueryPortfolioItemsForCertainDate> output;
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
-                output = connection.Query<spQueryPortfolioItemsForCertainDate>("dbo.spQueryPortfolioItemsForCertainDate @in_PortfolioName, @in_StartDate, @in_EndDate", new { in_PortfolioName = InputPortfolioName, in_StartDate = InputStartDate, in_EndDate = InputEndDate }).ToList();
+                output = connection.Query<spQueryPortfolioItemsForCertainDate>("dbo.spQUERY_PortfolioValue @in_PortfolioName, @in_EndDate", new { in_PortfolioName = InputPortfolioName, in_EndDate = InputEndDate }).ToList();
             }
             return output;
         }
@@ -417,16 +410,16 @@ namespace DataReferenceLibrary.DataAccess
             return output;
         }
 
-        public ShareTransactionModel spInsertNewShareTransaction(string PortfolioName, ShareTransactionModel model)
+        public TradingTransactionModel spInsertNewShareTransaction(string PortfolioName, TradingTransactionModel model)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 var p = new DynamicParameters();
                 p.Add("@in_PortfolioOwner", PortfolioName);
                 p.Add("@in_ContractNote", model.ContractNote);
-                p.Add("@in_ASXCode", model.ASXCode);
-                p.Add("@in_Date", model.Date);
-                p.Add("@in_Type", model.Type);
+               // p.Add("@in_ASXCode", model.ASXCode);
+               // p.Add("@in_Date", model.Date);
+                //p.Add("@in_Type", model.Type);
                 p.Add("@in_Quantity", model.Quantity);
                 p.Add("@in_UnitPrice", model.UnitPrice);
                 p.Add("@in_TradeValue", model.TradeValue);
@@ -448,7 +441,7 @@ namespace DataReferenceLibrary.DataAccess
         ///////TAB - NOTEPAD UPLOAD///////
         //////////////////////////////////
 
-        public List<ASXPriceModel> spINSERT_NotepadFile(DataTable dt)
+        public List<ASXEODPriceModel> spINSERT_NotepadFile(DataTable dt)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
@@ -477,7 +470,7 @@ namespace DataReferenceLibrary.DataAccess
         }
 
 
-        public ShareTransactionTypeModel CreateTransactionType(ShareTransactionTypeModel model)
+        public TradingTransactionTypeModel CreateTransactionType(TradingTransactionTypeModel model)
         {
             model.Id = Guid.NewGuid();
 

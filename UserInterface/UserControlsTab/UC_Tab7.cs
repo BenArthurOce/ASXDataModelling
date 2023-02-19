@@ -13,12 +13,13 @@ using System.Windows.Forms;
 using DataReferenceLibrary.StoredProcs;
 using System.Globalization;
 using UserInterface.FormAssets;
+using DataReferenceLibrary.Models2;
 
 namespace UserInterface.UserControlsTab
 {
     public partial class UC_Tab7 : UserControl
     {
-        private List<PortfolioModel> availablePortfolios = GlobalConfig.Connection.spQueryPortfolios();
+        private List<PortfolioModel> availablePortfolios = GlobalConfig.Connection.spGETLIST_Portfolios();
 
         private static UC_Tab7 _instance;
 

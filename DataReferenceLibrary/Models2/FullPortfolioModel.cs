@@ -10,13 +10,13 @@ namespace DataReferenceLibrary.Models2
     {
         public Guid Id { get; set; }
 
-        public int PortfolioNumber { get; set; }
+        public int PortfolioCustomerNumber { get; set; }
 
         public string Name { get; set; }
 
         public bool isDeleted { get; set; }
 
-        public List<NewIndividualModel> Individuals { get; set; }
+        public List<IndividualModel> Individuals { get; set; }
 
         public List<FullShareTransactionModel> Transactions { get; set; }
     }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataReferenceLibrary.Models
+namespace DataReferenceLibrary.Models2
 {
-    public class ShareTransactionModel
+    public class TradingTransactionModel 
     {
         public Guid Id { get; set; }
 
@@ -14,11 +14,13 @@ namespace DataReferenceLibrary.Models
 
         public int ContractNote { get; set; }
 
-        public string ASXCode { get; set; }
+        public PortfolioModel PortfolioId { get; set; }
+
+        public TradingEntityModel TradingEntityId { get; set; }
 
         public int Date { get; set; }
 
-        public string Type { get; set; }
+        public TradingTransactionTypeModel TradingTransactionTypeId { get; set; }
 
         public int Quantity { get; set; }
 
@@ -30,54 +32,48 @@ namespace DataReferenceLibrary.Models
 
         public decimal TotalValue { get; set; }
 
-        public bool IsIncrease { get; set; }
+        public bool IsDeleted { get; set; }
 
 
-        public ShareTransactionModel()
+        public TradingTransactionModel()
         { }
 
 
-        public ShareTransactionModel(string _ContractNote, string _ASXCode, string _Date, string _Type, string _Quantity, string _UnitPrice, string _TradeValue, string _Brokerage, string _TotalValue, string _IsIncrease)
+        public TradingTransactionModel(string _ContractNote, string _ASXCode, string _Date, string _Type, string _Quantity, string _UnitPrice, string _TradeValue, string _Brokerage, string _TotalValue, string _IsIncrease)
         {
             int ContractNoteValue = 0;
             int.TryParse(_ContractNote, out ContractNoteValue);
             ContractNote = ContractNoteValue;
 
-            ASXCode = _ASXCode;
-            
+            //ASXCode = _ASXCode;
+
             int DateValue = 0;
             int.TryParse(_Date, out DateValue);
             Date = DateValue;
 
-            Type = _Type;
+            //Type = _Type;
 
             int QuantityValue = 0;
             int.TryParse(_Quantity, out QuantityValue);
             Quantity = QuantityValue;
-        
+
             decimal UnitPriceValue = 0;
             decimal.TryParse(_UnitPrice, out UnitPriceValue);
             UnitPrice = UnitPriceValue;
 
             decimal TradeValueValue = 0;
             decimal.TryParse(_TradeValue, out TradeValueValue);
-            TradeValue = TradeValueValue;
+            //TradeValue = TradeValueValue;
 
             decimal BrokerageValue = 0;
             decimal.TryParse(_Brokerage, out BrokerageValue);
-            Brokerage = BrokerageValue;
+            // Brokerage = BrokerageValue;
 
 
             decimal TotalValueValue = 0;
             decimal.TryParse(_TotalValue, out TotalValueValue);
-            TotalValue = TotalValueValue;
-
-            if (_Type == "Buy" || _Type == "DRP")  { IsIncrease = true; } else { IsIncrease = false; }
+            //TotalValue = TotalValueValue;
 
         }
-
-
     }
-
-
 }

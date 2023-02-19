@@ -72,6 +72,8 @@
             this.btnFilterAddAmount = new System.Windows.Forms.Button();
             this.pnlButtonRow8 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
+            this.pnlButtonRow9 = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.pnlHeader.SuspendLayout();
             this.pnlContainerTransactionFilters.SuspendLayout();
             this.tlpnlTransactionFilters.SuspendLayout();
@@ -93,6 +95,7 @@
             this.pnlButtonFilterSector.SuspendLayout();
             this.pnlButtonFilterDate.SuspendLayout();
             this.pnlButtonFilterAmount.SuspendLayout();
+            this.pnlButtonRow9.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlHeader
@@ -154,6 +157,7 @@
             this.tlpnlTransactionFilters.Controls.Add(this.pnlButtonFilterAmount, 5, 6);
             this.tlpnlTransactionFilters.Controls.Add(this.pnlButtonRow8, 5, 8);
             this.tlpnlTransactionFilters.Controls.Add(this.button2, 3, 9);
+            this.tlpnlTransactionFilters.Controls.Add(this.pnlButtonRow9, 5, 9);
             this.tlpnlTransactionFilters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpnlTransactionFilters.Location = new System.Drawing.Point(10, 10);
             this.tlpnlTransactionFilters.Name = "tlpnlTransactionFilters";
@@ -575,6 +579,24 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // pnlButtonRow9
+            // 
+            this.pnlButtonRow9.Controls.Add(this.btnClose);
+            this.pnlButtonRow9.Location = new System.Drawing.Point(768, 344);
+            this.pnlButtonRow9.Name = "pnlButtonRow9";
+            this.pnlButtonRow9.Size = new System.Drawing.Size(82, 18);
+            this.pnlButtonRow9.TabIndex = 27;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnClose.Location = new System.Drawing.Point(0, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(82, 18);
+            this.btnClose.TabIndex = 0;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            // 
             // TransactionFilterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -615,6 +637,7 @@
             this.pnlButtonFilterDate.PerformLayout();
             this.pnlButtonFilterAmount.ResumeLayout(false);
             this.pnlButtonFilterAmount.PerformLayout();
+            this.pnlButtonRow9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -665,5 +688,7 @@
         private FormAssets.NumericTextBox ntboxFilterAmountEnd;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel pnlButtonRow9;
+        private System.Windows.Forms.Button btnClose;
     }
 }

@@ -312,14 +312,23 @@ namespace UserInterface.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //IEnumerable<NewShareTransactionModel> output;
-            //output = GlobalConfig.Connection.spQueryDummyTransactions();
 
-            IEnumerable<FullPortfolioModel> output2;
-            output2 = GlobalConfig.Connection.PopulatePortfolioModel();
+            //This filter style works
+            // you make an object and then allocate the required things to it and store that in the filter
 
 
-            //var output 
+            TradingEntityModel newCompany = new TradingEntityModel();
+            newCompany.ASXCode = "CBA";
+
+            Filter2 testfilter1 = new Filter2(500.01, 600.5);
+
+            Filter2 testfilter2 = new Filter2(newCompany);
+            //Filter2 testfilter2 = new Filter2();
+
+
+            List<Filter2> filtersList = new List<Filter2>();
+            filtersList.Add(testfilter2);
+
 
         }
     }

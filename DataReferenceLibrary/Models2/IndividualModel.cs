@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataReferenceLibrary.Models2
 {
-    public class NewIndividualModel
+    public class IndividualModel
     {
         public Guid Id { get; set; }
 

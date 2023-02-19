@@ -14,6 +14,7 @@ using UserInterface.FormAssets;
 using DataReferenceLibrary.Models;
 using UserInterface.Forms;
 using System.Globalization;
+using DataReferenceLibrary.Models2;
 
 namespace UserInterface.UserControlsTab
 {
@@ -40,7 +41,7 @@ namespace UserInterface.UserControlsTab
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-          //  List<spQueryShareTransactionsForPortfolio> output;
+            List<spQueryShareTransactionsForPortfolio> output;
           //  output = GlobalConfig.Connection.spQueryAllShareTransactions();
           //  PrepareTableLayoutPanel(output);
         }
@@ -61,7 +62,7 @@ namespace UserInterface.UserControlsTab
             form.Show();
         }
 
-        public void CreateTransactionComplete(ShareTransactionModel model)
+        public void CreateTransactionComplete(TradingTransactionModel model)
         {
             throw new NotImplementedException();
         }
