@@ -62,6 +62,7 @@
     <Compile Include="Filters\Filter.cs" />
     <Compile Include="Filters\Filter2.cs" />
     <Compile Include="Filters\FilterExample.cs" />
+    <Compile Include="Filters\Filtering.cs" />
     <Compile Include="Filters\IFilter.cs" />
     <Compile Include="GlobalConfig.cs" />
     <Compile Include="DataAccess\IDataConnection.cs" />

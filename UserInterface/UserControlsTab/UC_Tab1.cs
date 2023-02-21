@@ -41,29 +41,45 @@ namespace UserInterface.UserControlsTab
         {
             InitializeComponent();
             PrepareDataGridView();
-            tboxYear.Text = "2021";
-            tboxASXShare.Text = "CBA";
-            cboxPriceType.Text = "Open";
+            cBoxYear.Text = "2021";
+            tBoxASXCode.Text = "CBA";
+            cBoxPosition.Text = "Open";
         }
 
         private void PrepareDataGridView()
         {
             // Create rows for the DataGridView
+
+            dgvLeftPrices.Rows.Add();
+            dgvLeftPrices.Rows[0].HeaderCell.Value = "Min";
+            dgvLeftPrices.Rows.Add();
+            dgvLeftPrices.Rows[1].HeaderCell.Value = "Max";
+            dgvLeftPrices.Rows.Add(); //Empty Row
+
             for (int i = 1; i <= 31; i++)
             {
-                dgvAllSharePrices.Rows.Add();
-                dgvAllSharePrices.Rows[i - 1].HeaderCell.Value = i.ToString();
+                dgvLeftPrices.Rows.Add();
+                dgvLeftPrices.Rows[i - 1 + 3].HeaderCell.Value = i.ToString();
             }
+
+
+            dgvLeftPrices.RowHeadersDefaultCellStyle.Padding = new Padding(3);
+
+
+
+
         }
 
 
+  
 
-        private void btn_tab2_Display_Click(object sender, EventArgs e)
+
+        private void btnGenerate_Click(object sender, EventArgs e)
         {
 
-            int YearRequest = Convert.ToInt32(tboxYear.Text);
-            string ASXCode = tboxASXShare.Text;
-            string PriceType = cboxPriceType.Text;
+            int YearRequest = Convert.ToInt32(cBoxYear.Text);
+            string ASXCode = tBoxASXCode.Text;
+            string PriceType = cBoxPosition.Text;
             List<spQueryASXSharePricesForOneYear> output;
 
             switch (PriceType)
@@ -88,7 +104,7 @@ namespace UserInterface.UserControlsTab
 
             // Put all Numbers into a List and calculate the Standard Deviation of the number set
             List<double> allValueList = new List<double>();
-            foreach (DataGridViewRow row in dgvAllSharePrices.Rows)
+            foreach (DataGridViewRow row in dgvLeftPrices.Rows)
             {
                 foreach (DataGridViewCell cell in row.Cells)
                 {
@@ -106,8 +122,8 @@ namespace UserInterface.UserControlsTab
             double StandardDeviation = Math.Sqrt(allValueList.Average(v => Math.Pow(v - AverageMean, 2)));
 
             //Populate the Highest and Lowest Prices from the datagridview
-            lblFooterLowestPrice.Text = "$ " + allValueList.Min().ToString();
-            lblFooterHighestPrice.Text = "$ " + allValueList.Max().ToString();
+            //lblFooterLowestPrice.Text = "$ " + allValueList.Min().ToString();
+            //lblFooterHighestPrice.Text = "$ " + allValueList.Max().ToString();
 
             // Colour Cells in the datagridview based on their relation to the average of all numbers
             ColourCells(AverageMean, StandardDeviation);
@@ -120,16 +136,16 @@ namespace UserInterface.UserControlsTab
                 // Input the query result into the datagridview
                 foreach (spQueryASXSharePricesForOneYear result in output)
                 {
-                    int x = (int)result.DayInt - 1;
+                    int x = (int)result.DayInt - 1+3;
                     int y = (int)result.MonthInt - 1;
-                    dgvAllSharePrices[y, (x)].Value = result.Price.ToString();
+                    dgvLeftPrices[y, (x)].Value = result.Price.ToString();
                 }
             }
         }
 
         private void ColourCells(double AverageMean, double StandardDeviation)
         {
-            foreach (DataGridViewRow row in dgvAllSharePrices.Rows)
+            foreach (DataGridViewRow row in dgvLeftPrices.Rows)
             {
                 foreach (DataGridViewCell cell in row.Cells)
                 {
@@ -161,6 +177,17 @@ namespace UserInterface.UserControlsTab
                 }
             }
         }
+
+        private void dgvLeftPrices_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+        }
+
+
+
+
+
+
     }
 }
  

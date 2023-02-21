@@ -29,61 +29,89 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlHeaderSinglePriceData = new System.Windows.Forms.Panel();
             this.lblHeaderSinglePriceData = new System.Windows.Forms.Label();
-            this.btnDisplay = new System.Windows.Forms.Button();
-            this.tboxASXShare = new System.Windows.Forms.TextBox();
-            this.lblASXShare = new System.Windows.Forms.Label();
-            this.lblYear = new System.Windows.Forms.Label();
-            this.tboxYear = new System.Windows.Forms.TextBox();
-            this.lblPriceType = new System.Windows.Forms.Label();
-            this.cboxPriceType = new System.Windows.Forms.ComboBox();
             this.pnlContainerSinglePriceData = new System.Windows.Forms.Panel();
-            this.tpnlOutputsSinglePriceData = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlOutputsCol2 = new System.Windows.Forms.Panel();
-            this.dgvAllSharePrices = new System.Windows.Forms.DataGridView();
-            this.Jan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Feb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.May = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Jun = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Jul = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Aug = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Oct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nov = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dec = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnlOutputsCol1 = new System.Windows.Forms.Panel();
-            this.pnlOutputsCol3 = new System.Windows.Forms.Panel();
-            this.tpnlInputsSinglePriceData = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlInputsCol8 = new System.Windows.Forms.Panel();
-            this.lblFooterHighestPrice = new System.Windows.Forms.Label();
-            this.lblFooterLowestPrice = new System.Windows.Forms.Label();
-            this.pnlInputsCol7 = new System.Windows.Forms.Panel();
-            this.lblHeaderHighestPrice = new System.Windows.Forms.Label();
-            this.lblHeaderLowestPrice = new System.Windows.Forms.Label();
-            this.pnlInputsCol6 = new System.Windows.Forms.Panel();
-            this.pnlInputsCol5 = new System.Windows.Forms.Panel();
-            this.pnlInputsCol4 = new System.Windows.Forms.Panel();
-            this.pnlInputsCol3 = new System.Windows.Forms.Panel();
-            this.pnlInputsCol2 = new System.Windows.Forms.Panel();
-            this.pnlInputsCol1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlOutputsRow2Col10 = new System.Windows.Forms.Panel();
+            this.pnlOutputsRow2Col6 = new System.Windows.Forms.Panel();
+            this.pnlOutputsRow2Col5 = new System.Windows.Forms.Panel();
+            this.pnlOutputsRow2Col2 = new System.Windows.Forms.Panel();
+            this.dgvLeftPrices = new System.Windows.Forms.DataGridView();
+            this.pnlOutputsRow2Col1 = new System.Windows.Forms.Panel();
+            this.pnlOutputsRow1Col10 = new System.Windows.Forms.Panel();
+            this.pnlOutputsRow1Col9 = new System.Windows.Forms.Panel();
+            this.pnlOutputsRow1Col8 = new System.Windows.Forms.Panel();
+            this.pnlOutputsRow1Col7 = new System.Windows.Forms.Panel();
+            this.pnlOutputsRow1Col6 = new System.Windows.Forms.Panel();
+            this.pnlOutputsRow1Col5 = new System.Windows.Forms.Panel();
+            this.pnlOutputsRow1Col2 = new System.Windows.Forms.Panel();
+            this.pnlOutputsRow1Col1 = new System.Windows.Forms.Panel();
+            this.tpnlInputs = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlInputsRow2Col10 = new System.Windows.Forms.Panel();
+            this.pnlInputsRow2Col9 = new System.Windows.Forms.Panel();
+            this.pnlInputsRow2Col8 = new System.Windows.Forms.Panel();
+            this.pnlInputsRow2Col7 = new System.Windows.Forms.Panel();
+            this.pnlInputsRow2Col6 = new System.Windows.Forms.Panel();
+            this.pnlInputsRow2Col5 = new System.Windows.Forms.Panel();
+            this.pnlInputsRow2Col4 = new System.Windows.Forms.Panel();
+            this.pnlInputsRow2Col3 = new System.Windows.Forms.Panel();
+            this.pnlInputsRow2Col2 = new System.Windows.Forms.Panel();
+            this.pnlInputsRow2Col1 = new System.Windows.Forms.Panel();
+            this.pnlInputsRow1Col10 = new System.Windows.Forms.Panel();
+            this.pnlInputsRow1Col9 = new System.Windows.Forms.Panel();
+            this.pnlInputsRow1Col8 = new System.Windows.Forms.Panel();
+            this.pnlInputsRow1Col7 = new System.Windows.Forms.Panel();
+            this.pnlInputsRow1Col6 = new System.Windows.Forms.Panel();
+            this.pnlInputsRow1Col5 = new System.Windows.Forms.Panel();
+            this.btnGenerate = new System.Windows.Forms.Button();
+            this.pnlInputsRow1Col4 = new System.Windows.Forms.Panel();
+            this.cBoxPosition = new System.Windows.Forms.ComboBox();
+            this.cBoxYear = new System.Windows.Forms.ComboBox();
+            this.pnlInputsRow1Col3 = new System.Windows.Forms.Panel();
+            this.lblPosition = new System.Windows.Forms.Label();
+            this.lblYear = new System.Windows.Forms.Label();
+            this.pnlInputsRow1Col2 = new System.Windows.Forms.Panel();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.tBoxASXCode = new System.Windows.Forms.TextBox();
+            this.pnlInputsRow1Col1 = new System.Windows.Forms.Panel();
+            this.lblSecurity = new System.Windows.Forms.Label();
+            this.LeftTablePrices_Jan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_Feb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_Mar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_Apr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_May = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_Jun = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_Jul = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_Aug = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_Sep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_Oct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_Nov = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_Dec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmptyBetween = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Jan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Feb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Mar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Apr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_May = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Jun = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Jul = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Aug = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Sep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Oct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Nov = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Dec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlHeaderSinglePriceData.SuspendLayout();
             this.pnlContainerSinglePriceData.SuspendLayout();
-            this.tpnlOutputsSinglePriceData.SuspendLayout();
-            this.pnlOutputsCol2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAllSharePrices)).BeginInit();
-            this.tpnlInputsSinglePriceData.SuspendLayout();
-            this.pnlInputsCol8.SuspendLayout();
-            this.pnlInputsCol7.SuspendLayout();
-            this.pnlInputsCol6.SuspendLayout();
-            this.pnlInputsCol5.SuspendLayout();
-            this.pnlInputsCol4.SuspendLayout();
-            this.pnlInputsCol3.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.pnlOutputsRow2Col2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLeftPrices)).BeginInit();
+            this.tpnlInputs.SuspendLayout();
+            this.pnlInputsRow1Col5.SuspendLayout();
+            this.pnlInputsRow1Col4.SuspendLayout();
+            this.pnlInputsRow1Col3.SuspendLayout();
+            this.pnlInputsRow1Col2.SuspendLayout();
+            this.pnlInputsRow1Col1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlHeaderSinglePriceData
@@ -107,87 +135,11 @@
             this.lblHeaderSinglePriceData.TabIndex = 0;
             this.lblHeaderSinglePriceData.Text = "Single Price Data";
             // 
-            // btnDisplay
-            // 
-            this.btnDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDisplay.Location = new System.Drawing.Point(0, 0);
-            this.btnDisplay.Name = "btnDisplay";
-            this.btnDisplay.Size = new System.Drawing.Size(108, 50);
-            this.btnDisplay.TabIndex = 6;
-            this.btnDisplay.Text = "Display";
-            this.btnDisplay.UseVisualStyleBackColor = true;
-            this.btnDisplay.Click += new System.EventHandler(this.btn_tab2_Display_Click);
-            // 
-            // tboxASXShare
-            // 
-            this.tboxASXShare.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tboxASXShare.Location = new System.Drawing.Point(0, 30);
-            this.tboxASXShare.Name = "tboxASXShare";
-            this.tboxASXShare.Size = new System.Drawing.Size(108, 20);
-            this.tboxASXShare.TabIndex = 2;
-            this.tboxASXShare.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lblASXShare
-            // 
-            this.lblASXShare.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblASXShare.Location = new System.Drawing.Point(0, 0);
-            this.lblASXShare.Margin = new System.Windows.Forms.Padding(3);
-            this.lblASXShare.Name = "lblASXShare";
-            this.lblASXShare.Size = new System.Drawing.Size(108, 23);
-            this.lblASXShare.TabIndex = 4;
-            this.lblASXShare.Text = "ASXShare";
-            this.lblASXShare.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // lblYear
-            // 
-            this.lblYear.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblYear.Location = new System.Drawing.Point(0, 0);
-            this.lblYear.Margin = new System.Windows.Forms.Padding(3);
-            this.lblYear.Name = "lblYear";
-            this.lblYear.Size = new System.Drawing.Size(108, 23);
-            this.lblYear.TabIndex = 5;
-            this.lblYear.Text = "Year";
-            this.lblYear.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // tboxYear
-            // 
-            this.tboxYear.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tboxYear.Location = new System.Drawing.Point(0, 30);
-            this.tboxYear.Name = "tboxYear";
-            this.tboxYear.Size = new System.Drawing.Size(108, 20);
-            this.tboxYear.TabIndex = 1;
-            this.tboxYear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lblPriceType
-            // 
-            this.lblPriceType.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblPriceType.Location = new System.Drawing.Point(0, 0);
-            this.lblPriceType.Margin = new System.Windows.Forms.Padding(3);
-            this.lblPriceType.Name = "lblPriceType";
-            this.lblPriceType.Size = new System.Drawing.Size(108, 23);
-            this.lblPriceType.TabIndex = 7;
-            this.lblPriceType.Text = "PriceType";
-            this.lblPriceType.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // cboxPriceType
-            // 
-            this.cboxPriceType.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cboxPriceType.FormattingEnabled = true;
-            this.cboxPriceType.Items.AddRange(new object[] {
-            "Open",
-            "Close",
-            "High",
-            "Low"});
-            this.cboxPriceType.Location = new System.Drawing.Point(0, 29);
-            this.cboxPriceType.Name = "cboxPriceType";
-            this.cboxPriceType.Size = new System.Drawing.Size(108, 21);
-            this.cboxPriceType.TabIndex = 3;
-            // 
             // pnlContainerSinglePriceData
             // 
             this.pnlContainerSinglePriceData.BackColor = System.Drawing.Color.White;
-            this.pnlContainerSinglePriceData.Controls.Add(this.tpnlOutputsSinglePriceData);
-            this.pnlContainerSinglePriceData.Controls.Add(this.tpnlInputsSinglePriceData);
+            this.pnlContainerSinglePriceData.Controls.Add(this.tableLayoutPanel1);
+            this.pnlContainerSinglePriceData.Controls.Add(this.tpnlInputs);
             this.pnlContainerSinglePriceData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContainerSinglePriceData.Location = new System.Drawing.Point(0, 65);
             this.pnlContainerSinglePriceData.Name = "pnlContainerSinglePriceData";
@@ -195,330 +147,685 @@
             this.pnlContainerSinglePriceData.Size = new System.Drawing.Size(1050, 575);
             this.pnlContainerSinglePriceData.TabIndex = 1;
             // 
-            // tpnlOutputsSinglePriceData
+            // tableLayoutPanel1
             // 
-            this.tpnlOutputsSinglePriceData.ColumnCount = 3;
-            this.tpnlOutputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tpnlOutputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tpnlOutputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tpnlOutputsSinglePriceData.Controls.Add(this.pnlOutputsCol2, 1, 0);
-            this.tpnlOutputsSinglePriceData.Controls.Add(this.pnlOutputsCol1, 0, 0);
-            this.tpnlOutputsSinglePriceData.Controls.Add(this.pnlOutputsCol3, 2, 0);
-            this.tpnlOutputsSinglePriceData.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tpnlOutputsSinglePriceData.Location = new System.Drawing.Point(10, 80);
-            this.tpnlOutputsSinglePriceData.Name = "tpnlOutputsSinglePriceData";
-            this.tpnlOutputsSinglePriceData.RowCount = 1;
-            this.tpnlOutputsSinglePriceData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tpnlOutputsSinglePriceData.Size = new System.Drawing.Size(1030, 451);
-            this.tpnlOutputsSinglePriceData.TabIndex = 3;
+            this.tableLayoutPanel1.ColumnCount = 10;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1F));
+            this.tableLayoutPanel1.Controls.Add(this.pnlOutputsRow2Col10, 9, 1);
+            this.tableLayoutPanel1.Controls.Add(this.pnlOutputsRow2Col6, 5, 1);
+            this.tableLayoutPanel1.Controls.Add(this.pnlOutputsRow2Col5, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.pnlOutputsRow2Col2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.pnlOutputsRow2Col1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.pnlOutputsRow1Col10, 9, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pnlOutputsRow1Col9, 8, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pnlOutputsRow1Col8, 7, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pnlOutputsRow1Col7, 6, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pnlOutputsRow1Col6, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pnlOutputsRow1Col5, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pnlOutputsRow1Col2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pnlOutputsRow1Col1, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 78);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1030, 470);
+            this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // pnlOutputsCol2
+            // pnlOutputsRow2Col10
             // 
-            this.pnlOutputsCol2.Controls.Add(this.dgvAllSharePrices);
-            this.pnlOutputsCol2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOutputsCol2.Location = new System.Drawing.Point(81, 30);
-            this.pnlOutputsCol2.Margin = new System.Windows.Forms.Padding(30);
-            this.pnlOutputsCol2.Name = "pnlOutputsCol2";
-            this.pnlOutputsCol2.Size = new System.Drawing.Size(867, 391);
-            this.pnlOutputsCol2.TabIndex = 12;
+            this.pnlOutputsRow2Col10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow2Col10.Location = new System.Drawing.Point(15, 454);
+            this.pnlOutputsRow2Col10.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlOutputsRow2Col10.Name = "pnlOutputsRow2Col10";
+            this.pnlOutputsRow2Col10.Size = new System.Drawing.Size(154, 11);
+            this.pnlOutputsRow2Col10.TabIndex = 19;
             // 
-            // dgvAllSharePrices
+            // pnlOutputsRow2Col6
             // 
-            this.dgvAllSharePrices.AllowUserToAddRows = false;
-            this.dgvAllSharePrices.AllowUserToDeleteRows = false;
-            this.dgvAllSharePrices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.pnlOutputsRow2Col6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow2Col6.Location = new System.Drawing.Point(5, 454);
+            this.pnlOutputsRow2Col6.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlOutputsRow2Col6.Name = "pnlOutputsRow2Col6";
+            this.pnlOutputsRow2Col6.Size = new System.Drawing.Size(1, 11);
+            this.pnlOutputsRow2Col6.TabIndex = 15;
+            // 
+            // pnlOutputsRow2Col5
+            // 
+            this.pnlOutputsRow2Col5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow2Col5.Location = new System.Drawing.Point(1019, 27);
+            this.pnlOutputsRow2Col5.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlOutputsRow2Col5.Name = "pnlOutputsRow2Col5";
+            this.pnlOutputsRow2Col5.Size = new System.Drawing.Size(6, 417);
+            this.pnlOutputsRow2Col5.TabIndex = 14;
+            // 
+            // pnlOutputsRow2Col2
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.pnlOutputsRow2Col2, 8);
+            this.pnlOutputsRow2Col2.Controls.Add(this.dgvLeftPrices);
+            this.pnlOutputsRow2Col2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow2Col2.Location = new System.Drawing.Point(15, 27);
+            this.pnlOutputsRow2Col2.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlOutputsRow2Col2.Name = "pnlOutputsRow2Col2";
+            this.pnlOutputsRow2Col2.Size = new System.Drawing.Size(994, 417);
+            this.pnlOutputsRow2Col2.TabIndex = 11;
+            // 
+            // dgvLeftPrices
+            // 
+            this.dgvLeftPrices.AllowUserToAddRows = false;
+            this.dgvLeftPrices.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvLeftPrices.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvLeftPrices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvLeftPrices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLeftPrices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.LeftTablePrices_Jan,
+            this.LeftTablePrices_Feb,
+            this.LeftTablePrices_Mar,
+            this.LeftTablePrices_Apr,
+            this.LeftTablePrices_May,
+            this.LeftTablePrices_Jun,
+            this.LeftTablePrices_Jul,
+            this.LeftTablePrices_Aug,
+            this.LeftTablePrices_Sep,
+            this.LeftTablePrices_Oct,
+            this.LeftTablePrices_Nov,
+            this.LeftTablePrices_Dec,
+            this.EmptyBetween,
+            this.RightTablePrices_Jan,
+            this.RightTablePrices_Feb,
+            this.RightTablePrices_Mar,
+            this.RightTablePrices_Apr,
+            this.RightTablePrices_May,
+            this.RightTablePrices_Jun,
+            this.RightTablePrices_Jul,
+            this.RightTablePrices_Aug,
+            this.RightTablePrices_Sep,
+            this.RightTablePrices_Oct,
+            this.RightTablePrices_Nov,
+            this.RightTablePrices_Dec});
+            this.dgvLeftPrices.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvLeftPrices.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvLeftPrices.Location = new System.Drawing.Point(0, 0);
+            this.dgvLeftPrices.Name = "dgvLeftPrices";
+            this.dgvLeftPrices.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAllSharePrices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvAllSharePrices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAllSharePrices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Jan,
-            this.Feb,
-            this.Mar,
-            this.Apr,
-            this.May,
-            this.Jun,
-            this.Jul,
-            this.Aug,
-            this.Sep,
-            this.Oct,
-            this.Nov,
-            this.Dec});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAllSharePrices.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvAllSharePrices.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvAllSharePrices.Location = new System.Drawing.Point(0, 0);
-            this.dgvAllSharePrices.Margin = new System.Windows.Forms.Padding(0);
-            this.dgvAllSharePrices.Name = "dgvAllSharePrices";
-            this.dgvAllSharePrices.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAllSharePrices.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvAllSharePrices.RowHeadersWidth = 50;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvAllSharePrices.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvAllSharePrices.Size = new System.Drawing.Size(867, 391);
-            this.dgvAllSharePrices.TabIndex = 11;
+            this.dgvLeftPrices.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvLeftPrices.Size = new System.Drawing.Size(994, 417);
+            this.dgvLeftPrices.TabIndex = 0;
             // 
-            // Jan
+            // pnlOutputsRow2Col1
             // 
-            this.Jan.HeaderText = "Jan";
-            this.Jan.Name = "Jan";
-            this.Jan.ReadOnly = true;
+            this.pnlOutputsRow2Col1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow2Col1.Location = new System.Drawing.Point(5, 27);
+            this.pnlOutputsRow2Col1.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlOutputsRow2Col1.Name = "pnlOutputsRow2Col1";
+            this.pnlOutputsRow2Col1.Size = new System.Drawing.Size(1, 417);
+            this.pnlOutputsRow2Col1.TabIndex = 10;
             // 
-            // Feb
+            // pnlOutputsRow1Col10
             // 
-            this.Feb.HeaderText = "Feb";
-            this.Feb.Name = "Feb";
-            this.Feb.ReadOnly = true;
+            this.pnlOutputsRow1Col10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow1Col10.Location = new System.Drawing.Point(1019, 5);
+            this.pnlOutputsRow1Col10.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlOutputsRow1Col10.Name = "pnlOutputsRow1Col10";
+            this.pnlOutputsRow1Col10.Size = new System.Drawing.Size(6, 12);
+            this.pnlOutputsRow1Col10.TabIndex = 9;
             // 
-            // Mar
+            // pnlOutputsRow1Col9
             // 
-            this.Mar.HeaderText = "Mar";
-            this.Mar.Name = "Mar";
-            this.Mar.ReadOnly = true;
+            this.pnlOutputsRow1Col9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow1Col9.Location = new System.Drawing.Point(855, 5);
+            this.pnlOutputsRow1Col9.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlOutputsRow1Col9.Name = "pnlOutputsRow1Col9";
+            this.pnlOutputsRow1Col9.Size = new System.Drawing.Size(154, 12);
+            this.pnlOutputsRow1Col9.TabIndex = 8;
             // 
-            // Apr
+            // pnlOutputsRow1Col8
             // 
-            this.Apr.HeaderText = "Apr";
-            this.Apr.Name = "Apr";
-            this.Apr.ReadOnly = true;
+            this.pnlOutputsRow1Col8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow1Col8.Location = new System.Drawing.Point(691, 5);
+            this.pnlOutputsRow1Col8.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlOutputsRow1Col8.Name = "pnlOutputsRow1Col8";
+            this.pnlOutputsRow1Col8.Size = new System.Drawing.Size(154, 12);
+            this.pnlOutputsRow1Col8.TabIndex = 7;
             // 
-            // May
+            // pnlOutputsRow1Col7
             // 
-            this.May.HeaderText = "May";
-            this.May.Name = "May";
-            this.May.ReadOnly = true;
+            this.pnlOutputsRow1Col7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow1Col7.Location = new System.Drawing.Point(527, 5);
+            this.pnlOutputsRow1Col7.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlOutputsRow1Col7.Name = "pnlOutputsRow1Col7";
+            this.pnlOutputsRow1Col7.Size = new System.Drawing.Size(154, 12);
+            this.pnlOutputsRow1Col7.TabIndex = 6;
             // 
-            // Jun
+            // pnlOutputsRow1Col6
             // 
-            this.Jun.HeaderText = "Jun";
-            this.Jun.Name = "Jun";
-            this.Jun.ReadOnly = true;
+            this.pnlOutputsRow1Col6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow1Col6.Location = new System.Drawing.Point(517, 5);
+            this.pnlOutputsRow1Col6.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlOutputsRow1Col6.Name = "pnlOutputsRow1Col6";
+            this.pnlOutputsRow1Col6.Size = new System.Drawing.Size(1, 12);
+            this.pnlOutputsRow1Col6.TabIndex = 5;
             // 
-            // Jul
+            // pnlOutputsRow1Col5
             // 
-            this.Jul.HeaderText = "Jul";
-            this.Jul.Name = "Jul";
-            this.Jul.ReadOnly = true;
+            this.pnlOutputsRow1Col5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow1Col5.Location = new System.Drawing.Point(507, 5);
+            this.pnlOutputsRow1Col5.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlOutputsRow1Col5.Name = "pnlOutputsRow1Col5";
+            this.pnlOutputsRow1Col5.Size = new System.Drawing.Size(1, 12);
+            this.pnlOutputsRow1Col5.TabIndex = 4;
             // 
-            // Aug
+            // pnlOutputsRow1Col2
             // 
-            this.Aug.HeaderText = "Aug";
-            this.Aug.Name = "Aug";
-            this.Aug.ReadOnly = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.pnlOutputsRow1Col2, 3);
+            this.pnlOutputsRow1Col2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow1Col2.Location = new System.Drawing.Point(15, 5);
+            this.pnlOutputsRow1Col2.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlOutputsRow1Col2.Name = "pnlOutputsRow1Col2";
+            this.pnlOutputsRow1Col2.Size = new System.Drawing.Size(482, 12);
+            this.pnlOutputsRow1Col2.TabIndex = 1;
             // 
-            // Sep
+            // pnlOutputsRow1Col1
             // 
-            this.Sep.HeaderText = "Sep";
-            this.Sep.Name = "Sep";
-            this.Sep.ReadOnly = true;
+            this.pnlOutputsRow1Col1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow1Col1.Location = new System.Drawing.Point(5, 5);
+            this.pnlOutputsRow1Col1.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlOutputsRow1Col1.Name = "pnlOutputsRow1Col1";
+            this.pnlOutputsRow1Col1.Size = new System.Drawing.Size(1, 12);
+            this.pnlOutputsRow1Col1.TabIndex = 0;
             // 
-            // Oct
+            // tpnlInputs
             // 
-            this.Oct.HeaderText = "Oct";
-            this.Oct.Name = "Oct";
-            this.Oct.ReadOnly = true;
+            this.tpnlInputs.ColumnCount = 10;
+            this.tpnlInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow2Col10, 9, 1);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow2Col9, 8, 1);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow2Col8, 7, 1);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow2Col7, 6, 1);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow2Col6, 5, 1);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow2Col5, 4, 1);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow2Col4, 3, 1);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow2Col3, 2, 1);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow2Col2, 1, 1);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow2Col1, 0, 1);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow1Col10, 9, 0);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow1Col9, 8, 0);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow1Col8, 7, 0);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow1Col7, 6, 0);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow1Col6, 5, 0);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow1Col5, 4, 0);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow1Col4, 3, 0);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow1Col3, 2, 0);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow1Col2, 1, 0);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow1Col1, 0, 0);
+            this.tpnlInputs.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tpnlInputs.Location = new System.Drawing.Point(10, 10);
+            this.tpnlInputs.Name = "tpnlInputs";
+            this.tpnlInputs.RowCount = 2;
+            this.tpnlInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tpnlInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlInputs.Size = new System.Drawing.Size(1030, 68);
+            this.tpnlInputs.TabIndex = 2;
             // 
-            // Nov
+            // pnlInputsRow2Col10
             // 
-            this.Nov.HeaderText = "Nov";
-            this.Nov.Name = "Nov";
-            this.Nov.ReadOnly = true;
+            this.pnlInputsRow2Col10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow2Col10.Location = new System.Drawing.Point(932, 66);
+            this.pnlInputsRow2Col10.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlInputsRow2Col10.Name = "pnlInputsRow2Col10";
+            this.pnlInputsRow2Col10.Size = new System.Drawing.Size(93, 1);
+            this.pnlInputsRow2Col10.TabIndex = 19;
             // 
-            // Dec
+            // pnlInputsRow2Col9
             // 
-            this.Dec.HeaderText = "Dec";
-            this.Dec.Name = "Dec";
-            this.Dec.ReadOnly = true;
+            this.pnlInputsRow2Col9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow2Col9.Location = new System.Drawing.Point(829, 66);
+            this.pnlInputsRow2Col9.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlInputsRow2Col9.Name = "pnlInputsRow2Col9";
+            this.pnlInputsRow2Col9.Size = new System.Drawing.Size(93, 1);
+            this.pnlInputsRow2Col9.TabIndex = 18;
             // 
-            // pnlOutputsCol1
+            // pnlInputsRow2Col8
             // 
-            this.pnlOutputsCol1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOutputsCol1.Location = new System.Drawing.Point(10, 10);
-            this.pnlOutputsCol1.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlOutputsCol1.Name = "pnlOutputsCol1";
-            this.pnlOutputsCol1.Size = new System.Drawing.Size(31, 431);
-            this.pnlOutputsCol1.TabIndex = 13;
+            this.pnlInputsRow2Col8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow2Col8.Location = new System.Drawing.Point(726, 66);
+            this.pnlInputsRow2Col8.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlInputsRow2Col8.Name = "pnlInputsRow2Col8";
+            this.pnlInputsRow2Col8.Size = new System.Drawing.Size(93, 1);
+            this.pnlInputsRow2Col8.TabIndex = 17;
             // 
-            // pnlOutputsCol3
+            // pnlInputsRow2Col7
             // 
-            this.pnlOutputsCol3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOutputsCol3.Location = new System.Drawing.Point(988, 10);
-            this.pnlOutputsCol3.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlOutputsCol3.Name = "pnlOutputsCol3";
-            this.pnlOutputsCol3.Size = new System.Drawing.Size(32, 431);
-            this.pnlOutputsCol3.TabIndex = 14;
+            this.pnlInputsRow2Col7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow2Col7.Location = new System.Drawing.Point(623, 66);
+            this.pnlInputsRow2Col7.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlInputsRow2Col7.Name = "pnlInputsRow2Col7";
+            this.pnlInputsRow2Col7.Size = new System.Drawing.Size(93, 1);
+            this.pnlInputsRow2Col7.TabIndex = 16;
             // 
-            // tpnlInputsSinglePriceData
+            // pnlInputsRow2Col6
             // 
-            this.tpnlInputsSinglePriceData.ColumnCount = 8;
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol8, 7, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol7, 6, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol6, 5, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol5, 4, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol4, 3, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol3, 2, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol2, 1, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol1, 0, 0);
-            this.tpnlInputsSinglePriceData.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tpnlInputsSinglePriceData.Location = new System.Drawing.Point(10, 10);
-            this.tpnlInputsSinglePriceData.Name = "tpnlInputsSinglePriceData";
-            this.tpnlInputsSinglePriceData.RowCount = 1;
-            this.tpnlInputsSinglePriceData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tpnlInputsSinglePriceData.Size = new System.Drawing.Size(1030, 70);
-            this.tpnlInputsSinglePriceData.TabIndex = 2;
+            this.pnlInputsRow2Col6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow2Col6.Location = new System.Drawing.Point(520, 66);
+            this.pnlInputsRow2Col6.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlInputsRow2Col6.Name = "pnlInputsRow2Col6";
+            this.pnlInputsRow2Col6.Size = new System.Drawing.Size(93, 1);
+            this.pnlInputsRow2Col6.TabIndex = 15;
             // 
-            // pnlInputsCol8
+            // pnlInputsRow2Col5
             // 
-            this.pnlInputsCol8.Controls.Add(this.lblFooterHighestPrice);
-            this.pnlInputsCol8.Controls.Add(this.lblFooterLowestPrice);
-            this.pnlInputsCol8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInputsCol8.Location = new System.Drawing.Point(906, 10);
-            this.pnlInputsCol8.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlInputsCol8.Name = "pnlInputsCol8";
-            this.pnlInputsCol8.Size = new System.Drawing.Size(114, 50);
-            this.pnlInputsCol8.TabIndex = 8;
+            this.pnlInputsRow2Col5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow2Col5.Location = new System.Drawing.Point(417, 66);
+            this.pnlInputsRow2Col5.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlInputsRow2Col5.Name = "pnlInputsRow2Col5";
+            this.pnlInputsRow2Col5.Size = new System.Drawing.Size(93, 1);
+            this.pnlInputsRow2Col5.TabIndex = 14;
             // 
-            // lblFooterHighestPrice
+            // pnlInputsRow2Col4
             // 
-            this.lblFooterHighestPrice.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblFooterHighestPrice.Location = new System.Drawing.Point(0, 27);
-            this.lblFooterHighestPrice.Margin = new System.Windows.Forms.Padding(3);
-            this.lblFooterHighestPrice.Name = "lblFooterHighestPrice";
-            this.lblFooterHighestPrice.Size = new System.Drawing.Size(114, 23);
-            this.lblFooterHighestPrice.TabIndex = 11;
-            this.lblFooterHighestPrice.Text = "0";
-            this.lblFooterHighestPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pnlInputsRow2Col4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow2Col4.Location = new System.Drawing.Point(314, 66);
+            this.pnlInputsRow2Col4.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlInputsRow2Col4.Name = "pnlInputsRow2Col4";
+            this.pnlInputsRow2Col4.Size = new System.Drawing.Size(93, 1);
+            this.pnlInputsRow2Col4.TabIndex = 13;
             // 
-            // lblFooterLowestPrice
+            // pnlInputsRow2Col3
             // 
-            this.lblFooterLowestPrice.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblFooterLowestPrice.Location = new System.Drawing.Point(0, 0);
-            this.lblFooterLowestPrice.Margin = new System.Windows.Forms.Padding(3);
-            this.lblFooterLowestPrice.Name = "lblFooterLowestPrice";
-            this.lblFooterLowestPrice.Size = new System.Drawing.Size(114, 23);
-            this.lblFooterLowestPrice.TabIndex = 10;
-            this.lblFooterLowestPrice.Text = "0";
-            this.lblFooterLowestPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pnlInputsRow2Col3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow2Col3.Location = new System.Drawing.Point(211, 66);
+            this.pnlInputsRow2Col3.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlInputsRow2Col3.Name = "pnlInputsRow2Col3";
+            this.pnlInputsRow2Col3.Size = new System.Drawing.Size(93, 1);
+            this.pnlInputsRow2Col3.TabIndex = 12;
             // 
-            // pnlInputsCol7
+            // pnlInputsRow2Col2
             // 
-            this.pnlInputsCol7.Controls.Add(this.lblHeaderHighestPrice);
-            this.pnlInputsCol7.Controls.Add(this.lblHeaderLowestPrice);
-            this.pnlInputsCol7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInputsCol7.Location = new System.Drawing.Point(778, 10);
-            this.pnlInputsCol7.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlInputsCol7.Name = "pnlInputsCol7";
-            this.pnlInputsCol7.Size = new System.Drawing.Size(108, 50);
-            this.pnlInputsCol7.TabIndex = 7;
+            this.pnlInputsRow2Col2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow2Col2.Location = new System.Drawing.Point(108, 66);
+            this.pnlInputsRow2Col2.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlInputsRow2Col2.Name = "pnlInputsRow2Col2";
+            this.pnlInputsRow2Col2.Size = new System.Drawing.Size(93, 1);
+            this.pnlInputsRow2Col2.TabIndex = 11;
             // 
-            // lblHeaderHighestPrice
+            // pnlInputsRow2Col1
             // 
-            this.lblHeaderHighestPrice.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblHeaderHighestPrice.Location = new System.Drawing.Point(0, 27);
-            this.lblHeaderHighestPrice.Margin = new System.Windows.Forms.Padding(3);
-            this.lblHeaderHighestPrice.Name = "lblHeaderHighestPrice";
-            this.lblHeaderHighestPrice.Size = new System.Drawing.Size(108, 23);
-            this.lblHeaderHighestPrice.TabIndex = 9;
-            this.lblHeaderHighestPrice.Text = "Highest:";
-            this.lblHeaderHighestPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.pnlInputsRow2Col1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow2Col1.Location = new System.Drawing.Point(5, 66);
+            this.pnlInputsRow2Col1.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlInputsRow2Col1.Name = "pnlInputsRow2Col1";
+            this.pnlInputsRow2Col1.Size = new System.Drawing.Size(93, 1);
+            this.pnlInputsRow2Col1.TabIndex = 10;
             // 
-            // lblHeaderLowestPrice
+            // pnlInputsRow1Col10
             // 
-            this.lblHeaderLowestPrice.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblHeaderLowestPrice.Location = new System.Drawing.Point(0, 0);
-            this.lblHeaderLowestPrice.Margin = new System.Windows.Forms.Padding(3);
-            this.lblHeaderLowestPrice.Name = "lblHeaderLowestPrice";
-            this.lblHeaderLowestPrice.Size = new System.Drawing.Size(108, 23);
-            this.lblHeaderLowestPrice.TabIndex = 8;
-            this.lblHeaderLowestPrice.Text = "Lowest:";
-            this.lblHeaderLowestPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.pnlInputsRow1Col10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow1Col10.Location = new System.Drawing.Point(932, 5);
+            this.pnlInputsRow1Col10.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlInputsRow1Col10.Name = "pnlInputsRow1Col10";
+            this.pnlInputsRow1Col10.Size = new System.Drawing.Size(93, 51);
+            this.pnlInputsRow1Col10.TabIndex = 9;
             // 
-            // pnlInputsCol6
+            // pnlInputsRow1Col9
             // 
-            this.pnlInputsCol6.Controls.Add(this.btnDisplay);
-            this.pnlInputsCol6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInputsCol6.Location = new System.Drawing.Point(650, 10);
-            this.pnlInputsCol6.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlInputsCol6.Name = "pnlInputsCol6";
-            this.pnlInputsCol6.Size = new System.Drawing.Size(108, 50);
-            this.pnlInputsCol6.TabIndex = 10;
+            this.pnlInputsRow1Col9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow1Col9.Location = new System.Drawing.Point(829, 5);
+            this.pnlInputsRow1Col9.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlInputsRow1Col9.Name = "pnlInputsRow1Col9";
+            this.pnlInputsRow1Col9.Size = new System.Drawing.Size(93, 51);
+            this.pnlInputsRow1Col9.TabIndex = 8;
             // 
-            // pnlInputsCol5
+            // pnlInputsRow1Col8
             // 
-            this.pnlInputsCol5.Controls.Add(this.lblPriceType);
-            this.pnlInputsCol5.Controls.Add(this.cboxPriceType);
-            this.pnlInputsCol5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInputsCol5.Location = new System.Drawing.Point(522, 10);
-            this.pnlInputsCol5.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlInputsCol5.Name = "pnlInputsCol5";
-            this.pnlInputsCol5.Size = new System.Drawing.Size(108, 50);
-            this.pnlInputsCol5.TabIndex = 5;
+            this.pnlInputsRow1Col8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow1Col8.Location = new System.Drawing.Point(726, 5);
+            this.pnlInputsRow1Col8.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlInputsRow1Col8.Name = "pnlInputsRow1Col8";
+            this.pnlInputsRow1Col8.Size = new System.Drawing.Size(93, 51);
+            this.pnlInputsRow1Col8.TabIndex = 7;
             // 
-            // pnlInputsCol4
+            // pnlInputsRow1Col7
             // 
-            this.pnlInputsCol4.Controls.Add(this.lblASXShare);
-            this.pnlInputsCol4.Controls.Add(this.tboxASXShare);
-            this.pnlInputsCol4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInputsCol4.Location = new System.Drawing.Point(394, 10);
-            this.pnlInputsCol4.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlInputsCol4.Name = "pnlInputsCol4";
-            this.pnlInputsCol4.Size = new System.Drawing.Size(108, 50);
-            this.pnlInputsCol4.TabIndex = 4;
+            this.pnlInputsRow1Col7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow1Col7.Location = new System.Drawing.Point(623, 5);
+            this.pnlInputsRow1Col7.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlInputsRow1Col7.Name = "pnlInputsRow1Col7";
+            this.pnlInputsRow1Col7.Size = new System.Drawing.Size(93, 51);
+            this.pnlInputsRow1Col7.TabIndex = 6;
             // 
-            // pnlInputsCol3
+            // pnlInputsRow1Col6
             // 
-            this.pnlInputsCol3.Controls.Add(this.lblYear);
-            this.pnlInputsCol3.Controls.Add(this.tboxYear);
-            this.pnlInputsCol3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInputsCol3.Location = new System.Drawing.Point(266, 10);
-            this.pnlInputsCol3.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlInputsCol3.Name = "pnlInputsCol3";
-            this.pnlInputsCol3.Size = new System.Drawing.Size(108, 50);
-            this.pnlInputsCol3.TabIndex = 3;
+            this.pnlInputsRow1Col6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow1Col6.Location = new System.Drawing.Point(520, 5);
+            this.pnlInputsRow1Col6.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlInputsRow1Col6.Name = "pnlInputsRow1Col6";
+            this.pnlInputsRow1Col6.Size = new System.Drawing.Size(93, 51);
+            this.pnlInputsRow1Col6.TabIndex = 5;
             // 
-            // pnlInputsCol2
+            // pnlInputsRow1Col5
             // 
-            this.pnlInputsCol2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInputsCol2.Location = new System.Drawing.Point(138, 10);
-            this.pnlInputsCol2.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlInputsCol2.Name = "pnlInputsCol2";
-            this.pnlInputsCol2.Size = new System.Drawing.Size(108, 50);
-            this.pnlInputsCol2.TabIndex = 2;
+            this.pnlInputsRow1Col5.Controls.Add(this.btnGenerate);
+            this.pnlInputsRow1Col5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow1Col5.Location = new System.Drawing.Point(417, 5);
+            this.pnlInputsRow1Col5.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlInputsRow1Col5.Name = "pnlInputsRow1Col5";
+            this.pnlInputsRow1Col5.Size = new System.Drawing.Size(93, 51);
+            this.pnlInputsRow1Col5.TabIndex = 4;
             // 
-            // pnlInputsCol1
+            // btnGenerate
             // 
-            this.pnlInputsCol1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInputsCol1.Location = new System.Drawing.Point(10, 10);
-            this.pnlInputsCol1.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlInputsCol1.Name = "pnlInputsCol1";
-            this.pnlInputsCol1.Size = new System.Drawing.Size(108, 50);
-            this.pnlInputsCol1.TabIndex = 1;
+            this.btnGenerate.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGenerate.Location = new System.Drawing.Point(0, 0);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(93, 23);
+            this.btnGenerate.TabIndex = 0;
+            this.btnGenerate.Text = "Generate";
+            this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
+            // 
+            // pnlInputsRow1Col4
+            // 
+            this.pnlInputsRow1Col4.Controls.Add(this.cBoxPosition);
+            this.pnlInputsRow1Col4.Controls.Add(this.cBoxYear);
+            this.pnlInputsRow1Col4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow1Col4.Location = new System.Drawing.Point(314, 5);
+            this.pnlInputsRow1Col4.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlInputsRow1Col4.Name = "pnlInputsRow1Col4";
+            this.pnlInputsRow1Col4.Size = new System.Drawing.Size(93, 51);
+            this.pnlInputsRow1Col4.TabIndex = 3;
+            // 
+            // cBoxPosition
+            // 
+            this.cBoxPosition.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cBoxPosition.FormattingEnabled = true;
+            this.cBoxPosition.Location = new System.Drawing.Point(0, 30);
+            this.cBoxPosition.Name = "cBoxPosition";
+            this.cBoxPosition.Size = new System.Drawing.Size(93, 21);
+            this.cBoxPosition.TabIndex = 1;
+            // 
+            // cBoxYear
+            // 
+            this.cBoxYear.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cBoxYear.FormattingEnabled = true;
+            this.cBoxYear.Location = new System.Drawing.Point(0, 0);
+            this.cBoxYear.Name = "cBoxYear";
+            this.cBoxYear.Size = new System.Drawing.Size(93, 21);
+            this.cBoxYear.TabIndex = 0;
+            // 
+            // pnlInputsRow1Col3
+            // 
+            this.pnlInputsRow1Col3.Controls.Add(this.lblPosition);
+            this.pnlInputsRow1Col3.Controls.Add(this.lblYear);
+            this.pnlInputsRow1Col3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow1Col3.Location = new System.Drawing.Point(211, 5);
+            this.pnlInputsRow1Col3.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlInputsRow1Col3.Name = "pnlInputsRow1Col3";
+            this.pnlInputsRow1Col3.Size = new System.Drawing.Size(93, 51);
+            this.pnlInputsRow1Col3.TabIndex = 2;
+            // 
+            // lblPosition
+            // 
+            this.lblPosition.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblPosition.Location = new System.Drawing.Point(0, 28);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(93, 23);
+            this.lblPosition.TabIndex = 1;
+            this.lblPosition.Text = "Position:";
+            this.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblYear
+            // 
+            this.lblYear.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblYear.Location = new System.Drawing.Point(0, 0);
+            this.lblYear.Name = "lblYear";
+            this.lblYear.Size = new System.Drawing.Size(93, 23);
+            this.lblYear.TabIndex = 0;
+            this.lblYear.Text = "Year:";
+            this.lblYear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pnlInputsRow1Col2
+            // 
+            this.pnlInputsRow1Col2.Controls.Add(this.btnFind);
+            this.pnlInputsRow1Col2.Controls.Add(this.tBoxASXCode);
+            this.pnlInputsRow1Col2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow1Col2.Location = new System.Drawing.Point(108, 5);
+            this.pnlInputsRow1Col2.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlInputsRow1Col2.Name = "pnlInputsRow1Col2";
+            this.pnlInputsRow1Col2.Size = new System.Drawing.Size(93, 51);
+            this.pnlInputsRow1Col2.TabIndex = 1;
+            // 
+            // btnFind
+            // 
+            this.btnFind.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnFind.Location = new System.Drawing.Point(0, 28);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(93, 23);
+            this.btnFind.TabIndex = 1;
+            this.btnFind.Text = "Find";
+            this.btnFind.UseVisualStyleBackColor = true;
+            // 
+            // tBoxASXCode
+            // 
+            this.tBoxASXCode.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tBoxASXCode.Location = new System.Drawing.Point(0, 0);
+            this.tBoxASXCode.Name = "tBoxASXCode";
+            this.tBoxASXCode.Size = new System.Drawing.Size(93, 20);
+            this.tBoxASXCode.TabIndex = 0;
+            // 
+            // pnlInputsRow1Col1
+            // 
+            this.pnlInputsRow1Col1.Controls.Add(this.lblSecurity);
+            this.pnlInputsRow1Col1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow1Col1.Location = new System.Drawing.Point(5, 5);
+            this.pnlInputsRow1Col1.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlInputsRow1Col1.Name = "pnlInputsRow1Col1";
+            this.pnlInputsRow1Col1.Size = new System.Drawing.Size(93, 51);
+            this.pnlInputsRow1Col1.TabIndex = 0;
+            // 
+            // lblSecurity
+            // 
+            this.lblSecurity.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblSecurity.Location = new System.Drawing.Point(0, 0);
+            this.lblSecurity.Name = "lblSecurity";
+            this.lblSecurity.Size = new System.Drawing.Size(93, 20);
+            this.lblSecurity.TabIndex = 0;
+            this.lblSecurity.Text = "Security:";
+            this.lblSecurity.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // LeftTablePrices_Jan
+            // 
+            this.LeftTablePrices_Jan.HeaderText = "Jan";
+            this.LeftTablePrices_Jan.Name = "LeftTablePrices_Jan";
+            this.LeftTablePrices_Jan.ReadOnly = true;
+            this.LeftTablePrices_Jan.Width = 40;
+            // 
+            // LeftTablePrices_Feb
+            // 
+            this.LeftTablePrices_Feb.HeaderText = "Feb";
+            this.LeftTablePrices_Feb.Name = "LeftTablePrices_Feb";
+            this.LeftTablePrices_Feb.ReadOnly = true;
+            this.LeftTablePrices_Feb.Width = 40;
+            // 
+            // LeftTablePrices_Mar
+            // 
+            this.LeftTablePrices_Mar.HeaderText = "Mar";
+            this.LeftTablePrices_Mar.Name = "LeftTablePrices_Mar";
+            this.LeftTablePrices_Mar.ReadOnly = true;
+            this.LeftTablePrices_Mar.Width = 40;
+            // 
+            // LeftTablePrices_Apr
+            // 
+            this.LeftTablePrices_Apr.HeaderText = "Apr";
+            this.LeftTablePrices_Apr.Name = "LeftTablePrices_Apr";
+            this.LeftTablePrices_Apr.ReadOnly = true;
+            this.LeftTablePrices_Apr.Width = 40;
+            // 
+            // LeftTablePrices_May
+            // 
+            this.LeftTablePrices_May.HeaderText = "May";
+            this.LeftTablePrices_May.Name = "LeftTablePrices_May";
+            this.LeftTablePrices_May.ReadOnly = true;
+            this.LeftTablePrices_May.Width = 40;
+            // 
+            // LeftTablePrices_Jun
+            // 
+            this.LeftTablePrices_Jun.HeaderText = "Jun";
+            this.LeftTablePrices_Jun.Name = "LeftTablePrices_Jun";
+            this.LeftTablePrices_Jun.ReadOnly = true;
+            this.LeftTablePrices_Jun.Width = 40;
+            // 
+            // LeftTablePrices_Jul
+            // 
+            this.LeftTablePrices_Jul.HeaderText = "Jul";
+            this.LeftTablePrices_Jul.Name = "LeftTablePrices_Jul";
+            this.LeftTablePrices_Jul.ReadOnly = true;
+            this.LeftTablePrices_Jul.Width = 40;
+            // 
+            // LeftTablePrices_Aug
+            // 
+            this.LeftTablePrices_Aug.HeaderText = "Aug";
+            this.LeftTablePrices_Aug.Name = "LeftTablePrices_Aug";
+            this.LeftTablePrices_Aug.ReadOnly = true;
+            this.LeftTablePrices_Aug.Width = 40;
+            // 
+            // LeftTablePrices_Sep
+            // 
+            this.LeftTablePrices_Sep.HeaderText = "Sep";
+            this.LeftTablePrices_Sep.Name = "LeftTablePrices_Sep";
+            this.LeftTablePrices_Sep.ReadOnly = true;
+            this.LeftTablePrices_Sep.Width = 40;
+            // 
+            // LeftTablePrices_Oct
+            // 
+            this.LeftTablePrices_Oct.HeaderText = "Oct";
+            this.LeftTablePrices_Oct.Name = "LeftTablePrices_Oct";
+            this.LeftTablePrices_Oct.ReadOnly = true;
+            this.LeftTablePrices_Oct.Width = 40;
+            // 
+            // LeftTablePrices_Nov
+            // 
+            this.LeftTablePrices_Nov.HeaderText = "Nov";
+            this.LeftTablePrices_Nov.Name = "LeftTablePrices_Nov";
+            this.LeftTablePrices_Nov.ReadOnly = true;
+            this.LeftTablePrices_Nov.Width = 40;
+            // 
+            // LeftTablePrices_Dec
+            // 
+            this.LeftTablePrices_Dec.HeaderText = "Dec";
+            this.LeftTablePrices_Dec.Name = "LeftTablePrices_Dec";
+            this.LeftTablePrices_Dec.ReadOnly = true;
+            this.LeftTablePrices_Dec.Width = 40;
+            // 
+            // EmptyBetween
+            // 
+            this.EmptyBetween.HeaderText = "";
+            this.EmptyBetween.Name = "EmptyBetween";
+            this.EmptyBetween.Width = 40;
+            // 
+            // RightTablePrices_Jan
+            // 
+            this.RightTablePrices_Jan.HeaderText = "Jan";
+            this.RightTablePrices_Jan.Name = "RightTablePrices_Jan";
+            this.RightTablePrices_Jan.ReadOnly = true;
+            this.RightTablePrices_Jan.Width = 40;
+            // 
+            // RightTablePrices_Feb
+            // 
+            this.RightTablePrices_Feb.HeaderText = "Feb";
+            this.RightTablePrices_Feb.Name = "RightTablePrices_Feb";
+            this.RightTablePrices_Feb.ReadOnly = true;
+            this.RightTablePrices_Feb.Width = 40;
+            // 
+            // RightTablePrices_Mar
+            // 
+            this.RightTablePrices_Mar.HeaderText = "Mar";
+            this.RightTablePrices_Mar.Name = "RightTablePrices_Mar";
+            this.RightTablePrices_Mar.ReadOnly = true;
+            this.RightTablePrices_Mar.Width = 40;
+            // 
+            // RightTablePrices_Apr
+            // 
+            this.RightTablePrices_Apr.HeaderText = "Apr";
+            this.RightTablePrices_Apr.Name = "RightTablePrices_Apr";
+            this.RightTablePrices_Apr.ReadOnly = true;
+            this.RightTablePrices_Apr.Width = 40;
+            // 
+            // RightTablePrices_May
+            // 
+            this.RightTablePrices_May.HeaderText = "May";
+            this.RightTablePrices_May.Name = "RightTablePrices_May";
+            this.RightTablePrices_May.ReadOnly = true;
+            this.RightTablePrices_May.Width = 40;
+            // 
+            // RightTablePrices_Jun
+            // 
+            this.RightTablePrices_Jun.HeaderText = "Jun";
+            this.RightTablePrices_Jun.Name = "RightTablePrices_Jun";
+            this.RightTablePrices_Jun.ReadOnly = true;
+            this.RightTablePrices_Jun.Width = 40;
+            // 
+            // RightTablePrices_Jul
+            // 
+            this.RightTablePrices_Jul.HeaderText = "Jul";
+            this.RightTablePrices_Jul.Name = "RightTablePrices_Jul";
+            this.RightTablePrices_Jul.ReadOnly = true;
+            this.RightTablePrices_Jul.Width = 40;
+            // 
+            // RightTablePrices_Aug
+            // 
+            this.RightTablePrices_Aug.HeaderText = "Aug";
+            this.RightTablePrices_Aug.Name = "RightTablePrices_Aug";
+            this.RightTablePrices_Aug.ReadOnly = true;
+            this.RightTablePrices_Aug.Width = 40;
+            // 
+            // RightTablePrices_Sep
+            // 
+            this.RightTablePrices_Sep.HeaderText = "Sep";
+            this.RightTablePrices_Sep.Name = "RightTablePrices_Sep";
+            this.RightTablePrices_Sep.ReadOnly = true;
+            this.RightTablePrices_Sep.Width = 40;
+            // 
+            // RightTablePrices_Oct
+            // 
+            this.RightTablePrices_Oct.HeaderText = "Oct";
+            this.RightTablePrices_Oct.Name = "RightTablePrices_Oct";
+            this.RightTablePrices_Oct.ReadOnly = true;
+            this.RightTablePrices_Oct.Width = 40;
+            // 
+            // RightTablePrices_Nov
+            // 
+            this.RightTablePrices_Nov.HeaderText = "Nov";
+            this.RightTablePrices_Nov.Name = "RightTablePrices_Nov";
+            this.RightTablePrices_Nov.ReadOnly = true;
+            this.RightTablePrices_Nov.Width = 40;
+            // 
+            // RightTablePrices_Dec
+            // 
+            this.RightTablePrices_Dec.HeaderText = "Dec";
+            this.RightTablePrices_Dec.Name = "RightTablePrices_Dec";
+            this.RightTablePrices_Dec.ReadOnly = true;
+            this.RightTablePrices_Dec.Width = 40;
             // 
             // UC_Tab1
             // 
@@ -531,18 +838,16 @@
             this.pnlHeaderSinglePriceData.ResumeLayout(false);
             this.pnlHeaderSinglePriceData.PerformLayout();
             this.pnlContainerSinglePriceData.ResumeLayout(false);
-            this.tpnlOutputsSinglePriceData.ResumeLayout(false);
-            this.pnlOutputsCol2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAllSharePrices)).EndInit();
-            this.tpnlInputsSinglePriceData.ResumeLayout(false);
-            this.pnlInputsCol8.ResumeLayout(false);
-            this.pnlInputsCol7.ResumeLayout(false);
-            this.pnlInputsCol6.ResumeLayout(false);
-            this.pnlInputsCol5.ResumeLayout(false);
-            this.pnlInputsCol4.ResumeLayout(false);
-            this.pnlInputsCol4.PerformLayout();
-            this.pnlInputsCol3.ResumeLayout(false);
-            this.pnlInputsCol3.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.pnlOutputsRow2Col2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLeftPrices)).EndInit();
+            this.tpnlInputs.ResumeLayout(false);
+            this.pnlInputsRow1Col5.ResumeLayout(false);
+            this.pnlInputsRow1Col4.ResumeLayout(false);
+            this.pnlInputsRow1Col3.ResumeLayout(false);
+            this.pnlInputsRow1Col2.ResumeLayout(false);
+            this.pnlInputsRow1Col2.PerformLayout();
+            this.pnlInputsRow1Col1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -550,43 +855,75 @@
         #endregion
         private System.Windows.Forms.Panel pnlHeaderSinglePriceData;
         private System.Windows.Forms.Label lblHeaderSinglePriceData;
-        private System.Windows.Forms.Button btnDisplay;
-        private System.Windows.Forms.TextBox tboxASXShare;
-        private System.Windows.Forms.Label lblASXShare;
-        private System.Windows.Forms.Label lblYear;
-        private System.Windows.Forms.TextBox tboxYear;
-        private System.Windows.Forms.Label lblPriceType;
-        private System.Windows.Forms.ComboBox cboxPriceType;
         private System.Windows.Forms.Panel pnlContainerSinglePriceData;
-        private System.Windows.Forms.TableLayoutPanel tpnlInputsSinglePriceData;
-        private System.Windows.Forms.Panel pnlInputsCol1;
-        private System.Windows.Forms.Panel pnlInputsCol2;
-        private System.Windows.Forms.Panel pnlInputsCol3;
-        private System.Windows.Forms.Panel pnlInputsCol4;
-        private System.Windows.Forms.Panel pnlInputsCol8;
-        private System.Windows.Forms.Panel pnlInputsCol7;
-        private System.Windows.Forms.Panel pnlInputsCol6;
-        private System.Windows.Forms.Panel pnlInputsCol5;
-        private System.Windows.Forms.TableLayoutPanel tpnlOutputsSinglePriceData;
-        private System.Windows.Forms.DataGridView dgvAllSharePrices;
-        private System.Windows.Forms.Panel pnlOutputsCol1;
-        private System.Windows.Forms.Panel pnlOutputsCol2;
-        private System.Windows.Forms.Panel pnlOutputsCol3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Jan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Feb;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apr;
-        private System.Windows.Forms.DataGridViewTextBoxColumn May;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Jun;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Jul;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Aug;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Oct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nov;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dec;
-        private System.Windows.Forms.Label lblFooterHighestPrice;
-        private System.Windows.Forms.Label lblFooterLowestPrice;
-        private System.Windows.Forms.Label lblHeaderHighestPrice;
-        private System.Windows.Forms.Label lblHeaderLowestPrice;
+        private System.Windows.Forms.TableLayoutPanel tpnlInputs;
+        private System.Windows.Forms.Panel pnlInputsRow2Col10;
+        private System.Windows.Forms.Panel pnlInputsRow2Col9;
+        private System.Windows.Forms.Panel pnlInputsRow2Col8;
+        private System.Windows.Forms.Panel pnlInputsRow2Col7;
+        private System.Windows.Forms.Panel pnlInputsRow2Col6;
+        private System.Windows.Forms.Panel pnlInputsRow2Col5;
+        private System.Windows.Forms.Panel pnlInputsRow2Col4;
+        private System.Windows.Forms.Panel pnlInputsRow2Col3;
+        private System.Windows.Forms.Panel pnlInputsRow2Col2;
+        private System.Windows.Forms.Panel pnlInputsRow2Col1;
+        private System.Windows.Forms.Panel pnlInputsRow1Col10;
+        private System.Windows.Forms.Panel pnlInputsRow1Col9;
+        private System.Windows.Forms.Panel pnlInputsRow1Col8;
+        private System.Windows.Forms.Panel pnlInputsRow1Col7;
+        private System.Windows.Forms.Panel pnlInputsRow1Col6;
+        private System.Windows.Forms.Panel pnlInputsRow1Col5;
+        private System.Windows.Forms.Panel pnlInputsRow1Col4;
+        private System.Windows.Forms.Panel pnlInputsRow1Col3;
+        private System.Windows.Forms.Panel pnlInputsRow1Col2;
+        private System.Windows.Forms.Panel pnlInputsRow1Col1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel pnlOutputsRow2Col10;
+        private System.Windows.Forms.Panel pnlOutputsRow2Col6;
+        private System.Windows.Forms.Panel pnlOutputsRow2Col5;
+        private System.Windows.Forms.Panel pnlOutputsRow2Col2;
+        private System.Windows.Forms.Panel pnlOutputsRow2Col1;
+        private System.Windows.Forms.Panel pnlOutputsRow1Col10;
+        private System.Windows.Forms.Panel pnlOutputsRow1Col9;
+        private System.Windows.Forms.Panel pnlOutputsRow1Col8;
+        private System.Windows.Forms.Panel pnlOutputsRow1Col7;
+        private System.Windows.Forms.Panel pnlOutputsRow1Col6;
+        private System.Windows.Forms.Panel pnlOutputsRow1Col5;
+        private System.Windows.Forms.Panel pnlOutputsRow1Col2;
+        private System.Windows.Forms.Panel pnlOutputsRow1Col1;
+        private System.Windows.Forms.Label lblPosition;
+        private System.Windows.Forms.Label lblYear;
+        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.TextBox tBoxASXCode;
+        private System.Windows.Forms.Label lblSecurity;
+        private System.Windows.Forms.DataGridView dgvLeftPrices;
+        private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.ComboBox cBoxPosition;
+        private System.Windows.Forms.ComboBox cBoxYear;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LeftTablePrices_Jan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LeftTablePrices_Feb;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LeftTablePrices_Mar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LeftTablePrices_Apr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LeftTablePrices_May;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LeftTablePrices_Jun;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LeftTablePrices_Jul;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LeftTablePrices_Aug;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LeftTablePrices_Sep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LeftTablePrices_Oct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LeftTablePrices_Nov;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LeftTablePrices_Dec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmptyBetween;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RightTablePrices_Jan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RightTablePrices_Feb;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RightTablePrices_Mar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RightTablePrices_Apr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RightTablePrices_May;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RightTablePrices_Jun;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RightTablePrices_Jul;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RightTablePrices_Aug;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RightTablePrices_Sep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RightTablePrices_Oct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RightTablePrices_Nov;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RightTablePrices_Dec;
     }
 }

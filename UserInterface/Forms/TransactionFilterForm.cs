@@ -15,12 +15,14 @@ using System.Web.Util;
 using System.Windows.Documents;
 using System.Windows.Forms;
 using UserInterface.FormAssets;
+using static System.Net.WebRequestMethods;
 
 namespace UserInterface.Forms
 {
     public partial class TransactionFilterForm : Form
     {
         public List<Filter> FilterList = new List<Filter>();
+        public List<Filter2> filters2List = new List<Filter2>();
 
         //TODO - Need to have a combination of items into a single filter, like ANZ transactions of any kind over $1,000
 
@@ -77,6 +79,13 @@ namespace UserInterface.Forms
                 FilterList.Add(newFilter);
                 cboxFilterType.Text = null;
                 populateFilterPanel();
+
+                TradingTransactionTypeModel newTypeModel = new TradingTransactionTypeModel();
+                newTypeModel.Name = cboxFilterType.Text;
+
+                Filter2 newFilterToAdd = new Filter2(newTypeModel);
+                filters2List.Add(newFilterToAdd);
+
             }
         }
 
@@ -313,21 +322,46 @@ namespace UserInterface.Forms
         private void button2_Click(object sender, EventArgs e)
         {
 
-            //This filter style works
-            // you make an object and then allocate the required things to it and store that in the filter
+            //TransactionFilter myFilter = new Filter2();
+
+            // first, get a list of data to try on
+            string InputPortfolioName = "Bens Stock Portfolio";
+            IEnumerable<zFullPortfolioModel> allPortfolios;
+            allPortfolios = GlobalConfig.Connection.PopulatePortfolioModel();
+            zFullPortfolioModel myPortfolio = allPortfolios.FirstOrDefault(p => p.Name == InputPortfolioName);
+
+            //Transaction List
+            List<TradingTransactionModel> myTransactions;
+            myTransactions = myPortfolio.Transactions;
+
+            string lookupNote = "DUM00000B5";
+            TradingTransactionModel theTransaction = myTransactions.FirstOrDefault(t => t.ContractNote == lookupNote);
+
+            List<TradingTransactionModel> FilteredTransactions;
+            FilteredTransactions = myTransactions.Where(t => t.TradingTransactionTypeId.Name == "Buy").ToList();
+
+            int a = 1;
 
 
-            TradingEntityModel newCompany = new TradingEntityModel();
-            newCompany.ASXCode = "CBA";
+            // You create some filter Classes (which are just the requirements you want)
+            // Then you loop through
 
-            Filter2 testfilter1 = new Filter2(500.01, 600.5);
+            TradingTransactionTypeModel newType = new TradingTransactionTypeModel();
+            newType.Name = "Buy";
+            Filter2 myFilter = new Filter2(newType);
 
-            Filter2 testfilter2 = new Filter2(newCompany);
-            //Filter2 testfilter2 = new Filter2();
+
+            //List<TradingTransactionModel> myFilteredTransactions = myFilter.FilterTheTransactions(myTransactions, t => t.TradingTransactionTypeId.Name == myFilter)
 
 
-            List<Filter2> filtersList = new List<Filter2>();
-            filtersList.Add(testfilter2);
+            //List<TradingTransactionModel> transactionList;
+            //transactionList = myFilter.FilterTheTransactions(myTransactions, p => p.ContractNote == 'aaaa');
+
+            //		"DUM00000B5"
+
+
+
+            int b = 1;
 
 
         }

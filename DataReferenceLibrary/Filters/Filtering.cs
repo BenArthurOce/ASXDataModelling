@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace DataReferenceLibrary.Filters
 {
-    public class Filter2 : IFilter<TradingTransactionModel>
+    public class Filtering
     {
-
         private TradingTransactionTypeModel _transactionType;
         private readonly TradingEntityModel _tradingCompany;
         private readonly TradingSectorModel _tradingSector;
@@ -19,51 +18,37 @@ namespace DataReferenceLibrary.Filters
         private readonly double _minTradeValue;
         private readonly double _maxTradeValue;
 
-        public Filter2()
-        {
-
-        }
-
-        public Filter2(TradingTransactionTypeModel transactionType)
+        public Filtering(TradingTransactionTypeModel transactionType)
         {
             _transactionType = transactionType;
         }
 
-        public Filter2(TradingEntityModel tradingCompany)
+        public Filtering(TradingEntityModel tradingCompany)
         {
             _tradingCompany = tradingCompany;
         }
 
-        public Filter2(TradingSectorModel tradingSector)
+        public Filtering(TradingSectorModel tradingSector)
         {
             _tradingSector = tradingSector;
         }
 
-        public Filter2(DateTime minDate, DateTime maxDate)
+        public Filtering(DateTime minDate, DateTime maxDate)
         {
             _minDate = minDate;
             _maxDate = maxDate;
         }
 
-        public Filter2 (double minTradeValue, double maxTradeValue)
+        public Filtering(double minTradeValue, double maxTradeValue)
         {
             _minTradeValue = minTradeValue;
             _maxTradeValue = maxTradeValue;
         }
 
-        public bool Filtering(TradingTransactionModel model) 
-        {
-            return model.TotalValue >= _minTradeValue && model.TotalValue <= _maxTradeValue;
-        }
-
-        public List<TradingTransactionModel> FilterTheTransactions(List<TradingTransactionModel> transactions, Func<TradingTransactionModel, bool> filterCriteria)
+        public List<TradingTransactionModel> FilterTransactions(List<TradingTransactionModel> transactions, Func<TradingTransactionModel, bool> filterCriteria)
         {
             return transactions.Where(filterCriteria).ToList();
         }
-
-
-
-
 
 
     }
