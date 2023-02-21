@@ -56,7 +56,6 @@ namespace UserInterface.UserControlsTab
             // Clear previous entries
             flowLayoutPanel1.Controls.Clear();
 
-
             IEnumerable<zFullPortfolioModel> output2;
             output2 = GlobalConfig.Connection.PopulatePortfolioModel();
 
@@ -67,51 +66,11 @@ namespace UserInterface.UserControlsTab
 
                     foreach (var transaction in portfolio.Transactions)
                     {
-                        string messageString = $"Date:{transaction.Date} UnitPrice:{transaction.UnitPrice} TotalAmount:{transaction.TotalValue}";
-                        Console.WriteLine(messageString);
-
-                        // Adjust Date
-                        int input = transaction.Date;
-                        string inputString = input.ToString();
-                        DateTime date = DateTime.ParseExact(inputString, "yyyyMMdd", CultureInfo.InvariantCulture);
-                        string DateAdjust = date.ToString("dd/MM/yyyy");
-
-                        // Adjust Trade Value
-                        double TradeValueInput = transaction.TradeValue;
-                        string TradeValueOutput = string.Format("{0:C}", TradeValueInput);
-
-                        // Adjust Currency
-                        double TotalValueInput = transaction.TotalValue;
-                        string TotalValueOutput = string.Format("{0:C}", TotalValueInput);
 
 
-                        TransactionPanel newCustomPanel = new TransactionPanel
-                        (
-                            // _TransPortfolio
-                            "",
-                            //_TransContractNote
-                            transaction.ContractNote.ToString(),
-                            //_TransDate
-                            DateAdjust,
-                            //_TransType, 
-                            transaction.TradingTransactionTypeId.Name,
-                            //_TransShareCode
-                            transaction.TradingEntityId.ASXCode,
-                            //_TransShareName
-                            transaction.TradingEntityId.Name,
-                            //_TransShareSector
-                            transaction.TradingEntityId.TradingSectorId.SectorName,
-                            //_TransQuantity
-                            transaction.Quantity.ToString(),
-                            //_TransUnitPrice, 
-                            transaction.UnitPrice.ToString(),
-                            //_TransTradeValue,
-                            TradeValueOutput,
-                            //_TransBrokerage
-                            transaction.Brokerage.ToString(),
-                            //_TransCostTotal
-                            TotalValueOutput
-                        );
+                        TransactionPanel newCustomPanel = new TransactionPanel(transaction);
+
+ 
                         flowLayoutPanel1.Controls.Add(newCustomPanel);
                     }
 
@@ -122,7 +81,7 @@ namespace UserInterface.UserControlsTab
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Call the CreateNewTransactionForm
+            //Call the CreateNewTransactionForm
             //CreateNewTransactionForm form = new CreateNewTransactionForm(this);
             //form.Show();
         }

@@ -56,6 +56,7 @@ namespace UserInterface
                 UC_Tab2.Instance.BringToFront();
         }
 
+        
         private void radioButtonTab3_MouseClick(object sender, MouseEventArgs e)
         {
             if (!panelContainer.Controls.Contains(UC_Tab3.Instance))
@@ -67,6 +68,7 @@ namespace UserInterface
             else
                 UC_Tab3.Instance.BringToFront();
         }
+        
 
         private void radioButtonTab4_MouseClick(object sender, MouseEventArgs e)
         {
@@ -104,6 +106,7 @@ namespace UserInterface
                 UC_Tab6.Instance.BringToFront();
         }
 
+        /*
         private void radioButtonTab7_MouseClick(object sender, MouseEventArgs e)
         {
             if (!panelContainer.Controls.Contains(UC_Tab7.Instance))
@@ -115,6 +118,7 @@ namespace UserInterface
             else
                 UC_Tab7.Instance.BringToFront();
         }
+        */
 
         private void radioButtonTab8_MouseClick(object sender, MouseEventArgs e)
         {

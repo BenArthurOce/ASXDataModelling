@@ -76,6 +76,12 @@
     <Compile Include="FormAssets\TransactionPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\EditTransactionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditTransactionForm.Designer.cs">
+      <DependentUpon>EditTransactionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CreateNewTransactionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,11 +109,11 @@
     <Compile Include="UserControlsTab\UC_Tab8.Designer.cs">
       <DependentUpon>UC_Tab8.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlsTab\UC_Tab7.cs">
+    <Compile Include="UserControlsTab\UC_Tab3.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlsTab\UC_Tab7.Designer.cs">
-      <DependentUpon>UC_Tab7.cs</DependentUpon>
+    <Compile Include="UserControlsTab\UC_Tab3.Designer.cs">
+      <DependentUpon>UC_Tab3.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlsTab\UC_Tab1.cs">
       <SubType>UserControl</SubType>
@@ -127,12 +133,6 @@
     <Compile Include="UserControlsTab\UC_Tab4.Designer.cs">
       <DependentUpon>UC_Tab4.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlsTab\UC_Tab3.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlsTab\UC_Tab3.Designer.cs">
-      <DependentUpon>UC_Tab3.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControlsTab\UC_Tab2.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -147,6 +147,9 @@
     </Compile>
     <EmbeddedResource Include="FormAssets\RadioButtonTab.resx">
       <DependentUpon>RadioButtonTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditTransactionForm.resx">
+      <DependentUpon>EditTransactionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateNewTransactionForm.resx">
       <DependentUpon>CreateNewTransactionForm.cs</DependentUpon>
@@ -169,8 +172,8 @@
     <EmbeddedResource Include="UserControlsTab\UC_Tab8.resx">
       <DependentUpon>UC_Tab8.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlsTab\UC_Tab7.resx">
-      <DependentUpon>UC_Tab7.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlsTab\UC_Tab3.resx">
+      <DependentUpon>UC_Tab3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlsTab\UC_Tab1.resx">
       <DependentUpon>UC_Tab1.cs</DependentUpon>
@@ -180,9 +183,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlsTab\UC_Tab4.resx">
       <DependentUpon>UC_Tab4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlsTab\UC_Tab3.resx">
-      <DependentUpon>UC_Tab3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlsTab\UC_Tab2.resx">
       <DependentUpon>UC_Tab2.cs</DependentUpon>
