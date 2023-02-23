@@ -25,12 +25,12 @@ namespace UserInterface.Forms
         private TradingTransactionModel transaction;
 
 
-        public EditNewTransactionForm(TradingTransactionModel transaction)
+        public EditNewTransactionForm(TradingTransactionModel transactionModel)
         {
             InitializeComponent();
             WireUpLists();
-            //transaction = TradingTransactionModel;
-            //LoadFormData();
+            transaction = transactionModel;
+            LoadFormData();
             //    callingForm = caller;
         }
 
@@ -46,12 +46,20 @@ namespace UserInterface.Forms
         private void LoadFormData()
         {
             tBoxContractNote.Text = transaction.ContractNote;
-            tBoxASXCode.Text = transaction.TradingEntityId.Name;
+            tBoxASXCode.Text = transaction.TradingEntityId.ASXCode;
+            cboxType.Text = transaction.TradingTransactionTypeId.Name;
+            tBoxQuantity.Text = transaction.Quantity.ToString();
+            tBoxUnitPrice.Text = transaction.UnitPrice.ToString();
+            tBoxTradeValue.Text = transaction.TradeValue.ToString();
+            tBoxBrokerage.Text = transaction.Brokerage.ToString();
+            tBoxTotalValue.Text = transaction.TotalValue.ToString();
+
         }
 
         //TODO - Introduce "Clear" button to remove all data from fields
         //TODO - Find way to make date bar more presentable
         //TODO - Need a checkbox for contract note
+        //TODO - Need to Grey out Portfolio and Contract note on an edit transaction
 
 
         private bool ValidateForm()

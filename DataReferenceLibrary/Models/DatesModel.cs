@@ -8,7 +8,7 @@ namespace DataReferenceLibrary.Models2
 {
     public class DatesModel
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public int DateKey { get; set; }
         public DateTime DateId { get; set; }
         public long DayInt { get; set; }

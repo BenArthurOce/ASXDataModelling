@@ -12,6 +12,7 @@ namespace DataReferenceLibrary.DataAccess
 {
     public interface IDataConnection
     {
+        
 
         IEnumerable<zFullPortfolioModel> PopulatePortfolioModel();
 
@@ -26,10 +27,7 @@ namespace DataReferenceLibrary.DataAccess
         ///////////////////////////////
         ///////TAB - PRICE QUERY///////
         ///////////////////////////////
-        List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceOpen(string ASXCode, int InputYear);
-        List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceClose(string ASXCode, int InputYear);
-        List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceHigh(string ASXCode, int InputYear);
-        List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceLow(string ASXCode, int InputYear);
+        IEnumerable<zFullEODPriceModel> spQUERY_PricesOnYears(string ASXCode, int YearRequest);
 
 
         /////////////////////////////////////

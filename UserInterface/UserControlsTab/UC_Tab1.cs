@@ -16,6 +16,7 @@ using System.Data.Common;
 using System.Security.Claims;
 using TheArtOfDevHtmlRenderer.Adapters;
 using System.Windows.Media.Effects;
+using DataReferenceLibrary.Models2;
 
 namespace UserInterface.UserControlsTab
 {
@@ -41,7 +42,7 @@ namespace UserInterface.UserControlsTab
         {
             InitializeComponent();
             PrepareDataGridView();
-            cBoxYear.Text = "2021";
+            cBoxYear.Text = "2020";
             tBoxASXCode.Text = "CBA";
             cBoxPosition.Text = "Open";
         }
@@ -80,27 +81,47 @@ namespace UserInterface.UserControlsTab
             int YearRequest = Convert.ToInt32(cBoxYear.Text);
             string ASXCode = tBoxASXCode.Text;
             string PriceType = cBoxPosition.Text;
-            List<spQueryASXSharePricesForOneYear> output;
 
-            switch (PriceType)
+            IEnumerable<zFullEODPriceModel> output;
+            output = GlobalConfig.Connection.spQUERY_PricesOnYears(ASXCode, YearRequest);
+
+
+            // Populate Grid
+            foreach (zFullEODPriceModel result in output)
             {
-                case "Open":
-                    output = GlobalConfig.Connection.spQueryASXSharePricesForOneYear_PriceOpen(ASXCode, YearRequest);
-                    break;
-                case "Close":
-                    output = GlobalConfig.Connection.spQueryASXSharePricesForOneYear_PriceClose(ASXCode, YearRequest);
-                    break;
-                case "High":
-                    output = GlobalConfig.Connection.spQueryASXSharePricesForOneYear_PriceHigh(ASXCode, YearRequest);
-                    break;
-                case "Low":
-                    output = GlobalConfig.Connection.spQueryASXSharePricesForOneYear_PriceLow(ASXCode, YearRequest);
-                    break;
-                default:
-                    output = new List<spQueryASXSharePricesForOneYear>();
-                    break;
+                int x = 0;
+                int y = 0;
+
+                x = (int)result.DatesModel.DayInt - 1 + 3;
+                y = (int)result.DatesModel.MonthInt - 1;
+
+                if ((int)result.DatesModel.YearCalendar == YearRequest + 1)
+                {
+                    y += 13;
+                }
+
+                switch (PriceType)
+                {
+                    case "Open":
+                        dgvLeftPrices[y, (x)].Value = result.PriceOpen.ToString();
+                        break;
+                    case "Close":
+                        dgvLeftPrices[y, (x)].Value = result.PriceClose.ToString();
+                        break;
+                    case "High":
+                        dgvLeftPrices[y, (x)].Value = result.PriceHigh.ToString();
+                        break;
+                    case "Low":
+                        dgvLeftPrices[y, (x)].Value = result.PriceLow.ToString();
+                        break;
+                    default:
+                        dgvLeftPrices[y, (x)].Value = result.PriceOpen.ToString();
+                        break;
+                }
             }
-            PopulateGrid(output);
+
+            //TODO - Add Year Number to columns
+            //TODO - Add Min and Max
 
             // Put all Numbers into a List and calculate the Standard Deviation of the number set
             List<double> allValueList = new List<double>();
@@ -128,20 +149,10 @@ namespace UserInterface.UserControlsTab
             // Colour Cells in the datagridview based on their relation to the average of all numbers
             ColourCells(AverageMean, StandardDeviation);
 
+            
         }
 
-        private void PopulateGrid(List<spQueryASXSharePricesForOneYear> output)
-        {
-            {
-                // Input the query result into the datagridview
-                foreach (spQueryASXSharePricesForOneYear result in output)
-                {
-                    int x = (int)result.DayInt - 1+3;
-                    int y = (int)result.MonthInt - 1;
-                    dgvLeftPrices[y, (x)].Value = result.Price.ToString();
-                }
-            }
-        }
+
 
         private void ColourCells(double AverageMean, double StandardDeviation)
         {
@@ -177,13 +188,6 @@ namespace UserInterface.UserControlsTab
                 }
             }
         }
-
-        private void dgvLeftPrices_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-
-        }
-
-
 
 
 

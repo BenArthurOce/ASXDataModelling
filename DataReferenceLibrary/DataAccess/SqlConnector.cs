@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity.Infrastructure;
 using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Reflection;
@@ -10,12 +11,16 @@ using Dapper;
 using DataReferenceLibrary.Models;
 using DataReferenceLibrary.Models2;
 using DataReferenceLibrary.StoredProcs;
+using static System.Collections.Specialized.BitVector32;
 
 namespace DataReferenceLibrary.DataAccess
 {
     public class SqlConnector : IDataConnection
     {
         private const string db = "AppConfigAccess1";
+
+
+
 
 
 
@@ -138,45 +143,26 @@ namespace DataReferenceLibrary.DataAccess
         ///////////////////////////////
         ///////TAB - PRICE QUERY///////
         ///////////////////////////////
-        public List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceOpen(string ASXCode, int YearInput)
+        public IEnumerable<zFullEODPriceModel> spQUERY_PricesOnYears(string ASXCode, int YearRequest)
         {
-            List<spQueryASXSharePricesForOneYear> output;
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
-                output = connection.Query<spQueryASXSharePricesForOneYear>("dbo.spQueryASXSharePricesForOneYear_PriceOpen @ASXCode, @Year", new { ASXCode = ASXCode, Year = YearInput }).ToList();
+                var output_priceData = connection.Query<zFullEODPriceModel, TradingEntityModel, TradingSectorModel, DatesModel, zFullEODPriceModel>
+                    ("dbo.spQUERY_PricesOnYears @ASXCode, @Year",
+                    (prices, tradingEntity, tradingSector, dates) =>
+                    {
+                        prices.TradingEntityModel = tradingEntity;
+                        prices.DatesModel = dates;
+                        tradingEntity.TradingSectorId = tradingSector;
+                        return prices;
+                    },
+                    new { ASXCode = ASXCode, Year = YearRequest },
+                    splitOn: "Id"
+                    );
+                return output_priceData;
             }
-            return output;
         }
 
-        public List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceClose(string ASXCode, int YearInput)
-        {
-            List<spQueryASXSharePricesForOneYear> output;
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
-            {
-                output = connection.Query<spQueryASXSharePricesForOneYear>("dbo.spQueryASXSharePricesForOneYear_PriceClose @ASXCode, @Year", new { ASXCode = ASXCode, Year = YearInput }).ToList();
-            }
-            return output;
-        }
-
-        public List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceHigh(string ASXCode, int YearInput)
-        {
-            List<spQueryASXSharePricesForOneYear> output;
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
-            {
-                output = connection.Query<spQueryASXSharePricesForOneYear>("dbo.spQueryASXSharePricesForOneYear_PriceHigh @ASXCode, @Year", new { ASXCode = ASXCode, Year = YearInput }).ToList();
-            }
-            return output;
-        }
-
-        public List<spQueryASXSharePricesForOneYear> spQueryASXSharePricesForOneYear_PriceLow(string ASXCode, int YearInput)
-        {
-            List<spQueryASXSharePricesForOneYear> output;
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
-            {
-                output = connection.Query<spQueryASXSharePricesForOneYear>("dbo.spQueryASXSharePricesForOneYear_PriceLow @ASXCode, @Year", new { ASXCode = ASXCode, Year = YearInput }).ToList();
-            }
-            return output;
-        }
 
 
         /////////////////////////////////////

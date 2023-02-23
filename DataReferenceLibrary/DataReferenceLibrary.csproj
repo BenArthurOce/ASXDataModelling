@@ -66,6 +66,7 @@
     <Compile Include="Filters\IFilter.cs" />
     <Compile Include="GlobalConfig.cs" />
     <Compile Include="DataAccess\IDataConnection.cs" />
+    <Compile Include="Models\zFullEODPriceModel.cs" />
     <Compile Include="Models\zFullPortfolioModel.cs" />
     <Compile Include="Models\ConnectorIndividualsPortfolios.cs" />
     <Compile Include="Models\DatesModel.cs" />
@@ -79,7 +80,6 @@
     <Compile Include="Models\DocumentUploadHistoryModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StoredProcs\spQueryShareTransactionsForPortfolio.cs" />
-    <Compile Include="StoredProcs\spQueryASXSharePricesForOneYear.cs" />
     <Compile Include="StoredProcs\spQueryPortfolioItemsForCertainDate.cs" />
   </ItemGroup>
   <ItemGroup>
