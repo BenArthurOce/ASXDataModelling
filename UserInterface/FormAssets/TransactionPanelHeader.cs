@@ -1,8 +1,7 @@
-﻿
-
-using DataReferenceLibrary.Models2;
+﻿using DataReferenceLibrary.Models2;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -12,35 +11,48 @@ using System.Windows.Forms;
 
 namespace UserInterface.FormAssets
 {
-    class RowGridInactive : TableLayoutPanel
+    class TransactionPanelHeader : TableLayoutPanel
     {
-        private TradingTransactionModel TransactionModel;
+        private int _ColumnCount = 8;
+        private int _RowCount = 1;
 
-        public RowGridInactive(TradingTransactionModel _transactionModel)
+
+        public int ColumnCount
         {
-            this.TransactionModel = _transactionModel;
+            get { return _ColumnCount; }
+            set { _ColumnCount = value; Invalidate(); }
+        }
+
+        public int RowCount
+        {
+            get { return _RowCount; }
+            set { _RowCount = value; Invalidate(); }
+        }
+
+        public TransactionPanelHeader()
+        {
+            this.ColumnCount = _ColumnCount;
+            this.RowCount = _RowCount;
 
             // Define the number of columns and rows
-            int columns = 8;
-            int rows = 1;
+            int columns = _ColumnCount;
+            int rows = _RowCount;
+
 
             this.ColumnCount = columns;
             this.RowCount = rows;
             this.Margin = new Padding(0);
-            this.Dock = DockStyle.Fill;
 
-
-            List<string> listStrings = new List<string>() 
-            { 
-                DateTime.ParseExact(TransactionModel.Date.ToString(), "yyyyMMdd", CultureInfo.InvariantCulture).ToString("dd/MM/yyyy"),
-                this.TransactionModel.TradingTransactionTypeId.Name, 
-                this.TransactionModel.TradingEntityId.ASXCode, 
-                this.TransactionModel.Quantity.ToString(),
-                string.Format("{0:C}", this.TransactionModel.UnitPrice),
-                string.Format("{0:C}", this.TransactionModel.Brokerage),
-                string.Format("{0:C}", this.TransactionModel.TotalValue),
+            List<string> listStrings = new List<string>()
+            {
+                "Date",
+                "Type",
+                "Code",
+                "Quantity",
+                "Unit Price",
+                "Brokerage",
+                "Total Value",
                 "" };
-
 
             //Add Columns to the Control
             for (int i = 0; i < 8; i++)

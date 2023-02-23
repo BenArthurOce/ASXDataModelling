@@ -38,6 +38,31 @@
             this.pnlOutputsRow2Col5 = new System.Windows.Forms.Panel();
             this.pnlOutputsRow2Col2 = new System.Windows.Forms.Panel();
             this.dgvLeftPrices = new System.Windows.Forms.DataGridView();
+            this.LeftTablePrices_Jan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_Feb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_Mar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_Apr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_May = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_Jun = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_Jul = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_Aug = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_Sep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_Oct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_Nov = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTablePrices_Dec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmptyBetween = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Jan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Feb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Mar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Apr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_May = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Jun = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Jul = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Aug = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Sep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Oct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Nov = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RightTablePrices_Dec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlOutputsRow2Col1 = new System.Windows.Forms.Panel();
             this.pnlOutputsRow1Col10 = new System.Windows.Forms.Panel();
             this.pnlOutputsRow1Col9 = new System.Windows.Forms.Panel();
@@ -76,31 +101,6 @@
             this.tBoxASXCode = new System.Windows.Forms.TextBox();
             this.pnlInputsRow1Col1 = new System.Windows.Forms.Panel();
             this.lblSecurity = new System.Windows.Forms.Label();
-            this.LeftTablePrices_Jan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LeftTablePrices_Feb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LeftTablePrices_Mar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LeftTablePrices_Apr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LeftTablePrices_May = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LeftTablePrices_Jun = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LeftTablePrices_Jul = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LeftTablePrices_Aug = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LeftTablePrices_Sep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LeftTablePrices_Oct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LeftTablePrices_Nov = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LeftTablePrices_Dec = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmptyBetween = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RightTablePrices_Jan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RightTablePrices_Feb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RightTablePrices_Mar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RightTablePrices_Apr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RightTablePrices_May = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RightTablePrices_Jun = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RightTablePrices_Jul = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RightTablePrices_Aug = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RightTablePrices_Sep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RightTablePrices_Oct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RightTablePrices_Nov = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RightTablePrices_Dec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlHeaderSinglePriceData.SuspendLayout();
             this.pnlContainerSinglePriceData.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -263,6 +263,180 @@
             this.dgvLeftPrices.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLeftPrices.Size = new System.Drawing.Size(994, 417);
             this.dgvLeftPrices.TabIndex = 0;
+            // 
+            // LeftTablePrices_Jan
+            // 
+            this.LeftTablePrices_Jan.HeaderText = "Jan";
+            this.LeftTablePrices_Jan.Name = "LeftTablePrices_Jan";
+            this.LeftTablePrices_Jan.ReadOnly = true;
+            this.LeftTablePrices_Jan.Width = 40;
+            // 
+            // LeftTablePrices_Feb
+            // 
+            this.LeftTablePrices_Feb.HeaderText = "Feb";
+            this.LeftTablePrices_Feb.Name = "LeftTablePrices_Feb";
+            this.LeftTablePrices_Feb.ReadOnly = true;
+            this.LeftTablePrices_Feb.Width = 40;
+            // 
+            // LeftTablePrices_Mar
+            // 
+            this.LeftTablePrices_Mar.HeaderText = "Mar";
+            this.LeftTablePrices_Mar.Name = "LeftTablePrices_Mar";
+            this.LeftTablePrices_Mar.ReadOnly = true;
+            this.LeftTablePrices_Mar.Width = 40;
+            // 
+            // LeftTablePrices_Apr
+            // 
+            this.LeftTablePrices_Apr.HeaderText = "Apr";
+            this.LeftTablePrices_Apr.Name = "LeftTablePrices_Apr";
+            this.LeftTablePrices_Apr.ReadOnly = true;
+            this.LeftTablePrices_Apr.Width = 40;
+            // 
+            // LeftTablePrices_May
+            // 
+            this.LeftTablePrices_May.HeaderText = "May";
+            this.LeftTablePrices_May.Name = "LeftTablePrices_May";
+            this.LeftTablePrices_May.ReadOnly = true;
+            this.LeftTablePrices_May.Width = 40;
+            // 
+            // LeftTablePrices_Jun
+            // 
+            this.LeftTablePrices_Jun.HeaderText = "Jun";
+            this.LeftTablePrices_Jun.Name = "LeftTablePrices_Jun";
+            this.LeftTablePrices_Jun.ReadOnly = true;
+            this.LeftTablePrices_Jun.Width = 40;
+            // 
+            // LeftTablePrices_Jul
+            // 
+            this.LeftTablePrices_Jul.HeaderText = "Jul";
+            this.LeftTablePrices_Jul.Name = "LeftTablePrices_Jul";
+            this.LeftTablePrices_Jul.ReadOnly = true;
+            this.LeftTablePrices_Jul.Width = 40;
+            // 
+            // LeftTablePrices_Aug
+            // 
+            this.LeftTablePrices_Aug.HeaderText = "Aug";
+            this.LeftTablePrices_Aug.Name = "LeftTablePrices_Aug";
+            this.LeftTablePrices_Aug.ReadOnly = true;
+            this.LeftTablePrices_Aug.Width = 40;
+            // 
+            // LeftTablePrices_Sep
+            // 
+            this.LeftTablePrices_Sep.HeaderText = "Sep";
+            this.LeftTablePrices_Sep.Name = "LeftTablePrices_Sep";
+            this.LeftTablePrices_Sep.ReadOnly = true;
+            this.LeftTablePrices_Sep.Width = 40;
+            // 
+            // LeftTablePrices_Oct
+            // 
+            this.LeftTablePrices_Oct.HeaderText = "Oct";
+            this.LeftTablePrices_Oct.Name = "LeftTablePrices_Oct";
+            this.LeftTablePrices_Oct.ReadOnly = true;
+            this.LeftTablePrices_Oct.Width = 40;
+            // 
+            // LeftTablePrices_Nov
+            // 
+            this.LeftTablePrices_Nov.HeaderText = "Nov";
+            this.LeftTablePrices_Nov.Name = "LeftTablePrices_Nov";
+            this.LeftTablePrices_Nov.ReadOnly = true;
+            this.LeftTablePrices_Nov.Width = 40;
+            // 
+            // LeftTablePrices_Dec
+            // 
+            this.LeftTablePrices_Dec.HeaderText = "Dec";
+            this.LeftTablePrices_Dec.Name = "LeftTablePrices_Dec";
+            this.LeftTablePrices_Dec.ReadOnly = true;
+            this.LeftTablePrices_Dec.Width = 40;
+            // 
+            // EmptyBetween
+            // 
+            this.EmptyBetween.HeaderText = "";
+            this.EmptyBetween.Name = "EmptyBetween";
+            this.EmptyBetween.Width = 40;
+            // 
+            // RightTablePrices_Jan
+            // 
+            this.RightTablePrices_Jan.HeaderText = "Jan";
+            this.RightTablePrices_Jan.Name = "RightTablePrices_Jan";
+            this.RightTablePrices_Jan.ReadOnly = true;
+            this.RightTablePrices_Jan.Width = 40;
+            // 
+            // RightTablePrices_Feb
+            // 
+            this.RightTablePrices_Feb.HeaderText = "Feb";
+            this.RightTablePrices_Feb.Name = "RightTablePrices_Feb";
+            this.RightTablePrices_Feb.ReadOnly = true;
+            this.RightTablePrices_Feb.Width = 40;
+            // 
+            // RightTablePrices_Mar
+            // 
+            this.RightTablePrices_Mar.HeaderText = "Mar";
+            this.RightTablePrices_Mar.Name = "RightTablePrices_Mar";
+            this.RightTablePrices_Mar.ReadOnly = true;
+            this.RightTablePrices_Mar.Width = 40;
+            // 
+            // RightTablePrices_Apr
+            // 
+            this.RightTablePrices_Apr.HeaderText = "Apr";
+            this.RightTablePrices_Apr.Name = "RightTablePrices_Apr";
+            this.RightTablePrices_Apr.ReadOnly = true;
+            this.RightTablePrices_Apr.Width = 40;
+            // 
+            // RightTablePrices_May
+            // 
+            this.RightTablePrices_May.HeaderText = "May";
+            this.RightTablePrices_May.Name = "RightTablePrices_May";
+            this.RightTablePrices_May.ReadOnly = true;
+            this.RightTablePrices_May.Width = 40;
+            // 
+            // RightTablePrices_Jun
+            // 
+            this.RightTablePrices_Jun.HeaderText = "Jun";
+            this.RightTablePrices_Jun.Name = "RightTablePrices_Jun";
+            this.RightTablePrices_Jun.ReadOnly = true;
+            this.RightTablePrices_Jun.Width = 40;
+            // 
+            // RightTablePrices_Jul
+            // 
+            this.RightTablePrices_Jul.HeaderText = "Jul";
+            this.RightTablePrices_Jul.Name = "RightTablePrices_Jul";
+            this.RightTablePrices_Jul.ReadOnly = true;
+            this.RightTablePrices_Jul.Width = 40;
+            // 
+            // RightTablePrices_Aug
+            // 
+            this.RightTablePrices_Aug.HeaderText = "Aug";
+            this.RightTablePrices_Aug.Name = "RightTablePrices_Aug";
+            this.RightTablePrices_Aug.ReadOnly = true;
+            this.RightTablePrices_Aug.Width = 40;
+            // 
+            // RightTablePrices_Sep
+            // 
+            this.RightTablePrices_Sep.HeaderText = "Sep";
+            this.RightTablePrices_Sep.Name = "RightTablePrices_Sep";
+            this.RightTablePrices_Sep.ReadOnly = true;
+            this.RightTablePrices_Sep.Width = 40;
+            // 
+            // RightTablePrices_Oct
+            // 
+            this.RightTablePrices_Oct.HeaderText = "Oct";
+            this.RightTablePrices_Oct.Name = "RightTablePrices_Oct";
+            this.RightTablePrices_Oct.ReadOnly = true;
+            this.RightTablePrices_Oct.Width = 40;
+            // 
+            // RightTablePrices_Nov
+            // 
+            this.RightTablePrices_Nov.HeaderText = "Nov";
+            this.RightTablePrices_Nov.Name = "RightTablePrices_Nov";
+            this.RightTablePrices_Nov.ReadOnly = true;
+            this.RightTablePrices_Nov.Width = 40;
+            // 
+            // RightTablePrices_Dec
+            // 
+            this.RightTablePrices_Dec.HeaderText = "Dec";
+            this.RightTablePrices_Dec.Name = "RightTablePrices_Dec";
+            this.RightTablePrices_Dec.ReadOnly = true;
+            this.RightTablePrices_Dec.Width = 40;
             // 
             // pnlOutputsRow2Col1
             // 
@@ -652,180 +826,6 @@
             this.lblSecurity.TabIndex = 0;
             this.lblSecurity.Text = "Security:";
             this.lblSecurity.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // LeftTablePrices_Jan
-            // 
-            this.LeftTablePrices_Jan.HeaderText = "Jan";
-            this.LeftTablePrices_Jan.Name = "LeftTablePrices_Jan";
-            this.LeftTablePrices_Jan.ReadOnly = true;
-            this.LeftTablePrices_Jan.Width = 40;
-            // 
-            // LeftTablePrices_Feb
-            // 
-            this.LeftTablePrices_Feb.HeaderText = "Feb";
-            this.LeftTablePrices_Feb.Name = "LeftTablePrices_Feb";
-            this.LeftTablePrices_Feb.ReadOnly = true;
-            this.LeftTablePrices_Feb.Width = 40;
-            // 
-            // LeftTablePrices_Mar
-            // 
-            this.LeftTablePrices_Mar.HeaderText = "Mar";
-            this.LeftTablePrices_Mar.Name = "LeftTablePrices_Mar";
-            this.LeftTablePrices_Mar.ReadOnly = true;
-            this.LeftTablePrices_Mar.Width = 40;
-            // 
-            // LeftTablePrices_Apr
-            // 
-            this.LeftTablePrices_Apr.HeaderText = "Apr";
-            this.LeftTablePrices_Apr.Name = "LeftTablePrices_Apr";
-            this.LeftTablePrices_Apr.ReadOnly = true;
-            this.LeftTablePrices_Apr.Width = 40;
-            // 
-            // LeftTablePrices_May
-            // 
-            this.LeftTablePrices_May.HeaderText = "May";
-            this.LeftTablePrices_May.Name = "LeftTablePrices_May";
-            this.LeftTablePrices_May.ReadOnly = true;
-            this.LeftTablePrices_May.Width = 40;
-            // 
-            // LeftTablePrices_Jun
-            // 
-            this.LeftTablePrices_Jun.HeaderText = "Jun";
-            this.LeftTablePrices_Jun.Name = "LeftTablePrices_Jun";
-            this.LeftTablePrices_Jun.ReadOnly = true;
-            this.LeftTablePrices_Jun.Width = 40;
-            // 
-            // LeftTablePrices_Jul
-            // 
-            this.LeftTablePrices_Jul.HeaderText = "Jul";
-            this.LeftTablePrices_Jul.Name = "LeftTablePrices_Jul";
-            this.LeftTablePrices_Jul.ReadOnly = true;
-            this.LeftTablePrices_Jul.Width = 40;
-            // 
-            // LeftTablePrices_Aug
-            // 
-            this.LeftTablePrices_Aug.HeaderText = "Aug";
-            this.LeftTablePrices_Aug.Name = "LeftTablePrices_Aug";
-            this.LeftTablePrices_Aug.ReadOnly = true;
-            this.LeftTablePrices_Aug.Width = 40;
-            // 
-            // LeftTablePrices_Sep
-            // 
-            this.LeftTablePrices_Sep.HeaderText = "Sep";
-            this.LeftTablePrices_Sep.Name = "LeftTablePrices_Sep";
-            this.LeftTablePrices_Sep.ReadOnly = true;
-            this.LeftTablePrices_Sep.Width = 40;
-            // 
-            // LeftTablePrices_Oct
-            // 
-            this.LeftTablePrices_Oct.HeaderText = "Oct";
-            this.LeftTablePrices_Oct.Name = "LeftTablePrices_Oct";
-            this.LeftTablePrices_Oct.ReadOnly = true;
-            this.LeftTablePrices_Oct.Width = 40;
-            // 
-            // LeftTablePrices_Nov
-            // 
-            this.LeftTablePrices_Nov.HeaderText = "Nov";
-            this.LeftTablePrices_Nov.Name = "LeftTablePrices_Nov";
-            this.LeftTablePrices_Nov.ReadOnly = true;
-            this.LeftTablePrices_Nov.Width = 40;
-            // 
-            // LeftTablePrices_Dec
-            // 
-            this.LeftTablePrices_Dec.HeaderText = "Dec";
-            this.LeftTablePrices_Dec.Name = "LeftTablePrices_Dec";
-            this.LeftTablePrices_Dec.ReadOnly = true;
-            this.LeftTablePrices_Dec.Width = 40;
-            // 
-            // EmptyBetween
-            // 
-            this.EmptyBetween.HeaderText = "";
-            this.EmptyBetween.Name = "EmptyBetween";
-            this.EmptyBetween.Width = 40;
-            // 
-            // RightTablePrices_Jan
-            // 
-            this.RightTablePrices_Jan.HeaderText = "Jan";
-            this.RightTablePrices_Jan.Name = "RightTablePrices_Jan";
-            this.RightTablePrices_Jan.ReadOnly = true;
-            this.RightTablePrices_Jan.Width = 40;
-            // 
-            // RightTablePrices_Feb
-            // 
-            this.RightTablePrices_Feb.HeaderText = "Feb";
-            this.RightTablePrices_Feb.Name = "RightTablePrices_Feb";
-            this.RightTablePrices_Feb.ReadOnly = true;
-            this.RightTablePrices_Feb.Width = 40;
-            // 
-            // RightTablePrices_Mar
-            // 
-            this.RightTablePrices_Mar.HeaderText = "Mar";
-            this.RightTablePrices_Mar.Name = "RightTablePrices_Mar";
-            this.RightTablePrices_Mar.ReadOnly = true;
-            this.RightTablePrices_Mar.Width = 40;
-            // 
-            // RightTablePrices_Apr
-            // 
-            this.RightTablePrices_Apr.HeaderText = "Apr";
-            this.RightTablePrices_Apr.Name = "RightTablePrices_Apr";
-            this.RightTablePrices_Apr.ReadOnly = true;
-            this.RightTablePrices_Apr.Width = 40;
-            // 
-            // RightTablePrices_May
-            // 
-            this.RightTablePrices_May.HeaderText = "May";
-            this.RightTablePrices_May.Name = "RightTablePrices_May";
-            this.RightTablePrices_May.ReadOnly = true;
-            this.RightTablePrices_May.Width = 40;
-            // 
-            // RightTablePrices_Jun
-            // 
-            this.RightTablePrices_Jun.HeaderText = "Jun";
-            this.RightTablePrices_Jun.Name = "RightTablePrices_Jun";
-            this.RightTablePrices_Jun.ReadOnly = true;
-            this.RightTablePrices_Jun.Width = 40;
-            // 
-            // RightTablePrices_Jul
-            // 
-            this.RightTablePrices_Jul.HeaderText = "Jul";
-            this.RightTablePrices_Jul.Name = "RightTablePrices_Jul";
-            this.RightTablePrices_Jul.ReadOnly = true;
-            this.RightTablePrices_Jul.Width = 40;
-            // 
-            // RightTablePrices_Aug
-            // 
-            this.RightTablePrices_Aug.HeaderText = "Aug";
-            this.RightTablePrices_Aug.Name = "RightTablePrices_Aug";
-            this.RightTablePrices_Aug.ReadOnly = true;
-            this.RightTablePrices_Aug.Width = 40;
-            // 
-            // RightTablePrices_Sep
-            // 
-            this.RightTablePrices_Sep.HeaderText = "Sep";
-            this.RightTablePrices_Sep.Name = "RightTablePrices_Sep";
-            this.RightTablePrices_Sep.ReadOnly = true;
-            this.RightTablePrices_Sep.Width = 40;
-            // 
-            // RightTablePrices_Oct
-            // 
-            this.RightTablePrices_Oct.HeaderText = "Oct";
-            this.RightTablePrices_Oct.Name = "RightTablePrices_Oct";
-            this.RightTablePrices_Oct.ReadOnly = true;
-            this.RightTablePrices_Oct.Width = 40;
-            // 
-            // RightTablePrices_Nov
-            // 
-            this.RightTablePrices_Nov.HeaderText = "Nov";
-            this.RightTablePrices_Nov.Name = "RightTablePrices_Nov";
-            this.RightTablePrices_Nov.ReadOnly = true;
-            this.RightTablePrices_Nov.Width = 40;
-            // 
-            // RightTablePrices_Dec
-            // 
-            this.RightTablePrices_Dec.HeaderText = "Dec";
-            this.RightTablePrices_Dec.Name = "RightTablePrices_Dec";
-            this.RightTablePrices_Dec.ReadOnly = true;
-            this.RightTablePrices_Dec.Width = 40;
             // 
             // UC_Tab1
             // 

@@ -54,12 +54,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pnlInputsCol1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnNew = new System.Windows.Forms.Button();
             this.pnlHeaderSinglePriceData.SuspendLayout();
             this.pnlContainerSinglePriceData.SuspendLayout();
             this.tpnlOutputsSinglePriceData.SuspendLayout();
             this.pnlOutputsCol2.SuspendLayout();
             this.tpnlInputsSinglePriceData.SuspendLayout();
             this.pnlInputsCol8.SuspendLayout();
+            this.pnlInputsCol6.SuspendLayout();
             this.pnlInputsCol5.SuspendLayout();
             this.pnlInputsCol4.SuspendLayout();
             this.pnlInputsCol3.SuspendLayout();
@@ -223,6 +225,7 @@
             // 
             // pnlInputsCol6
             // 
+            this.pnlInputsCol6.Controls.Add(this.btnNew);
             this.pnlInputsCol6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlInputsCol6.Location = new System.Drawing.Point(650, 10);
             this.pnlInputsCol6.Margin = new System.Windows.Forms.Padding(10);
@@ -356,13 +359,23 @@
             this.label1.Text = "Filters:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // UC_Tab7
+            // btnNew
+            // 
+            this.btnNew.Location = new System.Drawing.Point(34, 17);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(75, 23);
+            this.btnNew.TabIndex = 0;
+            this.btnNew.Text = "New";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // UC_Tab3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlContainerSinglePriceData);
             this.Controls.Add(this.pnlHeaderSinglePriceData);
-            this.Name = "UC_Tab7";
+            this.Name = "UC_Tab3";
             this.Size = new System.Drawing.Size(1050, 640);
             this.pnlHeaderSinglePriceData.ResumeLayout(false);
             this.pnlHeaderSinglePriceData.PerformLayout();
@@ -371,6 +384,7 @@
             this.pnlOutputsCol2.ResumeLayout(false);
             this.tpnlInputsSinglePriceData.ResumeLayout(false);
             this.pnlInputsCol8.ResumeLayout(false);
+            this.pnlInputsCol6.ResumeLayout(false);
             this.pnlInputsCol5.ResumeLayout(false);
             this.pnlInputsCol4.ResumeLayout(false);
             this.pnlInputsCol3.ResumeLayout(false);
@@ -407,5 +421,6 @@
         private System.Windows.Forms.ComboBox cBoxPortfolio;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnNew;
     }
 }

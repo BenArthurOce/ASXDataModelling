@@ -41,10 +41,7 @@
             this.tBoxASXCode = new System.Windows.Forms.TextBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.cboxType = new System.Windows.Forms.ComboBox();
-            this.tBoxQuantity = new System.Windows.Forms.TextBox();
-            this.tBoxUnitPrice = new System.Windows.Forms.TextBox();
             this.tBoxTradeValue = new System.Windows.Forms.TextBox();
-            this.tBoxBrokerage = new System.Windows.Forms.TextBox();
             this.tBoxTotalValue = new System.Windows.Forms.TextBox();
             this.btnOk = new System.Windows.Forms.Button();
             this.lblPortfolio = new System.Windows.Forms.Label();
@@ -85,12 +82,17 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.cBoxPortfolio = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.nTBoxBrokerage = new UserInterface.FormAssets.NumericTextBox();
+            this.nTBoxUnitPrice = new UserInterface.FormAssets.NumericTextBox();
+            this.nTBoxQuantity = new UserInterface.FormAssets.NumericTextBox();
             this.panel1.SuspendLayout();
             this.pnlContainerNewEditTransaction.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel31.SuspendLayout();
             this.panel30.SuspendLayout();
             this.panel28.SuspendLayout();
+            this.panel27.SuspendLayout();
             this.panel26.SuspendLayout();
             this.panel25.SuspendLayout();
             this.panel23.SuspendLayout();
@@ -221,7 +223,9 @@
             // 
             // dtpDate
             // 
+            this.dtpDate.CustomFormat = "dd/MM/yyyy";
             this.dtpDate.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDate.Location = new System.Drawing.Point(0, 0);
             this.dtpDate.MaxDate = new System.DateTime(3999, 12, 31, 0, 0, 0, 0);
             this.dtpDate.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
@@ -238,26 +242,6 @@
             this.cboxType.Size = new System.Drawing.Size(99, 21);
             this.cboxType.TabIndex = 5;
             // 
-            // tBoxQuantity
-            // 
-            this.tBoxQuantity.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tBoxQuantity.Location = new System.Drawing.Point(0, 0);
-            this.tBoxQuantity.Name = "tBoxQuantity";
-            this.tBoxQuantity.Size = new System.Drawing.Size(103, 20);
-            this.tBoxQuantity.TabIndex = 6;
-            this.tBoxQuantity.TextChanged += new System.EventHandler(this.tBoxQuantity_TextChanged);
-            this.tBoxQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBoxQuantity_KeyPress);
-            // 
-            // tBoxUnitPrice
-            // 
-            this.tBoxUnitPrice.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tBoxUnitPrice.Location = new System.Drawing.Point(0, 0);
-            this.tBoxUnitPrice.Name = "tBoxUnitPrice";
-            this.tBoxUnitPrice.Size = new System.Drawing.Size(103, 20);
-            this.tBoxUnitPrice.TabIndex = 7;
-            this.tBoxUnitPrice.TextChanged += new System.EventHandler(this.tBoxUnitPrice_TextChanged);
-            this.tBoxUnitPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBoxUnitPrice_KeyPress);
-            // 
             // tBoxTradeValue
             // 
             this.tBoxTradeValue.Dock = System.Windows.Forms.DockStyle.Top;
@@ -267,16 +251,6 @@
             this.tBoxTradeValue.TabIndex = 8;
             this.tBoxTradeValue.TextChanged += new System.EventHandler(this.tBoxTradeValue_TextChanged);
             this.tBoxTradeValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBoxTradeValue_KeyPress);
-            // 
-            // tBoxBrokerage
-            // 
-            this.tBoxBrokerage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tBoxBrokerage.Location = new System.Drawing.Point(0, 0);
-            this.tBoxBrokerage.Name = "tBoxBrokerage";
-            this.tBoxBrokerage.Size = new System.Drawing.Size(103, 20);
-            this.tBoxBrokerage.TabIndex = 9;
-            this.tBoxBrokerage.TextChanged += new System.EventHandler(this.tBoxBrokerage_TextChanged);
-            this.tBoxBrokerage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBoxBrokerage_KeyPress);
             // 
             // tBoxTotalValue
             // 
@@ -429,7 +403,7 @@
             // 
             // panel28
             // 
-            this.panel28.Controls.Add(this.button1);
+            this.panel28.Controls.Add(this.btnClear);
             this.panel28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel28.Location = new System.Drawing.Point(129, 380);
             this.panel28.Margin = new System.Windows.Forms.Padding(10);
@@ -439,7 +413,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(4, -1);
+            this.button1.Location = new System.Drawing.Point(3, 13);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -449,6 +423,7 @@
             // 
             // panel27
             // 
+            this.panel27.Controls.Add(this.button1);
             this.panel27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel27.Location = new System.Drawing.Point(10, 380);
             this.panel27.Margin = new System.Windows.Forms.Padding(10);
@@ -507,7 +482,7 @@
             // 
             // panel21
             // 
-            this.panel21.Controls.Add(this.tBoxBrokerage);
+            this.panel21.Controls.Add(this.nTBoxBrokerage);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel21.Location = new System.Drawing.Point(398, 232);
             this.panel21.Margin = new System.Windows.Forms.Padding(10);
@@ -605,7 +580,7 @@
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.tBoxUnitPrice);
+            this.panel11.Controls.Add(this.nTBoxUnitPrice);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Location = new System.Drawing.Point(398, 84);
             this.panel11.Margin = new System.Windows.Forms.Padding(10);
@@ -654,7 +629,7 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.tBoxQuantity);
+            this.panel6.Controls.Add(this.nTBoxQuantity);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(398, 10);
             this.panel6.Margin = new System.Windows.Forms.Padding(10);
@@ -710,6 +685,46 @@
             this.panel2.Size = new System.Drawing.Size(99, 54);
             this.panel2.TabIndex = 23;
             // 
+            // btnClear
+            // 
+            this.btnClear.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnClear.Location = new System.Drawing.Point(0, 0);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(99, 23);
+            this.btnClear.TabIndex = 0;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            // 
+            // nTBoxBrokerage
+            // 
+            this.nTBoxBrokerage.AllowsDecimals = true;
+            this.nTBoxBrokerage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.nTBoxBrokerage.Location = new System.Drawing.Point(0, 0);
+            this.nTBoxBrokerage.Name = "nTBoxBrokerage";
+            this.nTBoxBrokerage.Size = new System.Drawing.Size(103, 20);
+            this.nTBoxBrokerage.TabIndex = 0;
+            this.nTBoxBrokerage.TextChanged += new System.EventHandler(this.nTBoxBrokerage_TextChanged);
+            // 
+            // nTBoxUnitPrice
+            // 
+            this.nTBoxUnitPrice.AllowsDecimals = true;
+            this.nTBoxUnitPrice.Dock = System.Windows.Forms.DockStyle.Top;
+            this.nTBoxUnitPrice.Location = new System.Drawing.Point(0, 0);
+            this.nTBoxUnitPrice.Name = "nTBoxUnitPrice";
+            this.nTBoxUnitPrice.Size = new System.Drawing.Size(103, 20);
+            this.nTBoxUnitPrice.TabIndex = 0;
+            this.nTBoxUnitPrice.TextChanged += new System.EventHandler(this.nTBoxUnitPrice_TextChanged);
+            // 
+            // nTBoxQuantity
+            // 
+            this.nTBoxQuantity.AllowsDecimals = false;
+            this.nTBoxQuantity.Dock = System.Windows.Forms.DockStyle.Top;
+            this.nTBoxQuantity.Location = new System.Drawing.Point(0, 0);
+            this.nTBoxQuantity.Name = "nTBoxQuantity";
+            this.nTBoxQuantity.Size = new System.Drawing.Size(103, 20);
+            this.nTBoxQuantity.TabIndex = 0;
+            this.nTBoxQuantity.TextChanged += new System.EventHandler(this.nTBoxQuantity_TextChanged);
+            // 
             // CreateNewTransactionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -726,6 +741,7 @@
             this.panel31.ResumeLayout(false);
             this.panel30.ResumeLayout(false);
             this.panel28.ResumeLayout(false);
+            this.panel27.ResumeLayout(false);
             this.panel26.ResumeLayout(false);
             this.panel26.PerformLayout();
             this.panel25.ResumeLayout(false);
@@ -772,10 +788,7 @@
         private System.Windows.Forms.TextBox tBoxASXCode;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.ComboBox cboxType;
-        private System.Windows.Forms.TextBox tBoxQuantity;
-        private System.Windows.Forms.TextBox tBoxUnitPrice;
         private System.Windows.Forms.TextBox tBoxTradeValue;
-        private System.Windows.Forms.TextBox tBoxBrokerage;
         private System.Windows.Forms.TextBox tBoxTotalValue;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Label lblPortfolio;
@@ -816,5 +829,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cBoxPortfolio;
         private System.Windows.Forms.Button button1;
+        private FormAssets.NumericTextBox nTBoxQuantity;
+        private FormAssets.NumericTextBox nTBoxBrokerage;
+        private FormAssets.NumericTextBox nTBoxUnitPrice;
+        private System.Windows.Forms.Button btnClear;
     }
 }

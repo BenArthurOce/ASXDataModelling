@@ -125,7 +125,7 @@ namespace UserInterface.Forms
         {
             //TODO - Validate Input Box 1
             //TODO - Validate Input Box 2
-            //TODO - Find a cleaner way to display date time when in form
+
 
 
             DateTime firstDate = DateTime.TryParse(dtpFilterDateStart.Text, out DateTime parsedDate1) ? parsedDate1 : DateTime.MinValue;
@@ -267,6 +267,7 @@ namespace UserInterface.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            /*
             // How does the logic work in this one
             // We make a list of the Transactions from the Query
             // We make a list of the Transactions that survived the filter
@@ -316,12 +317,12 @@ namespace UserInterface.Forms
             {
                 MessageBox.Show(transaction.ASXCode + transaction.Date.ToString());
             }
-
+            */
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            /*
             //TransactionFilter myFilter = new Filter2();
 
             // first, get a list of data to try on
@@ -362,7 +363,7 @@ namespace UserInterface.Forms
 
 
             int b = 1;
-
+            */
 
         }
     }

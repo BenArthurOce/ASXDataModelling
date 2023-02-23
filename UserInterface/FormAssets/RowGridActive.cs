@@ -31,6 +31,7 @@ namespace UserInterface.FormAssets
 
             this.ColumnCount = columns;
             this.RowCount = rows;
+            this.Dock = DockStyle.Fill;
 
             //Add Columns to the Control
             for (int i = 0; i < 8; i++)

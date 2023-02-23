@@ -14,10 +14,11 @@ using DataReferenceLibrary.StoredProcs;
 using System.Globalization;
 using UserInterface.FormAssets;
 using DataReferenceLibrary.Models2;
+using UserInterface.Forms;
 
 namespace UserInterface.UserControlsTab
 {
-    public partial class UC_Tab3 : UserControl
+    public partial class UC_Tab3 : UserControl, ICreateTransactionRequester
     {
         private List<PortfolioModel> availablePortfolios = GlobalConfig.Connection.spGETLIST_Portfolios();
 
@@ -48,16 +49,13 @@ namespace UserInterface.UserControlsTab
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string InputPortfolioName = "Ben Portfolio Account 1";
-            List<spQueryShareTransactionsForPortfolio> output;
-            output = GlobalConfig.Connection.spQueryAllShareTransactions(InputPortfolioName);
-            PrepareTableLayoutPanel(output);
+
         }
 
         private void PrepareTableLayoutPanel(List<spQueryShareTransactionsForPortfolio> output)
         {
             IEnumerable<zFullPortfolioModel> output2;
-            output2 = GlobalConfig.Connection.PopulatePortfolioModel();
+            output2 = GlobalConfig.Connection.spQUERY_PortfoliosIndividualsTransactions();
 
             foreach (zFullPortfolioModel portfolio in output2)
             {
@@ -75,6 +73,18 @@ namespace UserInterface.UserControlsTab
 
                 }
             }
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            //Call the CreateNewTransactionForm
+            CreateNewTransactionForm form = new CreateNewTransactionForm(this);
+            form.Show();
+        }
+
+        public void CreateTransactionComplete(TradingTransactionModel model)
+        {
+            throw new NotImplementedException();
         }
     }
 }

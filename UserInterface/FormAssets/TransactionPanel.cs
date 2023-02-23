@@ -18,6 +18,7 @@ namespace UserInterface.FormAssets
         private RowGridActive _ActiveGridRow;
         private RowGridInactive _InactiveGridRow;
         private bool _isClicked;
+        private int _PanelWidth;
 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         [RefreshProperties(System.ComponentModel.RefreshProperties.All)]
@@ -39,10 +40,26 @@ namespace UserInterface.FormAssets
             set { _isClicked = value; Invalidate(); }
         }
 
+        public int PanelWidth
+        {
+            get { return _PanelWidth; }
+            set { _PanelWidth = value; Invalidate(); }
+        }
+
         public TransactionPanel(TradingTransactionModel _transactionModel)
         {
-            Width = 867;
+            this.Width = PanelWidth;
+            //MessageBox.Show(this.Parent.Width.ToString());
+
+            //Width = 867;
+           // Width = 1200;
             Height = 40;
+ 
+
+            // This panel doesnt have a parent because it hasnt been created yet.
+            // A value will need to pass into it, to determine its width
+
+            this.BackColor = Color.Pink;
 
             this.TransactionModel = _transactionModel;
 
@@ -52,23 +69,29 @@ namespace UserInterface.FormAssets
             // The purpose of this control is to switch between the two, depending on active state
 
             this._ActiveGridRow = new RowGridActive(this.TransactionModel);
-            _ActiveGridRow.Width = 867;
+            //_ActiveGridRow.Width = this.Width;
             _ActiveGridRow.Height = 150;
             _ActiveGridRow.Visible = false;
             _ActiveGridRow.Location = new System.Drawing.Point(0, 0);
             _ActiveGridRow.Margin = new Padding(0);
             _ActiveGridRow.BackColor = Color.SteelBlue;
             _ActiveGridRow.ForeColor = Color.Black;
+            _ActiveGridRow.Dock = DockStyle.Top;
+            _ActiveGridRow.AutoSize = false;
 
 
             this._InactiveGridRow = new RowGridInactive(this.TransactionModel);
-            _InactiveGridRow.Width = 867;
+            //_InactiveGridRow.Width = this.Width;
             _InactiveGridRow.Height = 40;
             _InactiveGridRow.Visible = false;
             _InactiveGridRow.Location = new System.Drawing.Point(0, 0);
             _InactiveGridRow.Margin = new Padding(0);
             _InactiveGridRow.BackColor = Color.LightGray;
             _InactiveGridRow.ForeColor = Color.Black;
+            _InactiveGridRow.Dock = DockStyle.Top;
+            _InactiveGridRow.AutoSize = false;
+
+
 
             this.Controls.Add(_ActiveGridRow);
             this.Controls.Add(_InactiveGridRow);

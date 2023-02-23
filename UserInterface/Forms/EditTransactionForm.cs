@@ -36,8 +36,8 @@ namespace UserInterface.Forms
 
         private void WireUpLists()
         {
-            cBoxPortfolio.DataSource = availablePortfolios;
-            cBoxPortfolio.DisplayMember = "DropDownBoxDisplay";
+            //tboxPortfolio.DataSource = availablePortfolios;
+            //tboxPortfolio.DisplayMember = "DropDownBoxDisplay";
 
             cboxType.DataSource = availableTransactionTypes;
             cboxType.DisplayMember = "DropDownBoxDisplay";
@@ -45,6 +45,7 @@ namespace UserInterface.Forms
 
         private void LoadFormData()
         {
+            //tboxPortfolio.Text = transaction.PortfolioId.ToString();
             tBoxContractNote.Text = transaction.ContractNote;
             tBoxASXCode.Text = transaction.TradingEntityId.ASXCode;
             cboxType.Text = transaction.TradingTransactionTypeId.Name;
@@ -56,7 +57,7 @@ namespace UserInterface.Forms
 
         }
 
-        //TODO - Introduce "Clear" button to remove all data from fields
+
         //TODO - Find way to make date bar more presentable
         //TODO - Need a checkbox for contract note
         //TODO - Need to Grey out Portfolio and Contract note on an edit transaction
@@ -64,7 +65,7 @@ namespace UserInterface.Forms
 
         private bool ValidateForm()
         {
-            if (cBoxPortfolio.Text == null) { return false; }
+            if (tboxPortfolio.Text == null) { return false; }
             if (tBoxContractNote.Text == null) { return false; }
             if (tBoxASXCode.Text == null) { return false; }
             if (dtpDate.Text == null) { return false; }
@@ -83,7 +84,7 @@ namespace UserInterface.Forms
             if (ValidateForm())
             {
                 //callingForm.CreateTransactionComplete(model);
-                string portfolioName = cBoxPortfolio.Text;
+                string portfolioName = tboxPortfolio.Text;
 
                 TradingTransactionModel newTrans = new TradingTransactionModel(
                     tBoxContractNote.Text,
@@ -168,6 +169,8 @@ namespace UserInterface.Forms
             }
         }
 
+        //TODO - Introduce Numeric Textboxes
+
         private void tBoxQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
@@ -213,7 +216,7 @@ namespace UserInterface.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cBoxPortfolio.Text = "Dummy Portfolio 3";
+            tboxPortfolio.Text = "Dummy Portfolio 3";
             tBoxContractNote.Text = 00000001.ToString();
             tBoxASXCode.Text = "CBA";
             //dtpDate.Text = ;

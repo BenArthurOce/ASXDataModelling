@@ -52,7 +52,9 @@ namespace UserInterface.UserControlsTab
             int InputEndDate = Convert.ToInt32(tBoxPortfolioEndDate.Text);
             List<spQueryPortfolioItemsForCertainDate> output;
             output = GlobalConfig.Connection.spQUERY_PortfolioValue(InputPortfolioName, InputEndDate);
-            PopulatePortfolioGrid(output);          
+            PopulatePortfolioGrid(output);   
+            
+            //TODO - FORM DATA VALIDATION
         }
 
         private void PopulatePortfolioGrid(List<spQueryPortfolioItemsForCertainDate> output)

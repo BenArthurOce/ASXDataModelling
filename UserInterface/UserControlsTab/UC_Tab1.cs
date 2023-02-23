@@ -35,8 +35,8 @@ namespace UserInterface.UserControlsTab
         }
 
         //TODO - Add data validation
-        //TODO - Include some 52 week high, low data etc
-        //TODO - Colour Cells based on percentile
+
+
 
         public UC_Tab1()
         {
@@ -86,8 +86,10 @@ namespace UserInterface.UserControlsTab
             output = GlobalConfig.Connection.spQUERY_PricesOnYears(ASXCode, YearRequest);
 
 
-            // Populate Grid
-            foreach (zFullEODPriceModel result in output)
+
+
+                    // Populate Grid
+                foreach (zFullEODPriceModel result in output)
             {
                 int x = 0;
                 int y = 0;
@@ -119,9 +121,37 @@ namespace UserInterface.UserControlsTab
                         break;
                 }
             }
+            int numColumns = dgvLeftPrices.Columns.Count;
+            for (int i = 0; i < numColumns; i++)
+            {
+                if (i == 12)
+                {
+                    continue;
+                }
+                else
+                {
+                    DataGridViewColumn column = dgvLeftPrices.Columns[i];
+                    double max = double.MinValue;
+                    double min = double.MaxValue;
+
+                    foreach (DataGridViewRow row in dgvLeftPrices.Rows)
+                    {
+                        if (row.Cells[i].Value != null && double.TryParse(row.Cells[i].Value.ToString(), out double value))
+                        {
+                            if (value > max)
+                                max = value;
+                            if (value < min)
+                                min = value;
+                        }
+                    }
+                    dgvLeftPrices[i, (0)].Value = max;
+                    dgvLeftPrices[i, (1)].Value = min;
+                    Console.WriteLine($"Column {column.HeaderText}: max = {max}");
+                }
+            }
 
             //TODO - Add Year Number to columns
-            //TODO - Add Min and Max
+            //TODO - Fix Error When MNS is typed in 
 
             // Put all Numbers into a List and calculate the Standard Deviation of the number set
             List<double> allValueList = new List<double>();
@@ -150,6 +180,9 @@ namespace UserInterface.UserControlsTab
             ColourCells(AverageMean, StandardDeviation);
 
             
+
+
+
         }
 
 
@@ -162,7 +195,7 @@ namespace UserInterface.UserControlsTab
                 {
                     if (cell.Value == null || cell.Value == "")
                     {
-                        cell.Style.BackColor = Color.FromArgb(255, 255, 255);
+                        cell.Style.BackColor = Color.FromArgb(211, 211, 211);
                         continue;
                     }
                     else

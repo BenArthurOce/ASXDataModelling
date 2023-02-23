@@ -24,95 +24,7 @@ namespace DataReferenceLibrary.DataAccess
 
 
 
-        public IEnumerable<zFullPortfolioModel> PopulatePortfolioModel()
-        {
 
-            var transaction_list = new List<TradingTransactionModel>();
-            var portfolio_list = new List<zFullPortfolioModel>();
-
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
-            {
-
-
-                var output_portfolios = connection.Query<zFullPortfolioModel, ConnectorIndividualsPortfolios, IndividualModel, TradingTransactionModel, TradingTransactionTypeModel, TradingEntityModel, TradingSectorModel, zFullPortfolioModel>
-                    ("dbo.spQUERY_PortfoliosIndividualsTransactions",
-                    (portfolio, connector, individual, transaction, transtype, company, sector) =>
-                    {
-
-                        // Moodel the transaction information into one single "part" of data
-                        transaction.TradingTransactionTypeId = transtype;
-                        transaction.TradingEntityId = company;
-                        company.TradingSectorId = sector;
-
-
-                        //====================================
-                        // get from lookup (if any)
-                        var port = portfolio_list.FirstOrDefault(s => s.Id == portfolio.Id);
-
-                        // if its not there, add
-                        if (port == null)
-                        {
-                            portfolio_list.Add(portfolio);
-                            port = portfolio;
-                        }
-
-                        // if there is no list for individuals, instantiate it
-                        port.Individuals = port.Individuals ?? new List<IndividualModel>();
-
-
-
-
-                        //====================================
-                        // get from lookup (if any)
-                        var indiv = port.Individuals.FirstOrDefault(s => s.Id == individual.Id);
-
-                        // if its not there, add
-                        if (indiv == null)
-                        {
-                            port.Individuals.Add(individual);
-                            indiv = individual;
-                        }
-
-                        // Add the transaction for every line (no checks need to be made for duplicates like Portfolios or individuals)
-                        //port.Transactions = port.Transactions ?? new List<FullShareTransactionModel>();
-                        //port.Transactions.Add(transaction);
-
-
-                        // if there is no list for individuals, instantiate it
-                        port.Transactions = port.Transactions ?? new List<TradingTransactionModel>();
-
-
-                        //====================================
-                        // get from lookup (if any)
-                        var trans = port.Transactions.FirstOrDefault(s => s.Id == transaction.Id);
-                        if (trans == null)
-                        {
-                            port.Transactions.Add(transaction);
-                            trans = transaction;
-                        }
-
-
-                        return null;
-                    }, splitOn: "Id");
-                
-
-
-
-
-
-                // output_portfolios has 18 count, all null
-                // portfolio_list has 15 count
-
-                //When all fields are used:
-                // output_portfolios has 221 count, all null
-                // portfolio_list has 14 count?
-                // Each Portfolio has 13 or 26 individuals
-
-
-                return portfolio_list;
-            }
-           
-        }
 
 
 
@@ -183,14 +95,69 @@ namespace DataReferenceLibrary.DataAccess
         ///////////////////////////////////////
         ///////TAB - SHARE TRANSACTIONS///////
         //////////////////////////////////////
-        public List<spQueryShareTransactionsForPortfolio> spQueryAllShareTransactions(string InputPortfolioName)
+        public IEnumerable<zFullPortfolioModel> spQUERY_PortfoliosIndividualsTransactions()
         {
-            List<spQueryShareTransactionsForPortfolio> output;
+
+            var transaction_list = new List<TradingTransactionModel>();
+            var portfolio_list = new List<zFullPortfolioModel>();
+
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
-                output = connection.Query<spQueryShareTransactionsForPortfolio>("dbo.spQueryShareTransactionsForPortfolio @in_PortfolioName", new { in_PortfolioName = InputPortfolioName }).ToList();
+
+                var output_portfolios = connection.Query<zFullPortfolioModel, ConnectorIndividualsPortfolios, IndividualModel, TradingTransactionModel, TradingTransactionTypeModel, TradingEntityModel, TradingSectorModel, zFullPortfolioModel>
+                    ("dbo.spQUERY_PortfoliosIndividualsTransactions",
+                    (portfolio, connector, individual, transaction, transtype, company, sector) =>
+                    {
+
+                        // Moodel the transaction information into one single "part" of data
+                        transaction.TradingTransactionTypeId = transtype;
+                        transaction.TradingEntityId = company;
+                        company.TradingSectorId = sector;
+
+                        //====================================
+                        // get from lookup (if any)
+                        var port = portfolio_list.FirstOrDefault(s => s.Id == portfolio.Id);
+
+                        // if its not there, add
+                        if (port == null)
+                        {
+                            portfolio_list.Add(portfolio);
+                            port = portfolio;
+                        }
+
+                        // if there is no list for individuals, instantiate it
+                        port.Individuals = port.Individuals ?? new List<IndividualModel>();
+
+                        //====================================
+                        // get from lookup (if any)
+                        var indiv = port.Individuals.FirstOrDefault(s => s.Id == individual.Id);
+
+                        // if its not there, add
+                        if (indiv == null)
+                        {
+                            port.Individuals.Add(individual);
+                            indiv = individual;
+                        }
+
+                        // if there is no list for individuals, instantiate it
+                        port.Transactions = port.Transactions ?? new List<TradingTransactionModel>();
+
+                        //====================================
+                        // get from lookup (if any)
+                        var trans = port.Transactions.FirstOrDefault(s => s.Id == transaction.Id);
+                        if (trans == null)
+                        {
+                            port.Transactions.Add(transaction);
+                            trans = transaction;
+                        }
+
+                        return null;
+                    }, splitOn: "Id");
+
+
+                return portfolio_list;
             }
-            return output;
+
         }
 
         public TradingTransactionModel spInsertNewShareTransaction(string PortfolioName, TradingTransactionModel model)

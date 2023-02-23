@@ -45,19 +45,20 @@ namespace UserInterface.UserControlsTab
             cBoxPortfolio.DisplayMember = "DropDownBoxDisplay";
         }
         //TODO - Drop down display of portfolios
-        //TODO - in the transaction panel, make the text not cut off
-        //TODO - in the transaction panel, add dollar sign for brokerage
-        //TODO - in the transaction panel, move all the rightside rows down one
+
         //TODO - find what 3 letter codes are missing an industry
 
-
+        //TODO - Line up header panel correctly - padding doesnt work when window is resized
         private void btnDisplay_Click(object sender, EventArgs e)
         {
+
             // Clear previous entries
             flowLayoutPanel1.Controls.Clear();
 
+
+
             IEnumerable<zFullPortfolioModel> output2;
-            output2 = GlobalConfig.Connection.PopulatePortfolioModel();
+            output2 = GlobalConfig.Connection.spQUERY_PortfoliosIndividualsTransactions();
 
             foreach (zFullPortfolioModel portfolio in output2)
             {
@@ -67,10 +68,15 @@ namespace UserInterface.UserControlsTab
                     foreach (var transaction in portfolio.Transactions)
                     {
 
-
                         TransactionPanel newCustomPanel = new TransactionPanel(transaction);
+                        //MessageBox.Show(flowLayoutPanel1.Width.ToString());
+                        //newCustomPanel.PanelWidth = flowLayoutPanel1.Width;
+                        newCustomPanel.Width = flowLayoutPanel1.Width;
+                        newCustomPanel.Dock = DockStyle.Top;
+                        //newCustomPanel.BackColor = Color.Red;
+                        //newCustomPanel.Dock = DockStyle.Fill;
 
- 
+
                         flowLayoutPanel1.Controls.Add(newCustomPanel);
                     }
 
@@ -84,6 +90,10 @@ namespace UserInterface.UserControlsTab
             //Call the CreateNewTransactionForm
             //CreateNewTransactionForm form = new CreateNewTransactionForm(this);
             //form.Show();
+
+           
+
+
         }
     }
 }

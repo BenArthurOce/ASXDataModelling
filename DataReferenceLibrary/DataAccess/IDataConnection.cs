@@ -14,7 +14,7 @@ namespace DataReferenceLibrary.DataAccess
     {
         
 
-        IEnumerable<zFullPortfolioModel> PopulatePortfolioModel();
+        
 
 
         ///////////////////////////////
@@ -39,7 +39,9 @@ namespace DataReferenceLibrary.DataAccess
         ///////////////////////////////////////
         ///////TAB - SHARE TRANSACTIONS///////
         //////////////////////////////////////
-        List<spQueryShareTransactionsForPortfolio> spQueryAllShareTransactions(string InputPortfolioName);
+
+        IEnumerable<zFullPortfolioModel> spQUERY_PortfoliosIndividualsTransactions();
+
 
         TradingTransactionModel spInsertNewShareTransaction(string PortfolioName, TradingTransactionModel model);
 

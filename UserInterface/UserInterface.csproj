@@ -76,6 +76,9 @@
     <Compile Include="FormAssets\TransactionPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FormAssets\TransactionPanelHeader.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\EditTransactionForm.cs">
       <SubType>Form</SubType>
     </Compile>

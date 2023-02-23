@@ -50,10 +50,10 @@ namespace UserInterface.Forms
             if (tBoxASXCode.Text == null) { return false; }
             if (dtpDate.Text == null) { return false; }
             if (cboxType.Text == null) { return false; }
-            if (tBoxQuantity.Text == null) { return false; }
-            if (tBoxUnitPrice.Text == null) { return false; }
+            if (nTBoxQuantity.Text == null) { return false; }
+            if (nTBoxUnitPrice.Text == null) { return false; }
             if (tBoxTradeValue.Text == null) { return false; }
-            if (tBoxBrokerage.Text == null) { return false; }
+            if (nTBoxBrokerage.Text == null) { return false; }
             if (tBoxTotalValue.Text == null) { return false; }
             return true;
         }
@@ -71,10 +71,10 @@ namespace UserInterface.Forms
                     tBoxASXCode.Text,
                     "20201010",
                     cboxType.Text,
-                    tBoxQuantity.Text,
-                    tBoxUnitPrice.Text,
+                    nTBoxQuantity.Text,
+                    nTBoxUnitPrice.Text,
                     tBoxTradeValue.Text,
-                    tBoxBrokerage.Text,
+                    nTBoxBrokerage.Text,
                     tBoxTotalValue.Text,
                     "false");
 
@@ -92,26 +92,29 @@ namespace UserInterface.Forms
                 MessageBox.Show("Error Missing, data not inputted");
             }
         }
-
-        private void tBoxQuantity_TextChanged(object sender, EventArgs e)
+        private void nTBoxQuantity_TextChanged(object sender, EventArgs e)
         {
-            if (tBoxQuantity.Text.EndsWith(".")) { return; } else { CheckFormBlanksAndApplyMath(); }
+            if (nTBoxQuantity.Text.EndsWith(".")) { return; } else { CheckFormBlanksAndApplyMath(); }
         }
 
-        private void tBoxUnitPrice_TextChanged(object sender, EventArgs e)
+        private void nTBoxUnitPrice_TextChanged(object sender, EventArgs e)
         {
-            if (tBoxUnitPrice.Text.EndsWith(".")) { return; } else { CheckFormBlanksAndApplyMath(); }
+            if (nTBoxUnitPrice.Text.EndsWith(".")) { return; } else { CheckFormBlanksAndApplyMath(); }
         }
+
+        private void nTBoxBrokerage_TextChanged(object sender, EventArgs e)
+        {
+            if (nTBoxBrokerage.Text.EndsWith(".")) { return; } else { CheckFormBlanksAndApplyMath(); }
+        }
+
+
 
         private void tBoxTradeValue_TextChanged(object sender, EventArgs e)
         {
             if (tBoxTradeValue.Text.EndsWith(".")) { return; } else { CheckFormBlanksAndApplyMath(); }
         }
 
-        private void tBoxBrokerage_TextChanged(object sender, EventArgs e)
-        {
-            if (tBoxBrokerage.Text.EndsWith(".")) { return; } else { CheckFormBlanksAndApplyMath(); }
-        }
+
 
 
         private void CheckFormBlanksAndApplyMath()
@@ -120,7 +123,7 @@ namespace UserInterface.Forms
             float TotalValue = 0;
 
             // If "UnitPrice or Quantity are blank or null, this code is to be skipped
-            if (string.IsNullOrWhiteSpace(tBoxQuantity.Text) == true || string.IsNullOrWhiteSpace(tBoxUnitPrice.Text) == true)
+            if (string.IsNullOrWhiteSpace(nTBoxQuantity.Text) == true || string.IsNullOrWhiteSpace(nTBoxUnitPrice.Text) == true)
             {
                 tBoxTradeValue.Text = null;
                 tBoxTotalValue.Text = null;
@@ -128,12 +131,12 @@ namespace UserInterface.Forms
             }
             else
             {   // Calculate the Trade value and apply it to textbox
-                TradeValue = float.Parse(tBoxQuantity.Text) * float.Parse(tBoxUnitPrice.Text);
+                TradeValue = float.Parse(nTBoxQuantity.Text) * float.Parse(nTBoxUnitPrice.Text);
                 tBoxTradeValue.Text = TradeValue.ToString();
             }
 
             // If Brokerage is empty
-            if (string.IsNullOrWhiteSpace(tBoxBrokerage.Text) == true)
+            if (string.IsNullOrWhiteSpace(nTBoxBrokerage.Text) == true)
             {
                 // Then calculate Total Value without brokerage
                 TotalValue = float.Parse(tBoxTradeValue.Text);
@@ -144,21 +147,13 @@ namespace UserInterface.Forms
             else
             {
                 // Then calculate Total Value with brokerage
-                TotalValue = float.Parse(tBoxTradeValue.Text) + float.Parse(tBoxBrokerage.Text);
+                TotalValue = float.Parse(tBoxTradeValue.Text) + float.Parse(nTBoxBrokerage.Text);
                 tBoxTotalValue.Text = TotalValue.ToString();
             }
         }
 
-        private void tBoxQuantity_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        }
 
-        private void tBoxUnitPrice_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!isNumber(e.KeyChar, tBoxUnitPrice.Text))
-                e.Handled = true;
-        }
+
 
         private void tBoxTradeValue_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -166,11 +161,7 @@ namespace UserInterface.Forms
                 e.Handled = true;
         }
 
-        private void tBoxBrokerage_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!isNumber(e.KeyChar, tBoxBrokerage.Text))
-                e.Handled = true;
-        }
+
 
 
         public bool isNumber(char ch, string text)
@@ -199,11 +190,13 @@ namespace UserInterface.Forms
             tBoxASXCode.Text = "CBA";
             //dtpDate.Text = ;
             cboxType.Text = "Buy";
-            tBoxQuantity.Text = 50.ToString();
-            tBoxUnitPrice.Text = 99.99.ToString();
+            nTBoxQuantity.Text = 50.ToString();
+            nTBoxUnitPrice.Text = 99.99.ToString();
             //tBoxTradeValue.Text = ;
             //tBoxBrokerage.Text = ;
             //tBoxTotalValue.Text = ;
         }
+
+
     }
 }
