@@ -250,7 +250,6 @@ namespace UserInterface.UserControlsTab
 
         }
 
-
         private void ColourCells(double AverageMean, double StandardDeviation)
         {
             foreach (DataGridViewRow row in dgvLeftPrices.Rows)
@@ -279,7 +278,7 @@ namespace UserInterface.UserControlsTab
                         int green = Math.Min(255, (int)(255 * normalizedZScore));
                         int blue = 0;
 
-                       // cell.Style.BackColor = System.Drawing.Color.FromArgb(red, green, blue);
+                         cell.Style.BackColor = System.Drawing.Color.FromArgb(red, green, blue);
 
 
                     }

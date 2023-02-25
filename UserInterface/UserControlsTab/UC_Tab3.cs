@@ -18,7 +18,7 @@ using UserInterface.Forms;
 
 namespace UserInterface.UserControlsTab
 {
-    public partial class UC_Tab3 : UserControl, ICreateTransactionRequester
+    public partial class UC_Tab3 : UserControl
     {
         private List<PortfolioModel> availablePortfolios = GlobalConfig.Connection.spGETLIST_Portfolios();
 
@@ -78,13 +78,10 @@ namespace UserInterface.UserControlsTab
         private void btnNew_Click(object sender, EventArgs e)
         {
             //Call the CreateNewTransactionForm
-            CreateNewTransactionForm form = new CreateNewTransactionForm(this);
-            form.Show();
+            CreateNewTransactionForm transactionForm = new CreateNewTransactionForm(true);
+            //CreateNewTransactionForm form = new CreateNewTransactionForm(this);
+            transactionForm.Show();
         }
 
-        public void CreateTransactionComplete(TradingTransactionModel model)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

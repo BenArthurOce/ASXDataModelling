@@ -79,12 +79,6 @@
     <Compile Include="FormAssets\TransactionPanelHeader.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\EditTransactionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\EditTransactionForm.Designer.cs">
-      <DependentUpon>EditTransactionForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\CreateNewTransactionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,7 +91,6 @@
     <Compile Include="Forms\TransactionFilterForm.Designer.cs">
       <DependentUpon>TransactionFilterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ICreateTransactionRequester.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShareDashboardForm.cs">
@@ -150,9 +143,6 @@
     </Compile>
     <EmbeddedResource Include="FormAssets\RadioButtonTab.resx">
       <DependentUpon>RadioButtonTab.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EditTransactionForm.resx">
-      <DependentUpon>EditTransactionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateNewTransactionForm.resx">
       <DependentUpon>CreateNewTransactionForm.cs</DependentUpon>

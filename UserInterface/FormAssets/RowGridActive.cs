@@ -306,9 +306,8 @@ namespace UserInterface.FormAssets
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            //Call the CreateNewTransactionForm
-            EditNewTransactionForm form = new EditNewTransactionForm(this.TransactionModel);
-            form.Show();
+            CreateNewTransactionForm transactionForm = new CreateNewTransactionForm(false, this.TransactionModel);
+            transactionForm.Show();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

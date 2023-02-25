@@ -46,7 +46,7 @@
             this.btnOk = new System.Windows.Forms.Button();
             this.lblPortfolio = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblFormTitle = new System.Windows.Forms.Label();
             this.pnlContainerNewEditTransaction = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel31 = new System.Windows.Forms.Panel();
@@ -54,8 +54,9 @@
             this.panel30 = new System.Windows.Forms.Panel();
             this.panel29 = new System.Windows.Forms.Panel();
             this.panel28 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.panel27 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel26 = new System.Windows.Forms.Panel();
             this.panel25 = new System.Windows.Forms.Panel();
             this.panel24 = new System.Windows.Forms.Panel();
@@ -82,7 +83,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.cBoxPortfolio = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnClear = new System.Windows.Forms.Button();
             this.nTBoxBrokerage = new UserInterface.FormAssets.NumericTextBox();
             this.nTBoxUnitPrice = new UserInterface.FormAssets.NumericTextBox();
             this.nTBoxQuantity = new UserInterface.FormAssets.NumericTextBox();
@@ -250,7 +250,6 @@
             this.tBoxTradeValue.Size = new System.Drawing.Size(103, 20);
             this.tBoxTradeValue.TabIndex = 8;
             this.tBoxTradeValue.TextChanged += new System.EventHandler(this.tBoxTradeValue_TextChanged);
-            this.tBoxTradeValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBoxTradeValue_KeyPress);
             // 
             // tBoxTotalValue
             // 
@@ -284,21 +283,21 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblFormTitle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(531, 65);
             this.panel1.TabIndex = 21;
             // 
-            // label1
+            // lblFormTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(218, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Add/Modify Transaction";
+            this.lblFormTitle.AutoSize = true;
+            this.lblFormTitle.Location = new System.Drawing.Point(218, 25);
+            this.lblFormTitle.Name = "lblFormTitle";
+            this.lblFormTitle.Size = new System.Drawing.Size(121, 13);
+            this.lblFormTitle.TabIndex = 0;
+            this.lblFormTitle.Text = "Add/Modify Transaction";
             // 
             // pnlContainerNewEditTransaction
             // 
@@ -411,15 +410,16 @@
             this.panel28.Size = new System.Drawing.Size(99, 59);
             this.panel28.TabIndex = 49;
             // 
-            // button1
+            // btnClear
             // 
-            this.button1.Location = new System.Drawing.Point(3, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "GenerateDummy";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnClear.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnClear.Location = new System.Drawing.Point(0, 0);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(99, 23);
+            this.btnClear.TabIndex = 0;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // panel27
             // 
@@ -430,6 +430,16 @@
             this.panel27.Name = "panel27";
             this.panel27.Size = new System.Drawing.Size(99, 59);
             this.panel27.TabIndex = 48;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "GenerateDummy";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel26
             // 
@@ -685,16 +695,6 @@
             this.panel2.Size = new System.Drawing.Size(99, 54);
             this.panel2.TabIndex = 23;
             // 
-            // btnClear
-            // 
-            this.btnClear.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnClear.Location = new System.Drawing.Point(0, 0);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(99, 23);
-            this.btnClear.TabIndex = 0;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            // 
             // nTBoxBrokerage
             // 
             this.nTBoxBrokerage.AllowsDecimals = true;
@@ -793,7 +793,7 @@
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Label lblPortfolio;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblFormTitle;
         private System.Windows.Forms.Panel pnlContainerNewEditTransaction;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Panel panel2;

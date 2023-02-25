@@ -17,16 +17,56 @@ namespace UserInterface.Forms
 {
     public partial class CreateNewTransactionForm : Form
     {
+        public bool IsNewTransaction { get; set; }
+
         private List<PortfolioModel> availablePortfolios = GlobalConfig.Connection.spGETLIST_Portfolios();
         private List<TradingTransactionTypeModel> availableTransactionTypes = GlobalConfig.Connection.spGETLIST_TransactionTypes();
 
-        ICreateTransactionRequester callingForm;
+        private TradingTransactionModel transactionModel;
 
-        public CreateNewTransactionForm(ICreateTransactionRequester caller)
+        public CreateNewTransactionForm(bool isNewTransaction)
         {
             InitializeComponent();
+            IsNewTransaction = isNewTransaction;
             WireUpLists();
-            callingForm = caller;
+            if (IsNewTransaction)
+            {
+                transactionModel = new TradingTransactionModel(); // Initialize with default values
+                tBoxTradeValue.Enabled = false;
+                tBoxTotalValue.Enabled = false;
+
+                //Change Form Header
+                lblFormTitle.Text = "Create New Transaction";
+            }
+        }
+
+        public CreateNewTransactionForm(bool isNewTransaction, TradingTransactionModel transaction)
+        {
+            InitializeComponent();
+            IsNewTransaction = isNewTransaction;
+            WireUpLists();
+            if (!IsNewTransaction == true && transaction != null)
+            {
+                this.transactionModel = transaction; // Use the passed transaction to initialize fields
+                                                     // set form fields to the values in the transaction object
+                tBoxContractNote.Text = transaction.ContractNote;
+                tBoxASXCode.Text = transaction.TradingEntityId.ASXCode;
+                cboxType.Text = transaction.TradingTransactionTypeId.Name;
+                nTBoxQuantity.Text = transaction.Quantity.ToString();
+                nTBoxUnitPrice.Text = transaction.UnitPrice.ToString();
+                tBoxTradeValue.Text = transaction.TradeValue.ToString();
+                nTBoxBrokerage.Text = transaction.Brokerage.ToString();
+                tBoxTotalValue.Text = transaction.TotalValue.ToString();
+
+                //Disable Certain Textboxes
+                cBoxPortfolio.Enabled = false;
+                tBoxContractNote.Enabled = false;
+                tBoxTradeValue.Enabled = false;
+                tBoxTotalValue.Enabled = false;
+
+                //Change Form Header
+                lblFormTitle.Text = "Edit Transaction";
+            }
         }
 
         private void WireUpLists()
@@ -38,8 +78,6 @@ namespace UserInterface.Forms
             cboxType.DisplayMember = "DropDownBoxDisplay";
         }
 
-        //TODO - Introduce "Clear" button to remove all data from fields
-        //TODO - Find way to make date bar more presentable
         //TODO - Need a checkbox for contract note
 
 
@@ -81,8 +119,6 @@ namespace UserInterface.Forms
                 
                 GlobalConfig.Connection.spInsertNewShareTransaction(portfolioName, newTrans);
 
-                callingForm.CreateTransactionComplete(newTrans);
-
                 this.Close();
 
                 //TODO - Reset textboxes and notify user that success
@@ -107,14 +143,10 @@ namespace UserInterface.Forms
             if (nTBoxBrokerage.Text.EndsWith(".")) { return; } else { CheckFormBlanksAndApplyMath(); }
         }
 
-
-
         private void tBoxTradeValue_TextChanged(object sender, EventArgs e)
         {
             if (tBoxTradeValue.Text.EndsWith(".")) { return; } else { CheckFormBlanksAndApplyMath(); }
         }
-
-
 
 
         private void CheckFormBlanksAndApplyMath()
@@ -153,36 +185,6 @@ namespace UserInterface.Forms
         }
 
 
-
-
-        private void tBoxTradeValue_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!isNumber(e.KeyChar, tBoxTradeValue.Text))
-                e.Handled = true;
-        }
-
-
-
-
-        public bool isNumber(char ch, string text)
-        {
-            bool res = true;
-            char decimalChar = Convert.ToChar(CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator);
-
-            //check if it´s a decimal separator and if doesn´t already have one in the text string
-            if (ch == decimalChar && text.IndexOf(decimalChar) != -1)
-            {
-                res = false;
-                return res;
-            }
-
-            //check if it´s a digit, decimal separator and backspace
-            if (!Char.IsDigit(ch) && ch != decimalChar && ch != (char)Keys.Back)
-                res = false;
-
-            return res;
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             cBoxPortfolio.Text = "Dummy Portfolio 3";
@@ -197,6 +199,16 @@ namespace UserInterface.Forms
             //tBoxTotalValue.Text = ;
         }
 
-
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            //tBoxContractNote.Text = "";
+            tBoxASXCode.Text = "";
+            cboxType.Text = "";
+            nTBoxQuantity.Text = "";
+            nTBoxUnitPrice.Text = "";
+            tBoxTradeValue.Text = "";
+            nTBoxBrokerage.Text = "";
+            tBoxTotalValue.Text = "";
+        }
     }
 }
