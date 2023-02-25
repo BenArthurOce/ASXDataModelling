@@ -1,5 +1,4 @@
 ﻿using DataReferenceLibrary;
-using DataReferenceLibrary.Filters;
 using DataReferenceLibrary.Models2;
 using DataReferenceLibrary.StoredProcs;
 using System;
@@ -21,8 +20,9 @@ namespace UserInterface.Forms
 {
     public partial class TransactionFilterForm : Form
     {
-        public List<Filter> FilterList = new List<Filter>();
-        public List<Filter2> filters2List = new List<Filter2>();
+
+        //public List<Filter> FilterList = new List<Filter>();
+        //public List<Filter2> filters2List = new List<Filter2>();
 
         //TODO - Need to have a combination of items into a single filter, like ANZ transactions of any kind over $1,000
 
@@ -31,8 +31,10 @@ namespace UserInterface.Forms
             InitializeComponent();
         }
 
+        
         private void populateFilterPanel()
         {
+            /*
             // This populates the grid of Filter panels depending on the instances of the class Filter are kept in "FilterList"
             // For each Filter instance, it will make a new panel containing information about the Filter class.
             // It will also hold a "Delete" button. When deleted, it will remove the panel, and remove the instance from the stored list
@@ -62,10 +64,13 @@ namespace UserInterface.Forms
                 // Add the FilterPanel to the form
                 fpnlCurrentFilters.Controls.Add(newFilterPanel);
             }
+            */
         }
+
 
         private void btnFilterAddType_Click(object sender, EventArgs e)
         {
+            /*
             //TODO - Check against existing filters
             //TODO - Populate ComboBox
 
@@ -87,10 +92,12 @@ namespace UserInterface.Forms
                 filters2List.Add(newFilterToAdd);
 
             }
+            */
         }
 
         private void btnFilterAddCode_Click(object sender, EventArgs e)
         {
+            /*
             //TODO - Validation check that the ASX code actually exists?
             if (string.IsNullOrWhiteSpace(tboxFilterCode.Text))
             {
@@ -103,10 +110,12 @@ namespace UserInterface.Forms
                 tboxFilterCode.Text = null;
                 populateFilterPanel();
             }
+            */
         }
 
         private void btnFilterAddSector_Click(object sender, EventArgs e)
         {
+            /*
             //TODO - Populate ComboBox
             if (string.IsNullOrWhiteSpace(cboxFilterSector.Text))
             {
@@ -119,10 +128,12 @@ namespace UserInterface.Forms
                 cboxFilterSector.Text = null;
                 populateFilterPanel();
             }
+            */
         }
 
         private void btnFilterAddDate_Click(object sender, EventArgs e)
         {
+            /*
             //TODO - Validate Input Box 1
             //TODO - Validate Input Box 2
 
@@ -193,11 +204,12 @@ namespace UserInterface.Forms
             // If you made it this far, error check
             //TODO - Ensure this is deleted
             MessageBox.Show("You shouldn't have reached this far - How'd you do that.");
-
+            */
         }
 
         private void btnFilterAddAmount_Click(object sender, EventArgs e)
         {
+            /*
             double firstNumber = double.TryParse(ntboxFilterAmountStart.Text, out double parsedValue1) ? parsedValue1 : 0;
             double secondNumber = double.TryParse(ntboxFilterAmountEnd.Text, out double parsedValue2) ? parsedValue2 : 0;
 
@@ -262,73 +274,23 @@ namespace UserInterface.Forms
             // If you made it this far, error check
             //TODO - Ensure this is deleted
             MessageBox.Show("You shouldn't have reached this far - How'd you do that.");
-
+            */
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*
-            // How does the logic work in this one
-            // We make a list of the Transactions from the Query
-            // We make a list of the Transactions that survived the filter
-            // We copy the surviving ones over
-            // We populate
 
-            string InputPortfolioName = "Ben Portfolio Account 1";
-            List<spQueryShareTransactionsForPortfolio> output;
-            output = GlobalConfig.Connection.spQueryAllShareTransactions(InputPortfolioName);
-
-
-            TransactionFilter filter = new TransactionFilter();
-            int startDate = 20220101;
-            int endDate = 20220301;
-            string LookupCode = "CBA";
-
-
-            // First we get the list off all transactions
-            // Then we filter based on the first Filter. The Filter Class Tells us which column, What sort of match, and the values to match it up against
-            // You need to translate that
-            // 
-
-
-            Filter newFilter1 = new Filter("Code", "String", "Equals", "ANZ");
-            Filter newFilter2 = new Filter("Code", "String", "Equals", "CBA");
-            Filter newFilter3 = new Filter("Code", "String", "Equals", "INA");
-
-            FilterList.Add(newFilter1);
-            FilterList.Add(newFilter2);
-            FilterList.Add(newFilter3);
-
-
-            List<spQueryShareTransactionsForPortfolio> PerformAFilter(List<spQueryShareTransactionsForPortfolio> transactionList, string filterValue)
-            {
-                transactionList = filter.FilterTransactions(transactionList, p => p.ASXCode == filterValue);
-                return transactionList;
-            }
-
-            List<spQueryShareTransactionsForPortfolio> myList2 = output;
-            foreach (Filter FilterClass in FilterList)
-            {
-                myList2 = PerformAFilter(myList2, FilterClass.MatchValue);
-            }
-
-
-            foreach(spQueryShareTransactionsForPortfolio transaction in myList2)
-            {
-                MessageBox.Show(transaction.ASXCode + transaction.Date.ToString());
-            }
-            */
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            /*
+            
             //TransactionFilter myFilter = new Filter2();
 
             // first, get a list of data to try on
             string InputPortfolioName = "Bens Stock Portfolio";
             IEnumerable<zFullPortfolioModel> allPortfolios;
-            allPortfolios = GlobalConfig.Connection.PopulatePortfolioModel();
+            allPortfolios = GlobalConfig.Connection.spQUERY_PortfoliosIndividualsTransactions();
             zFullPortfolioModel myPortfolio = allPortfolios.FirstOrDefault(p => p.Name == InputPortfolioName);
 
             //Transaction List
@@ -341,29 +303,19 @@ namespace UserInterface.Forms
             List<TradingTransactionModel> FilteredTransactions;
             FilteredTransactions = myTransactions.Where(t => t.TradingTransactionTypeId.Name == "Buy").ToList();
 
+
+            string lookupASXCode = "WPR";
+            List<TradingTransactionModel> FilteredTransactions2;
+            FilteredTransactions2 = myTransactions.Where(t => t.TradingEntityId.ASXCode == lookupASXCode).ToList();
+
+
+
             int a = 1;
-
-
-            // You create some filter Classes (which are just the requirements you want)
-            // Then you loop through
-
-            TradingTransactionTypeModel newType = new TradingTransactionTypeModel();
-            newType.Name = "Buy";
-            Filter2 myFilter = new Filter2(newType);
-
-
-            //List<TradingTransactionModel> myFilteredTransactions = myFilter.FilterTheTransactions(myTransactions, t => t.TradingTransactionTypeId.Name == myFilter)
-
-
-            //List<TradingTransactionModel> transactionList;
-            //transactionList = myFilter.FilterTheTransactions(myTransactions, p => p.ContractNote == 'aaaa');
-
-            //		"DUM00000B5"
 
 
 
             int b = 1;
-            */
+            
 
         }
     }

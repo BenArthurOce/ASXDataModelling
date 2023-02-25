@@ -8,6 +8,7 @@ namespace DataReferenceLibrary.Models2
 {
     public class DatesModel
     {
+        public DatesModel() { }
         public int Id { get; set; }
         public int DateKey { get; set; }
         public DateTime DateId { get; set; }
@@ -34,6 +35,7 @@ namespace DataReferenceLibrary.Models2
         public long YearMonthInt { get; set; }
         public string MonthYearStringFull { get; set; }
         public string MonthYearStringAbv { get; set; }
+        public string MonthAbvYearString { get; set; }
         public string YearMonthStringFull { get; set; }
         public string YearMonthStringAbv { get; set; }
         public string FullDateStringLong { get; set; }

@@ -17,6 +17,8 @@ using System.Security.Claims;
 using TheArtOfDevHtmlRenderer.Adapters;
 using System.Windows.Media.Effects;
 using DataReferenceLibrary.Models2;
+using System.IO;
+using System.Windows.Media;
 
 namespace UserInterface.UserControlsTab
 {
@@ -41,13 +43,105 @@ namespace UserInterface.UserControlsTab
         public UC_Tab1()
         {
             InitializeComponent();
-            PrepareDataGridView();
+            PrepareRows();
+
             cBoxYear.Text = "2020";
             tBoxASXCode.Text = "CBA";
             cBoxPosition.Text = "Open";
         }
 
-        private void PrepareDataGridView()
+
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+
+            // Validate Data
+            if (ValidateForm() == false)
+            {
+                MessageBox.Show("Data Validation Failed");
+                return;
+            }
+
+            // Obtain Input Information
+            int YearRequest = Convert.ToInt32(cBoxYear.Text);
+            string ASXCode = tBoxASXCode.Text;
+            string PriceType = cBoxPosition.Text;
+
+            // Read SQL Query
+            IEnumerable<zFullEODPriceModel> sql_result;
+            sql_result = GlobalConfig.Connection.spQUERY_PricesOnYears(ASXCode, YearRequest);
+
+
+            // Check that the ASX code exists
+
+
+            //Clear out Current Data
+            dgvLeftPrices.DataSource = null; // Set the DataSource to null to clear the data
+            dgvLeftPrices.Rows.Clear(); // Clear the rows collection
+
+            //Prepare Column Headers
+            PrepareColumnHeaders(sql_result);
+
+            // Prepare Rows
+            PrepareRows();
+
+            // Input the sql results into the datagridview
+            InputData(sql_result);
+
+            // Obtain the Mean and the Standard Deviation of the values
+            var tempValues = CalculateMeanAndDeviation();
+            double AverageMean = tempValues.Item1;
+            double StandardDeviation = tempValues.Item2;
+
+            // Change colours on a sliding scale of red to green
+            ColourCells(AverageMean, StandardDeviation);
+
+            //TODO - Fix Error When MNS is typed in 
+
+        }
+
+
+        private bool ValidateForm()
+        {
+            if (cBoxYear.Text == null) { return false; }
+            if (tBoxASXCode.Text == null) { return false; }
+            if (cBoxPosition.Text == null) { return false; }
+            return true;
+        }
+
+
+        private void PrepareColumnHeaders(IEnumerable<zFullEODPriceModel> sql_result)
+        {
+            int Year = Convert.ToInt32(cBoxYear.Text);
+            List<string> monthsYear = new List<string>();
+
+            // Add the MonthYear Column Names for the First Year
+            for (int i = 1; i <= 12; i++)
+            {
+                DateTime monthDate = new DateTime(Year, i, 1);
+                string monthYearString = string.Format("{0:MMMyy}", monthDate);
+                monthsYear.Add(monthYearString);
+            }
+
+            // Add the MonthYear Column Names for the Second Year
+            for (int i = 1; i <= 12; i++)
+            {
+                DateTime monthDate = new DateTime(Year + 1, i, 1);
+                string monthYearString = string.Format("{0:MMMyy}", monthDate);
+                monthsYear.Add(monthYearString);
+            }
+
+            //Add a blank string to the 12th position
+            monthsYear.Insert(12, "");
+
+            for (int i = 0; i < 25; i++)
+            {
+                dgvLeftPrices.Columns[i].HeaderText = monthsYear[i];
+            }
+
+            dgvLeftPrices.Refresh(); // Refresh the DataGridView
+        }
+
+        private void PrepareRows()
         {
             // Create rows for the DataGridView
 
@@ -63,33 +157,13 @@ namespace UserInterface.UserControlsTab
                 dgvLeftPrices.Rows[i - 1 + 3].HeaderCell.Value = i.ToString();
             }
 
-
             dgvLeftPrices.RowHeadersDefaultCellStyle.Padding = new Padding(3);
-
-
-
-
         }
 
-
-  
-
-
-        private void btnGenerate_Click(object sender, EventArgs e)
+        private void InputData(IEnumerable<zFullEODPriceModel> sql_result)
         {
-
-            int YearRequest = Convert.ToInt32(cBoxYear.Text);
-            string ASXCode = tBoxASXCode.Text;
-            string PriceType = cBoxPosition.Text;
-
-            IEnumerable<zFullEODPriceModel> output;
-            output = GlobalConfig.Connection.spQUERY_PricesOnYears(ASXCode, YearRequest);
-
-
-
-
-                    // Populate Grid
-                foreach (zFullEODPriceModel result in output)
+            // Populate Grid with Data From SQL query
+            foreach (zFullEODPriceModel result in sql_result)
             {
                 int x = 0;
                 int y = 0;
@@ -97,12 +171,12 @@ namespace UserInterface.UserControlsTab
                 x = (int)result.DatesModel.DayInt - 1 + 3;
                 y = (int)result.DatesModel.MonthInt - 1;
 
-                if ((int)result.DatesModel.YearCalendar == YearRequest + 1)
+                if ((int)result.DatesModel.YearCalendar == Convert.ToInt32(cBoxYear.Text) + 1)
                 {
                     y += 13;
                 }
 
-                switch (PriceType)
+                switch (cBoxPosition.Text)
                 {
                     case "Open":
                         dgvLeftPrices[y, (x)].Value = result.PriceOpen.ToString();
@@ -121,8 +195,9 @@ namespace UserInterface.UserControlsTab
                         break;
                 }
             }
-            int numColumns = dgvLeftPrices.Columns.Count;
-            for (int i = 0; i < numColumns; i++)
+
+            // Populate MinMax Rows
+            for (int i = 0; i < dgvLeftPrices.Columns.Count; i++)
             {
                 if (i == 12)
                 {
@@ -149,10 +224,10 @@ namespace UserInterface.UserControlsTab
                     Console.WriteLine($"Column {column.HeaderText}: max = {max}");
                 }
             }
+        }
 
-            //TODO - Add Year Number to columns
-            //TODO - Fix Error When MNS is typed in 
-
+        private Tuple<double, double> CalculateMeanAndDeviation()
+        {
             // Put all Numbers into a List and calculate the Standard Deviation of the number set
             List<double> allValueList = new List<double>();
             foreach (DataGridViewRow row in dgvLeftPrices.Rows)
@@ -171,20 +246,9 @@ namespace UserInterface.UserControlsTab
             }
             double AverageMean = allValueList.Average();
             double StandardDeviation = Math.Sqrt(allValueList.Average(v => Math.Pow(v - AverageMean, 2)));
-
-            //Populate the Highest and Lowest Prices from the datagridview
-            //lblFooterLowestPrice.Text = "$ " + allValueList.Min().ToString();
-            //lblFooterHighestPrice.Text = "$ " + allValueList.Max().ToString();
-
-            // Colour Cells in the datagridview based on their relation to the average of all numbers
-            ColourCells(AverageMean, StandardDeviation);
-
-            
-
-
+            return Tuple.Create(AverageMean, StandardDeviation);
 
         }
-
 
 
         private void ColourCells(double AverageMean, double StandardDeviation)
@@ -193,9 +257,10 @@ namespace UserInterface.UserControlsTab
             {
                 foreach (DataGridViewCell cell in row.Cells)
                 {
+                    // If the cell is null, colour it gray
                     if (cell.Value == null || cell.Value == "")
                     {
-                        cell.Style.BackColor = Color.FromArgb(211, 211, 211);
+                        cell.Style.BackColor = System.Drawing.Color.FromArgb(211, 211, 211);
                         continue;
                     }
                     else
@@ -214,16 +279,13 @@ namespace UserInterface.UserControlsTab
                         int green = Math.Min(255, (int)(255 * normalizedZScore));
                         int blue = 0;
 
-                        cell.Style.BackColor = Color.FromArgb(red, green, blue);
+                       // cell.Style.BackColor = System.Drawing.Color.FromArgb(red, green, blue);
 
 
                     }
                 }
             }
         }
-
-
-
 
     }
 }

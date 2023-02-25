@@ -191,18 +191,18 @@ namespace DataReferenceLibrary.DataAccess
         ///////TAB - NOTEPAD UPLOAD///////
         //////////////////////////////////
 
-        public List<ASXEODPriceModel> spINSERT_NotepadFile(DataTable dt)
+        public List<ASXEODPriceModel> spINSERTDATA_ASXEODPrice(DataTable dt)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 var p = new DynamicParameters();
                 p.Add("@data", dt, DbType.Object);
-                connection.Execute("dbo.spINSERT_NotepadFile", p, commandType: CommandType.StoredProcedure);
+                connection.Execute("dbo.spINSERTDATA_ASXEODPrice", p, commandType: CommandType.StoredProcedure);
             }
             return null;
         }
 
-        public DocumentUploadHistoryModel CreateNewDocumentUploadRecord(DocumentUploadHistoryModel model)
+        public DocumentUploadHistoryModel spINSERTDATA_DocumentUploadRecord(DocumentUploadHistoryModel model)
         {
             model.Id = Guid.NewGuid();
 
@@ -214,7 +214,7 @@ namespace DataReferenceLibrary.DataAccess
                 p.Add("@in_DateTimeUpload", model.DateTimeUploaded);
                 p.Add("@in_FileSizeBytes", model.FileSizeBytes);
                 p.Add("@in_RowsInFile", model.RowsInFile);
-                connection.Execute("dbo.spINSERT_DocumentUploadRecord", p, commandType: CommandType.StoredProcedure);
+                connection.Execute("dbo.spINSERTDATA_DocumentUploadRecord", p, commandType: CommandType.StoredProcedure);
             }
             return model;
         }

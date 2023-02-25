@@ -46,6 +46,7 @@ namespace UserInterface.UserControlsTab
         private void btnFindFiles_Click(object sender, EventArgs e)
         {
             PopulateDataTable();
+            btnSubmitFiles.Visible = true;
         }
 
 
@@ -120,7 +121,6 @@ namespace UserInterface.UserControlsTab
             foreach (string textLine in File.ReadAllLines(filePath))
             {
                 if (string.IsNullOrEmpty(textLine) || textLine.Contains("Date")) { continue; }
-                //MessageBox.Show(row.ToString());
                 else
                 {
                     dt.Rows.Add();
@@ -137,7 +137,7 @@ namespace UserInterface.UserControlsTab
 
         private void ImportASingleTextFile(DataTable dt)
         {
-            GlobalConfig.Connection.spINSERT_NotepadFile(dt);
+            GlobalConfig.Connection.spINSERTDATA_ASXEODPrice(dt);
         }
 
 
@@ -162,11 +162,9 @@ namespace UserInterface.UserControlsTab
             dgvDocumentsQueued.Rows.Clear();
         }
 
-
-
         private void AddEntryToDocumentTable(DocumentUploadHistoryModel model)
         {
-            GlobalConfig.Connection.CreateNewDocumentUploadRecord(model);
+            GlobalConfig.Connection.spINSERTDATA_DocumentUploadRecord(model);
             lBoxDocumentUploadLog.Items.Add($"Document: {model.FileName} was added to the database");
         }
 

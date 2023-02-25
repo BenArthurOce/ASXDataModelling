@@ -324,7 +324,9 @@
             // 
             // dtpFilterDateStart
             // 
+            this.dtpFilterDateStart.CustomFormat = "dd/MM/yyyy";
             this.dtpFilterDateStart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpFilterDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFilterDateStart.Location = new System.Drawing.Point(0, 0);
             this.dtpFilterDateStart.Name = "dtpFilterDateStart";
             this.dtpFilterDateStart.Size = new System.Drawing.Size(150, 20);
@@ -342,7 +344,9 @@
             // 
             // dtpFilterDateEnd
             // 
+            this.dtpFilterDateEnd.CustomFormat = "dd/MM/yyyy";
             this.dtpFilterDateEnd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpFilterDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFilterDateEnd.Location = new System.Drawing.Point(0, 0);
             this.dtpFilterDateEnd.Name = "dtpFilterDateEnd";
             this.dtpFilterDateEnd.Size = new System.Drawing.Size(150, 20);

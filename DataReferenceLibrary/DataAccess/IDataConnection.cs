@@ -53,8 +53,8 @@ namespace DataReferenceLibrary.DataAccess
         //////////////////////////////////
         ///////TAB - NOTEPAD UPLOAD///////
         //////////////////////////////////
-        List<ASXEODPriceModel> spINSERT_NotepadFile(DataTable dt);
-        DocumentUploadHistoryModel CreateNewDocumentUploadRecord(DocumentUploadHistoryModel model);
+        List<ASXEODPriceModel> spINSERTDATA_ASXEODPrice(DataTable dt);
+        DocumentUploadHistoryModel spINSERTDATA_DocumentUploadRecord(DocumentUploadHistoryModel model);
 
 
 

@@ -733,6 +733,11 @@
             // 
             this.cBoxPosition.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.cBoxPosition.FormattingEnabled = true;
+            this.cBoxPosition.Items.AddRange(new object[] {
+            "Open",
+            "Close",
+            "High",
+            "Low"});
             this.cBoxPosition.Location = new System.Drawing.Point(0, 30);
             this.cBoxPosition.Name = "cBoxPosition";
             this.cBoxPosition.Size = new System.Drawing.Size(93, 21);
@@ -742,6 +747,11 @@
             // 
             this.cBoxYear.Dock = System.Windows.Forms.DockStyle.Top;
             this.cBoxYear.FormattingEnabled = true;
+            this.cBoxYear.Items.AddRange(new object[] {
+            "2019",
+            "2020",
+            "2021",
+            "2022"});
             this.cBoxYear.Location = new System.Drawing.Point(0, 0);
             this.cBoxYear.Name = "cBoxYear";
             this.cBoxYear.Size = new System.Drawing.Size(93, 21);
