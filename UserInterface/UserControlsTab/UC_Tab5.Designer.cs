@@ -30,20 +30,31 @@
         {
             this.lblFilesQueuedForImport = new System.Windows.Forms.Label();
             this.dgvDocumentsQueued = new System.Windows.Forms.DataGridView();
+            this.FilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateUploaded = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FileSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RowCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnFindFiles = new System.Windows.Forms.Button();
             this.btnSubmitFiles = new System.Windows.Forms.Button();
-            this.lBoxDocumentUploadLog = new System.Windows.Forms.ListBox();
             this.pnlHeaderUploadPriceData = new System.Windows.Forms.Panel();
             this.lblHeaderUploadPriceData = new System.Windows.Forms.Label();
             this.tpnlInputs = new System.Windows.Forms.TableLayoutPanel();
             this.pnlInputsRow1Col8 = new System.Windows.Forms.Panel();
-            this.lblFilesImported = new System.Windows.Forms.Label();
             this.pnlInputsRow1Col7 = new System.Windows.Forms.Panel();
             this.pnlInputsRow1Col6 = new System.Windows.Forms.Panel();
             this.pnlInputsRow1Col5 = new System.Windows.Forms.Panel();
             this.pnlInputsRow1Col2 = new System.Windows.Forms.Panel();
             this.pnlInputsRow1Col1 = new System.Windows.Forms.Panel();
             this.tpnlOutputs = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlOutputsRow3Col9 = new System.Windows.Forms.Panel();
+            this.pnlOutputsRow3Col10 = new System.Windows.Forms.Panel();
+            this.dgvDocumentsImported = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlOutputsRow1Col10 = new System.Windows.Forms.Panel();
             this.pnlOutputsRow2Col10 = new System.Windows.Forms.Panel();
             this.pnlOutputsRow2Col9 = new System.Windows.Forms.Panel();
@@ -51,27 +62,24 @@
             this.pnlOutputsRow2Col7 = new System.Windows.Forms.Panel();
             this.pnlOutputsRow2Col6 = new System.Windows.Forms.Panel();
             this.pnlOutputsRow2Col5 = new System.Windows.Forms.Panel();
-            this.pnlOutputsRow2Col4 = new System.Windows.Forms.Panel();
-            this.pnlOutputsRow2Col3 = new System.Windows.Forms.Panel();
             this.pnlOutputsRow2Col2 = new System.Windows.Forms.Panel();
+            this.lblFilesSuccessfullyImported = new System.Windows.Forms.Label();
             this.pnlOutputsRow2Col1 = new System.Windows.Forms.Panel();
             this.pnlOutputsRow1Col8 = new System.Windows.Forms.Panel();
             this.pnlOutputsRow1Col1 = new System.Windows.Forms.Panel();
             this.pnlOutputsRow1Col2 = new System.Windows.Forms.Panel();
-            this.FilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateUploaded = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FileSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RowCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocumentsQueued)).BeginInit();
             this.pnlHeaderUploadPriceData.SuspendLayout();
             this.tpnlInputs.SuspendLayout();
-            this.pnlInputsRow1Col8.SuspendLayout();
+            this.pnlInputsRow1Col7.SuspendLayout();
             this.pnlInputsRow1Col6.SuspendLayout();
             this.pnlInputsRow1Col5.SuspendLayout();
             this.pnlInputsRow1Col2.SuspendLayout();
             this.tpnlOutputs.SuspendLayout();
-            this.pnlOutputsRow1Col8.SuspendLayout();
+            this.pnlOutputsRow3Col10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDocumentsImported)).BeginInit();
+            this.pnlOutputsRow2Col2.SuspendLayout();
             this.pnlOutputsRow1Col2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,8 +107,43 @@
             this.dgvDocumentsQueued.Location = new System.Drawing.Point(0, 0);
             this.dgvDocumentsQueued.Name = "dgvDocumentsQueued";
             this.dgvDocumentsQueued.ReadOnly = true;
-            this.dgvDocumentsQueued.Size = new System.Drawing.Size(610, 370);
+            this.dgvDocumentsQueued.Size = new System.Drawing.Size(610, 153);
             this.dgvDocumentsQueued.TabIndex = 1;
+            // 
+            // FilePath
+            // 
+            this.FilePath.HeaderText = "File Path";
+            this.FilePath.Name = "FilePath";
+            this.FilePath.ReadOnly = true;
+            this.FilePath.Width = 170;
+            // 
+            // FileName
+            // 
+            this.FileName.HeaderText = "File Name";
+            this.FileName.Name = "FileName";
+            this.FileName.ReadOnly = true;
+            this.FileName.Width = 120;
+            // 
+            // DateUploaded
+            // 
+            this.DateUploaded.HeaderText = "Date Uploaded";
+            this.DateUploaded.Name = "DateUploaded";
+            this.DateUploaded.ReadOnly = true;
+            this.DateUploaded.Width = 120;
+            // 
+            // FileSize
+            // 
+            this.FileSize.HeaderText = "File Size";
+            this.FileSize.Name = "FileSize";
+            this.FileSize.ReadOnly = true;
+            this.FileSize.Width = 80;
+            // 
+            // RowCount
+            // 
+            this.RowCount.HeaderText = "Row Count";
+            this.RowCount.Name = "RowCount";
+            this.RowCount.ReadOnly = true;
+            this.RowCount.Width = 80;
             // 
             // btnFindFiles
             // 
@@ -124,15 +167,6 @@
             this.btnSubmitFiles.UseVisualStyleBackColor = true;
             this.btnSubmitFiles.Visible = false;
             this.btnSubmitFiles.Click += new System.EventHandler(this.btnSubmitFiles_Click);
-            // 
-            // lBoxDocumentUploadLog
-            // 
-            this.lBoxDocumentUploadLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lBoxDocumentUploadLog.FormattingEnabled = true;
-            this.lBoxDocumentUploadLog.Location = new System.Drawing.Point(0, 0);
-            this.lBoxDocumentUploadLog.Name = "lBoxDocumentUploadLog";
-            this.lBoxDocumentUploadLog.Size = new System.Drawing.Size(190, 370);
-            this.lBoxDocumentUploadLog.TabIndex = 4;
             // 
             // pnlHeaderUploadPriceData
             // 
@@ -184,27 +218,16 @@
             // 
             // pnlInputsRow1Col8
             // 
-            this.tpnlInputs.SetColumnSpan(this.pnlInputsRow1Col8, 3);
-            this.pnlInputsRow1Col8.Controls.Add(this.lblFilesImported);
             this.pnlInputsRow1Col8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlInputsRow1Col8.Location = new System.Drawing.Point(745, 10);
             this.pnlInputsRow1Col8.Margin = new System.Windows.Forms.Padding(10);
             this.pnlInputsRow1Col8.Name = "pnlInputsRow1Col8";
-            this.pnlInputsRow1Col8.Size = new System.Drawing.Size(295, 52);
+            this.pnlInputsRow1Col8.Size = new System.Drawing.Size(85, 52);
             this.pnlInputsRow1Col8.TabIndex = 7;
-            // 
-            // lblFilesImported
-            // 
-            this.lblFilesImported.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblFilesImported.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFilesImported.Location = new System.Drawing.Point(0, 27);
-            this.lblFilesImported.Name = "lblFilesImported";
-            this.lblFilesImported.Size = new System.Drawing.Size(295, 25);
-            this.lblFilesImported.TabIndex = 0;
-            this.lblFilesImported.Text = "Files Imported:";
             // 
             // pnlInputsRow1Col7
             // 
+            this.pnlInputsRow1Col7.Controls.Add(this.button1);
             this.pnlInputsRow1Col7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlInputsRow1Col7.Location = new System.Drawing.Point(640, 10);
             this.pnlInputsRow1Col7.Margin = new System.Windows.Forms.Padding(10);
@@ -265,6 +288,8 @@
             this.tpnlOutputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tpnlOutputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tpnlOutputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlOutputs.Controls.Add(this.pnlOutputsRow3Col9, 0, 2);
+            this.tpnlOutputs.Controls.Add(this.pnlOutputsRow3Col10, 0, 2);
             this.tpnlOutputs.Controls.Add(this.pnlOutputsRow1Col10, 9, 0);
             this.tpnlOutputs.Controls.Add(this.pnlOutputsRow2Col10, 9, 1);
             this.tpnlOutputs.Controls.Add(this.pnlOutputsRow2Col9, 8, 1);
@@ -272,8 +297,6 @@
             this.tpnlOutputs.Controls.Add(this.pnlOutputsRow2Col7, 6, 1);
             this.tpnlOutputs.Controls.Add(this.pnlOutputsRow2Col6, 5, 1);
             this.tpnlOutputs.Controls.Add(this.pnlOutputsRow2Col5, 4, 1);
-            this.tpnlOutputs.Controls.Add(this.pnlOutputsRow2Col4, 3, 1);
-            this.tpnlOutputs.Controls.Add(this.pnlOutputsRow2Col3, 2, 1);
             this.tpnlOutputs.Controls.Add(this.pnlOutputsRow2Col2, 1, 1);
             this.tpnlOutputs.Controls.Add(this.pnlOutputsRow2Col1, 0, 1);
             this.tpnlOutputs.Controls.Add(this.pnlOutputsRow1Col8, 7, 0);
@@ -282,11 +305,84 @@
             this.tpnlOutputs.Dock = System.Windows.Forms.DockStyle.Top;
             this.tpnlOutputs.Location = new System.Drawing.Point(0, 137);
             this.tpnlOutputs.Name = "tpnlOutputs";
-            this.tpnlOutputs.RowCount = 2;
-            this.tpnlOutputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tpnlOutputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlOutputs.RowCount = 3;
+            this.tpnlOutputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tpnlOutputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tpnlOutputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tpnlOutputs.Size = new System.Drawing.Size(1050, 434);
             this.tpnlOutputs.TabIndex = 7;
+            // 
+            // pnlOutputsRow3Col9
+            // 
+            this.pnlOutputsRow3Col9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow3Col9.Location = new System.Drawing.Point(10, 269);
+            this.pnlOutputsRow3Col9.Margin = new System.Windows.Forms.Padding(10);
+            this.pnlOutputsRow3Col9.Name = "pnlOutputsRow3Col9";
+            this.pnlOutputsRow3Col9.Size = new System.Drawing.Size(85, 155);
+            this.pnlOutputsRow3Col9.TabIndex = 34;
+            // 
+            // pnlOutputsRow3Col10
+            // 
+            this.tpnlOutputs.SetColumnSpan(this.pnlOutputsRow3Col10, 6);
+            this.pnlOutputsRow3Col10.Controls.Add(this.dgvDocumentsImported);
+            this.pnlOutputsRow3Col10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow3Col10.Location = new System.Drawing.Point(115, 269);
+            this.pnlOutputsRow3Col10.Margin = new System.Windows.Forms.Padding(10);
+            this.pnlOutputsRow3Col10.Name = "pnlOutputsRow3Col10";
+            this.pnlOutputsRow3Col10.Size = new System.Drawing.Size(610, 155);
+            this.pnlOutputsRow3Col10.TabIndex = 33;
+            // 
+            // dgvDocumentsImported
+            // 
+            this.dgvDocumentsImported.AllowUserToAddRows = false;
+            this.dgvDocumentsImported.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDocumentsImported.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+            this.dgvDocumentsImported.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDocumentsImported.Location = new System.Drawing.Point(0, 0);
+            this.dgvDocumentsImported.Name = "dgvDocumentsImported";
+            this.dgvDocumentsImported.ReadOnly = true;
+            this.dgvDocumentsImported.Size = new System.Drawing.Size(610, 155);
+            this.dgvDocumentsImported.TabIndex = 2;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "File Path";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 170;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "File Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Date Uploaded";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "File Size";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 80;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Row Count";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 80;
             // 
             // pnlOutputsRow1Col10
             // 
@@ -294,108 +390,100 @@
             this.pnlOutputsRow1Col10.Location = new System.Drawing.Point(955, 10);
             this.pnlOutputsRow1Col10.Margin = new System.Windows.Forms.Padding(10);
             this.pnlOutputsRow1Col10.Name = "pnlOutputsRow1Col10";
-            this.pnlOutputsRow1Col10.Size = new System.Drawing.Size(85, 370);
+            this.pnlOutputsRow1Col10.Size = new System.Drawing.Size(85, 153);
             this.pnlOutputsRow1Col10.TabIndex = 29;
             // 
             // pnlOutputsRow2Col10
             // 
             this.pnlOutputsRow2Col10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOutputsRow2Col10.Location = new System.Drawing.Point(955, 400);
+            this.pnlOutputsRow2Col10.Location = new System.Drawing.Point(955, 183);
             this.pnlOutputsRow2Col10.Margin = new System.Windows.Forms.Padding(10);
             this.pnlOutputsRow2Col10.Name = "pnlOutputsRow2Col10";
-            this.pnlOutputsRow2Col10.Size = new System.Drawing.Size(85, 24);
+            this.pnlOutputsRow2Col10.Size = new System.Drawing.Size(85, 66);
             this.pnlOutputsRow2Col10.TabIndex = 28;
             // 
             // pnlOutputsRow2Col9
             // 
             this.pnlOutputsRow2Col9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOutputsRow2Col9.Location = new System.Drawing.Point(850, 400);
+            this.pnlOutputsRow2Col9.Location = new System.Drawing.Point(850, 183);
             this.pnlOutputsRow2Col9.Margin = new System.Windows.Forms.Padding(10);
             this.pnlOutputsRow2Col9.Name = "pnlOutputsRow2Col9";
-            this.pnlOutputsRow2Col9.Size = new System.Drawing.Size(85, 24);
+            this.pnlOutputsRow2Col9.Size = new System.Drawing.Size(85, 66);
             this.pnlOutputsRow2Col9.TabIndex = 27;
             // 
             // pnlOutputsRow2Col8
             // 
             this.pnlOutputsRow2Col8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOutputsRow2Col8.Location = new System.Drawing.Point(745, 400);
+            this.pnlOutputsRow2Col8.Location = new System.Drawing.Point(745, 183);
             this.pnlOutputsRow2Col8.Margin = new System.Windows.Forms.Padding(10);
             this.pnlOutputsRow2Col8.Name = "pnlOutputsRow2Col8";
-            this.pnlOutputsRow2Col8.Size = new System.Drawing.Size(85, 24);
+            this.pnlOutputsRow2Col8.Size = new System.Drawing.Size(85, 66);
             this.pnlOutputsRow2Col8.TabIndex = 26;
             // 
             // pnlOutputsRow2Col7
             // 
             this.pnlOutputsRow2Col7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOutputsRow2Col7.Location = new System.Drawing.Point(640, 400);
+            this.pnlOutputsRow2Col7.Location = new System.Drawing.Point(640, 183);
             this.pnlOutputsRow2Col7.Margin = new System.Windows.Forms.Padding(10);
             this.pnlOutputsRow2Col7.Name = "pnlOutputsRow2Col7";
-            this.pnlOutputsRow2Col7.Size = new System.Drawing.Size(85, 24);
+            this.pnlOutputsRow2Col7.Size = new System.Drawing.Size(85, 66);
             this.pnlOutputsRow2Col7.TabIndex = 25;
             // 
             // pnlOutputsRow2Col6
             // 
             this.pnlOutputsRow2Col6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOutputsRow2Col6.Location = new System.Drawing.Point(535, 400);
+            this.pnlOutputsRow2Col6.Location = new System.Drawing.Point(535, 183);
             this.pnlOutputsRow2Col6.Margin = new System.Windows.Forms.Padding(10);
             this.pnlOutputsRow2Col6.Name = "pnlOutputsRow2Col6";
-            this.pnlOutputsRow2Col6.Size = new System.Drawing.Size(85, 24);
+            this.pnlOutputsRow2Col6.Size = new System.Drawing.Size(85, 66);
             this.pnlOutputsRow2Col6.TabIndex = 24;
             // 
             // pnlOutputsRow2Col5
             // 
             this.pnlOutputsRow2Col5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOutputsRow2Col5.Location = new System.Drawing.Point(430, 400);
+            this.pnlOutputsRow2Col5.Location = new System.Drawing.Point(430, 183);
             this.pnlOutputsRow2Col5.Margin = new System.Windows.Forms.Padding(10);
             this.pnlOutputsRow2Col5.Name = "pnlOutputsRow2Col5";
-            this.pnlOutputsRow2Col5.Size = new System.Drawing.Size(85, 24);
+            this.pnlOutputsRow2Col5.Size = new System.Drawing.Size(85, 66);
             this.pnlOutputsRow2Col5.TabIndex = 23;
-            // 
-            // pnlOutputsRow2Col4
-            // 
-            this.pnlOutputsRow2Col4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOutputsRow2Col4.Location = new System.Drawing.Point(325, 400);
-            this.pnlOutputsRow2Col4.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlOutputsRow2Col4.Name = "pnlOutputsRow2Col4";
-            this.pnlOutputsRow2Col4.Size = new System.Drawing.Size(85, 24);
-            this.pnlOutputsRow2Col4.TabIndex = 22;
-            // 
-            // pnlOutputsRow2Col3
-            // 
-            this.pnlOutputsRow2Col3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOutputsRow2Col3.Location = new System.Drawing.Point(220, 400);
-            this.pnlOutputsRow2Col3.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlOutputsRow2Col3.Name = "pnlOutputsRow2Col3";
-            this.pnlOutputsRow2Col3.Size = new System.Drawing.Size(85, 24);
-            this.pnlOutputsRow2Col3.TabIndex = 21;
             // 
             // pnlOutputsRow2Col2
             // 
+            this.tpnlOutputs.SetColumnSpan(this.pnlOutputsRow2Col2, 3);
+            this.pnlOutputsRow2Col2.Controls.Add(this.lblFilesSuccessfullyImported);
             this.pnlOutputsRow2Col2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOutputsRow2Col2.Location = new System.Drawing.Point(115, 400);
+            this.pnlOutputsRow2Col2.Location = new System.Drawing.Point(115, 183);
             this.pnlOutputsRow2Col2.Margin = new System.Windows.Forms.Padding(10);
             this.pnlOutputsRow2Col2.Name = "pnlOutputsRow2Col2";
-            this.pnlOutputsRow2Col2.Size = new System.Drawing.Size(85, 24);
+            this.pnlOutputsRow2Col2.Size = new System.Drawing.Size(295, 66);
             this.pnlOutputsRow2Col2.TabIndex = 20;
+            // 
+            // lblFilesSuccessfullyImported
+            // 
+            this.lblFilesSuccessfullyImported.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblFilesSuccessfullyImported.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFilesSuccessfullyImported.Location = new System.Drawing.Point(0, 33);
+            this.lblFilesSuccessfullyImported.Name = "lblFilesSuccessfullyImported";
+            this.lblFilesSuccessfullyImported.Size = new System.Drawing.Size(295, 33);
+            this.lblFilesSuccessfullyImported.TabIndex = 0;
+            this.lblFilesSuccessfullyImported.Text = "Files Successfully Imported:";
             // 
             // pnlOutputsRow2Col1
             // 
             this.pnlOutputsRow2Col1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOutputsRow2Col1.Location = new System.Drawing.Point(10, 400);
+            this.pnlOutputsRow2Col1.Location = new System.Drawing.Point(10, 183);
             this.pnlOutputsRow2Col1.Margin = new System.Windows.Forms.Padding(10);
             this.pnlOutputsRow2Col1.Name = "pnlOutputsRow2Col1";
-            this.pnlOutputsRow2Col1.Size = new System.Drawing.Size(85, 24);
+            this.pnlOutputsRow2Col1.Size = new System.Drawing.Size(85, 66);
             this.pnlOutputsRow2Col1.TabIndex = 19;
             // 
             // pnlOutputsRow1Col8
             // 
-            this.tpnlOutputs.SetColumnSpan(this.pnlOutputsRow1Col8, 2);
-            this.pnlOutputsRow1Col8.Controls.Add(this.lBoxDocumentUploadLog);
             this.pnlOutputsRow1Col8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlOutputsRow1Col8.Location = new System.Drawing.Point(745, 10);
             this.pnlOutputsRow1Col8.Margin = new System.Windows.Forms.Padding(10);
             this.pnlOutputsRow1Col8.Name = "pnlOutputsRow1Col8";
-            this.pnlOutputsRow1Col8.Size = new System.Drawing.Size(190, 370);
+            this.pnlOutputsRow1Col8.Size = new System.Drawing.Size(85, 153);
             this.pnlOutputsRow1Col8.TabIndex = 16;
             // 
             // pnlOutputsRow1Col1
@@ -404,7 +492,7 @@
             this.pnlOutputsRow1Col1.Location = new System.Drawing.Point(10, 10);
             this.pnlOutputsRow1Col1.Margin = new System.Windows.Forms.Padding(10);
             this.pnlOutputsRow1Col1.Name = "pnlOutputsRow1Col1";
-            this.pnlOutputsRow1Col1.Size = new System.Drawing.Size(85, 370);
+            this.pnlOutputsRow1Col1.Size = new System.Drawing.Size(85, 153);
             this.pnlOutputsRow1Col1.TabIndex = 10;
             // 
             // pnlOutputsRow1Col2
@@ -415,43 +503,18 @@
             this.pnlOutputsRow1Col2.Location = new System.Drawing.Point(115, 10);
             this.pnlOutputsRow1Col2.Margin = new System.Windows.Forms.Padding(10);
             this.pnlOutputsRow1Col2.Name = "pnlOutputsRow1Col2";
-            this.pnlOutputsRow1Col2.Size = new System.Drawing.Size(610, 370);
+            this.pnlOutputsRow1Col2.Size = new System.Drawing.Size(610, 153);
             this.pnlOutputsRow1Col2.TabIndex = 11;
             // 
-            // FilePath
+            // button1
             // 
-            this.FilePath.HeaderText = "File Path";
-            this.FilePath.Name = "FilePath";
-            this.FilePath.ReadOnly = true;
-            this.FilePath.Width = 170;
-            // 
-            // FileName
-            // 
-            this.FileName.HeaderText = "File Name";
-            this.FileName.Name = "FileName";
-            this.FileName.ReadOnly = true;
-            this.FileName.Width = 120;
-            // 
-            // DateUploaded
-            // 
-            this.DateUploaded.HeaderText = "Date Uploaded";
-            this.DateUploaded.Name = "DateUploaded";
-            this.DateUploaded.ReadOnly = true;
-            this.DateUploaded.Width = 120;
-            // 
-            // FileSize
-            // 
-            this.FileSize.HeaderText = "File Size";
-            this.FileSize.Name = "FileSize";
-            this.FileSize.ReadOnly = true;
-            this.FileSize.Width = 80;
-            // 
-            // RowCount
-            // 
-            this.RowCount.HeaderText = "Row Count";
-            this.RowCount.Name = "RowCount";
-            this.RowCount.ReadOnly = true;
-            this.RowCount.Width = 80;
+            this.button1.Location = new System.Drawing.Point(7, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "TestButton";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // UC_Tab5
             // 
@@ -467,12 +530,14 @@
             this.pnlHeaderUploadPriceData.ResumeLayout(false);
             this.pnlHeaderUploadPriceData.PerformLayout();
             this.tpnlInputs.ResumeLayout(false);
-            this.pnlInputsRow1Col8.ResumeLayout(false);
+            this.pnlInputsRow1Col7.ResumeLayout(false);
             this.pnlInputsRow1Col6.ResumeLayout(false);
             this.pnlInputsRow1Col5.ResumeLayout(false);
             this.pnlInputsRow1Col2.ResumeLayout(false);
             this.tpnlOutputs.ResumeLayout(false);
-            this.pnlOutputsRow1Col8.ResumeLayout(false);
+            this.pnlOutputsRow3Col10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDocumentsImported)).EndInit();
+            this.pnlOutputsRow2Col2.ResumeLayout(false);
             this.pnlOutputsRow1Col2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -484,7 +549,6 @@
         private System.Windows.Forms.DataGridView dgvDocumentsQueued;
         private System.Windows.Forms.Button btnFindFiles;
         private System.Windows.Forms.Button btnSubmitFiles;
-        private System.Windows.Forms.ListBox lBoxDocumentUploadLog;
         private System.Windows.Forms.Panel pnlHeaderUploadPriceData;
         private System.Windows.Forms.Label lblHeaderUploadPriceData;
         private System.Windows.Forms.TableLayoutPanel tpnlInputs;
@@ -501,19 +565,26 @@
         private System.Windows.Forms.Panel pnlOutputsRow2Col7;
         private System.Windows.Forms.Panel pnlOutputsRow2Col6;
         private System.Windows.Forms.Panel pnlOutputsRow2Col5;
-        private System.Windows.Forms.Panel pnlOutputsRow2Col4;
-        private System.Windows.Forms.Panel pnlOutputsRow2Col3;
         private System.Windows.Forms.Panel pnlOutputsRow2Col2;
         private System.Windows.Forms.Panel pnlOutputsRow2Col1;
         private System.Windows.Forms.Panel pnlOutputsRow1Col8;
         private System.Windows.Forms.Panel pnlOutputsRow1Col1;
         private System.Windows.Forms.Panel pnlOutputsRow1Col2;
-        private System.Windows.Forms.Label lblFilesImported;
         private System.Windows.Forms.Panel pnlOutputsRow1Col10;
         private System.Windows.Forms.DataGridViewTextBoxColumn FilePath;
         private System.Windows.Forms.DataGridViewTextBoxColumn FileName;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateUploaded;
         private System.Windows.Forms.DataGridViewTextBoxColumn FileSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn RowCount;
+        private System.Windows.Forms.Panel pnlOutputsRow3Col9;
+        private System.Windows.Forms.Panel pnlOutputsRow3Col10;
+        private System.Windows.Forms.DataGridView dgvDocumentsImported;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Label lblFilesSuccessfullyImported;
+        private System.Windows.Forms.Button button1;
     }
 }

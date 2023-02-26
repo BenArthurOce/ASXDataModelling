@@ -20,5 +20,14 @@ namespace DataReferenceLibrary.Models
 
         public long RowsInFile { get; set; }
 
+
+        public DocumentUploadHistoryModel(string filePath, string fileName, DateTime dateTimeUploaded, long fileSizeBytes, long rowsInFile)
+        {
+            FilePath = filePath;
+            FileName = fileName;
+            DateTimeUploaded = dateTimeUploaded;
+            FileSizeBytes = fileSizeBytes;
+            RowsInFile = rowsInFile;
+        }
     }
 }

@@ -16,6 +16,10 @@ using System.Windows.Forms;
 using static System.Windows.Forms.LinkLabel;
 using System.Web.UI.WebControls;
 using System.Xml.Linq;
+using Microsoft.Win32;
+using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
+using System.Windows.Documents;
+using System.Windows.Media.Media3D;
 
 namespace UserInterface.UserControlsTab
 {
@@ -33,26 +37,44 @@ namespace UserInterface.UserControlsTab
             }
         }
 
-        private List<DocumentUploadHistoryModel> ListDocumentModelsToAdd = new List<DocumentUploadHistoryModel>();
-
-        //TODO - Fix layout using a table layout panel
 
         public UC_Tab5()
         {
             InitializeComponent();
         }
 
-
         private void btnFindFiles_Click(object sender, EventArgs e)
         {
-            PopulateDataTable();
+            // Run the File Dialogue and return the files
+            OpenFileDialog openFileDialogResults = SelectNotepadFiles();
+
+            if (openFileDialogResults == null)
+            {
+                return;
+            }
+            else
+            {
+                //Check if the File/Row already exists in the DGV
+                foreach (string filename in openFileDialogResults.FileNames)
+                {
+                    bool isExist = DoesRecordAlreadyExistInDGV(filename);
+                    if (isExist == true) 
+                    { 
+                        continue; 
+                    }
+                    // If it doesnt already exist, add it.
+                    if (isExist == false)
+                    {
+                        OpenFileDialogIntoDGVQueued(filename);
+                    }
+                }
+            }
             btnSubmitFiles.Visible = true;
         }
 
 
-        private void PopulateDataTable()
+        private OpenFileDialog SelectNotepadFiles()
         {
-            List<DocumentUploadHistoryModel> ListDocumentModelsToAdd2 = new List<DocumentUploadHistoryModel>();
             OpenFileDialog openFileDialog1 = new OpenFileDialog
             {
                 InitialDirectory = @"C:\Users\vboxuser\Desktop\ASXHistoricalPrices",
@@ -70,35 +92,84 @@ namespace UserInterface.UserControlsTab
                 ReadOnlyChecked = true,
                 ShowReadOnly = true
             };
-
-            // Create a Model for each file created and store in list
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                string[] fileNames = openFileDialog1.FileNames;
-                foreach (string fileName in fileNames)
+                return openFileDialog1;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        private bool DoesRecordAlreadyExistInDGV(string DocumentFileName)
+        {
+            foreach (DataGridViewRow row in dgvDocumentsQueued.Rows)
+            {
+                if (row.Cells[0].Value.ToString() == DocumentFileName)
                 {
-                    FileInfo fileInfo = new FileInfo(fileName);
-                    DocumentUploadHistoryModel OneDocument = new DocumentUploadHistoryModel();
-
-                    // Document Properties
-                    OneDocument.FilePath = fileInfo.FullName;
-                    OneDocument.FileName = fileInfo.Name.ToLower();
-                    OneDocument.DateTimeUploaded = DateTime.Now;
-                    OneDocument.FileSizeBytes = fileInfo.Length;
-
-                    // Number of Rows in File
-                    string[] lines = File.ReadAllLines(fileName);
-                    OneDocument.RowsInFile = lines.Length;
-
-                    // Add to list
-                    ListDocumentModelsToAdd.Add(OneDocument);
+                    return true;
                 }
+            }
+                return false;
+        }
 
-                // Put each model into the dt row
-                foreach (DocumentUploadHistoryModel SingleDocument in ListDocumentModelsToAdd)
-                {
-                    dgvDocumentsQueued.Rows.Add(SingleDocument.FilePath, SingleDocument.FileName, SingleDocument.DateTimeUploaded, SingleDocument.FileSizeBytes, SingleDocument.RowsInFile);
-                }
+        private void OpenFileDialogIntoDGVQueued(string filename)
+        {
+            FileInfo fileInfo = new FileInfo(filename);
+
+            //Read Number of Lines in File
+            string[] lines = File.ReadAllLines(filename);
+
+            // Create New Model
+            DocumentUploadHistoryModel OneDocument = new DocumentUploadHistoryModel(
+                  fileInfo.FullName         //FilePath
+                , fileInfo.Name.ToLower()   //FileName
+                , DateTime.Now              //DateTimeUploaded
+                , fileInfo.Length           //FileSizeBytes
+                , lines.Length              //RowsInFile
+                );
+
+            // Add to DataGridView
+            dgvDocumentsQueued.Rows.Add(OneDocument.FilePath, OneDocument.FileName, OneDocument.DateTimeUploaded, OneDocument.FileSizeBytes, OneDocument.RowsInFile);
+        }
+
+
+        private void btnSubmitFiles_Click(object sender, EventArgs e)
+        {
+
+            for (int i = dgvDocumentsQueued.Rows.Count - 1; i >= 0; i--)
+            {
+                
+                // Create a Datatable from the notepad
+                DataTable dt = new DataTable();
+                string filePath = dgvDocumentsQueued.Rows[i].Cells[0].Value.ToString();
+                dt = CreateDataTableFromNotePad(filePath);
+
+                // Create a Model from the notepad information
+                DocumentUploadHistoryModel model = new DocumentUploadHistoryModel(
+                      dgvDocumentsQueued.Rows[i].Cells[0].Value.ToString() //FilePath
+                    , dgvDocumentsQueued.Rows[i].Cells[1].Value.ToString() //FileName
+                    , DateTime.Now                  //DateTimeUploaded
+                    , (long)dgvDocumentsQueued.Rows[i].Cells[3].Value      //FileSizeBytes
+                    , (long)dgvDocumentsQueued.Rows[i].Cells[4].Value      //RowsInFile
+                    );
+
+                // Attempt to Import the text file
+                ImportASingleTextFile(dt, model);
+
+                // Get Index Of DGV Queued
+                int index = GetRowIndexOfDGV(model.FilePath);
+
+                //If success, remove old row and place into new row
+                //If fail, highlight the relevant index in red
+                // TODO - Need error validation
+
+                //Remove old Row
+                dgvDocumentsQueued.Rows.RemoveAt(index);
+
+                //Place into new row
+                dgvDocumentsImported.Rows.Add(model.FilePath, model.FileName, model.DateTimeUploaded, model.FileSizeBytes, model.RowsInFile);
             }
         }
 
@@ -135,38 +206,33 @@ namespace UserInterface.UserControlsTab
             return dt;
         }
 
-        private void ImportASingleTextFile(DataTable dt)
+
+        private int GetRowIndexOfDGV(string LookupValue)
+        {
+            int rowIndex = -1;
+
+            DataGridViewRow row = dgvDocumentsQueued.Rows
+                .Cast<DataGridViewRow>()
+                .Where(r => r.Cells["FilePath"].Value.ToString().Equals(LookupValue))
+                .First();
+
+            rowIndex = row.Index;
+            return rowIndex;
+        }
+
+
+        private void ImportASingleTextFile(DataTable dt, DocumentUploadHistoryModel model)
         {
             GlobalConfig.Connection.spINSERTDATA_ASXEODPrice(dt);
-        }
-
-
-        private void btnSubmitFiles_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow row in dgvDocumentsQueued.Rows)
-            {
-                string filePath = row.Cells[0].Value.ToString();
-                DataTable dt = new DataTable();
-                dt = CreateDataTableFromNotePad(filePath);
-                ImportASingleTextFile(dt);
-
-                DocumentUploadHistoryModel model = new DocumentUploadHistoryModel();
-                model.FilePath = row.Cells[0].Value.ToString();
-                model.FileName = row.Cells[1].Value.ToString();
-                model.DateTimeUploaded = DateTime.Now;
-                model.FileSizeBytes = (long)row.Cells[3].Value;
-                model.RowsInFile = (long)row.Cells[4].Value;
-
-                AddEntryToDocumentTable(model);
-            }
-            dgvDocumentsQueued.Rows.Clear();
-        }
-
-        private void AddEntryToDocumentTable(DocumentUploadHistoryModel model)
-        {
             GlobalConfig.Connection.spINSERTDATA_DocumentUploadRecord(model);
-            lBoxDocumentUploadLog.Items.Add($"Document: {model.FileName} was added to the database");
         }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {           
+            
+        }
+
 
     }  
 }
