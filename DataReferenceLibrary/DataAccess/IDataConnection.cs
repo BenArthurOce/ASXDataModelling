@@ -24,6 +24,9 @@ namespace DataReferenceLibrary.DataAccess
 
         List<TradingTransactionTypeModel> spGETLIST_TransactionTypes();
 
+        List<TradingSectorModel> spGETLIST_TradingSectors();
+
+
         ///////////////////////////////
         ///////TAB - PRICE QUERY///////
         ///////////////////////////////

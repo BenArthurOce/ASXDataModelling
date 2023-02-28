@@ -14,6 +14,7 @@ using System.Globalization;
 using UserInterface.FormAssets;
 using DataReferenceLibrary.Models;
 using UserInterface.Forms;
+using System.Windows.Documents;
 
 namespace UserInterface.UserControlsTab
 {
@@ -32,6 +33,8 @@ namespace UserInterface.UserControlsTab
         }
 
         private List<PortfolioModel> availablePortfolios = GlobalConfig.Connection.spGETLIST_Portfolios();
+        private List<TradingTransactionTypeModel> transactionTypes = GlobalConfig.Connection.spGETLIST_TransactionTypes();
+        private List<TradingSectorModel> tradingSectors = GlobalConfig.Connection.spGETLIST_TradingSectors();
 
         public UC_Tab8()
         {
@@ -43,57 +46,79 @@ namespace UserInterface.UserControlsTab
         {
             cBoxPortfolio.DataSource = availablePortfolios;
             cBoxPortfolio.DisplayMember = "DropDownBoxDisplay";
+
+            cboxType.DataSource = transactionTypes;
+            cboxType.DisplayMember = "DropDownBoxDisplay";
+
+            cboxSector.DataSource = tradingSectors;
+            cboxSector.DisplayMember = "DropDownBoxDisplay";
         }
-        //TODO - Drop down display of portfolios
 
         //TODO - find what 3 letter codes are missing an industry
 
         //TODO - Line up header panel correctly - padding doesnt work when window is resized
-        private void btnDisplay_Click(object sender, EventArgs e)
+
+
+        //TODO - Sector is now missing from the Transaction Panel. I changed "SectorName" to "Name" in the model. It has to do with that.
+
+        private void btnGenerate_Click(object sender, EventArgs e)
         {
+
+            //TODO - VALIDATE FILTER ITEMS
 
             // Clear previous entries
             flowLayoutPanel1.Controls.Clear();
 
-
-
             IEnumerable<zFullPortfolioModel> output2;
             output2 = GlobalConfig.Connection.spQUERY_PortfoliosIndividualsTransactions();
 
-            foreach (zFullPortfolioModel portfolio in output2)
+            //TODO - ADD CATCH IF THE TEXTBOX IS NULL
+            zFullPortfolioModel selected_portfolio = output2.FirstOrDefault(item => item.Name == cBoxPortfolio.Text);
+
+
+            //List<TradingTransactionModel> filtered_transactions = selected_portfolio.Transactions.FirstOrDefault(p => p.TradingTransactionTypeId.Name == cboxType.Text);
+
+            //List<TradingTransactionModel> filtered_transactions = (List<TradingTransactionModel>)selected_portfolio.Transactions.Where(p => p.TradingTransactionTypeId.Name == cboxType.Text);
+
+            //var items = selected_portfolio.Transactions.Where(item => item.TradingTransactionTypeId.Name == "BUY");
+
+            var items = selected_portfolio.Transactions.Where(item => item.TradingEntityId.ASXCode == tBoxASXCode.Text);
+            int a = 1;
+
+            foreach (var trans in items)
             {
-                if (portfolio.Name == cBoxPortfolio.Text)
-                {
+                TransactionPanel newCustomPanel = new TransactionPanel(trans);
+                newCustomPanel.Width = flowLayoutPanel1.Width;
+                newCustomPanel.Dock = DockStyle.Top;
 
-                    foreach (var transaction in portfolio.Transactions)
-                    {
-
-                        TransactionPanel newCustomPanel = new TransactionPanel(transaction);
-                        //MessageBox.Show(flowLayoutPanel1.Width.ToString());
-                        //newCustomPanel.PanelWidth = flowLayoutPanel1.Width;
-                        newCustomPanel.Width = flowLayoutPanel1.Width;
-                        newCustomPanel.Dock = DockStyle.Top;
-                        //newCustomPanel.BackColor = Color.Red;
-                        //newCustomPanel.Dock = DockStyle.Fill;
-
-
-                        flowLayoutPanel1.Controls.Add(newCustomPanel);
-                    }
-
-                }
+                flowLayoutPanel1.Controls.Add(newCustomPanel);
             }
 
+            /*
+            foreach (TradingTransactionModel transaction in selected_portfolio.Transactions)
+            {
+                TransactionPanel newCustomPanel = new TransactionPanel(transaction);
+                newCustomPanel.Width = flowLayoutPanel1.Width;
+                newCustomPanel.Dock = DockStyle.Top;
+
+                flowLayoutPanel1.Controls.Add(newCustomPanel);
+            }
+            */
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+
+
+        private void btnClear_Click(object sender, EventArgs e)
         {
-            //Call the CreateNewTransactionForm
-            //CreateNewTransactionForm form = new CreateNewTransactionForm(this);
-            //form.Show();
-
-           
-
-
+            dtpDateFrom.Text = null;
+            dtpDateTo.Text = null;
+            cboxType.Text = null;
+            cboxSector.Text = null;
+            tBoxASXCode.Text = null;
+            nTboxMinAmount.Text = null;
+            nTboxMaxAmount.Text = null;
         }
     }
 }

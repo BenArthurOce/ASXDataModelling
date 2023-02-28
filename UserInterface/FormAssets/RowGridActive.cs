@@ -191,7 +191,7 @@ namespace UserInterface.FormAssets
                 AutoEllipsis = true,
                 Dock = DockStyle.Fill,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Text = TransactionModel.TradingEntityId.TradingSectorId.SectorName
+                Text = TransactionModel.TradingEntityId.TradingSectorId.Name
             };
             //
             // lblFooter_TransQuantity

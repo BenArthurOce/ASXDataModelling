@@ -51,6 +51,15 @@ namespace DataReferenceLibrary.DataAccess
             return output;
         }
 
+        public List<TradingSectorModel> spGETLIST_TradingSectors()
+        {
+            List<TradingSectorModel> output;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                output = connection.Query<TradingSectorModel>("dbo.spGETLIST_TradingSectors").ToList();
+            }
+            return output;
+        }
 
         ///////////////////////////////
         ///////TAB - PRICE QUERY///////
