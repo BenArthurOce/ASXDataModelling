@@ -99,17 +99,17 @@
     <Compile Include="ShareDashboardForm.Designer.cs">
       <DependentUpon>ShareDashboardForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlsTab\UC_Tab8.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlsTab\UC_Tab8.Designer.cs">
-      <DependentUpon>UC_Tab8.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControlsTab\UC_Tab3.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControlsTab\UC_Tab3.Designer.cs">
       <DependentUpon>UC_Tab3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsTab\UC_Tab8.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsTab\UC_Tab8.Designer.cs">
+      <DependentUpon>UC_Tab8.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlsTab\UC_Tab1.cs">
       <SubType>UserControl</SubType>
@@ -162,11 +162,11 @@
     <EmbeddedResource Include="ShareDashboardForm.resx">
       <DependentUpon>ShareDashboardForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlsTab\UC_Tab8.resx">
-      <DependentUpon>UC_Tab8.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControlsTab\UC_Tab3.resx">
       <DependentUpon>UC_Tab3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsTab\UC_Tab8.resx">
+      <DependentUpon>UC_Tab8.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlsTab\UC_Tab1.resx">
       <DependentUpon>UC_Tab1.cs</DependentUpon>

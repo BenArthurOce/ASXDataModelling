@@ -46,18 +46,23 @@ namespace UserInterface.UserControlsTab
             cBoxPortfolio.DisplayMember = "DropDownBoxDisplay";
         }
 
-            private void btnPortfolioGenerate_Click(object sender, EventArgs e)
+        private void btnPortfolioGenerate_Click(object sender, EventArgs e)
         {
+            // Leave Code if Portfolio ComboBox is Empty
+            if (string.IsNullOrWhiteSpace(cBoxPortfolio.Text))
+            {
+                MessageBox.Show("A Portfolio Must be selected before transactions can be generated");
+                return;
+            }
+
             string InputPortfolioName = cBoxPortfolio.Text;
-            int InputEndDate = Convert.ToInt32(tBoxPortfolioEndDate.Text);
-            List<spQueryPortfolioItemsForCertainDate> output;
-            output = GlobalConfig.Connection.spQUERY_PortfolioValue(InputPortfolioName, InputEndDate);
-            PopulatePortfolioGrid(output);   
-            
-            //TODO - FORM DATA VALIDATION
+            int InputEndDate = Int32.Parse(dtpDate.Value.ToString("yyyyMMdd"));
+
+            List<spQueryPortfolioItemsForCertainDate> sql_request = GlobalConfig.Connection.spQUERY_PortfolioValue(InputPortfolioName, InputEndDate);
+            PopulatePortfolioGrid(sql_request);   
         }
 
-        private void PopulatePortfolioGrid(List<spQueryPortfolioItemsForCertainDate> output)
+        private void PopulatePortfolioGrid(List<spQueryPortfolioItemsForCertainDate> sql_request)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("ASXCode",       typeof(string));
@@ -70,7 +75,7 @@ namespace UserInterface.UserControlsTab
             dt.Columns.Add("ProfitLossP",   typeof(decimal));
             dt.Columns.Add("WeightP",       typeof(decimal));
 
-            foreach (spQueryPortfolioItemsForCertainDate result in output)
+            foreach (spQueryPortfolioItemsForCertainDate result in sql_request)
             {
                 dt.Rows.Add(
                     result.ASXCode,

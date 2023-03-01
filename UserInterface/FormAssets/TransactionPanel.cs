@@ -59,8 +59,6 @@ namespace UserInterface.FormAssets
             // This panel doesnt have a parent because it hasnt been created yet.
             // A value will need to pass into it, to determine its width
 
-            this.BackColor = Color.Pink;
-
             this.TransactionModel = _transactionModel;
 
             // This Panel needs two States. Active and Inactive.
@@ -121,11 +119,13 @@ namespace UserInterface.FormAssets
             this.Click += TransactionPanel_Clicked;
         }
 
+        //This handles anything inside the panel that is clicked
         private void APanelWasClicked(object sender, EventArgs e)
         {
             TransactionPanel_Clicked(this, e);
         }
 
+        //Grows a panel if clicked, shrinks the rest if not clicked
         private void TransactionPanel_Clicked(object sender, EventArgs e)
         {
             TransactionPanel ThisPanel = (TransactionPanel)sender;

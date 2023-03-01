@@ -28,90 +28,523 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlHeaderSinglePriceData = new System.Windows.Forms.Panel();
-            this.lblHeaderSinglePriceData = new System.Windows.Forms.Label();
-            this.lblASXShare = new System.Windows.Forms.Label();
+            this.pnlOutputsRow1Col1 = new System.Windows.Forms.Panel();
+            this.tpnlInputs = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlInputsRow1Col10 = new System.Windows.Forms.Panel();
+            this.btnGenerate = new System.Windows.Forms.Button();
+            this.pnlInputsRow1Col2 = new System.Windows.Forms.Panel();
+            this.lblFilters = new System.Windows.Forms.Label();
+            this.pnlInputsRow1Col8 = new System.Windows.Forms.Panel();
+            this.lblAmountStart = new System.Windows.Forms.Label();
+            this.pnlInputsRow1Col7 = new System.Windows.Forms.Panel();
+            this.lblASXCode = new System.Windows.Forms.Label();
+            this.pnlInputsRow1Col6 = new System.Windows.Forms.Panel();
+            this.lblSector = new System.Windows.Forms.Label();
+            this.pnlInputsRow1Col5 = new System.Windows.Forms.Panel();
+            this.lblType = new System.Windows.Forms.Label();
+            this.pnlInputsRow1Col4 = new System.Windows.Forms.Panel();
+            this.lblDateEnd = new System.Windows.Forms.Label();
+            this.pnlInputsRow1Col3 = new System.Windows.Forms.Panel();
+            this.lblDateStart = new System.Windows.Forms.Label();
+            this.pnlInputsRow1Col1 = new System.Windows.Forms.Panel();
+            this.pnlInputsRow1Col9 = new System.Windows.Forms.Panel();
+            this.lblAmountEnd = new System.Windows.Forms.Label();
+            this.pnlInputsRow2Col1 = new System.Windows.Forms.Panel();
+            this.cBoxPortfolio = new System.Windows.Forms.ComboBox();
+            this.pnlInputsRow2Col3 = new System.Windows.Forms.Panel();
+            this.dtpDateFrom = new System.Windows.Forms.DateTimePicker();
+            this.pnlInputsRow2Col4 = new System.Windows.Forms.Panel();
+            this.dtpDateTo = new System.Windows.Forms.DateTimePicker();
+            this.pnlInputsRow2Col5 = new System.Windows.Forms.Panel();
+            this.cboxType = new System.Windows.Forms.ComboBox();
+            this.pnlInputsRow2Col6 = new System.Windows.Forms.Panel();
+            this.cboxSector = new System.Windows.Forms.ComboBox();
+            this.pnlInputsRow2Col7 = new System.Windows.Forms.Panel();
+            this.tBoxASXCode = new System.Windows.Forms.TextBox();
+            this.pnlInputsRow2Col8 = new System.Windows.Forms.Panel();
+            this.nTboxMinAmount = new UserInterface.FormAssets.NumericTextBox();
+            this.pnlInputsRow2Col9 = new System.Windows.Forms.Panel();
+            this.nTboxMaxAmount = new UserInterface.FormAssets.NumericTextBox();
+            this.pnlInputsRow2Col10 = new System.Windows.Forms.Panel();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.pnlOutputsRow1Col3 = new System.Windows.Forms.Panel();
             this.pnlContainerSinglePriceData = new System.Windows.Forms.Panel();
             this.tpnlOutputsSinglePriceData = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlOutputsCol2 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnlOutputsCol1 = new System.Windows.Forms.Panel();
-            this.pnlOutputsCol3 = new System.Windows.Forms.Panel();
-            this.tpnlInputsSinglePriceData = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlInputsCol8 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pnlInputsCol7 = new System.Windows.Forms.Panel();
-            this.pnlInputsCol6 = new System.Windows.Forms.Panel();
-            this.pnlInputsCol5 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pnlInputsCol4 = new System.Windows.Forms.Panel();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.pnlInputsCol3 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pnlInputsCol2 = new System.Windows.Forms.Panel();
-            this.cBoxPortfolio = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pnlInputsCol1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.pnlHeaderSinglePriceData.SuspendLayout();
+            this.pnlOutputsRow2Col1 = new System.Windows.Forms.Panel();
+            this.pnlOutputsRow2Col2 = new System.Windows.Forms.Panel();
+            this.flPanelTransactions = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlOutputsRow1Col2 = new System.Windows.Forms.Panel();
+            this.transactionPanelHeader1 = new UserInterface.FormAssets.TransactionPanelHeader();
+            this.pnlOutputsRow3Col1 = new System.Windows.Forms.Panel();
+            this.pnlOutputsRow3Col2 = new System.Windows.Forms.Panel();
+            this.btnNewTransaction = new System.Windows.Forms.Button();
+            this.pnlOutputsRow3Col3 = new System.Windows.Forms.Panel();
+            this.lblHeaderTab3 = new System.Windows.Forms.Label();
+            this.pnlHeaderSinglePriceData = new System.Windows.Forms.Panel();
+            this.tpnlInputs.SuspendLayout();
+            this.pnlInputsRow1Col10.SuspendLayout();
+            this.pnlInputsRow1Col2.SuspendLayout();
+            this.pnlInputsRow1Col8.SuspendLayout();
+            this.pnlInputsRow1Col7.SuspendLayout();
+            this.pnlInputsRow1Col6.SuspendLayout();
+            this.pnlInputsRow1Col5.SuspendLayout();
+            this.pnlInputsRow1Col4.SuspendLayout();
+            this.pnlInputsRow1Col3.SuspendLayout();
+            this.pnlInputsRow1Col9.SuspendLayout();
+            this.pnlInputsRow2Col1.SuspendLayout();
+            this.pnlInputsRow2Col3.SuspendLayout();
+            this.pnlInputsRow2Col4.SuspendLayout();
+            this.pnlInputsRow2Col5.SuspendLayout();
+            this.pnlInputsRow2Col6.SuspendLayout();
+            this.pnlInputsRow2Col7.SuspendLayout();
+            this.pnlInputsRow2Col8.SuspendLayout();
+            this.pnlInputsRow2Col9.SuspendLayout();
+            this.pnlInputsRow2Col10.SuspendLayout();
             this.pnlContainerSinglePriceData.SuspendLayout();
             this.tpnlOutputsSinglePriceData.SuspendLayout();
-            this.pnlOutputsCol2.SuspendLayout();
-            this.tpnlInputsSinglePriceData.SuspendLayout();
-            this.pnlInputsCol8.SuspendLayout();
-            this.pnlInputsCol6.SuspendLayout();
-            this.pnlInputsCol5.SuspendLayout();
-            this.pnlInputsCol4.SuspendLayout();
-            this.pnlInputsCol3.SuspendLayout();
-            this.pnlInputsCol2.SuspendLayout();
-            this.pnlInputsCol1.SuspendLayout();
+            this.pnlOutputsRow2Col2.SuspendLayout();
+            this.pnlOutputsRow1Col2.SuspendLayout();
+            this.pnlOutputsRow3Col2.SuspendLayout();
+            this.pnlHeaderSinglePriceData.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlHeaderSinglePriceData
+            // pnlOutputsRow1Col1
             // 
-            this.pnlHeaderSinglePriceData.BackColor = System.Drawing.Color.White;
-            this.pnlHeaderSinglePriceData.Controls.Add(this.lblHeaderSinglePriceData);
-            this.pnlHeaderSinglePriceData.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeaderSinglePriceData.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeaderSinglePriceData.Name = "pnlHeaderSinglePriceData";
-            this.pnlHeaderSinglePriceData.Size = new System.Drawing.Size(1050, 65);
-            this.pnlHeaderSinglePriceData.TabIndex = 10;
+            this.pnlOutputsRow1Col1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow1Col1.Location = new System.Drawing.Point(10, 10);
+            this.pnlOutputsRow1Col1.Margin = new System.Windows.Forms.Padding(10);
+            this.pnlOutputsRow1Col1.Name = "pnlOutputsRow1Col1";
+            this.pnlOutputsRow1Col1.Size = new System.Drawing.Size(31, 19);
+            this.pnlOutputsRow1Col1.TabIndex = 13;
             // 
-            // lblHeaderSinglePriceData
+            // tpnlInputs
             // 
-            this.lblHeaderSinglePriceData.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblHeaderSinglePriceData.AutoSize = true;
-            this.lblHeaderSinglePriceData.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeaderSinglePriceData.Location = new System.Drawing.Point(431, 21);
-            this.lblHeaderSinglePriceData.Name = "lblHeaderSinglePriceData";
-            this.lblHeaderSinglePriceData.Size = new System.Drawing.Size(58, 25);
-            this.lblHeaderSinglePriceData.TabIndex = 0;
-            this.lblHeaderSinglePriceData.Text = "Tab7";
+            this.tpnlInputs.ColumnCount = 10;
+            this.tpnlInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow1Col10, 9, 0);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow1Col2, 0, 0);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow1Col8, 7, 0);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow1Col7, 6, 0);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow1Col6, 5, 0);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow1Col5, 3, 0);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow1Col4, 2, 0);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow1Col3, 1, 0);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow1Col1, 0, 0);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow1Col9, 8, 0);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow2Col1, 0, 1);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow2Col3, 2, 1);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow2Col4, 3, 1);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow2Col5, 4, 1);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow2Col6, 5, 1);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow2Col7, 6, 1);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow2Col8, 7, 1);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow2Col9, 8, 1);
+            this.tpnlInputs.Controls.Add(this.pnlInputsRow2Col10, 9, 1);
+            this.tpnlInputs.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tpnlInputs.Location = new System.Drawing.Point(10, 10);
+            this.tpnlInputs.Name = "tpnlInputs";
+            this.tpnlInputs.RowCount = 2;
+            this.tpnlInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tpnlInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tpnlInputs.Size = new System.Drawing.Size(1030, 70);
+            this.tpnlInputs.TabIndex = 2;
             // 
-            // lblASXShare
+            // pnlInputsRow1Col10
             // 
-            this.lblASXShare.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblASXShare.Location = new System.Drawing.Point(0, 0);
-            this.lblASXShare.Margin = new System.Windows.Forms.Padding(3);
-            this.lblASXShare.Name = "lblASXShare";
-            this.lblASXShare.Size = new System.Drawing.Size(108, 23);
-            this.lblASXShare.TabIndex = 4;
-            this.lblASXShare.Text = "Date End";
-            this.lblASXShare.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.pnlInputsRow1Col10.Controls.Add(this.btnGenerate);
+            this.pnlInputsRow1Col10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow1Col10.Location = new System.Drawing.Point(930, 3);
+            this.pnlInputsRow1Col10.Name = "pnlInputsRow1Col10";
+            this.pnlInputsRow1Col10.Size = new System.Drawing.Size(97, 29);
+            this.pnlInputsRow1Col10.TabIndex = 24;
+            // 
+            // btnGenerate
+            // 
+            this.btnGenerate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnGenerate.Location = new System.Drawing.Point(0, 0);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(97, 29);
+            this.btnGenerate.TabIndex = 0;
+            this.btnGenerate.Text = "Generate";
+            this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
+            // 
+            // pnlInputsRow1Col2
+            // 
+            this.pnlInputsRow1Col2.Controls.Add(this.lblFilters);
+            this.pnlInputsRow1Col2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow1Col2.Location = new System.Drawing.Point(3, 3);
+            this.pnlInputsRow1Col2.Name = "pnlInputsRow1Col2";
+            this.pnlInputsRow1Col2.Size = new System.Drawing.Size(97, 29);
+            this.pnlInputsRow1Col2.TabIndex = 11;
+            // 
+            // lblFilters
+            // 
+            this.lblFilters.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblFilters.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFilters.Location = new System.Drawing.Point(0, 0);
+            this.lblFilters.Name = "lblFilters";
+            this.lblFilters.Size = new System.Drawing.Size(97, 29);
+            this.lblFilters.TabIndex = 0;
+            this.lblFilters.Text = "Filters:";
+            // 
+            // pnlInputsRow1Col8
+            // 
+            this.pnlInputsRow1Col8.Controls.Add(this.lblAmountStart);
+            this.pnlInputsRow1Col8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow1Col8.Location = new System.Drawing.Point(724, 3);
+            this.pnlInputsRow1Col8.Name = "pnlInputsRow1Col8";
+            this.pnlInputsRow1Col8.Size = new System.Drawing.Size(97, 29);
+            this.pnlInputsRow1Col8.TabIndex = 8;
+            // 
+            // lblAmountStart
+            // 
+            this.lblAmountStart.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblAmountStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmountStart.Location = new System.Drawing.Point(0, 16);
+            this.lblAmountStart.Name = "lblAmountStart";
+            this.lblAmountStart.Size = new System.Drawing.Size(97, 13);
+            this.lblAmountStart.TabIndex = 0;
+            this.lblAmountStart.Text = "Min Amount:";
+            this.lblAmountStart.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // pnlInputsRow1Col7
+            // 
+            this.pnlInputsRow1Col7.Controls.Add(this.lblASXCode);
+            this.pnlInputsRow1Col7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow1Col7.Location = new System.Drawing.Point(621, 3);
+            this.pnlInputsRow1Col7.Name = "pnlInputsRow1Col7";
+            this.pnlInputsRow1Col7.Size = new System.Drawing.Size(97, 29);
+            this.pnlInputsRow1Col7.TabIndex = 7;
+            // 
+            // lblASXCode
+            // 
+            this.lblASXCode.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblASXCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblASXCode.Location = new System.Drawing.Point(0, 16);
+            this.lblASXCode.Name = "lblASXCode";
+            this.lblASXCode.Size = new System.Drawing.Size(97, 13);
+            this.lblASXCode.TabIndex = 0;
+            this.lblASXCode.Text = "ASX Code:";
+            this.lblASXCode.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // pnlInputsRow1Col6
+            // 
+            this.pnlInputsRow1Col6.Controls.Add(this.lblSector);
+            this.pnlInputsRow1Col6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow1Col6.Location = new System.Drawing.Point(518, 3);
+            this.pnlInputsRow1Col6.Name = "pnlInputsRow1Col6";
+            this.pnlInputsRow1Col6.Size = new System.Drawing.Size(97, 29);
+            this.pnlInputsRow1Col6.TabIndex = 10;
+            // 
+            // lblSector
+            // 
+            this.lblSector.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblSector.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSector.Location = new System.Drawing.Point(0, 16);
+            this.lblSector.Name = "lblSector";
+            this.lblSector.Size = new System.Drawing.Size(97, 13);
+            this.lblSector.TabIndex = 0;
+            this.lblSector.Text = "Sector:";
+            this.lblSector.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // pnlInputsRow1Col5
+            // 
+            this.pnlInputsRow1Col5.Controls.Add(this.lblType);
+            this.pnlInputsRow1Col5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow1Col5.Location = new System.Drawing.Point(415, 3);
+            this.pnlInputsRow1Col5.Name = "pnlInputsRow1Col5";
+            this.pnlInputsRow1Col5.Size = new System.Drawing.Size(97, 29);
+            this.pnlInputsRow1Col5.TabIndex = 4;
+            // 
+            // lblType
+            // 
+            this.lblType.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblType.Location = new System.Drawing.Point(0, 16);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(97, 13);
+            this.lblType.TabIndex = 0;
+            this.lblType.Text = "Type:";
+            this.lblType.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // pnlInputsRow1Col4
+            // 
+            this.pnlInputsRow1Col4.Controls.Add(this.lblDateEnd);
+            this.pnlInputsRow1Col4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow1Col4.Location = new System.Drawing.Point(312, 3);
+            this.pnlInputsRow1Col4.Name = "pnlInputsRow1Col4";
+            this.pnlInputsRow1Col4.Size = new System.Drawing.Size(97, 29);
+            this.pnlInputsRow1Col4.TabIndex = 3;
+            // 
+            // lblDateEnd
+            // 
+            this.lblDateEnd.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblDateEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateEnd.Location = new System.Drawing.Point(0, 16);
+            this.lblDateEnd.Name = "lblDateEnd";
+            this.lblDateEnd.Size = new System.Drawing.Size(97, 13);
+            this.lblDateEnd.TabIndex = 0;
+            this.lblDateEnd.Text = "Date To:";
+            this.lblDateEnd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // pnlInputsRow1Col3
+            // 
+            this.pnlInputsRow1Col3.Controls.Add(this.lblDateStart);
+            this.pnlInputsRow1Col3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow1Col3.Location = new System.Drawing.Point(209, 3);
+            this.pnlInputsRow1Col3.Name = "pnlInputsRow1Col3";
+            this.pnlInputsRow1Col3.Size = new System.Drawing.Size(97, 29);
+            this.pnlInputsRow1Col3.TabIndex = 2;
+            // 
+            // lblDateStart
+            // 
+            this.lblDateStart.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblDateStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateStart.Location = new System.Drawing.Point(0, 16);
+            this.lblDateStart.Name = "lblDateStart";
+            this.lblDateStart.Size = new System.Drawing.Size(97, 13);
+            this.lblDateStart.TabIndex = 0;
+            this.lblDateStart.Text = "Date From:";
+            this.lblDateStart.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // pnlInputsRow1Col1
+            // 
+            this.pnlInputsRow1Col1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow1Col1.Location = new System.Drawing.Point(106, 3);
+            this.pnlInputsRow1Col1.Name = "pnlInputsRow1Col1";
+            this.pnlInputsRow1Col1.Size = new System.Drawing.Size(97, 29);
+            this.pnlInputsRow1Col1.TabIndex = 1;
+            // 
+            // pnlInputsRow1Col9
+            // 
+            this.pnlInputsRow1Col9.Controls.Add(this.lblAmountEnd);
+            this.pnlInputsRow1Col9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow1Col9.Location = new System.Drawing.Point(827, 3);
+            this.pnlInputsRow1Col9.Name = "pnlInputsRow1Col9";
+            this.pnlInputsRow1Col9.Size = new System.Drawing.Size(97, 29);
+            this.pnlInputsRow1Col9.TabIndex = 12;
+            // 
+            // lblAmountEnd
+            // 
+            this.lblAmountEnd.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblAmountEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmountEnd.Location = new System.Drawing.Point(0, 16);
+            this.lblAmountEnd.Name = "lblAmountEnd";
+            this.lblAmountEnd.Size = new System.Drawing.Size(97, 13);
+            this.lblAmountEnd.TabIndex = 0;
+            this.lblAmountEnd.Text = "Max Amount:";
+            this.lblAmountEnd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // pnlInputsRow2Col1
+            // 
+            this.tpnlInputs.SetColumnSpan(this.pnlInputsRow2Col1, 2);
+            this.pnlInputsRow2Col1.Controls.Add(this.cBoxPortfolio);
+            this.pnlInputsRow2Col1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow2Col1.Location = new System.Drawing.Point(3, 38);
+            this.pnlInputsRow2Col1.Name = "pnlInputsRow2Col1";
+            this.pnlInputsRow2Col1.Size = new System.Drawing.Size(200, 29);
+            this.pnlInputsRow2Col1.TabIndex = 14;
+            // 
+            // cBoxPortfolio
+            // 
+            this.cBoxPortfolio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cBoxPortfolio.FormattingEnabled = true;
+            this.cBoxPortfolio.Location = new System.Drawing.Point(0, 0);
+            this.cBoxPortfolio.Name = "cBoxPortfolio";
+            this.cBoxPortfolio.Size = new System.Drawing.Size(200, 21);
+            this.cBoxPortfolio.TabIndex = 0;
+            // 
+            // pnlInputsRow2Col3
+            // 
+            this.pnlInputsRow2Col3.Controls.Add(this.dtpDateFrom);
+            this.pnlInputsRow2Col3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow2Col3.Location = new System.Drawing.Point(209, 38);
+            this.pnlInputsRow2Col3.Name = "pnlInputsRow2Col3";
+            this.pnlInputsRow2Col3.Size = new System.Drawing.Size(97, 29);
+            this.pnlInputsRow2Col3.TabIndex = 16;
+            // 
+            // dtpDateFrom
+            // 
+            this.dtpDateFrom.Checked = false;
+            this.dtpDateFrom.CustomFormat = "dd/MM/yyyy";
+            this.dtpDateFrom.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dtpDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDateFrom.Location = new System.Drawing.Point(0, 0);
+            this.dtpDateFrom.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
+            this.dtpDateFrom.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
+            this.dtpDateFrom.Name = "dtpDateFrom";
+            this.dtpDateFrom.ShowCheckBox = true;
+            this.dtpDateFrom.Size = new System.Drawing.Size(97, 20);
+            this.dtpDateFrom.TabIndex = 0;
+            this.dtpDateFrom.Tag = "0";
+            this.dtpDateFrom.ValueChanged += new System.EventHandler(this.dtpDateFrom_ValueChanged);
+            // 
+            // pnlInputsRow2Col4
+            // 
+            this.pnlInputsRow2Col4.Controls.Add(this.dtpDateTo);
+            this.pnlInputsRow2Col4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow2Col4.Location = new System.Drawing.Point(312, 38);
+            this.pnlInputsRow2Col4.Name = "pnlInputsRow2Col4";
+            this.pnlInputsRow2Col4.Size = new System.Drawing.Size(97, 29);
+            this.pnlInputsRow2Col4.TabIndex = 17;
+            // 
+            // dtpDateTo
+            // 
+            this.dtpDateTo.Checked = false;
+            this.dtpDateTo.CustomFormat = "dd/MM/yyyy";
+            this.dtpDateTo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dtpDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDateTo.Location = new System.Drawing.Point(0, 0);
+            this.dtpDateTo.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
+            this.dtpDateTo.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
+            this.dtpDateTo.Name = "dtpDateTo";
+            this.dtpDateTo.ShowCheckBox = true;
+            this.dtpDateTo.Size = new System.Drawing.Size(97, 20);
+            this.dtpDateTo.TabIndex = 0;
+            this.dtpDateTo.ValueChanged += new System.EventHandler(this.dtpDateTo_ValueChanged);
+            // 
+            // pnlInputsRow2Col5
+            // 
+            this.pnlInputsRow2Col5.Controls.Add(this.cboxType);
+            this.pnlInputsRow2Col5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow2Col5.Location = new System.Drawing.Point(415, 38);
+            this.pnlInputsRow2Col5.Name = "pnlInputsRow2Col5";
+            this.pnlInputsRow2Col5.Size = new System.Drawing.Size(97, 29);
+            this.pnlInputsRow2Col5.TabIndex = 18;
+            // 
+            // cboxType
+            // 
+            this.cboxType.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cboxType.FormattingEnabled = true;
+            this.cboxType.Location = new System.Drawing.Point(0, 0);
+            this.cboxType.Name = "cboxType";
+            this.cboxType.Size = new System.Drawing.Size(97, 21);
+            this.cboxType.TabIndex = 0;
+            // 
+            // pnlInputsRow2Col6
+            // 
+            this.pnlInputsRow2Col6.Controls.Add(this.cboxSector);
+            this.pnlInputsRow2Col6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow2Col6.Location = new System.Drawing.Point(518, 38);
+            this.pnlInputsRow2Col6.Name = "pnlInputsRow2Col6";
+            this.pnlInputsRow2Col6.Size = new System.Drawing.Size(97, 29);
+            this.pnlInputsRow2Col6.TabIndex = 19;
+            // 
+            // cboxSector
+            // 
+            this.cboxSector.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cboxSector.FormattingEnabled = true;
+            this.cboxSector.Location = new System.Drawing.Point(0, 0);
+            this.cboxSector.Name = "cboxSector";
+            this.cboxSector.Size = new System.Drawing.Size(97, 21);
+            this.cboxSector.TabIndex = 0;
+            // 
+            // pnlInputsRow2Col7
+            // 
+            this.pnlInputsRow2Col7.Controls.Add(this.tBoxASXCode);
+            this.pnlInputsRow2Col7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow2Col7.Location = new System.Drawing.Point(621, 38);
+            this.pnlInputsRow2Col7.Name = "pnlInputsRow2Col7";
+            this.pnlInputsRow2Col7.Size = new System.Drawing.Size(97, 29);
+            this.pnlInputsRow2Col7.TabIndex = 20;
+            // 
+            // tBoxASXCode
+            // 
+            this.tBoxASXCode.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tBoxASXCode.Location = new System.Drawing.Point(0, 0);
+            this.tBoxASXCode.Name = "tBoxASXCode";
+            this.tBoxASXCode.Size = new System.Drawing.Size(97, 20);
+            this.tBoxASXCode.TabIndex = 0;
+            this.tBoxASXCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // pnlInputsRow2Col8
+            // 
+            this.pnlInputsRow2Col8.Controls.Add(this.nTboxMinAmount);
+            this.pnlInputsRow2Col8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow2Col8.Location = new System.Drawing.Point(724, 38);
+            this.pnlInputsRow2Col8.Name = "pnlInputsRow2Col8";
+            this.pnlInputsRow2Col8.Size = new System.Drawing.Size(97, 29);
+            this.pnlInputsRow2Col8.TabIndex = 21;
+            // 
+            // nTboxMinAmount
+            // 
+            this.nTboxMinAmount.AllowsDecimals = false;
+            this.nTboxMinAmount.Dock = System.Windows.Forms.DockStyle.Top;
+            this.nTboxMinAmount.Location = new System.Drawing.Point(0, 0);
+            this.nTboxMinAmount.Name = "nTboxMinAmount";
+            this.nTboxMinAmount.Size = new System.Drawing.Size(97, 20);
+            this.nTboxMinAmount.TabIndex = 0;
+            this.nTboxMinAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // pnlInputsRow2Col9
+            // 
+            this.pnlInputsRow2Col9.Controls.Add(this.nTboxMaxAmount);
+            this.pnlInputsRow2Col9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow2Col9.Location = new System.Drawing.Point(827, 38);
+            this.pnlInputsRow2Col9.Name = "pnlInputsRow2Col9";
+            this.pnlInputsRow2Col9.Size = new System.Drawing.Size(97, 29);
+            this.pnlInputsRow2Col9.TabIndex = 22;
+            // 
+            // nTboxMaxAmount
+            // 
+            this.nTboxMaxAmount.AllowsDecimals = false;
+            this.nTboxMaxAmount.Dock = System.Windows.Forms.DockStyle.Top;
+            this.nTboxMaxAmount.Location = new System.Drawing.Point(0, 0);
+            this.nTboxMaxAmount.Name = "nTboxMaxAmount";
+            this.nTboxMaxAmount.Size = new System.Drawing.Size(97, 20);
+            this.nTboxMaxAmount.TabIndex = 0;
+            this.nTboxMaxAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // pnlInputsRow2Col10
+            // 
+            this.pnlInputsRow2Col10.Controls.Add(this.btnClear);
+            this.pnlInputsRow2Col10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInputsRow2Col10.Location = new System.Drawing.Point(930, 38);
+            this.pnlInputsRow2Col10.Name = "pnlInputsRow2Col10";
+            this.pnlInputsRow2Col10.Size = new System.Drawing.Size(97, 29);
+            this.pnlInputsRow2Col10.TabIndex = 23;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnClear.Location = new System.Drawing.Point(0, 0);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(97, 29);
+            this.btnClear.TabIndex = 0;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // pnlOutputsRow1Col3
+            // 
+            this.pnlOutputsRow1Col3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow1Col3.Location = new System.Drawing.Point(988, 10);
+            this.pnlOutputsRow1Col3.Margin = new System.Windows.Forms.Padding(10);
+            this.pnlOutputsRow1Col3.Name = "pnlOutputsRow1Col3";
+            this.pnlOutputsRow1Col3.Size = new System.Drawing.Size(32, 19);
+            this.pnlOutputsRow1Col3.TabIndex = 14;
             // 
             // pnlContainerSinglePriceData
             // 
             this.pnlContainerSinglePriceData.BackColor = System.Drawing.Color.White;
             this.pnlContainerSinglePriceData.Controls.Add(this.tpnlOutputsSinglePriceData);
-            this.pnlContainerSinglePriceData.Controls.Add(this.tpnlInputsSinglePriceData);
+            this.pnlContainerSinglePriceData.Controls.Add(this.tpnlInputs);
             this.pnlContainerSinglePriceData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContainerSinglePriceData.Location = new System.Drawing.Point(0, 65);
             this.pnlContainerSinglePriceData.Name = "pnlContainerSinglePriceData";
             this.pnlContainerSinglePriceData.Padding = new System.Windows.Forms.Padding(10);
             this.pnlContainerSinglePriceData.Size = new System.Drawing.Size(1050, 575);
-            this.pnlContainerSinglePriceData.TabIndex = 1;
+            this.pnlContainerSinglePriceData.TabIndex = 11;
             // 
             // tpnlOutputsSinglePriceData
             // 
@@ -119,255 +552,216 @@
             this.tpnlOutputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tpnlOutputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tpnlOutputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tpnlOutputsSinglePriceData.Controls.Add(this.pnlOutputsCol2, 1, 0);
-            this.tpnlOutputsSinglePriceData.Controls.Add(this.pnlOutputsCol1, 0, 0);
-            this.tpnlOutputsSinglePriceData.Controls.Add(this.pnlOutputsCol3, 2, 0);
+            this.tpnlOutputsSinglePriceData.Controls.Add(this.pnlOutputsRow2Col1, 0, 1);
+            this.tpnlOutputsSinglePriceData.Controls.Add(this.pnlOutputsRow1Col1, 0, 0);
+            this.tpnlOutputsSinglePriceData.Controls.Add(this.pnlOutputsRow1Col3, 2, 0);
+            this.tpnlOutputsSinglePriceData.Controls.Add(this.pnlOutputsRow2Col2, 1, 1);
+            this.tpnlOutputsSinglePriceData.Controls.Add(this.pnlOutputsRow1Col2, 1, 0);
+            this.tpnlOutputsSinglePriceData.Controls.Add(this.pnlOutputsRow3Col1, 0, 2);
+            this.tpnlOutputsSinglePriceData.Controls.Add(this.pnlOutputsRow3Col2, 1, 2);
+            this.tpnlOutputsSinglePriceData.Controls.Add(this.pnlOutputsRow3Col3, 2, 2);
             this.tpnlOutputsSinglePriceData.Dock = System.Windows.Forms.DockStyle.Top;
             this.tpnlOutputsSinglePriceData.Location = new System.Drawing.Point(10, 80);
             this.tpnlOutputsSinglePriceData.Name = "tpnlOutputsSinglePriceData";
-            this.tpnlOutputsSinglePriceData.RowCount = 1;
-            this.tpnlOutputsSinglePriceData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tpnlOutputsSinglePriceData.Size = new System.Drawing.Size(1030, 451);
+            this.tpnlOutputsSinglePriceData.RowCount = 3;
+            this.tpnlOutputsSinglePriceData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tpnlOutputsSinglePriceData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.81818F));
+            this.tpnlOutputsSinglePriceData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tpnlOutputsSinglePriceData.Size = new System.Drawing.Size(1030, 438);
             this.tpnlOutputsSinglePriceData.TabIndex = 3;
             // 
-            // pnlOutputsCol2
+            // pnlOutputsRow2Col1
             // 
-            this.pnlOutputsCol2.Controls.Add(this.flowLayoutPanel1);
-            this.pnlOutputsCol2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOutputsCol2.Location = new System.Drawing.Point(81, 30);
-            this.pnlOutputsCol2.Margin = new System.Windows.Forms.Padding(30);
-            this.pnlOutputsCol2.Name = "pnlOutputsCol2";
-            this.pnlOutputsCol2.Size = new System.Drawing.Size(867, 391);
-            this.pnlOutputsCol2.TabIndex = 12;
+            this.pnlOutputsRow2Col1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow2Col1.Location = new System.Drawing.Point(10, 49);
+            this.pnlOutputsRow2Col1.Margin = new System.Windows.Forms.Padding(10);
+            this.pnlOutputsRow2Col1.Name = "pnlOutputsRow2Col1";
+            this.pnlOutputsRow2Col1.Size = new System.Drawing.Size(31, 338);
+            this.pnlOutputsRow2Col1.TabIndex = 16;
             // 
-            // flowLayoutPanel1
+            // pnlOutputsRow2Col2
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(867, 391);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.pnlOutputsRow2Col2.BackColor = System.Drawing.Color.White;
+            this.pnlOutputsRow2Col2.Controls.Add(this.flPanelTransactions);
+            this.pnlOutputsRow2Col2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow2Col2.Location = new System.Drawing.Point(56, 44);
+            this.pnlOutputsRow2Col2.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlOutputsRow2Col2.Name = "pnlOutputsRow2Col2";
+            this.pnlOutputsRow2Col2.Size = new System.Drawing.Size(917, 348);
+            this.pnlOutputsRow2Col2.TabIndex = 15;
             // 
-            // pnlOutputsCol1
+            // flPanelTransactions
             // 
-            this.pnlOutputsCol1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOutputsCol1.Location = new System.Drawing.Point(10, 10);
-            this.pnlOutputsCol1.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlOutputsCol1.Name = "pnlOutputsCol1";
-            this.pnlOutputsCol1.Size = new System.Drawing.Size(31, 431);
-            this.pnlOutputsCol1.TabIndex = 13;
+            this.flPanelTransactions.AutoScroll = true;
+            this.flPanelTransactions.BackColor = System.Drawing.Color.White;
+            this.flPanelTransactions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flPanelTransactions.Location = new System.Drawing.Point(0, 0);
+            this.flPanelTransactions.Name = "flPanelTransactions";
+            this.flPanelTransactions.Size = new System.Drawing.Size(917, 348);
+            this.flPanelTransactions.TabIndex = 0;
             // 
-            // pnlOutputsCol3
+            // pnlOutputsRow1Col2
             // 
-            this.pnlOutputsCol3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOutputsCol3.Location = new System.Drawing.Point(988, 10);
-            this.pnlOutputsCol3.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlOutputsCol3.Name = "pnlOutputsCol3";
-            this.pnlOutputsCol3.Size = new System.Drawing.Size(32, 431);
-            this.pnlOutputsCol3.TabIndex = 14;
+            this.pnlOutputsRow1Col2.Controls.Add(this.transactionPanelHeader1);
+            this.pnlOutputsRow1Col2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow1Col2.Location = new System.Drawing.Point(56, 5);
+            this.pnlOutputsRow1Col2.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlOutputsRow1Col2.Name = "pnlOutputsRow1Col2";
+            this.pnlOutputsRow1Col2.Size = new System.Drawing.Size(917, 29);
+            this.pnlOutputsRow1Col2.TabIndex = 17;
             // 
-            // tpnlInputsSinglePriceData
+            // transactionPanelHeader1
             // 
-            this.tpnlInputsSinglePriceData.ColumnCount = 8;
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol8, 7, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol7, 6, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol6, 5, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol5, 4, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol4, 3, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol3, 2, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol2, 1, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol1, 0, 0);
-            this.tpnlInputsSinglePriceData.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tpnlInputsSinglePriceData.Location = new System.Drawing.Point(10, 10);
-            this.tpnlInputsSinglePriceData.Name = "tpnlInputsSinglePriceData";
-            this.tpnlInputsSinglePriceData.RowCount = 1;
-            this.tpnlInputsSinglePriceData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tpnlInputsSinglePriceData.Size = new System.Drawing.Size(1030, 70);
-            this.tpnlInputsSinglePriceData.TabIndex = 2;
+            this.transactionPanelHeader1.ColumnCount = 8;
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.transactionPanelHeader1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.transactionPanelHeader1.Location = new System.Drawing.Point(0, 0);
+            this.transactionPanelHeader1.Margin = new System.Windows.Forms.Padding(0);
+            this.transactionPanelHeader1.Name = "transactionPanelHeader1";
+            this.transactionPanelHeader1.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.transactionPanelHeader1.RowCount = 1;
+            this.transactionPanelHeader1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.transactionPanelHeader1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.transactionPanelHeader1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.transactionPanelHeader1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.transactionPanelHeader1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.transactionPanelHeader1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.transactionPanelHeader1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.transactionPanelHeader1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.transactionPanelHeader1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.transactionPanelHeader1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.transactionPanelHeader1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.transactionPanelHeader1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.transactionPanelHeader1.Size = new System.Drawing.Size(917, 29);
+            this.transactionPanelHeader1.TabIndex = 0;
             // 
-            // pnlInputsCol8
+            // pnlOutputsRow3Col1
             // 
-            this.pnlInputsCol8.Controls.Add(this.button2);
-            this.pnlInputsCol8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInputsCol8.Location = new System.Drawing.Point(906, 10);
-            this.pnlInputsCol8.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlInputsCol8.Name = "pnlInputsCol8";
-            this.pnlInputsCol8.Size = new System.Drawing.Size(114, 50);
-            this.pnlInputsCol8.TabIndex = 8;
+            this.pnlOutputsRow3Col1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow3Col1.Location = new System.Drawing.Point(3, 400);
+            this.pnlOutputsRow3Col1.Name = "pnlOutputsRow3Col1";
+            this.pnlOutputsRow3Col1.Size = new System.Drawing.Size(45, 35);
+            this.pnlOutputsRow3Col1.TabIndex = 18;
             // 
-            // button2
+            // pnlOutputsRow3Col2
             // 
-            this.button2.Location = new System.Drawing.Point(19, 17);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Generate";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.pnlOutputsRow3Col2.Controls.Add(this.btnNewTransaction);
+            this.pnlOutputsRow3Col2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow3Col2.Location = new System.Drawing.Point(54, 400);
+            this.pnlOutputsRow3Col2.Name = "pnlOutputsRow3Col2";
+            this.pnlOutputsRow3Col2.Size = new System.Drawing.Size(921, 35);
+            this.pnlOutputsRow3Col2.TabIndex = 19;
             // 
-            // pnlInputsCol7
+            // btnNewTransaction
             // 
-            this.pnlInputsCol7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInputsCol7.Location = new System.Drawing.Point(778, 10);
-            this.pnlInputsCol7.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlInputsCol7.Name = "pnlInputsCol7";
-            this.pnlInputsCol7.Size = new System.Drawing.Size(108, 50);
-            this.pnlInputsCol7.TabIndex = 7;
+            this.btnNewTransaction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewTransaction.Location = new System.Drawing.Point(810, 6);
+            this.btnNewTransaction.Name = "btnNewTransaction";
+            this.btnNewTransaction.Size = new System.Drawing.Size(108, 23);
+            this.btnNewTransaction.TabIndex = 0;
+            this.btnNewTransaction.Text = "New Transaction";
+            this.btnNewTransaction.UseVisualStyleBackColor = true;
+            this.btnNewTransaction.Click += new System.EventHandler(this.btnNewTransaction_Click);
             // 
-            // pnlInputsCol6
+            // pnlOutputsRow3Col3
             // 
-            this.pnlInputsCol6.Controls.Add(this.btnNew);
-            this.pnlInputsCol6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInputsCol6.Location = new System.Drawing.Point(650, 10);
-            this.pnlInputsCol6.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlInputsCol6.Name = "pnlInputsCol6";
-            this.pnlInputsCol6.Size = new System.Drawing.Size(108, 50);
-            this.pnlInputsCol6.TabIndex = 10;
+            this.pnlOutputsRow3Col3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow3Col3.Location = new System.Drawing.Point(981, 400);
+            this.pnlOutputsRow3Col3.Name = "pnlOutputsRow3Col3";
+            this.pnlOutputsRow3Col3.Size = new System.Drawing.Size(46, 35);
+            this.pnlOutputsRow3Col3.TabIndex = 20;
             // 
-            // pnlInputsCol5
+            // lblHeaderTab3
             // 
-            this.pnlInputsCol5.Controls.Add(this.button1);
-            this.pnlInputsCol5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInputsCol5.Location = new System.Drawing.Point(522, 10);
-            this.pnlInputsCol5.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlInputsCol5.Name = "pnlInputsCol5";
-            this.pnlInputsCol5.Size = new System.Drawing.Size(108, 50);
-            this.pnlInputsCol5.TabIndex = 5;
+            this.lblHeaderTab3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblHeaderTab3.AutoSize = true;
+            this.lblHeaderTab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeaderTab3.Location = new System.Drawing.Point(431, 21);
+            this.lblHeaderTab3.Name = "lblHeaderTab3";
+            this.lblHeaderTab3.Size = new System.Drawing.Size(235, 25);
+            this.lblHeaderTab3.TabIndex = 0;
+            this.lblHeaderTab3.Text = "Transactions Per Portfolio";
             // 
-            // button1
+            // pnlHeaderSinglePriceData
             // 
-            this.button1.Location = new System.Drawing.Point(38, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Other Filters";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // pnlInputsCol4
-            // 
-            this.pnlInputsCol4.Controls.Add(this.dateTimePicker2);
-            this.pnlInputsCol4.Controls.Add(this.lblASXShare);
-            this.pnlInputsCol4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInputsCol4.Location = new System.Drawing.Point(394, 10);
-            this.pnlInputsCol4.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlInputsCol4.Name = "pnlInputsCol4";
-            this.pnlInputsCol4.Size = new System.Drawing.Size(108, 50);
-            this.pnlInputsCol4.TabIndex = 4;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(0, 30);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(108, 20);
-            this.dateTimePicker2.TabIndex = 5;
-            // 
-            // pnlInputsCol3
-            // 
-            this.pnlInputsCol3.Controls.Add(this.dateTimePicker1);
-            this.pnlInputsCol3.Controls.Add(this.label3);
-            this.pnlInputsCol3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInputsCol3.Location = new System.Drawing.Point(266, 10);
-            this.pnlInputsCol3.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlInputsCol3.Name = "pnlInputsCol3";
-            this.pnlInputsCol3.Size = new System.Drawing.Size(108, 50);
-            this.pnlInputsCol3.TabIndex = 3;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(0, 30);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(108, 20);
-            this.dateTimePicker1.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 23);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Date Start";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // pnlInputsCol2
-            // 
-            this.pnlInputsCol2.Controls.Add(this.cBoxPortfolio);
-            this.pnlInputsCol2.Controls.Add(this.label2);
-            this.pnlInputsCol2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInputsCol2.Location = new System.Drawing.Point(138, 10);
-            this.pnlInputsCol2.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlInputsCol2.Name = "pnlInputsCol2";
-            this.pnlInputsCol2.Size = new System.Drawing.Size(108, 50);
-            this.pnlInputsCol2.TabIndex = 2;
-            // 
-            // cBoxPortfolio
-            // 
-            this.cBoxPortfolio.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cBoxPortfolio.FormattingEnabled = true;
-            this.cBoxPortfolio.Items.AddRange(new object[] {
-            "Open",
-            "Close",
-            "High",
-            "Low"});
-            this.cBoxPortfolio.Location = new System.Drawing.Point(0, 29);
-            this.cBoxPortfolio.Name = "cBoxPortfolio";
-            this.cBoxPortfolio.Size = new System.Drawing.Size(108, 21);
-            this.cBoxPortfolio.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 23);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Portfolio";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // pnlInputsCol1
-            // 
-            this.pnlInputsCol1.Controls.Add(this.label1);
-            this.pnlInputsCol1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInputsCol1.Location = new System.Drawing.Point(10, 10);
-            this.pnlInputsCol1.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlInputsCol1.Name = "pnlInputsCol1";
-            this.pnlInputsCol1.Size = new System.Drawing.Size(108, 50);
-            this.pnlInputsCol1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 23);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Filters:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // btnNew
-            // 
-            this.btnNew.Location = new System.Drawing.Point(34, 17);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(75, 23);
-            this.btnNew.TabIndex = 0;
-            this.btnNew.Text = "New";
-            this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            this.pnlHeaderSinglePriceData.BackColor = System.Drawing.Color.White;
+            this.pnlHeaderSinglePriceData.Controls.Add(this.lblHeaderTab3);
+            this.pnlHeaderSinglePriceData.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeaderSinglePriceData.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeaderSinglePriceData.Name = "pnlHeaderSinglePriceData";
+            this.pnlHeaderSinglePriceData.Size = new System.Drawing.Size(1050, 65);
+            this.pnlHeaderSinglePriceData.TabIndex = 12;
             // 
             // UC_Tab3
             // 
@@ -377,50 +771,92 @@
             this.Controls.Add(this.pnlHeaderSinglePriceData);
             this.Name = "UC_Tab3";
             this.Size = new System.Drawing.Size(1050, 640);
-            this.pnlHeaderSinglePriceData.ResumeLayout(false);
-            this.pnlHeaderSinglePriceData.PerformLayout();
+            this.tpnlInputs.ResumeLayout(false);
+            this.pnlInputsRow1Col10.ResumeLayout(false);
+            this.pnlInputsRow1Col2.ResumeLayout(false);
+            this.pnlInputsRow1Col8.ResumeLayout(false);
+            this.pnlInputsRow1Col7.ResumeLayout(false);
+            this.pnlInputsRow1Col6.ResumeLayout(false);
+            this.pnlInputsRow1Col5.ResumeLayout(false);
+            this.pnlInputsRow1Col4.ResumeLayout(false);
+            this.pnlInputsRow1Col3.ResumeLayout(false);
+            this.pnlInputsRow1Col9.ResumeLayout(false);
+            this.pnlInputsRow2Col1.ResumeLayout(false);
+            this.pnlInputsRow2Col3.ResumeLayout(false);
+            this.pnlInputsRow2Col4.ResumeLayout(false);
+            this.pnlInputsRow2Col5.ResumeLayout(false);
+            this.pnlInputsRow2Col6.ResumeLayout(false);
+            this.pnlInputsRow2Col7.ResumeLayout(false);
+            this.pnlInputsRow2Col7.PerformLayout();
+            this.pnlInputsRow2Col8.ResumeLayout(false);
+            this.pnlInputsRow2Col8.PerformLayout();
+            this.pnlInputsRow2Col9.ResumeLayout(false);
+            this.pnlInputsRow2Col9.PerformLayout();
+            this.pnlInputsRow2Col10.ResumeLayout(false);
             this.pnlContainerSinglePriceData.ResumeLayout(false);
             this.tpnlOutputsSinglePriceData.ResumeLayout(false);
-            this.pnlOutputsCol2.ResumeLayout(false);
-            this.tpnlInputsSinglePriceData.ResumeLayout(false);
-            this.pnlInputsCol8.ResumeLayout(false);
-            this.pnlInputsCol6.ResumeLayout(false);
-            this.pnlInputsCol5.ResumeLayout(false);
-            this.pnlInputsCol4.ResumeLayout(false);
-            this.pnlInputsCol3.ResumeLayout(false);
-            this.pnlInputsCol2.ResumeLayout(false);
-            this.pnlInputsCol1.ResumeLayout(false);
+            this.pnlOutputsRow2Col2.ResumeLayout(false);
+            this.pnlOutputsRow1Col2.ResumeLayout(false);
+            this.pnlOutputsRow3Col2.ResumeLayout(false);
+            this.pnlHeaderSinglePriceData.ResumeLayout(false);
+            this.pnlHeaderSinglePriceData.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel pnlHeaderSinglePriceData;
-        private System.Windows.Forms.Label lblHeaderSinglePriceData;
-        private System.Windows.Forms.Label lblASXShare;
+        private System.Windows.Forms.Panel pnlOutputsRow1Col1;
+        private System.Windows.Forms.TableLayoutPanel tpnlInputs;
+        private System.Windows.Forms.Panel pnlInputsRow1Col8;
+        private System.Windows.Forms.Panel pnlInputsRow1Col7;
+        private System.Windows.Forms.Panel pnlInputsRow1Col6;
+        private System.Windows.Forms.Panel pnlInputsRow1Col4;
+        private System.Windows.Forms.Panel pnlInputsRow1Col3;
+        private System.Windows.Forms.Panel pnlInputsRow1Col1;
+        private System.Windows.Forms.Panel pnlOutputsRow1Col3;
         private System.Windows.Forms.Panel pnlContainerSinglePriceData;
-        private System.Windows.Forms.TableLayoutPanel tpnlInputsSinglePriceData;
-        private System.Windows.Forms.Panel pnlInputsCol1;
-        private System.Windows.Forms.Panel pnlInputsCol2;
-        private System.Windows.Forms.Panel pnlInputsCol3;
-        private System.Windows.Forms.Panel pnlInputsCol4;
-        private System.Windows.Forms.Panel pnlInputsCol8;
-        private System.Windows.Forms.Panel pnlInputsCol7;
-        private System.Windows.Forms.Panel pnlInputsCol6;
-        private System.Windows.Forms.Panel pnlInputsCol5;
         private System.Windows.Forms.TableLayoutPanel tpnlOutputsSinglePriceData;
-        private System.Windows.Forms.Panel pnlOutputsCol1;
-        private System.Windows.Forms.Panel pnlOutputsCol2;
-        private System.Windows.Forms.Panel pnlOutputsCol3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblHeaderTab3;
+        private System.Windows.Forms.Panel pnlHeaderSinglePriceData;
+        private System.Windows.Forms.Panel pnlOutputsRow2Col2;
+        private System.Windows.Forms.FlowLayoutPanel flPanelTransactions;
+        private System.Windows.Forms.Panel pnlOutputsRow2Col1;
+        private System.Windows.Forms.Panel pnlOutputsRow1Col2;
+        private FormAssets.TransactionPanelHeader transactionPanelHeader1;
+        private System.Windows.Forms.Panel pnlInputsRow1Col2;
+        private System.Windows.Forms.Panel pnlInputsRow1Col5;
+        private System.Windows.Forms.Panel pnlInputsRow1Col9;
+        private System.Windows.Forms.Panel pnlInputsRow2Col1;
+        private System.Windows.Forms.Panel pnlInputsRow2Col3;
+        private System.Windows.Forms.Panel pnlInputsRow2Col4;
+        private System.Windows.Forms.Panel pnlInputsRow2Col5;
+        private System.Windows.Forms.Panel pnlInputsRow2Col6;
+        private System.Windows.Forms.Panel pnlInputsRow2Col7;
+        private System.Windows.Forms.Panel pnlInputsRow2Col8;
+        private System.Windows.Forms.Panel pnlInputsRow2Col9;
+        private System.Windows.Forms.Panel pnlInputsRow2Col10;
+        private System.Windows.Forms.Panel pnlInputsRow1Col10;
+        private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.Label lblAmountStart;
+        private System.Windows.Forms.Label lblASXCode;
+        private System.Windows.Forms.Label lblSector;
+        private System.Windows.Forms.Label lblType;
+        private System.Windows.Forms.Label lblDateEnd;
+        private System.Windows.Forms.Label lblDateStart;
+        private System.Windows.Forms.Label lblAmountEnd;
         private System.Windows.Forms.ComboBox cBoxPortfolio;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.DateTimePicker dtpDateFrom;
+        private System.Windows.Forms.DateTimePicker dtpDateTo;
+        private System.Windows.Forms.ComboBox cboxType;
+        private System.Windows.Forms.ComboBox cboxSector;
+        private System.Windows.Forms.TextBox tBoxASXCode;
+        private FormAssets.NumericTextBox nTboxMinAmount;
+        private FormAssets.NumericTextBox nTboxMaxAmount;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Label lblFilters;
+        private System.Windows.Forms.Panel pnlOutputsRow3Col1;
+        private System.Windows.Forms.Panel pnlOutputsRow3Col2;
+        private System.Windows.Forms.Button btnNewTransaction;
+        private System.Windows.Forms.Panel pnlOutputsRow3Col3;
     }
 }

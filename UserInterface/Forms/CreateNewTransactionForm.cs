@@ -84,14 +84,14 @@ namespace UserInterface.Forms
         private bool ValidateForm()
         {
             if (cBoxPortfolio.Text == null) { return false; }
-            if (tBoxContractNote.Text == null) { return false; }
+            //if (tBoxContractNote.Text == null) { return false; }
             if (tBoxASXCode.Text == null) { return false; }
             if (dtpDate.Text == null) { return false; }
             if (cboxType.Text == null) { return false; }
             if (nTBoxQuantity.Text == null) { return false; }
             if (nTBoxUnitPrice.Text == null) { return false; }
             if (tBoxTradeValue.Text == null) { return false; }
-            if (nTBoxBrokerage.Text == null) { return false; }
+            //if (nTBoxBrokerage.Text == null) { return false; }
             if (tBoxTotalValue.Text == null) { return false; }
             return true;
         }
@@ -101,33 +101,60 @@ namespace UserInterface.Forms
 
             if (ValidateForm())
             {
-                //callingForm.CreateTransactionComplete(model);
-                string portfolioName = cBoxPortfolio.Text;
+                int dateInt = Int32.Parse(dtpDate.Value.ToString("yyyyMMdd"));
 
-                TradingTransactionModel newTrans = new TradingTransactionModel(
-                    tBoxContractNote.Text,
-                    tBoxASXCode.Text,
-                    "20201010",
-                    cboxType.Text,
-                    nTBoxQuantity.Text,
-                    nTBoxUnitPrice.Text,
-                    tBoxTradeValue.Text,
-                    nTBoxBrokerage.Text,
-                    tBoxTotalValue.Text,
-                    "false");
+                TradingTransactionModel newTransModel = new TradingTransactionModel(
+                     cBoxPortfolio.Text      //PortfolioId
+                    ,tBoxContractNote.Text   //ContractNote
+                    ,tBoxASXCode.Text        //TradingEntityId
+                    ,dateInt.ToString()      //Date
+                    ,cboxType.Text           //TradingTransactionTypeId
+                    ,nTBoxQuantity.Text      //Quantity
+                    ,nTBoxUnitPrice.Text     //UnitPrice
+                    ,tBoxTradeValue.Text     //TradeValue
+                    ,nTBoxBrokerage.Text     //Brokerage
+                    ,tBoxTotalValue.Text     //TotalValue
+                    );
 
                 
-                GlobalConfig.Connection.spInsertNewShareTransaction(portfolioName, newTrans);
+                if (IsNewTransaction == true)
+                {
+                    GlobalConfig.Connection.spINSERTDATA_TradingTransaction(newTransModel);
+                    MessageBox.Show("This Transaction was imported Successfully. Recommended that you regenerate transactions to display edited transaction");
 
+                }
+                else if (IsNewTransaction == false)
+                {
+                    // Create a transaction model from the details of the original transaction prior to edit
+                    TradingTransactionModel oldTransModel = new TradingTransactionModel(
+                      cBoxPortfolio.Text                            //PortfolioId
+                    , this.transactionModel.ContractNote             //ContractNote
+                    , this.transactionModel.TradingEntityId.ASXCode  //TradingEntityId
+                    , this.transactionModel.Date.ToString()                  //Date
+                    , this.transactionModel.TradingTransactionTypeId.Name   //TradingTransactionTypeId
+                    , this.transactionModel.Quantity.ToString()       //Quantity
+                    , this.transactionModel.UnitPrice.ToString()      //UnitPrice
+                    , this.transactionModel.TradeValue.ToString()      //TradeValue
+                    , this.transactionModel.Brokerage.ToString()       //Brokerage
+                    , this.transactionModel.TotalValue.ToString()      //TotalValue
+                    );
+                    GlobalConfig.Connection.spEDITDATA_TradingTransaction(oldTransModel, newTransModel);
+                    MessageBox.Show("This Transaction was edited Successfully. Recommended that you regenerate transactions to display edited transaction");
+
+                }
+
+
+                
                 this.Close();
 
-                //TODO - Reset textboxes and notify user that success
             }
             else
             {
                 MessageBox.Show("Error Missing, data not inputted");
             }
         }
+
+
         private void nTBoxQuantity_TextChanged(object sender, EventArgs e)
         {
             if (nTBoxQuantity.Text.EndsWith(".")) { return; } else { CheckFormBlanksAndApplyMath(); }
@@ -187,28 +214,29 @@ namespace UserInterface.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cBoxPortfolio.Text = "Dummy Portfolio 3";
-            tBoxContractNote.Text = 00000001.ToString();
-            tBoxASXCode.Text = "CBA";
-            //dtpDate.Text = ;
-            cboxType.Text = "Buy";
-            nTBoxQuantity.Text = 50.ToString();
-            nTBoxUnitPrice.Text = 99.99.ToString();
+            //cBoxPortfolio.Text = "Dummy Portfolio 3";
+            //tBoxContractNote.Text = "DUM00000M13";
+            //tBoxASXCode.Text = "CXO";
+            //dtpDate.Text = "14/1/2022";
+            //cboxType.Text = "Buy";
+            nTBoxQuantity.Text = 5000.ToString();
+            nTBoxUnitPrice.Text = 0.91.ToString();
             //tBoxTradeValue.Text = ;
-            //tBoxBrokerage.Text = ;
+            nTBoxBrokerage.Text = 25.ToString(); ;
             //tBoxTotalValue.Text = ;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             //tBoxContractNote.Text = "";
-            tBoxASXCode.Text = "";
-            cboxType.Text = "";
-            nTBoxQuantity.Text = "";
-            nTBoxUnitPrice.Text = "";
-            tBoxTradeValue.Text = "";
-            nTBoxBrokerage.Text = "";
-            tBoxTotalValue.Text = "";
+            tBoxASXCode.Text = null;
+            cboxType.Text = null;
+            nTBoxQuantity.Text = null;
+            nTBoxUnitPrice.Text = null;
+            tBoxTradeValue.Text = null;
+            nTBoxBrokerage.Text = null;
+            tBoxTotalValue.Text = null;
+
         }
     }
 }

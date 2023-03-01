@@ -46,7 +46,10 @@ namespace DataReferenceLibrary.DataAccess
         IEnumerable<zFullPortfolioModel> spQUERY_PortfoliosIndividualsTransactions();
 
 
-        TradingTransactionModel spInsertNewShareTransaction(string PortfolioName, TradingTransactionModel model);
+        TradingTransactionModel spINSERTDATA_TradingTransaction(TradingTransactionModel model);
+
+
+        TradingTransactionModel spEDITDATA_TradingTransaction(TradingTransactionModel oldModel, TradingTransactionModel newModel);
 
         ///////////////////////////////////////
         ///////TAB - PORTFOLIO MOVEMENTS///////

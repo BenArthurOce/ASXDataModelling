@@ -39,40 +39,40 @@ namespace DataReferenceLibrary.Models2
         { }
 
 
-        public TradingTransactionModel(string _ContractNote, string _ASXCode, string _Date, string _Type, string _Quantity, string _UnitPrice, string _TradeValue, string _Brokerage, string _TotalValue, string _IsIncrease)
+        public TradingTransactionModel(string _Portfolio, string _ContractNote, string _ASXCode, string _Date, string _Type, string _Quantity, string _UnitPrice, string _TradeValue, string _Brokerage, string _TotalValue)
         {
-            //int ContractNoteValue = 0;
-            //int.TryParse(_ContractNote, out ContractNoteValue);
-            //ContractNote = ContractNoteValue;
 
-            //ASXCode = _ASXCode;
+            PortfolioId = new PortfolioModel { Name = _Portfolio };
+
+            ContractNote = _ContractNote;
+
+            TradingEntityId = new TradingEntityModel { ASXCode = _ASXCode };
 
             int DateValue = 0;
             int.TryParse(_Date, out DateValue);
             Date = DateValue;
 
-            //Type = _Type;
+            TradingTransactionTypeId = new TradingTransactionTypeModel { Name = _Type };
 
             int QuantityValue = 0;
             int.TryParse(_Quantity, out QuantityValue);
             Quantity = QuantityValue;
 
-            //decimal UnitPriceValue = 0;
-            //decimal.TryParse(_UnitPrice, out UnitPriceValue);
-            //UnitPrice = UnitPriceValue;
+            decimal UnitPriceValue = 0;
+            decimal.TryParse(_UnitPrice, out UnitPriceValue);
+            UnitPrice = (double)UnitPriceValue;
 
             decimal TradeValueValue = 0;
             decimal.TryParse(_TradeValue, out TradeValueValue);
-            //TradeValue = TradeValueValue;
+            TradeValue = (double)TradeValueValue;
 
             decimal BrokerageValue = 0;
             decimal.TryParse(_Brokerage, out BrokerageValue);
-            // Brokerage = BrokerageValue;
-
+            Brokerage = (double)BrokerageValue;
 
             decimal TotalValueValue = 0;
             decimal.TryParse(_TotalValue, out TotalValueValue);
-            //TotalValue = TotalValueValue;
+            TotalValue = (double)TotalValueValue;
 
         }
     }

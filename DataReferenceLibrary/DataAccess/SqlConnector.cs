@@ -169,24 +169,54 @@ namespace DataReferenceLibrary.DataAccess
 
         }
 
-        public TradingTransactionModel spInsertNewShareTransaction(string PortfolioName, TradingTransactionModel model)
+        public TradingTransactionModel spINSERTDATA_TradingTransaction(TradingTransactionModel model)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 var p = new DynamicParameters();
-                p.Add("@in_PortfolioOwner", PortfolioName);
-                p.Add("@in_ContractNote", model.ContractNote);
-               // p.Add("@in_ASXCode", model.ASXCode);
-               // p.Add("@in_Date", model.Date);
-                //p.Add("@in_Type", model.Type);
+                p.Add("@in_ContactNote", model.ContractNote);
+                p.Add("@in_PortfolioName", model.PortfolioId.Name);
+                p.Add("@in_TradingEntityASXCode", model.TradingEntityId.ASXCode);
+                p.Add("@in_Date", model.Date);
+                p.Add("@in_Type", model.TradingTransactionTypeId.Name);
                 p.Add("@in_Quantity", model.Quantity);
                 p.Add("@in_UnitPrice", model.UnitPrice);
-                p.Add("@in_TradeValue", model.TradeValue);
                 p.Add("@in_Brokerage", model.Brokerage);
-                p.Add("@in_TotalValue", model.TotalValue);
-                connection.Execute("dbo.spInsertNewShareTransaction", p, commandType: CommandType.StoredProcedure);
+                connection.Execute("dbo.spINSERTDATA_TradingTransaction", p, commandType: CommandType.StoredProcedure);
             }
             return model;
+        }
+
+        public TradingTransactionModel spEDITDATA_TradingTransaction(TradingTransactionModel oldModel, TradingTransactionModel newModel)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@orig_ContactNote", oldModel.ContractNote);
+                p.Add("@orig_PortfolioName", oldModel.PortfolioId.Name);
+                p.Add("@orig_TradingEntityASXCode", oldModel.TradingEntityId.ASXCode);
+                p.Add("@orig_Date", oldModel.Date);
+                p.Add("@orig_Type", oldModel.TradingTransactionTypeId.Name);
+                p.Add("@orig_Quantity", oldModel.Quantity);
+                p.Add("@orig_UnitPrice", oldModel.UnitPrice);
+                p.Add("@orig_TradeValue", oldModel.TradeValue);
+                p.Add("@orig_Brokerage", oldModel.Brokerage);
+                p.Add("@orig_TotalValue", oldModel.TotalValue);
+
+                p.Add("@update_ContactNote", newModel.ContractNote);
+                p.Add("@update_PortfolioName", newModel.PortfolioId.Name);
+                p.Add("@update_TradingEntityASXCode", newModel.TradingEntityId.ASXCode);
+                p.Add("@update_Date", newModel.Date);
+                p.Add("@update_Type", newModel.TradingTransactionTypeId.Name);
+                p.Add("@update_Quantity", newModel.Quantity);
+                p.Add("@update_UnitPrice", newModel.UnitPrice);
+                p.Add("@update_TradeValue", newModel.TradeValue);
+                p.Add("@update_Brokerage", newModel.Brokerage);
+                p.Add("@update_TotalValue", newModel.TotalValue);
+
+                connection.Execute("dbo.spEDITDATA_TradingTransaction", p, commandType: CommandType.StoredProcedure);
+            }
+            return newModel;
         }
 
 
