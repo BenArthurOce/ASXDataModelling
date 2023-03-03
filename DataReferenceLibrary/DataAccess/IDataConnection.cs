@@ -55,6 +55,8 @@ namespace DataReferenceLibrary.DataAccess
         ///////TAB - PORTFOLIO MOVEMENTS///////
         //////////////////////////////////////
 
+        List<ASXEODPriceModel> spQUERY_SharePricesSixMonths();
+
 
         //////////////////////////////////
         ///////TAB - NOTEPAD UPLOAD///////

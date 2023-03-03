@@ -74,7 +74,6 @@
     <Compile Include="Models\ASXEODPriceModel.cs" />
     <Compile Include="Models\DocumentUploadHistoryModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StoredProcs\spQueryShareTransactionsForPortfolio.cs" />
     <Compile Include="StoredProcs\spQueryPortfolioItemsForCertainDate.cs" />
   </ItemGroup>
   <ItemGroup>

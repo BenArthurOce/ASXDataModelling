@@ -94,20 +94,9 @@ namespace UserInterface
                 UC_Tab5.Instance.BringToFront();
         }
 
-        private void radioButtonTab6_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (!panelContainer.Controls.Contains(UC_Tab6.Instance))
-            {
-                panelContainer.Controls.Add(UC_Tab6.Instance);
-                UC_Tab6.Instance.Dock = DockStyle.Fill;
-                UC_Tab6.Instance.BringToFront();
-            }
-            else
-                UC_Tab6.Instance.BringToFront();
-        }
 
-        /*
-        private void radioButtonTab7_MouseClick(object sender, MouseEventArgs e)
+        
+        private void radioButtonTab6_MouseClick(object sender, MouseEventArgs e)
         {
             if (!panelContainer.Controls.Contains(UC_Tab7.Instance))
             {
@@ -117,6 +106,19 @@ namespace UserInterface
             }
             else
                 UC_Tab7.Instance.BringToFront();
+        }
+
+        /*
+        private void radioButtonTab6_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (!panelContainer.Controls.Contains(UC_Tac7.Instance))
+            {
+                panelContainer.Controls.Add(UC_Tac7.Instance);
+                UC_Tac7.Instance.Dock = DockStyle.Fill;
+                UC_Tac7.Instance.BringToFront();
+            }
+            else
+                UC_Tac7.Instance.BringToFront();
         }
         */
 
@@ -131,5 +133,7 @@ namespace UserInterface
             else
                 UC_Tab8.Instance.BringToFront();
         }
+
+
     }
 }

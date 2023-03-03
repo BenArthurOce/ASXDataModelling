@@ -224,6 +224,16 @@ namespace DataReferenceLibrary.DataAccess
         ///////TAB - PORTFOLIO MOVEMENTS///////
         //////////////////////////////////////
 
+        public List<ASXEODPriceModel> spQUERY_SharePricesSixMonths()
+        {
+            List<ASXEODPriceModel> output;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                output = connection.Query<ASXEODPriceModel>("dbo.spQUERY_SharePricesSixMonths").ToList();
+            }
+            return output;
+        }
+
 
 
         //////////////////////////////////
