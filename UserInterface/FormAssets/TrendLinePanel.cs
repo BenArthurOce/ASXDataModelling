@@ -33,11 +33,21 @@ namespace UserInterface.FormAssets
 
 
 
+
+
+
+
+
+
+
+
+
+
         private TableLayoutPanel tableLayoutPanel1;
         private Panel pnlTrendLineRow2Col1;
         //private Label lblASXcode;
         private Panel pnlTrendLineRow1Col2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        public System.Windows.Forms.DataVisualization.Charting.Chart chart1;
 
         private void InitializeComponent()
         {

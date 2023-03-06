@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity.Infrastructure;
+using System.Data.Linq;
 using System.Data.Linq.Mapping;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -59,6 +61,17 @@ namespace DataReferenceLibrary.DataAccess
                 output = connection.Query<TradingSectorModel>("dbo.spGETLIST_TradingSectors").ToList();
             }
             return output;
+        }
+
+        public int spGETLIST_MostRecentPriceData()
+        {
+            int myvalue;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                myvalue = connection.Query<int>("spGETLIST_MostRecentPriceData",
+                       CommandType.StoredProcedure).First();
+            }
+            return myvalue;
         }
 
         ///////////////////////////////
@@ -226,12 +239,53 @@ namespace DataReferenceLibrary.DataAccess
 
         public List<ASXEODPriceModel> spQUERY_SharePricesSixMonths()
         {
+            //TODO - Add date range
+            //TODO - Add ASX Code variable
             List<ASXEODPriceModel> output;
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 output = connection.Query<ASXEODPriceModel>("dbo.spQUERY_SharePricesSixMonths").ToList();
             }
             return output;
+        }
+
+        public List<ASXEODPriceModel> spQUERY_SharePricesOneMonth(string ASXCode)
+        {
+            //TODO - Add date range
+            List<ASXEODPriceModel> output;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                output = connection.Query<ASXEODPriceModel>("dbo.spQUERY_SharePricesOneMonth @in_ASXCode", new { in_ASXCode = ASXCode }).ToList();
+            }
+            return output;
+        }
+
+        public IEnumerable<zFullEODPriceModel> spQUERY_SharePricesOneMonth(List<string> ASXCodeList)
+        {
+            var table = new DataTable();
+            table.Columns.Add("Code", typeof(string));
+            foreach (var code in ASXCodeList)
+            {
+                table.Rows.Add(code);
+            }
+
+
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var output_priceData = connection.Query<zFullEODPriceModel, TradingEntityModel, TradingSectorModel, DatesModel, zFullEODPriceModel>
+                    ("dbo.spQUERY_SharePricesOneMonth @in_ASXCodeList",
+                    (prices, tradingEntity, tradingSector, dates) =>
+                    {
+                        prices.TradingEntityModel = tradingEntity;
+                        prices.DatesModel = dates;
+                        tradingEntity.TradingSectorId = tradingSector;
+                        return prices;
+                    },
+                    new { in_ASXCodeList = table.AsTableValuedParameter("StockCodeList") },
+                    splitOn: "Id"
+                    );
+                return output_priceData;
+            }
         }
 
 
@@ -241,15 +295,15 @@ namespace DataReferenceLibrary.DataAccess
         //////////////////////////////////
 
         public List<ASXEODPriceModel> spINSERTDATA_ASXEODPrice(DataTable dt)
-        {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
-                var p = new DynamicParameters();
-                p.Add("@data", dt, DbType.Object);
-                connection.Execute("dbo.spINSERTDATA_ASXEODPrice", p, commandType: CommandType.StoredProcedure);
+                using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+                {
+                    var p = new DynamicParameters();
+                    p.Add("@data", dt, DbType.Object);
+                    connection.Execute("dbo.spINSERTDATA_ASXEODPrice", p, commandType: CommandType.StoredProcedure);
+                }
+                return null;
             }
-            return null;
-        }
 
         public DocumentUploadHistoryModel spINSERTDATA_DocumentUploadRecord(DocumentUploadHistoryModel model)
         {

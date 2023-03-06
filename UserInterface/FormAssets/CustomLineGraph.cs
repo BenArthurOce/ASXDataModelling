@@ -15,7 +15,7 @@ namespace UserInterface.FormAssets
     class CustomLineGraph : Panel
     {
 
-
+        public System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private TableLayoutPanel tableLayoutPanel;
         private Panel panelRow1Col1;
         private Panel panelRow2Col1;
@@ -33,6 +33,7 @@ namespace UserInterface.FormAssets
 
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             this.tableLayoutPanel = new TableLayoutPanel();
             this.panelRow1Col1 = new Panel();
             this.panelRow2Col1 = new Panel();
@@ -47,11 +48,13 @@ namespace UserInterface.FormAssets
             this.radioButtonTab2 = new UserInterface.FormAssets.RadioButtonTab();
             this.radioButtonTab3 = new UserInterface.FormAssets.RadioButtonTab();
             this.radioButtonTab4 = new UserInterface.FormAssets.RadioButtonTab();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableLayoutPanel.SuspendLayout();
             this.panelRow1Col3.SuspendLayout();
             this.panelRow1Col4.SuspendLayout();
             this.panelRow1Col5.SuspendLayout();
             this.panelRow1Col6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
 
 
@@ -284,6 +287,20 @@ namespace UserInterface.FormAssets
             this.radioButtonTab4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioButtonTab4.TextForeColor = System.Drawing.Color.Black;
             this.radioButtonTab4.UseVisualStyleBackColor = true;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            //this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chart1.Location = new System.Drawing.Point(0, 0);
+            this.chart1.Name = "chart1";
+            this.chart1.Size = new System.Drawing.Size(612, 182);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+
+
+
             this.tableLayoutPanel.ResumeLayout(false);
             this.panelRow1Col3.ResumeLayout(false);
             this.panelRow1Col3.PerformLayout();
@@ -303,46 +320,7 @@ namespace UserInterface.FormAssets
         public CustomLineGraph()
         {
             InitializeComponent();
-            /*
-
-
-            //
-            // tableLayoutPanel
-            //
-
-
-
-            this.Controls.Add(tableLayoutPanel);
-
-            Label lbl1 = new Label();
-            lbl1.Text = "a";
-            Label lbl2 = new Label();
-            lbl2.Text = "b";
-            Label lbl3 = new Label();
-            lbl3.Text = "c";
-            Label lbl4 = new Label();
-            lbl4.Text = "d";
-
-            //tableLayoutPanel.Controls.Add(lbl1, 0, 0);
-            //tableLayoutPanel.Controls.Add(lbl2, 1, 0);
-            //tableLayoutPanel.Controls.Add(lbl3, 2, 0);
-            //tableLayoutPanel.Controls.Add(lbl4, 3, 0);
-
-            //RadioButtonTab rbTab1 = new RadioButtonTab();
-            //rbTab1.Dock = DockStyle.Fill;
-            //RadioButtonTab rbTab2 = new RadioButtonTab();
-            //rbTab2.Dock = DockStyle.Fill;
-            //RadioButtonTab rbTab3 = new RadioButtonTab();
-            //rbTab3.Dock = DockStyle.Fill;
-            //RadioButtonTab rbTab4 = new RadioButtonTab();
-            //rbTab4.Dock = DockStyle.Fill;
-
-            //tableLayoutPanel.Controls.Add(rbTab1, 0, 0);
-            //tableLayoutPanel.Controls.Add(rbTab2, 1, 0);
-            //tableLayoutPanel.Controls.Add(rbTab3, 2, 0);
-            //tableLayoutPanel.Controls.Add(rbTab4, 3, 0);
-
-            */
+            BackColor = Color.Pink;
         }
     }
 }

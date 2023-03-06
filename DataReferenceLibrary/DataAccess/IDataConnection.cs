@@ -26,6 +26,8 @@ namespace DataReferenceLibrary.DataAccess
 
         List<TradingSectorModel> spGETLIST_TradingSectors();
 
+        int spGETLIST_MostRecentPriceData();
+
 
         ///////////////////////////////
         ///////TAB - PRICE QUERY///////
@@ -57,6 +59,9 @@ namespace DataReferenceLibrary.DataAccess
 
         List<ASXEODPriceModel> spQUERY_SharePricesSixMonths();
 
+        List<ASXEODPriceModel> spQUERY_SharePricesOneMonth(string ASXCode);
+
+        IEnumerable<zFullEODPriceModel> spQUERY_SharePricesOneMonth(List<string> ASXCodeList);
 
         //////////////////////////////////
         ///////TAB - NOTEPAD UPLOAD///////
