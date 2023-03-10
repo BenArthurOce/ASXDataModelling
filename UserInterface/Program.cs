@@ -19,7 +19,14 @@ namespace UserInterface
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            
+
+
+
+            //
+            //WISHLIST
+            //
+
+            //Stock Codes need to recognise when they have changed names. WPL into WDS happened 2022-05-24 this is a good example
 
 
             // Start the Reference Library

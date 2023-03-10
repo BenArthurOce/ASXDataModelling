@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlHeaderPortfolioSummary = new System.Windows.Forms.Panel();
             this.lblHeaderPortfolioSummary = new System.Windows.Forms.Label();
             this.dgvPortfolioItems = new System.Windows.Forms.DataGridView();
@@ -42,14 +42,14 @@
             this.pnlInputsCol1 = new System.Windows.Forms.Panel();
             this.pnlInputsCol2 = new System.Windows.Forms.Panel();
             this.pnlInputsCol3 = new System.Windows.Forms.Panel();
+            this.lblPortfolio = new System.Windows.Forms.Label();
+            this.cBoxPortfolio = new System.Windows.Forms.ComboBox();
             this.pnlInputsCol5 = new System.Windows.Forms.Panel();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.lblEndDate = new System.Windows.Forms.Label();
             this.pnlInputsCol6 = new System.Windows.Forms.Panel();
             this.pnlInputsCol7 = new System.Windows.Forms.Panel();
             this.pnlInputsCol8 = new System.Windows.Forms.Panel();
-            this.cBoxPortfolio = new System.Windows.Forms.ComboBox();
-            this.lblPortfolio = new System.Windows.Forms.Label();
-            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.pnlHeaderPortfolioSummary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPortfolioItems)).BeginInit();
             this.panel1.SuspendLayout();
@@ -86,14 +86,14 @@
             // 
             this.dgvPortfolioItems.AllowUserToAddRows = false;
             this.dgvPortfolioItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPortfolioItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPortfolioItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPortfolioItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPortfolioItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPortfolioItems.Location = new System.Drawing.Point(0, 0);
@@ -227,6 +227,26 @@
             this.pnlInputsCol3.Size = new System.Drawing.Size(236, 50);
             this.pnlInputsCol3.TabIndex = 3;
             // 
+            // lblPortfolio
+            // 
+            this.lblPortfolio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblPortfolio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPortfolio.Location = new System.Drawing.Point(0, 0);
+            this.lblPortfolio.Name = "lblPortfolio";
+            this.lblPortfolio.Size = new System.Drawing.Size(236, 26);
+            this.lblPortfolio.TabIndex = 1;
+            this.lblPortfolio.Text = "Portfolio:";
+            this.lblPortfolio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cBoxPortfolio
+            // 
+            this.cBoxPortfolio.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cBoxPortfolio.FormattingEnabled = true;
+            this.cBoxPortfolio.Location = new System.Drawing.Point(0, 29);
+            this.cBoxPortfolio.Name = "cBoxPortfolio";
+            this.cBoxPortfolio.Size = new System.Drawing.Size(236, 21);
+            this.cBoxPortfolio.TabIndex = 0;
+            // 
             // pnlInputsCol5
             // 
             this.pnlInputsCol5.Controls.Add(this.dtpDate);
@@ -237,6 +257,18 @@
             this.pnlInputsCol5.Name = "pnlInputsCol5";
             this.pnlInputsCol5.Size = new System.Drawing.Size(108, 50);
             this.pnlInputsCol5.TabIndex = 5;
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.CustomFormat = "dd/MM/yyyy";
+            this.dtpDate.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDate.Location = new System.Drawing.Point(0, 30);
+            this.dtpDate.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
+            this.dtpDate.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(108, 20);
+            this.dtpDate.TabIndex = 1;
             // 
             // lblEndDate
             // 
@@ -276,38 +308,6 @@
             this.pnlInputsCol8.Name = "pnlInputsCol8";
             this.pnlInputsCol8.Size = new System.Drawing.Size(114, 50);
             this.pnlInputsCol8.TabIndex = 8;
-            // 
-            // cBoxPortfolio
-            // 
-            this.cBoxPortfolio.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cBoxPortfolio.FormattingEnabled = true;
-            this.cBoxPortfolio.Location = new System.Drawing.Point(0, 29);
-            this.cBoxPortfolio.Name = "cBoxPortfolio";
-            this.cBoxPortfolio.Size = new System.Drawing.Size(236, 21);
-            this.cBoxPortfolio.TabIndex = 0;
-            // 
-            // lblPortfolio
-            // 
-            this.lblPortfolio.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblPortfolio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPortfolio.Location = new System.Drawing.Point(0, 0);
-            this.lblPortfolio.Name = "lblPortfolio";
-            this.lblPortfolio.Size = new System.Drawing.Size(236, 26);
-            this.lblPortfolio.TabIndex = 1;
-            this.lblPortfolio.Text = "Portfolio:";
-            this.lblPortfolio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dtpDate
-            // 
-            this.dtpDate.CustomFormat = "dd/MM/yyyy";
-            this.dtpDate.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDate.Location = new System.Drawing.Point(0, 30);
-            this.dtpDate.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
-            this.dtpDate.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(108, 20);
-            this.dtpDate.TabIndex = 1;
             // 
             // UC_Tab2
             // 

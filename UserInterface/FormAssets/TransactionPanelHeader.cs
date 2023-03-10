@@ -23,7 +23,10 @@ namespace UserInterface.FormAssets
             set { _ColumnCount = value; Invalidate(); }
         }
 
-        public int RowCount
+        public int 
+            
+            
+            RowCount
         {
             get { return _RowCount; }
             set { _RowCount = value; Invalidate(); }

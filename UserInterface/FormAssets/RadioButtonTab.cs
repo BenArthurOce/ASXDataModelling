@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,31 +12,17 @@ namespace UserInterface.FormAssets
     class RadioButtonTab : System.Windows.Forms.RadioButton
     {
 
+        [Category("Custom Properties")]
+        [Description("Custom Properties for the RadioButtonTab.")]
 
-        private String text = "";
+        public override string Text { get; set; }
+
         private Color _textForeColour = Color.Black;
         private Color _activeColor = Color.SteelBlue;
         private Color _hoverColor = Color.LightGray;
         private Color _inactiveColor = Color.LightBlue;
         private bool isHovered;
 
-        private int _defaultMinWidth = 90;
-        private int _defaultMinHeight = 70;
-
-        private Color _defaultBoarderColor = Color.Red;
-        private int _defaultBoarderWidth = 90;
-
-        public Color DefaultBoarderColor
-        {
-            get { return _defaultBoarderColor; }
-            set { _defaultBoarderColor = value; Invalidate(); }
-        }
-
-        public int DefaultBoarderWidth
-        {
-            get { return _defaultBoarderWidth; }
-            set { _defaultBoarderWidth = value; Invalidate(); }
-        }
 
         public Color TextForeColor
         {
@@ -61,23 +48,6 @@ namespace UserInterface.FormAssets
             set { _activeColor = value; Invalidate(); }
         }
 
-        public String DisplayText
-        {
-            get { return text; }
-            set { text = value; Invalidate(); }
-        }
-
-        public int DefaultMinWidth
-        {
-            get { return _defaultMinWidth; }
-            set { _defaultMinWidth = value; Invalidate(); }
-        }
-        public int DefaultMinHeight
-        {
-            get { return _defaultMinHeight; }
-            set { _defaultMinHeight = value; Invalidate(); }
-        }
-
 
         public RadioButtonTab()
         {
@@ -85,16 +55,14 @@ namespace UserInterface.FormAssets
             this.TextForeColor = TextForeColor;
             this.Appearance = Appearance.Button;
             this.AutoSize = false;
-            this.MinimumSize = new Size(DefaultMinWidth, DefaultMinHeight);
-            this.Text = DisplayText;
+            this.ForeColor = TextForeColor;
+
+
             this.TextAlign = ContentAlignment.MiddleCenter;
-            this.FlatAppearance.BorderColor = DefaultBoarderColor;
-            this.FlatAppearance.BorderSize = DefaultBoarderWidth;
-            this.FlatAppearance.MouseOverBackColor = Color.Red;
-            this.FlatAppearance.MouseDownBackColor = Color.Green;
-            
-            int x = this.Size.Width / 2;
-            int y = this.Size.Height / 2;
+
+
+
+
 
 
         }
@@ -131,7 +99,7 @@ namespace UserInterface.FormAssets
                 StringFormat sf = new StringFormat();
                 sf.Alignment = StringAlignment.Center;
                 sf.LineAlignment = StringAlignment.Center;
-                pe.Graphics.DrawString(DisplayText, this.Font, new SolidBrush(TextForeColor), ClientRectangle, sf);
+                pe.Graphics.DrawString(Text, this.Font, new SolidBrush(TextForeColor), ClientRectangle, sf);
                 bsh.Dispose();
             }
             else if (isHovered)
@@ -143,7 +111,7 @@ namespace UserInterface.FormAssets
                 StringFormat sf = new StringFormat();
                 sf.Alignment = StringAlignment.Center;
                 sf.LineAlignment = StringAlignment.Center;
-                pe.Graphics.DrawString(DisplayText, this.Font, new SolidBrush(TextForeColor), ClientRectangle, sf);
+                pe.Graphics.DrawString(Text, this.Font, new SolidBrush(TextForeColor), ClientRectangle, sf);
                 bsh.Dispose();
             }
             else
@@ -155,7 +123,7 @@ namespace UserInterface.FormAssets
                 StringFormat sf = new StringFormat();
                 sf.Alignment = StringAlignment.Center;
                 sf.LineAlignment = StringAlignment.Center;
-                pe.Graphics.DrawString(DisplayText, this.Font, new SolidBrush(TextForeColor), ClientRectangle, sf);
+                pe.Graphics.DrawString(Text, this.Font, new SolidBrush(TextForeColor), ClientRectangle, sf);
                 bsh.Dispose();
             }
         }

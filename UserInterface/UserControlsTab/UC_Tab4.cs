@@ -12,10 +12,10 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using UserInterface.FormAssets;
 using DataReferenceLibrary.Models2;
-using DataReferenceLibrary.StoredProcs;
 using System.Web.Util;
 using System.Xml.Linq;
 using System.Reflection;
+using System.Windows.Markup;
 
 namespace UserInterface.UserControlsTab
 {
@@ -48,34 +48,107 @@ namespace UserInterface.UserControlsTab
         }
 
 
- 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnGenerate_Click(object sender, EventArgs e)
         {
 
+            // ==============================================
+            // RUN SQL QUERY
+            // ==============================================
 
-            // Step 1 - Get the List of ASX codes that are currently Active
-            List<TrendLinePanel> trendLinePanels = tlpTrendLines.Controls
+            // Get last date on record, and 5 days prior to that (required to fill SQL parameters)
+            int finalDatePossible = GlobalConfig.Connection.spGETLIST_MostRecentPriceData();
+            DateTime date = DateTime.ParseExact(finalDatePossible.ToString(), "yyyyMMdd", null);
+            DateTime newDate = date.AddDays(-300);
+            int outputDateInt = int.Parse(newDate.ToString("yyyyMMdd"));
+
+
+            // Run Query to get standings
+            IEnumerable<xShareHolding> sql_results;
+            sql_results = GlobalConfig.Connection.spGetShareHoldingsFromWarehouse(cBoxPortfolio.Text, outputDateInt, finalDatePossible);
+
+            var sumsByDate = sql_results.GroupBy(t => t.Date)
+                                         .Select(g => new {
+                                             Date = g.Key
+                                             ,
+                                             CostBaseSum = g.Sum(t => t.CostBase)
+                                             ,
+                                             MarketValueSum = g.Sum(t => t.MarketValue)
+                                         })
+                                         .OrderBy(x => x.Date)
+                                         .ToList();
+
+
+
+            // ==============================================
+            // UPDATE PORTFOLIO GRAPH
+            // ==============================================
+            chart1.ChartAreas.Clear();
+            chart1.Series.Clear();
+            updateGraphTwoLine();
+
+            // Step 0 - Put Query Results into KeyPairValue
+            List<KeyValuePair<int, decimal>> data_costBase = new List<KeyValuePair<int, decimal>>();
+            List<KeyValuePair<int, decimal>> data_marketValue = new List<KeyValuePair<int, decimal>>();
+
+
+            // Step 1 - Set up KeyValuePair for X and Y points
+            int n = 0;
+            foreach (var standing in sumsByDate)
+            {
+                n += 1;
+                data_costBase.Add(new KeyValuePair<int, decimal>(n, standing.CostBaseSum));
+                data_marketValue.Add(new KeyValuePair<int, decimal>(n, standing.MarketValueSum));
+            }
+
+
+            // Step 2 - create Series
+            var series_costBase = new Series("Cost Base");
+            series_costBase.ChartType = SeriesChartType.Line;
+
+            var series_marketValue = new Series("Market Value");
+            series_marketValue.ChartType = SeriesChartType.Line;
+
+
+            // Step 3 - Find the lowest value to set a minimum Y Axis
+            decimal minYValue_costBase = data_costBase.Min(d => d.Value);
+            decimal minYValue_marketValue = data_marketValue.Min(d => d.Value);
+            chart1.ChartAreas[0].AxisY.Minimum = (double)minYValue_costBase * .98;
+
+            // Step 5 - Populate the graph
+            series_costBase.Points.DataBind(data_costBase, "Key", "Value", "");
+            series_marketValue.Points.DataBind(data_marketValue, "Key", "Value", "");
+            chart1.Series.Add(series_costBase);
+            chart1.Series.Add(series_marketValue);
+
+
+            // ==============================================
+            // UPDATE TRENDLINES
+            // ==============================================
+            // Step 1 - Get the List of trend line panels
+            List<TrendLinePanel> trendLinePanels = tlPnlTrendLines.Controls
                 .OfType<Control>()
                 .SelectMany(c => c.Controls.OfType<TrendLinePanel>())
                 .ToList();
 
 
             // Step 2 - Get the List of ASX codes that are currently Active
-            List<string> ASXCodelist = GetShareOwnerCodes();
+            List<string> asxCodesList = sql_results
+                                        .Select(t => t.TradingEntityModel.ASXCode)      // Extract the code from each transaction
+                                        .Distinct()                                     // Get distinct codes
+                                        .ToList();                                      // Convert the result to a list
 
 
             // Step 3 - Using that list of ASX codes, get relevant price data
             IEnumerable<zFullEODPriceModel> sql_query;
-            sql_query = GlobalConfig.Connection.spQUERY_SharePricesOneMonth(ASXCodelist);
+            sql_query = GlobalConfig.Connection.spQUERY_SharePricesOneMonth(asxCodesList);
 
 
             // Step 4 - Loop
-            foreach (var pair in ASXCodelist.Select((name, index) => new { Name = name, Index = index }))
+            foreach (var pair in asxCodesList.Select((name, index) => new { Name = name, Index = index }))
             {
 
                 // Step 4a - Use LinQ to obtain the price data for that ASX code
-                IEnumerable<zFullEODPriceModel> filtered_prices = sql_query.Where(item => item.TradingEntityModel.ASXCode == ASXCodelist[pair.Index]);
+                IEnumerable<zFullEODPriceModel> filtered_prices = sql_query.Where(item => item.TradingEntityModel.ASXCode == asxCodesList[pair.Index]);
 
                 // Step 4b - If there are less than 5 prices in the results, skip it
                 if (filtered_prices.Count() <= 5)
@@ -86,25 +159,9 @@ namespace UserInterface.UserControlsTab
                 {
                     TrendLineUpdateData(trendLinePanels[pair.Index], filtered_prices, pair.Name);
                 }
-                
             }
-
         }
 
-
-
-        private List<string> GetShareOwnerCodes()
-        {
-            //TODO - In this query there is a date set staticlly. We need to to be the result of a query for the most recent date of data
-            List<spQueryPortfolioItemsForCertainDate> sql_request = GlobalConfig.Connection.spQUERY_PortfolioValue(cBoxPortfolio.Text, 20220810);
-
-            List<string> asxCodesList = sql_request
-                                        .Select(t => t.ASXCode)     // Extract the code from each transaction
-                                        .Distinct()                 // Get distinct codes
-                                        .ToList();                  // Convert the result to a list
-
-            return asxCodesList;
-        }
 
 
 
@@ -150,8 +207,57 @@ namespace UserInterface.UserControlsTab
             //Step 6 - Name the Label
             panel.LabelText = ASXCodeString;
 
+        }
+
+
+
+        // TAKEN FROM THE TRENDLINE PANEL CONTROL
+        public void updateGraphTwoLine()
+        {
+            var series1 = new Series("First")
+            {
+                ChartType = SeriesChartType.Spline, //line chart
+                ChartArea = "chartArea",
+                Color = Color.White
+            };
+
+            var series2 = new Series("Second")
+            {
+                ChartType = SeriesChartType.Spline, //line chart
+                ChartArea = "chartArea",
+                Color = Color.White
+            };
+
+            //creating display area
+            var chartArea = new ChartArea("chartArea")
+            {
+                //hiding grid lines
+                AxisX =
+                                    {
+                                         LineWidth = 0
+                                        ,IntervalType = DateTimeIntervalType.NotSet
+                                        ,LabelStyle = {Enabled = false}
+                                        ,MajorGrid = {LineWidth = 0}
+                                        ,MajorTickMark = {LineWidth = 0}
+                                    },
+                AxisY =
+                                    {
+                                         LineWidth = 0
+                                        ,LabelStyle = {Enabled = false}
+                                        ,MajorGrid = {LineWidth = 0}
+                                        ,MajorTickMark = {LineWidth = 0}
+                                        ,Title = "Price"
+                                    },
+                BackColor = Color.Black
+            };
+
+
+            chart1.ChartAreas.Add(chartArea);
+            chart1.Series.Add(series1);
+            chart1.Series.Add(series2);
 
         }
+
 
     }
 }

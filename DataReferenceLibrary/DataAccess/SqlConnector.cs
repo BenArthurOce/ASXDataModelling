@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 using Dapper;
 using DataReferenceLibrary.Models;
 using DataReferenceLibrary.Models2;
-using DataReferenceLibrary.StoredProcs;
 using static System.Collections.Specialized.BitVector32;
 
 namespace DataReferenceLibrary.DataAccess
@@ -74,6 +73,7 @@ namespace DataReferenceLibrary.DataAccess
             return myvalue;
         }
 
+
         ///////////////////////////////
         ///////TAB - PRICE QUERY///////
         ///////////////////////////////
@@ -103,24 +103,39 @@ namespace DataReferenceLibrary.DataAccess
         ///////TAB - PORTFILIO ON DAY///////
         ////////////////////////////////////
 
-        public List<spQueryPortfolioItemsForCertainDate> spQUERY_PortfolioValue(string InputPortfolioName, int InputEndDate)
+
+        public IEnumerable<xShareHolding> spGetShareHoldingsFromWarehouse(string InputPortfolioName, int StartDate, int EndDate)
         {
-            List<spQueryPortfolioItemsForCertainDate> output;
+
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
-                output = connection.Query<spQueryPortfolioItemsForCertainDate>("dbo.spQUERY_PortfolioValue @in_PortfolioName, @in_EndDate", new { in_PortfolioName = InputPortfolioName, in_EndDate = InputEndDate }).ToList();
+                var output_portfolioStandings = connection.Query<xShareHolding, PortfolioModel2, ConnectorIndividualsPortfolios, IndividualModel, TradingEntityModel, TradingSectorModel, xShareHolding>
+                    ("dbo.spQUERY_dwPortfolioStandings4 @in_PortfolioName, @in_StartDate, @in_EndDate",
+                    (holding, portfolio, connector, individual, entity, sector) =>
+                    {
+
+                        holding.PortfolioModel = portfolio;
+                        holding.TradingEntityModel = entity;
+                        entity.TradingSectorId = sector;
+
+                        return holding;
+                    },
+                    new { in_PortfolioName = InputPortfolioName, in_StartDate = StartDate, in_EndDate = EndDate },
+                    splitOn: "Id"
+                    );
+                return output_portfolioStandings;
             }
-            return output;
         }
+
 
 
         ///////////////////////////////////////
         ///////TAB - SHARE TRANSACTIONS///////
         //////////////////////////////////////
+      
         public IEnumerable<zFullPortfolioModel> spQUERY_PortfoliosIndividualsTransactions()
         {
 
-            var transaction_list = new List<TradingTransactionModel>();
             var portfolio_list = new List<zFullPortfolioModel>();
 
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
@@ -161,7 +176,7 @@ namespace DataReferenceLibrary.DataAccess
                             indiv = individual;
                         }
 
-                        // if there is no list for individuals, instantiate it
+                        // if there is no list for transactions, instantiate it
                         port.Transactions = port.Transactions ?? new List<TradingTransactionModel>();
 
                         //====================================

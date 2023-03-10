@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tpnlInputsSinglePriceData = new System.Windows.Forms.TableLayoutPanel();
+            this.tlPnlInputsSinglePriceData = new System.Windows.Forms.TableLayoutPanel();
             this.pnlInputsCol8 = new System.Windows.Forms.Panel();
+            this.cBoxPortfolio = new System.Windows.Forms.ComboBox();
             this.pnlInputsCol7 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.pnlInputsCol6 = new System.Windows.Forms.Panel();
             this.pnlInputsCol5 = new System.Windows.Forms.Panel();
             this.pnlInputsCol4 = new System.Windows.Forms.Panel();
@@ -39,8 +39,9 @@
             this.pnlInputsCol2 = new System.Windows.Forms.Panel();
             this.pnlInputsCol1 = new System.Windows.Forms.Panel();
             this.pnlInputsCol10 = new System.Windows.Forms.Panel();
+            this.btnGenerate = new System.Windows.Forms.Button();
             this.pnlContainerSinglePriceData = new System.Windows.Forms.Panel();
-            this.tlpTrendLines = new System.Windows.Forms.TableLayoutPanel();
+            this.tlPnlTrendLines = new System.Windows.Forms.TableLayoutPanel();
             this.tlpTrendLinesRow1Col1 = new System.Windows.Forms.Panel();
             this.trendLinePanel1 = new UserInterface.FormAssets.TrendLinePanel();
             this.tlpTrendLinesRow1Col2 = new System.Windows.Forms.Panel();
@@ -57,9 +58,21 @@
             this.trendLinePanel7 = new UserInterface.FormAssets.TrendLinePanel();
             this.tlpTrendLinesRow2Col4 = new System.Windows.Forms.Panel();
             this.trendLinePanel8 = new UserInterface.FormAssets.TrendLinePanel();
-            this.tlpPortfolioInformation = new System.Windows.Forms.TableLayoutPanel();
+            this.tlPnlPortfolioInformation = new System.Windows.Forms.TableLayoutPanel();
             this.pnlPortfolioRow1Col1 = new System.Windows.Forms.Panel();
-            this.customLineGraph1 = new UserInterface.FormAssets.CustomLineGraph();
+            this.tlPnlPortfolioGraph = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlRow1Col1 = new System.Windows.Forms.Panel();
+            this.pnlRow1Col2 = new System.Windows.Forms.Panel();
+            this.gBoxrBtns = new System.Windows.Forms.GroupBox();
+            this.radioButtonTab4 = new UserInterface.FormAssets.RadioButtonTab();
+            this.radioButtonTab3 = new UserInterface.FormAssets.RadioButtonTab();
+            this.radioButtonTab2 = new UserInterface.FormAssets.RadioButtonTab();
+            this.radioButtonTab1 = new UserInterface.FormAssets.RadioButtonTab();
+            this.pnlRow1Col8 = new System.Windows.Forms.Panel();
+            this.pnlRow1Col9 = new System.Windows.Forms.Panel();
+            this.pnlRow1Col10 = new System.Windows.Forms.Panel();
+            this.pnlRow2Col1 = new System.Windows.Forms.Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnlPortfolioRow1Col7 = new System.Windows.Forms.Panel();
             this.pnlPortfolioRow1Col8 = new System.Windows.Forms.Panel();
             this.pnlPortfolioRow1Col9 = new System.Windows.Forms.Panel();
@@ -68,24 +81,17 @@
             this.pnlPortfolioRow2Col8 = new System.Windows.Forms.Panel();
             this.pnlPortfolioRow2Col9 = new System.Windows.Forms.Panel();
             this.pnlPortfolioRow2Col10 = new System.Windows.Forms.Panel();
-            this.pnlPortfolioRow3Col1 = new System.Windows.Forms.Panel();
-            this.pnlPortfolioRow3Col2 = new System.Windows.Forms.Panel();
-            this.pnlPortfolioRow3Col3 = new System.Windows.Forms.Panel();
-            this.pnlPortfolioRow3Col4 = new System.Windows.Forms.Panel();
-            this.pnlPortfolioRow3Col5 = new System.Windows.Forms.Panel();
-            this.pnlPortfolioRow3Col6 = new System.Windows.Forms.Panel();
             this.pnlPortfolioRow3Col7 = new System.Windows.Forms.Panel();
             this.pnlPortfolioRow3Col8 = new System.Windows.Forms.Panel();
             this.pnlPortfolioRow3Col9 = new System.Windows.Forms.Panel();
             this.pnlPortfolioRow3Col10 = new System.Windows.Forms.Panel();
             this.lblHeaderSinglePriceData = new System.Windows.Forms.Label();
             this.pnlHeaderSinglePriceData = new System.Windows.Forms.Panel();
-            this.cBoxPortfolio = new System.Windows.Forms.ComboBox();
-            this.tpnlInputsSinglePriceData.SuspendLayout();
+            this.tlPnlInputsSinglePriceData.SuspendLayout();
             this.pnlInputsCol8.SuspendLayout();
             this.pnlInputsCol10.SuspendLayout();
             this.pnlContainerSinglePriceData.SuspendLayout();
-            this.tlpTrendLines.SuspendLayout();
+            this.tlPnlTrendLines.SuspendLayout();
             this.tlpTrendLinesRow1Col1.SuspendLayout();
             this.tlpTrendLinesRow1Col2.SuspendLayout();
             this.tlpTrendLinesRow1Col3.SuspendLayout();
@@ -94,44 +100,49 @@
             this.tlpTrendLinesRow2Col2.SuspendLayout();
             this.tlpTrendLinesRow2Col3.SuspendLayout();
             this.tlpTrendLinesRow2Col4.SuspendLayout();
-            this.tlpPortfolioInformation.SuspendLayout();
+            this.tlPnlPortfolioInformation.SuspendLayout();
             this.pnlPortfolioRow1Col1.SuspendLayout();
+            this.tlPnlPortfolioGraph.SuspendLayout();
+            this.pnlRow1Col2.SuspendLayout();
+            this.gBoxrBtns.SuspendLayout();
+            this.pnlRow2Col1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.pnlHeaderSinglePriceData.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tpnlInputsSinglePriceData
+            // tlPnlInputsSinglePriceData
             // 
-            this.tpnlInputsSinglePriceData.ColumnCount = 10;
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tpnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol8, 7, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol7, 6, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol6, 5, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol5, 4, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol4, 3, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol3, 2, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol2, 1, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol1, 0, 0);
-            this.tpnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol10, 9, 0);
-            this.tpnlInputsSinglePriceData.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tpnlInputsSinglePriceData.Location = new System.Drawing.Point(10, 10);
-            this.tpnlInputsSinglePriceData.Name = "tpnlInputsSinglePriceData";
-            this.tpnlInputsSinglePriceData.RowCount = 1;
-            this.tpnlInputsSinglePriceData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tpnlInputsSinglePriceData.Size = new System.Drawing.Size(1030, 70);
-            this.tpnlInputsSinglePriceData.TabIndex = 1;
+            this.tlPnlInputsSinglePriceData.ColumnCount = 10;
+            this.tlPnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlInputsSinglePriceData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol8, 7, 0);
+            this.tlPnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol7, 6, 0);
+            this.tlPnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol6, 5, 0);
+            this.tlPnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol5, 4, 0);
+            this.tlPnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol4, 3, 0);
+            this.tlPnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol3, 2, 0);
+            this.tlPnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol2, 1, 0);
+            this.tlPnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol1, 0, 0);
+            this.tlPnlInputsSinglePriceData.Controls.Add(this.pnlInputsCol10, 9, 0);
+            this.tlPnlInputsSinglePriceData.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tlPnlInputsSinglePriceData.Location = new System.Drawing.Point(10, 10);
+            this.tlPnlInputsSinglePriceData.Name = "tlPnlInputsSinglePriceData";
+            this.tlPnlInputsSinglePriceData.RowCount = 1;
+            this.tlPnlInputsSinglePriceData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlPnlInputsSinglePriceData.Size = new System.Drawing.Size(1030, 70);
+            this.tlPnlInputsSinglePriceData.TabIndex = 1;
             // 
             // pnlInputsCol8
             // 
-            this.tpnlInputsSinglePriceData.SetColumnSpan(this.pnlInputsCol8, 2);
+            this.tlPnlInputsSinglePriceData.SetColumnSpan(this.pnlInputsCol8, 2);
             this.pnlInputsCol8.Controls.Add(this.cBoxPortfolio);
             this.pnlInputsCol8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlInputsCol8.Location = new System.Drawing.Point(731, 10);
@@ -139,6 +150,15 @@
             this.pnlInputsCol8.Name = "pnlInputsCol8";
             this.pnlInputsCol8.Size = new System.Drawing.Size(186, 50);
             this.pnlInputsCol8.TabIndex = 8;
+            // 
+            // cBoxPortfolio
+            // 
+            this.cBoxPortfolio.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cBoxPortfolio.FormattingEnabled = true;
+            this.cBoxPortfolio.Location = new System.Drawing.Point(0, 29);
+            this.cBoxPortfolio.Name = "cBoxPortfolio";
+            this.cBoxPortfolio.Size = new System.Drawing.Size(186, 21);
+            this.cBoxPortfolio.TabIndex = 0;
             // 
             // pnlInputsCol7
             // 
@@ -148,17 +168,6 @@
             this.pnlInputsCol7.Name = "pnlInputsCol7";
             this.pnlInputsCol7.Size = new System.Drawing.Size(83, 50);
             this.pnlInputsCol7.TabIndex = 7;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.Location = new System.Drawing.Point(0, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pnlInputsCol6
             // 
@@ -216,7 +225,7 @@
             // 
             // pnlInputsCol10
             // 
-            this.pnlInputsCol10.Controls.Add(this.button1);
+            this.pnlInputsCol10.Controls.Add(this.btnGenerate);
             this.pnlInputsCol10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlInputsCol10.Location = new System.Drawing.Point(937, 10);
             this.pnlInputsCol10.Margin = new System.Windows.Forms.Padding(10);
@@ -224,12 +233,23 @@
             this.pnlInputsCol10.Size = new System.Drawing.Size(83, 50);
             this.pnlInputsCol10.TabIndex = 12;
             // 
+            // btnGenerate
+            // 
+            this.btnGenerate.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnGenerate.Location = new System.Drawing.Point(0, 27);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(83, 23);
+            this.btnGenerate.TabIndex = 0;
+            this.btnGenerate.Text = "Generate";
+            this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
+            // 
             // pnlContainerSinglePriceData
             // 
             this.pnlContainerSinglePriceData.BackColor = System.Drawing.Color.White;
-            this.pnlContainerSinglePriceData.Controls.Add(this.tlpTrendLines);
-            this.pnlContainerSinglePriceData.Controls.Add(this.tlpPortfolioInformation);
-            this.pnlContainerSinglePriceData.Controls.Add(this.tpnlInputsSinglePriceData);
+            this.pnlContainerSinglePriceData.Controls.Add(this.tlPnlTrendLines);
+            this.pnlContainerSinglePriceData.Controls.Add(this.tlPnlPortfolioInformation);
+            this.pnlContainerSinglePriceData.Controls.Add(this.tlPnlInputsSinglePriceData);
             this.pnlContainerSinglePriceData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContainerSinglePriceData.Location = new System.Drawing.Point(0, 65);
             this.pnlContainerSinglePriceData.Name = "pnlContainerSinglePriceData";
@@ -237,29 +257,29 @@
             this.pnlContainerSinglePriceData.Size = new System.Drawing.Size(1050, 575);
             this.pnlContainerSinglePriceData.TabIndex = 11;
             // 
-            // tlpTrendLines
+            // tlPnlTrendLines
             // 
-            this.tlpTrendLines.ColumnCount = 4;
-            this.tlpTrendLines.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpTrendLines.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpTrendLines.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpTrendLines.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpTrendLines.Controls.Add(this.tlpTrendLinesRow1Col1, 0, 0);
-            this.tlpTrendLines.Controls.Add(this.tlpTrendLinesRow1Col2, 1, 0);
-            this.tlpTrendLines.Controls.Add(this.tlpTrendLinesRow1Col3, 2, 0);
-            this.tlpTrendLines.Controls.Add(this.tlpTrendLinesRow1Col4, 3, 0);
-            this.tlpTrendLines.Controls.Add(this.tlpTrendLinesRow2Col1, 0, 1);
-            this.tlpTrendLines.Controls.Add(this.tlpTrendLinesRow2Col2, 1, 1);
-            this.tlpTrendLines.Controls.Add(this.tlpTrendLinesRow2Col3, 2, 1);
-            this.tlpTrendLines.Controls.Add(this.tlpTrendLinesRow2Col4, 3, 1);
-            this.tlpTrendLines.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tlpTrendLines.Location = new System.Drawing.Point(10, 315);
-            this.tlpTrendLines.Name = "tlpTrendLines";
-            this.tlpTrendLines.RowCount = 2;
-            this.tlpTrendLines.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpTrendLines.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpTrendLines.Size = new System.Drawing.Size(1030, 188);
-            this.tlpTrendLines.TabIndex = 3;
+            this.tlPnlTrendLines.ColumnCount = 4;
+            this.tlPnlTrendLines.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlPnlTrendLines.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlPnlTrendLines.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlPnlTrendLines.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlPnlTrendLines.Controls.Add(this.tlpTrendLinesRow1Col1, 0, 0);
+            this.tlPnlTrendLines.Controls.Add(this.tlpTrendLinesRow1Col2, 1, 0);
+            this.tlPnlTrendLines.Controls.Add(this.tlpTrendLinesRow1Col3, 2, 0);
+            this.tlPnlTrendLines.Controls.Add(this.tlpTrendLinesRow1Col4, 3, 0);
+            this.tlPnlTrendLines.Controls.Add(this.tlpTrendLinesRow2Col1, 0, 1);
+            this.tlPnlTrendLines.Controls.Add(this.tlpTrendLinesRow2Col2, 1, 1);
+            this.tlPnlTrendLines.Controls.Add(this.tlpTrendLinesRow2Col3, 2, 1);
+            this.tlPnlTrendLines.Controls.Add(this.tlpTrendLinesRow2Col4, 3, 1);
+            this.tlPnlTrendLines.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tlPnlTrendLines.Location = new System.Drawing.Point(10, 315);
+            this.tlPnlTrendLines.Name = "tlPnlTrendLines";
+            this.tlPnlTrendLines.RowCount = 2;
+            this.tlPnlTrendLines.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlPnlTrendLines.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlPnlTrendLines.Size = new System.Drawing.Size(1030, 188);
+            this.tlPnlTrendLines.TabIndex = 3;
             // 
             // tlpTrendLinesRow1Col1
             // 
@@ -405,67 +425,255 @@
             this.trendLinePanel8.Size = new System.Drawing.Size(253, 88);
             this.trendLinePanel8.TabIndex = 0;
             // 
-            // tlpPortfolioInformation
+            // tlPnlPortfolioInformation
             // 
-            this.tlpPortfolioInformation.ColumnCount = 10;
-            this.tlpPortfolioInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpPortfolioInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpPortfolioInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpPortfolioInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpPortfolioInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpPortfolioInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpPortfolioInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpPortfolioInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpPortfolioInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpPortfolioInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpPortfolioInformation.Controls.Add(this.pnlPortfolioRow1Col1, 0, 0);
-            this.tlpPortfolioInformation.Controls.Add(this.pnlPortfolioRow1Col7, 6, 0);
-            this.tlpPortfolioInformation.Controls.Add(this.pnlPortfolioRow1Col8, 7, 0);
-            this.tlpPortfolioInformation.Controls.Add(this.pnlPortfolioRow1Col9, 8, 0);
-            this.tlpPortfolioInformation.Controls.Add(this.pnlPortfolioRow1Col10, 9, 0);
-            this.tlpPortfolioInformation.Controls.Add(this.pnlPortfolioRow2Col7, 6, 1);
-            this.tlpPortfolioInformation.Controls.Add(this.pnlPortfolioRow2Col8, 7, 1);
-            this.tlpPortfolioInformation.Controls.Add(this.pnlPortfolioRow2Col9, 8, 1);
-            this.tlpPortfolioInformation.Controls.Add(this.pnlPortfolioRow2Col10, 9, 1);
-            this.tlpPortfolioInformation.Controls.Add(this.pnlPortfolioRow3Col1, 0, 2);
-            this.tlpPortfolioInformation.Controls.Add(this.pnlPortfolioRow3Col2, 1, 2);
-            this.tlpPortfolioInformation.Controls.Add(this.pnlPortfolioRow3Col3, 2, 2);
-            this.tlpPortfolioInformation.Controls.Add(this.pnlPortfolioRow3Col4, 3, 2);
-            this.tlpPortfolioInformation.Controls.Add(this.pnlPortfolioRow3Col5, 4, 2);
-            this.tlpPortfolioInformation.Controls.Add(this.pnlPortfolioRow3Col6, 5, 2);
-            this.tlpPortfolioInformation.Controls.Add(this.pnlPortfolioRow3Col7, 6, 2);
-            this.tlpPortfolioInformation.Controls.Add(this.pnlPortfolioRow3Col8, 7, 2);
-            this.tlpPortfolioInformation.Controls.Add(this.pnlPortfolioRow3Col9, 8, 2);
-            this.tlpPortfolioInformation.Controls.Add(this.pnlPortfolioRow3Col10, 9, 2);
-            this.tlpPortfolioInformation.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tlpPortfolioInformation.Location = new System.Drawing.Point(10, 80);
-            this.tlpPortfolioInformation.Name = "tlpPortfolioInformation";
-            this.tlpPortfolioInformation.RowCount = 3;
-            this.tlpPortfolioInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tlpPortfolioInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tlpPortfolioInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpPortfolioInformation.Size = new System.Drawing.Size(1030, 235);
-            this.tlpPortfolioInformation.TabIndex = 2;
+            this.tlPnlPortfolioInformation.ColumnCount = 10;
+            this.tlPnlPortfolioInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlPortfolioInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlPortfolioInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlPortfolioInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlPortfolioInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlPortfolioInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlPortfolioInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlPortfolioInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlPortfolioInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlPortfolioInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlPortfolioInformation.Controls.Add(this.pnlPortfolioRow1Col1, 0, 0);
+            this.tlPnlPortfolioInformation.Controls.Add(this.pnlPortfolioRow1Col7, 6, 0);
+            this.tlPnlPortfolioInformation.Controls.Add(this.pnlPortfolioRow1Col8, 7, 0);
+            this.tlPnlPortfolioInformation.Controls.Add(this.pnlPortfolioRow1Col9, 8, 0);
+            this.tlPnlPortfolioInformation.Controls.Add(this.pnlPortfolioRow1Col10, 9, 0);
+            this.tlPnlPortfolioInformation.Controls.Add(this.pnlPortfolioRow2Col7, 6, 1);
+            this.tlPnlPortfolioInformation.Controls.Add(this.pnlPortfolioRow2Col8, 7, 1);
+            this.tlPnlPortfolioInformation.Controls.Add(this.pnlPortfolioRow2Col9, 8, 1);
+            this.tlPnlPortfolioInformation.Controls.Add(this.pnlPortfolioRow2Col10, 9, 1);
+            this.tlPnlPortfolioInformation.Controls.Add(this.pnlPortfolioRow3Col7, 6, 2);
+            this.tlPnlPortfolioInformation.Controls.Add(this.pnlPortfolioRow3Col8, 7, 2);
+            this.tlPnlPortfolioInformation.Controls.Add(this.pnlPortfolioRow3Col9, 8, 2);
+            this.tlPnlPortfolioInformation.Controls.Add(this.pnlPortfolioRow3Col10, 9, 2);
+            this.tlPnlPortfolioInformation.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tlPnlPortfolioInformation.Location = new System.Drawing.Point(10, 80);
+            this.tlPnlPortfolioInformation.Name = "tlPnlPortfolioInformation";
+            this.tlPnlPortfolioInformation.RowCount = 3;
+            this.tlPnlPortfolioInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlPnlPortfolioInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlPnlPortfolioInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlPnlPortfolioInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlPnlPortfolioInformation.Size = new System.Drawing.Size(1030, 235);
+            this.tlPnlPortfolioInformation.TabIndex = 2;
             // 
             // pnlPortfolioRow1Col1
             // 
-            this.tlpPortfolioInformation.SetColumnSpan(this.pnlPortfolioRow1Col1, 6);
-            this.pnlPortfolioRow1Col1.Controls.Add(this.customLineGraph1);
+            this.tlPnlPortfolioInformation.SetColumnSpan(this.pnlPortfolioRow1Col1, 6);
+            this.pnlPortfolioRow1Col1.Controls.Add(this.tlPnlPortfolioGraph);
             this.pnlPortfolioRow1Col1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPortfolioRow1Col1.Location = new System.Drawing.Point(3, 3);
             this.pnlPortfolioRow1Col1.Name = "pnlPortfolioRow1Col1";
-            this.tlpPortfolioInformation.SetRowSpan(this.pnlPortfolioRow1Col1, 2);
-            this.pnlPortfolioRow1Col1.Size = new System.Drawing.Size(612, 182);
+            this.tlPnlPortfolioInformation.SetRowSpan(this.pnlPortfolioRow1Col1, 3);
+            this.pnlPortfolioRow1Col1.Size = new System.Drawing.Size(612, 229);
             this.pnlPortfolioRow1Col1.TabIndex = 0;
             // 
-            // customLineGraph1
+            // tlPnlPortfolioGraph
             // 
-            this.customLineGraph1.BackColor = System.Drawing.Color.Pink;
-            this.customLineGraph1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customLineGraph1.Location = new System.Drawing.Point(0, 0);
-            this.customLineGraph1.Name = "customLineGraph1";
-            this.customLineGraph1.Size = new System.Drawing.Size(612, 182);
-            this.customLineGraph1.TabIndex = 0;
+            this.tlPnlPortfolioGraph.ColumnCount = 10;
+            this.tlPnlPortfolioGraph.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlPortfolioGraph.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlPortfolioGraph.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlPortfolioGraph.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlPortfolioGraph.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlPortfolioGraph.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlPortfolioGraph.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlPortfolioGraph.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlPortfolioGraph.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlPortfolioGraph.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlPnlPortfolioGraph.Controls.Add(this.pnlRow1Col1, 0, 0);
+            this.tlPnlPortfolioGraph.Controls.Add(this.pnlRow1Col2, 1, 0);
+            this.tlPnlPortfolioGraph.Controls.Add(this.pnlRow1Col8, 7, 0);
+            this.tlPnlPortfolioGraph.Controls.Add(this.pnlRow1Col9, 8, 0);
+            this.tlPnlPortfolioGraph.Controls.Add(this.pnlRow1Col10, 9, 0);
+            this.tlPnlPortfolioGraph.Controls.Add(this.pnlRow2Col1, 0, 1);
+            this.tlPnlPortfolioGraph.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlPnlPortfolioGraph.Location = new System.Drawing.Point(0, 0);
+            this.tlPnlPortfolioGraph.Name = "tlPnlPortfolioGraph";
+            this.tlPnlPortfolioGraph.RowCount = 2;
+            this.tlPnlPortfolioGraph.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tlPnlPortfolioGraph.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            this.tlPnlPortfolioGraph.Size = new System.Drawing.Size(612, 229);
+            this.tlPnlPortfolioGraph.TabIndex = 1;
+            // 
+            // pnlRow1Col1
+            // 
+            this.pnlRow1Col1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRow1Col1.Location = new System.Drawing.Point(3, 3);
+            this.pnlRow1Col1.Name = "pnlRow1Col1";
+            this.pnlRow1Col1.Size = new System.Drawing.Size(55, 28);
+            this.pnlRow1Col1.TabIndex = 0;
+            // 
+            // pnlRow1Col2
+            // 
+            this.tlPnlPortfolioGraph.SetColumnSpan(this.pnlRow1Col2, 6);
+            this.pnlRow1Col2.Controls.Add(this.gBoxrBtns);
+            this.pnlRow1Col2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRow1Col2.Location = new System.Drawing.Point(64, 3);
+            this.pnlRow1Col2.Name = "pnlRow1Col2";
+            this.pnlRow1Col2.Size = new System.Drawing.Size(360, 28);
+            this.pnlRow1Col2.TabIndex = 1;
+            // 
+            // gBoxrBtns
+            // 
+            this.gBoxrBtns.Controls.Add(this.radioButtonTab4);
+            this.gBoxrBtns.Controls.Add(this.radioButtonTab3);
+            this.gBoxrBtns.Controls.Add(this.radioButtonTab2);
+            this.gBoxrBtns.Controls.Add(this.radioButtonTab1);
+            this.gBoxrBtns.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gBoxrBtns.Location = new System.Drawing.Point(0, 0);
+            this.gBoxrBtns.Margin = new System.Windows.Forms.Padding(0);
+            this.gBoxrBtns.Name = "gBoxrBtns";
+            this.gBoxrBtns.Padding = new System.Windows.Forms.Padding(0);
+            this.gBoxrBtns.Size = new System.Drawing.Size(360, 28);
+            this.gBoxrBtns.TabIndex = 0;
+            this.gBoxrBtns.TabStop = false;
+            // 
+            // radioButtonTab4
+            // 
+            this.radioButtonTab4.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonTab4.ColorMouseHovorOff = System.Drawing.Color.LightBlue;
+            this.radioButtonTab4.ColorMouseHovorOn = System.Drawing.Color.LightGray;
+            this.radioButtonTab4.ColourMouseClick = System.Drawing.Color.SteelBlue;
+            this.radioButtonTab4.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.radioButtonTab4.FlatAppearance.BorderSize = 90;
+            this.radioButtonTab4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.radioButtonTab4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.radioButtonTab4.ForeColor = System.Drawing.Color.Black;
+            this.radioButtonTab4.Location = new System.Drawing.Point(260, 2);
+            this.radioButtonTab4.Margin = new System.Windows.Forms.Padding(5);
+            this.radioButtonTab4.MinimumSize = new System.Drawing.Size(20, 30);
+            this.radioButtonTab4.Name = "radioButtonTab4";
+            this.radioButtonTab4.Padding = new System.Windows.Forms.Padding(10);
+            this.radioButtonTab4.Size = new System.Drawing.Size(75, 30);
+            this.radioButtonTab4.TabIndex = 3;
+            this.radioButtonTab4.TabStop = true;
+            this.radioButtonTab4.Text = "2 Years";
+            this.radioButtonTab4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButtonTab4.TextForeColor = System.Drawing.Color.Black;
+            this.radioButtonTab4.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonTab3
+            // 
+            this.radioButtonTab3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonTab3.ColorMouseHovorOff = System.Drawing.Color.LightBlue;
+            this.radioButtonTab3.ColorMouseHovorOn = System.Drawing.Color.LightGray;
+            this.radioButtonTab3.ColourMouseClick = System.Drawing.Color.SteelBlue;
+            this.radioButtonTab3.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.radioButtonTab3.FlatAppearance.BorderSize = 90;
+            this.radioButtonTab3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.radioButtonTab3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.radioButtonTab3.ForeColor = System.Drawing.Color.Black;
+            this.radioButtonTab3.Location = new System.Drawing.Point(175, 2);
+            this.radioButtonTab3.Margin = new System.Windows.Forms.Padding(5);
+            this.radioButtonTab3.MinimumSize = new System.Drawing.Size(20, 30);
+            this.radioButtonTab3.Name = "radioButtonTab3";
+            this.radioButtonTab3.Padding = new System.Windows.Forms.Padding(10);
+            this.radioButtonTab3.Size = new System.Drawing.Size(75, 30);
+            this.radioButtonTab3.TabIndex = 2;
+            this.radioButtonTab3.TabStop = true;
+            this.radioButtonTab3.Text = "1 Year";
+            this.radioButtonTab3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButtonTab3.TextForeColor = System.Drawing.Color.Black;
+            this.radioButtonTab3.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonTab2
+            // 
+            this.radioButtonTab2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonTab2.ColorMouseHovorOff = System.Drawing.Color.LightBlue;
+            this.radioButtonTab2.ColorMouseHovorOn = System.Drawing.Color.LightGray;
+            this.radioButtonTab2.ColourMouseClick = System.Drawing.Color.SteelBlue;
+            this.radioButtonTab2.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.radioButtonTab2.FlatAppearance.BorderSize = 90;
+            this.radioButtonTab2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.radioButtonTab2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.radioButtonTab2.ForeColor = System.Drawing.Color.Black;
+            this.radioButtonTab2.Location = new System.Drawing.Point(90, 2);
+            this.radioButtonTab2.Margin = new System.Windows.Forms.Padding(5);
+            this.radioButtonTab2.MinimumSize = new System.Drawing.Size(20, 30);
+            this.radioButtonTab2.Name = "radioButtonTab2";
+            this.radioButtonTab2.Padding = new System.Windows.Forms.Padding(10);
+            this.radioButtonTab2.Size = new System.Drawing.Size(75, 30);
+            this.radioButtonTab2.TabIndex = 1;
+            this.radioButtonTab2.TabStop = true;
+            this.radioButtonTab2.Text = "6 Months";
+            this.radioButtonTab2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButtonTab2.TextForeColor = System.Drawing.Color.Black;
+            this.radioButtonTab2.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonTab1
+            // 
+            this.radioButtonTab1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonTab1.ColorMouseHovorOff = System.Drawing.Color.LightBlue;
+            this.radioButtonTab1.ColorMouseHovorOn = System.Drawing.Color.LightGray;
+            this.radioButtonTab1.ColourMouseClick = System.Drawing.Color.SteelBlue;
+            this.radioButtonTab1.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.radioButtonTab1.FlatAppearance.BorderSize = 90;
+            this.radioButtonTab1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.radioButtonTab1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.radioButtonTab1.ForeColor = System.Drawing.Color.Black;
+            this.radioButtonTab1.Location = new System.Drawing.Point(5, 2);
+            this.radioButtonTab1.Margin = new System.Windows.Forms.Padding(5);
+            this.radioButtonTab1.MinimumSize = new System.Drawing.Size(20, 30);
+            this.radioButtonTab1.Name = "radioButtonTab1";
+            this.radioButtonTab1.Padding = new System.Windows.Forms.Padding(10);
+            this.radioButtonTab1.Size = new System.Drawing.Size(75, 30);
+            this.radioButtonTab1.TabIndex = 0;
+            this.radioButtonTab1.TabStop = true;
+            this.radioButtonTab1.Text = "1 Month";
+            this.radioButtonTab1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButtonTab1.TextForeColor = System.Drawing.Color.Black;
+            this.radioButtonTab1.UseVisualStyleBackColor = true;
+            // 
+            // pnlRow1Col8
+            // 
+            this.pnlRow1Col8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRow1Col8.Location = new System.Drawing.Point(430, 3);
+            this.pnlRow1Col8.Name = "pnlRow1Col8";
+            this.pnlRow1Col8.Size = new System.Drawing.Size(55, 28);
+            this.pnlRow1Col8.TabIndex = 7;
+            // 
+            // pnlRow1Col9
+            // 
+            this.pnlRow1Col9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRow1Col9.Location = new System.Drawing.Point(491, 3);
+            this.pnlRow1Col9.Name = "pnlRow1Col9";
+            this.pnlRow1Col9.Size = new System.Drawing.Size(55, 28);
+            this.pnlRow1Col9.TabIndex = 8;
+            // 
+            // pnlRow1Col10
+            // 
+            this.pnlRow1Col10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRow1Col10.Location = new System.Drawing.Point(552, 3);
+            this.pnlRow1Col10.Name = "pnlRow1Col10";
+            this.pnlRow1Col10.Size = new System.Drawing.Size(57, 28);
+            this.pnlRow1Col10.TabIndex = 9;
+            // 
+            // pnlRow2Col1
+            // 
+            this.tlPnlPortfolioGraph.SetColumnSpan(this.pnlRow2Col1, 10);
+            this.pnlRow2Col1.Controls.Add(this.chart1);
+            this.pnlRow2Col1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRow2Col1.Location = new System.Drawing.Point(3, 37);
+            this.pnlRow2Col1.Name = "pnlRow2Col1";
+            this.pnlRow2Col1.Size = new System.Drawing.Size(606, 189);
+            this.pnlRow2Col1.TabIndex = 10;
+            // 
+            // chart1
+            // 
+            this.chart1.BackColor = System.Drawing.Color.Black;
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chart1.Location = new System.Drawing.Point(0, 0);
+            this.chart1.Margin = new System.Windows.Forms.Padding(0);
+            this.chart1.Name = "chart1";
+            this.chart1.Size = new System.Drawing.Size(606, 189);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
             // 
             // pnlPortfolioRow1Col7
             // 
@@ -531,54 +739,6 @@
             this.pnlPortfolioRow2Col10.Size = new System.Drawing.Size(97, 88);
             this.pnlPortfolioRow2Col10.TabIndex = 19;
             // 
-            // pnlPortfolioRow3Col1
-            // 
-            this.pnlPortfolioRow3Col1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPortfolioRow3Col1.Location = new System.Drawing.Point(3, 191);
-            this.pnlPortfolioRow3Col1.Name = "pnlPortfolioRow3Col1";
-            this.pnlPortfolioRow3Col1.Size = new System.Drawing.Size(97, 41);
-            this.pnlPortfolioRow3Col1.TabIndex = 20;
-            // 
-            // pnlPortfolioRow3Col2
-            // 
-            this.pnlPortfolioRow3Col2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPortfolioRow3Col2.Location = new System.Drawing.Point(106, 191);
-            this.pnlPortfolioRow3Col2.Name = "pnlPortfolioRow3Col2";
-            this.pnlPortfolioRow3Col2.Size = new System.Drawing.Size(97, 41);
-            this.pnlPortfolioRow3Col2.TabIndex = 21;
-            // 
-            // pnlPortfolioRow3Col3
-            // 
-            this.pnlPortfolioRow3Col3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPortfolioRow3Col3.Location = new System.Drawing.Point(209, 191);
-            this.pnlPortfolioRow3Col3.Name = "pnlPortfolioRow3Col3";
-            this.pnlPortfolioRow3Col3.Size = new System.Drawing.Size(97, 41);
-            this.pnlPortfolioRow3Col3.TabIndex = 22;
-            // 
-            // pnlPortfolioRow3Col4
-            // 
-            this.pnlPortfolioRow3Col4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPortfolioRow3Col4.Location = new System.Drawing.Point(312, 191);
-            this.pnlPortfolioRow3Col4.Name = "pnlPortfolioRow3Col4";
-            this.pnlPortfolioRow3Col4.Size = new System.Drawing.Size(97, 41);
-            this.pnlPortfolioRow3Col4.TabIndex = 23;
-            // 
-            // pnlPortfolioRow3Col5
-            // 
-            this.pnlPortfolioRow3Col5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPortfolioRow3Col5.Location = new System.Drawing.Point(415, 191);
-            this.pnlPortfolioRow3Col5.Name = "pnlPortfolioRow3Col5";
-            this.pnlPortfolioRow3Col5.Size = new System.Drawing.Size(97, 41);
-            this.pnlPortfolioRow3Col5.TabIndex = 24;
-            // 
-            // pnlPortfolioRow3Col6
-            // 
-            this.pnlPortfolioRow3Col6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPortfolioRow3Col6.Location = new System.Drawing.Point(518, 191);
-            this.pnlPortfolioRow3Col6.Name = "pnlPortfolioRow3Col6";
-            this.pnlPortfolioRow3Col6.Size = new System.Drawing.Size(97, 41);
-            this.pnlPortfolioRow3Col6.TabIndex = 25;
-            // 
             // pnlPortfolioRow3Col7
             // 
             this.pnlPortfolioRow3Col7.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -632,15 +792,6 @@
             this.pnlHeaderSinglePriceData.Size = new System.Drawing.Size(1050, 65);
             this.pnlHeaderSinglePriceData.TabIndex = 12;
             // 
-            // cBoxPortfolio
-            // 
-            this.cBoxPortfolio.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cBoxPortfolio.FormattingEnabled = true;
-            this.cBoxPortfolio.Location = new System.Drawing.Point(0, 29);
-            this.cBoxPortfolio.Name = "cBoxPortfolio";
-            this.cBoxPortfolio.Size = new System.Drawing.Size(186, 21);
-            this.cBoxPortfolio.TabIndex = 0;
-            // 
             // UC_Tab4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -649,11 +800,11 @@
             this.Controls.Add(this.pnlHeaderSinglePriceData);
             this.Name = "UC_Tab4";
             this.Size = new System.Drawing.Size(1050, 640);
-            this.tpnlInputsSinglePriceData.ResumeLayout(false);
+            this.tlPnlInputsSinglePriceData.ResumeLayout(false);
             this.pnlInputsCol8.ResumeLayout(false);
             this.pnlInputsCol10.ResumeLayout(false);
             this.pnlContainerSinglePriceData.ResumeLayout(false);
-            this.tlpTrendLines.ResumeLayout(false);
+            this.tlPnlTrendLines.ResumeLayout(false);
             this.tlpTrendLinesRow1Col1.ResumeLayout(false);
             this.tlpTrendLinesRow1Col2.ResumeLayout(false);
             this.tlpTrendLinesRow1Col3.ResumeLayout(false);
@@ -662,8 +813,13 @@
             this.tlpTrendLinesRow2Col2.ResumeLayout(false);
             this.tlpTrendLinesRow2Col3.ResumeLayout(false);
             this.tlpTrendLinesRow2Col4.ResumeLayout(false);
-            this.tlpPortfolioInformation.ResumeLayout(false);
+            this.tlPnlPortfolioInformation.ResumeLayout(false);
             this.pnlPortfolioRow1Col1.ResumeLayout(false);
+            this.tlPnlPortfolioGraph.ResumeLayout(false);
+            this.pnlRow1Col2.ResumeLayout(false);
+            this.gBoxrBtns.ResumeLayout(false);
+            this.pnlRow2Col1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.pnlHeaderSinglePriceData.ResumeLayout(false);
             this.pnlHeaderSinglePriceData.PerformLayout();
             this.ResumeLayout(false);
@@ -671,7 +827,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.TableLayoutPanel tpnlInputsSinglePriceData;
+        private System.Windows.Forms.TableLayoutPanel tlPnlInputsSinglePriceData;
         private System.Windows.Forms.Panel pnlInputsCol8;
         private System.Windows.Forms.Panel pnlInputsCol7;
         private System.Windows.Forms.Panel pnlInputsCol6;
@@ -684,7 +840,7 @@
         private System.Windows.Forms.Label lblHeaderSinglePriceData;
         private System.Windows.Forms.Panel pnlHeaderSinglePriceData;
         private System.Windows.Forms.Panel pnlInputsCol10;
-        private System.Windows.Forms.TableLayoutPanel tlpTrendLines;
+        private System.Windows.Forms.TableLayoutPanel tlPnlTrendLines;
         private System.Windows.Forms.Panel tlpTrendLinesRow1Col1;
         private FormAssets.TrendLinePanel trendLinePanel1;
         private System.Windows.Forms.Panel tlpTrendLinesRow1Col2;
@@ -701,8 +857,23 @@
         private FormAssets.TrendLinePanel trendLinePanel7;
         private System.Windows.Forms.Panel tlpTrendLinesRow2Col4;
         private FormAssets.TrendLinePanel trendLinePanel8;
-        private System.Windows.Forms.TableLayoutPanel tlpPortfolioInformation;
+        private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.ComboBox cBoxPortfolio;
+        private System.Windows.Forms.TableLayoutPanel tlPnlPortfolioInformation;
         private System.Windows.Forms.Panel pnlPortfolioRow1Col1;
+        private System.Windows.Forms.TableLayoutPanel tlPnlPortfolioGraph;
+        private System.Windows.Forms.Panel pnlRow1Col1;
+        private System.Windows.Forms.Panel pnlRow1Col2;
+        private System.Windows.Forms.GroupBox gBoxrBtns;
+        private FormAssets.RadioButtonTab radioButtonTab4;
+        private FormAssets.RadioButtonTab radioButtonTab3;
+        private FormAssets.RadioButtonTab radioButtonTab2;
+        private FormAssets.RadioButtonTab radioButtonTab1;
+        private System.Windows.Forms.Panel pnlRow1Col8;
+        private System.Windows.Forms.Panel pnlRow1Col9;
+        private System.Windows.Forms.Panel pnlRow1Col10;
+        private System.Windows.Forms.Panel pnlRow2Col1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Panel pnlPortfolioRow1Col7;
         private System.Windows.Forms.Panel pnlPortfolioRow1Col8;
         private System.Windows.Forms.Panel pnlPortfolioRow1Col9;
@@ -711,18 +882,9 @@
         private System.Windows.Forms.Panel pnlPortfolioRow2Col8;
         private System.Windows.Forms.Panel pnlPortfolioRow2Col9;
         private System.Windows.Forms.Panel pnlPortfolioRow2Col10;
-        private System.Windows.Forms.Panel pnlPortfolioRow3Col1;
-        private System.Windows.Forms.Panel pnlPortfolioRow3Col2;
-        private System.Windows.Forms.Panel pnlPortfolioRow3Col3;
-        private System.Windows.Forms.Panel pnlPortfolioRow3Col4;
-        private System.Windows.Forms.Panel pnlPortfolioRow3Col5;
-        private System.Windows.Forms.Panel pnlPortfolioRow3Col6;
         private System.Windows.Forms.Panel pnlPortfolioRow3Col7;
         private System.Windows.Forms.Panel pnlPortfolioRow3Col8;
         private System.Windows.Forms.Panel pnlPortfolioRow3Col9;
         private System.Windows.Forms.Panel pnlPortfolioRow3Col10;
-        private FormAssets.CustomLineGraph customLineGraph1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox cBoxPortfolio;
     }
 }

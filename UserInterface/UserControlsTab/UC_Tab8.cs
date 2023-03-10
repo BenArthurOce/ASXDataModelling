@@ -1,4 +1,4 @@
-﻿using DataReferenceLibrary.StoredProcs;
+﻿
 using DataReferenceLibrary;
 using System;
 using System.Collections.Generic;
@@ -203,14 +203,7 @@ namespace UserInterface.UserControlsTab
 
         private void Populate_flPanelTransactions(IEnumerable<TradingTransactionModel> filtered_transactions)
         {
-            foreach (var single_transaction in filtered_transactions)
-            {
-                TransactionPanel newCustomPanel = new TransactionPanel(single_transaction);
-                newCustomPanel.Width = flPanelTransactions.Width;
-                newCustomPanel.Dock = DockStyle.Top;
 
-                flPanelTransactions.Controls.Add(newCustomPanel);
-            }
         }
 
 
@@ -218,97 +211,6 @@ namespace UserInterface.UserControlsTab
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-
-            // Clear previous entries
-            flPanelTransactions.Controls.Clear();
-
-
-            // Leave Code if Portfolio ComboBox is Empty
-            if (string.IsNullOrWhiteSpace(cBoxPortfolio.Text))
-            {
-                MessageBox.Show("A Portfolio Must be selected before transactions can be generated");
-                return;
-            }
-
-
-            // Leave code if the SQL query returns an error and returns null
-            IEnumerable<zFullPortfolioModel> sql_results = QueryPortfolioTransactions();
-            if (sql_results == null)
-            {
-                MessageBox.Show("The SQL Query returned null before filters. Please check that your query / standardprocedure is correct");
-                return;
-            }
-
-
-            // Current sql_results are all the portfolios with all the transactions. Only obtain the one portfolio
-            zFullPortfolioModel selected_portfolio = sql_results.FirstOrDefault(portfolio => portfolio.Name == cBoxPortfolio.Text);
-
-
-            // Filter the transactions based on the controls on the transaction tab
-            IEnumerable<TradingTransactionModel> filtered_transactions = FilterTheTransactions(selected_portfolio.Transactions);
-
-
-            // Use the filtered transactions to populate the flow layout panel
-            Populate_flPanelTransactions(filtered_transactions);
-        }
-
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            dtpDateFrom.Text = null;
-            dtpDateTo.Text = null;
-            cboxType.Text = null;
-            cboxSector.Text = null;
-            tBoxASXCode.Text = null;
-            nTboxMinAmount.Text = null;
-            nTboxMaxAmount.Text = null;
-        }
-
-        private void dtpDateFrom_ValueChanged(object sender, EventArgs e)
-        {
-            if (((DateTimePicker)sender).ShowCheckBox == true)
-            {
-                if (((DateTimePicker)sender).Checked == false)
-                {
-                    ((DateTimePicker)sender).CustomFormat = " ";
-                    ((DateTimePicker)sender).Format = DateTimePickerFormat.Custom;
-                }
-                else
-                {
-                    ((DateTimePicker)sender).Format = DateTimePickerFormat.Short;
-                }
-            }
-            else
-            {
-                ((DateTimePicker)sender).Format = DateTimePickerFormat.Short;
-            }
-        }
-
-        private void dtpDateTo_ValueChanged(object sender, EventArgs e)
-        {
-            if (((DateTimePicker)sender).ShowCheckBox == true)
-            {
-                if (((DateTimePicker)sender).Checked == false)
-                {
-                    ((DateTimePicker)sender).CustomFormat = " ";
-                    ((DateTimePicker)sender).Format = DateTimePickerFormat.Custom;
-                }
-                else
-                {
-                    ((DateTimePicker)sender).Format = DateTimePickerFormat.Short;
-                }
-            }
-            else
-            {
-                ((DateTimePicker)sender).Format = DateTimePickerFormat.Short;
-            }
-        }
-
-        private void btnNewTransaction_Click(object sender, EventArgs e)
-        {
-            //Call the CreateNewTransactionForm
-            CreateNewTransactionForm transactionForm = new CreateNewTransactionForm(true);
-            transactionForm.Show();
         }
     }
 }

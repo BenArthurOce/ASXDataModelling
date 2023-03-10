@@ -1,5 +1,4 @@
-﻿using DataReferenceLibrary.StoredProcs;
-using DataReferenceLibrary;
+﻿using DataReferenceLibrary;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

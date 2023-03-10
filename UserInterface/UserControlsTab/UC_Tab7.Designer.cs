@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             this.tpnlInputsSinglePriceData = new System.Windows.Forms.TableLayoutPanel();
             this.pnlInputsCol8 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlInputsCol7 = new System.Windows.Forms.Panel();
             this.pnlInputsCol6 = new System.Windows.Forms.Panel();
             this.pnlInputsCol5 = new System.Windows.Forms.Panel();
@@ -50,10 +50,18 @@
             this.tlpTrendLinesRow2Col2 = new System.Windows.Forms.Panel();
             this.tlpTrendLinesRow2Col3 = new System.Windows.Forms.Panel();
             this.tlpTrendLinesRow2Col4 = new System.Windows.Forms.Panel();
-            this.lblHeaderSinglePriceData = new System.Windows.Forms.Label();
-            this.pnlHeaderSinglePriceData = new System.Windows.Forms.Panel();
             this.tlpPortfolioInformation = new System.Windows.Forms.TableLayoutPanel();
             this.pnlPortfolioRow1Col1 = new System.Windows.Forms.Panel();
+            this.pnlTableDesign = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlRow2Col1 = new System.Windows.Forms.Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.pnlRow1Col2 = new System.Windows.Forms.Panel();
+            this.gBoxrBtns = new System.Windows.Forms.GroupBox();
+            this.pnlRow1Col1 = new System.Windows.Forms.Panel();
+            this.pnlRow1Col8 = new System.Windows.Forms.Panel();
+            this.pnlRow1Col9 = new System.Windows.Forms.Panel();
+            this.pnlRow1Col10 = new System.Windows.Forms.Panel();
             this.pnlPortfolioRow1Col7 = new System.Windows.Forms.Panel();
             this.pnlPortfolioRow1Col8 = new System.Windows.Forms.Panel();
             this.pnlPortfolioRow1Col9 = new System.Windows.Forms.Panel();
@@ -72,32 +80,31 @@
             this.pnlPortfolioRow3Col8 = new System.Windows.Forms.Panel();
             this.pnlPortfolioRow3Col9 = new System.Windows.Forms.Panel();
             this.pnlPortfolioRow3Col10 = new System.Windows.Forms.Panel();
-            this.trendLinePanel1 = new UserInterface.FormAssets.TrendLinePanel();
-            this.trendLinePanel2 = new UserInterface.FormAssets.TrendLinePanel();
-            this.trendLinePanel3 = new UserInterface.FormAssets.TrendLinePanel();
-            this.trendLinePanel4 = new UserInterface.FormAssets.TrendLinePanel();
-            this.trendLinePanel5 = new UserInterface.FormAssets.TrendLinePanel();
-            this.trendLinePanel6 = new UserInterface.FormAssets.TrendLinePanel();
-            this.trendLinePanel7 = new UserInterface.FormAssets.TrendLinePanel();
-            this.trendLinePanel8 = new UserInterface.FormAssets.TrendLinePanel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lblHeaderSinglePriceData = new System.Windows.Forms.Label();
+            this.pnlHeaderSinglePriceData = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.radioButtonTab2 = new UserInterface.FormAssets.RadioButtonTab();
+            this.radioButtonTab1 = new UserInterface.FormAssets.RadioButtonTab();
+            this.radioButtonTab3 = new UserInterface.FormAssets.RadioButtonTab();
+            this.radioButtonTab4 = new UserInterface.FormAssets.RadioButtonTab();
             this.tpnlInputsSinglePriceData.SuspendLayout();
             this.pnlInputsCol8.SuspendLayout();
+            this.pnlInputsCol9.SuspendLayout();
+            this.pnlInputsCol10.SuspendLayout();
             this.pnlContainerSinglePriceData.SuspendLayout();
             this.tlpTrendLines.SuspendLayout();
-            this.tlpTrendLinesRow1Col1.SuspendLayout();
-            this.tlpTrendLinesRow1Col2.SuspendLayout();
-            this.tlpTrendLinesRow1Col3.SuspendLayout();
-            this.tlpTrendLinesRow1Col4.SuspendLayout();
-            this.tlpTrendLinesRow2Col1.SuspendLayout();
-            this.tlpTrendLinesRow2Col2.SuspendLayout();
-            this.tlpTrendLinesRow2Col3.SuspendLayout();
-            this.tlpTrendLinesRow2Col4.SuspendLayout();
-            this.pnlHeaderSinglePriceData.SuspendLayout();
             this.tlpPortfolioInformation.SuspendLayout();
             this.pnlPortfolioRow1Col1.SuspendLayout();
+            this.pnlTableDesign.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.pnlRow2Col1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.pnlRow1Col2.SuspendLayout();
+            this.gBoxrBtns.SuspendLayout();
+            this.pnlPortfolioRow1Col10.SuspendLayout();
+            this.pnlHeaderSinglePriceData.SuspendLayout();
             this.SuspendLayout();
             // 
             // tpnlInputsSinglePriceData
@@ -140,6 +147,16 @@
             this.pnlInputsCol8.Name = "pnlInputsCol8";
             this.pnlInputsCol8.Size = new System.Drawing.Size(83, 50);
             this.pnlInputsCol8.TabIndex = 8;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(4, 20);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pnlInputsCol7
             // 
@@ -206,6 +223,7 @@
             // 
             // pnlInputsCol9
             // 
+            this.pnlInputsCol9.Controls.Add(this.button2);
             this.pnlInputsCol9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlInputsCol9.Location = new System.Drawing.Point(834, 10);
             this.pnlInputsCol9.Margin = new System.Windows.Forms.Padding(10);
@@ -215,6 +233,7 @@
             // 
             // pnlInputsCol10
             // 
+            this.pnlInputsCol10.Controls.Add(this.button3);
             this.pnlInputsCol10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlInputsCol10.Location = new System.Drawing.Point(937, 10);
             this.pnlInputsCol10.Margin = new System.Windows.Forms.Padding(10);
@@ -250,107 +269,77 @@
             this.tlpTrendLines.Controls.Add(this.tlpTrendLinesRow2Col2, 1, 1);
             this.tlpTrendLines.Controls.Add(this.tlpTrendLinesRow2Col3, 2, 1);
             this.tlpTrendLines.Controls.Add(this.tlpTrendLinesRow2Col4, 3, 1);
-            this.tlpTrendLines.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tlpTrendLines.Location = new System.Drawing.Point(10, 315);
+            this.tlpTrendLines.Location = new System.Drawing.Point(10, 432);
             this.tlpTrendLines.Name = "tlpTrendLines";
             this.tlpTrendLines.RowCount = 2;
             this.tlpTrendLines.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpTrendLines.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpTrendLines.Size = new System.Drawing.Size(1030, 188);
+            this.tlpTrendLines.Size = new System.Drawing.Size(1030, 71);
             this.tlpTrendLines.TabIndex = 3;
             // 
             // tlpTrendLinesRow1Col1
             // 
-            this.tlpTrendLinesRow1Col1.Controls.Add(this.trendLinePanel1);
             this.tlpTrendLinesRow1Col1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpTrendLinesRow1Col1.Location = new System.Drawing.Point(3, 3);
             this.tlpTrendLinesRow1Col1.Name = "tlpTrendLinesRow1Col1";
-            this.tlpTrendLinesRow1Col1.Size = new System.Drawing.Size(251, 88);
+            this.tlpTrendLinesRow1Col1.Size = new System.Drawing.Size(251, 29);
             this.tlpTrendLinesRow1Col1.TabIndex = 0;
             // 
             // tlpTrendLinesRow1Col2
             // 
-            this.tlpTrendLinesRow1Col2.Controls.Add(this.trendLinePanel2);
             this.tlpTrendLinesRow1Col2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpTrendLinesRow1Col2.Location = new System.Drawing.Point(260, 3);
             this.tlpTrendLinesRow1Col2.Name = "tlpTrendLinesRow1Col2";
-            this.tlpTrendLinesRow1Col2.Size = new System.Drawing.Size(251, 88);
+            this.tlpTrendLinesRow1Col2.Size = new System.Drawing.Size(251, 29);
             this.tlpTrendLinesRow1Col2.TabIndex = 1;
             // 
             // tlpTrendLinesRow1Col3
             // 
-            this.tlpTrendLinesRow1Col3.Controls.Add(this.trendLinePanel3);
             this.tlpTrendLinesRow1Col3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpTrendLinesRow1Col3.Location = new System.Drawing.Point(517, 3);
             this.tlpTrendLinesRow1Col3.Name = "tlpTrendLinesRow1Col3";
-            this.tlpTrendLinesRow1Col3.Size = new System.Drawing.Size(251, 88);
+            this.tlpTrendLinesRow1Col3.Size = new System.Drawing.Size(251, 29);
             this.tlpTrendLinesRow1Col3.TabIndex = 2;
             // 
             // tlpTrendLinesRow1Col4
             // 
-            this.tlpTrendLinesRow1Col4.Controls.Add(this.trendLinePanel4);
             this.tlpTrendLinesRow1Col4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpTrendLinesRow1Col4.Location = new System.Drawing.Point(774, 3);
             this.tlpTrendLinesRow1Col4.Name = "tlpTrendLinesRow1Col4";
-            this.tlpTrendLinesRow1Col4.Size = new System.Drawing.Size(253, 88);
+            this.tlpTrendLinesRow1Col4.Size = new System.Drawing.Size(253, 29);
             this.tlpTrendLinesRow1Col4.TabIndex = 3;
             // 
             // tlpTrendLinesRow2Col1
             // 
-            this.tlpTrendLinesRow2Col1.Controls.Add(this.trendLinePanel5);
             this.tlpTrendLinesRow2Col1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTrendLinesRow2Col1.Location = new System.Drawing.Point(3, 97);
+            this.tlpTrendLinesRow2Col1.Location = new System.Drawing.Point(3, 38);
             this.tlpTrendLinesRow2Col1.Name = "tlpTrendLinesRow2Col1";
-            this.tlpTrendLinesRow2Col1.Size = new System.Drawing.Size(251, 88);
+            this.tlpTrendLinesRow2Col1.Size = new System.Drawing.Size(251, 30);
             this.tlpTrendLinesRow2Col1.TabIndex = 4;
             // 
             // tlpTrendLinesRow2Col2
             // 
-            this.tlpTrendLinesRow2Col2.Controls.Add(this.trendLinePanel6);
             this.tlpTrendLinesRow2Col2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTrendLinesRow2Col2.Location = new System.Drawing.Point(260, 97);
+            this.tlpTrendLinesRow2Col2.Location = new System.Drawing.Point(260, 38);
             this.tlpTrendLinesRow2Col2.Name = "tlpTrendLinesRow2Col2";
-            this.tlpTrendLinesRow2Col2.Size = new System.Drawing.Size(251, 88);
+            this.tlpTrendLinesRow2Col2.Size = new System.Drawing.Size(251, 30);
             this.tlpTrendLinesRow2Col2.TabIndex = 5;
             // 
             // tlpTrendLinesRow2Col3
             // 
-            this.tlpTrendLinesRow2Col3.Controls.Add(this.trendLinePanel7);
             this.tlpTrendLinesRow2Col3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTrendLinesRow2Col3.Location = new System.Drawing.Point(517, 97);
+            this.tlpTrendLinesRow2Col3.Location = new System.Drawing.Point(517, 38);
             this.tlpTrendLinesRow2Col3.Name = "tlpTrendLinesRow2Col3";
-            this.tlpTrendLinesRow2Col3.Size = new System.Drawing.Size(251, 88);
+            this.tlpTrendLinesRow2Col3.Size = new System.Drawing.Size(251, 30);
             this.tlpTrendLinesRow2Col3.TabIndex = 6;
             // 
             // tlpTrendLinesRow2Col4
             // 
-            this.tlpTrendLinesRow2Col4.Controls.Add(this.trendLinePanel8);
             this.tlpTrendLinesRow2Col4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTrendLinesRow2Col4.Location = new System.Drawing.Point(774, 97);
+            this.tlpTrendLinesRow2Col4.Location = new System.Drawing.Point(774, 38);
             this.tlpTrendLinesRow2Col4.Name = "tlpTrendLinesRow2Col4";
-            this.tlpTrendLinesRow2Col4.Size = new System.Drawing.Size(253, 88);
+            this.tlpTrendLinesRow2Col4.Size = new System.Drawing.Size(253, 30);
             this.tlpTrendLinesRow2Col4.TabIndex = 7;
-            // 
-            // lblHeaderSinglePriceData
-            // 
-            this.lblHeaderSinglePriceData.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblHeaderSinglePriceData.AutoSize = true;
-            this.lblHeaderSinglePriceData.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeaderSinglePriceData.Location = new System.Drawing.Point(431, 21);
-            this.lblHeaderSinglePriceData.Name = "lblHeaderSinglePriceData";
-            this.lblHeaderSinglePriceData.Size = new System.Drawing.Size(248, 25);
-            this.lblHeaderSinglePriceData.TabIndex = 0;
-            this.lblHeaderSinglePriceData.Text = "Tab4 Draft Portfolio Display";
-            // 
-            // pnlHeaderSinglePriceData
-            // 
-            this.pnlHeaderSinglePriceData.BackColor = System.Drawing.Color.White;
-            this.pnlHeaderSinglePriceData.Controls.Add(this.lblHeaderSinglePriceData);
-            this.pnlHeaderSinglePriceData.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeaderSinglePriceData.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeaderSinglePriceData.Name = "pnlHeaderSinglePriceData";
-            this.pnlHeaderSinglePriceData.Size = new System.Drawing.Size(1050, 65);
-            this.pnlHeaderSinglePriceData.TabIndex = 12;
             // 
             // tlpPortfolioInformation
             // 
@@ -391,26 +380,142 @@
             this.tlpPortfolioInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tlpPortfolioInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tlpPortfolioInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpPortfolioInformation.Size = new System.Drawing.Size(1030, 235);
+            this.tlpPortfolioInformation.Size = new System.Drawing.Size(1030, 327);
             this.tlpPortfolioInformation.TabIndex = 2;
             // 
             // pnlPortfolioRow1Col1
             // 
             this.tlpPortfolioInformation.SetColumnSpan(this.pnlPortfolioRow1Col1, 6);
-            this.pnlPortfolioRow1Col1.Controls.Add(this.chart1);
+            this.pnlPortfolioRow1Col1.Controls.Add(this.pnlTableDesign);
             this.pnlPortfolioRow1Col1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPortfolioRow1Col1.Location = new System.Drawing.Point(3, 3);
             this.pnlPortfolioRow1Col1.Name = "pnlPortfolioRow1Col1";
             this.tlpPortfolioInformation.SetRowSpan(this.pnlPortfolioRow1Col1, 2);
-            this.pnlPortfolioRow1Col1.Size = new System.Drawing.Size(612, 182);
+            this.pnlPortfolioRow1Col1.Size = new System.Drawing.Size(612, 254);
             this.pnlPortfolioRow1Col1.TabIndex = 0;
+            // 
+            // pnlTableDesign
+            // 
+            this.pnlTableDesign.BackColor = System.Drawing.Color.RosyBrown;
+            this.pnlTableDesign.Controls.Add(this.tableLayoutPanel1);
+            this.pnlTableDesign.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTableDesign.Location = new System.Drawing.Point(0, 0);
+            this.pnlTableDesign.Name = "pnlTableDesign";
+            this.pnlTableDesign.Size = new System.Drawing.Size(612, 254);
+            this.pnlTableDesign.TabIndex = 0;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 10;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.Controls.Add(this.pnlRow1Col1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pnlRow1Col2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pnlRow1Col8, 7, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pnlRow1Col9, 8, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pnlRow1Col10, 9, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pnlRow2Col1, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(612, 254);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // pnlRow2Col1
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.pnlRow2Col1, 10);
+            this.pnlRow2Col1.Controls.Add(this.chart1);
+            this.pnlRow2Col1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRow2Col1.Location = new System.Drawing.Point(3, 53);
+            this.pnlRow2Col1.Name = "pnlRow2Col1";
+            this.pnlRow2Col1.Size = new System.Drawing.Size(606, 198);
+            this.pnlRow2Col1.TabIndex = 10;
+            // 
+            // chart1
+            // 
+            this.chart1.BackColor = System.Drawing.Color.Black;
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chart1.Location = new System.Drawing.Point(0, 0);
+            this.chart1.Margin = new System.Windows.Forms.Padding(0);
+            this.chart1.Name = "chart1";
+            this.chart1.Size = new System.Drawing.Size(606, 198);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            // 
+            // pnlRow1Col2
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.pnlRow1Col2, 6);
+            this.pnlRow1Col2.Controls.Add(this.gBoxrBtns);
+            this.pnlRow1Col2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRow1Col2.Location = new System.Drawing.Point(64, 3);
+            this.pnlRow1Col2.Name = "pnlRow1Col2";
+            this.pnlRow1Col2.Size = new System.Drawing.Size(360, 44);
+            this.pnlRow1Col2.TabIndex = 1;
+            // 
+            // gBoxrBtns
+            // 
+            this.gBoxrBtns.Controls.Add(this.radioButtonTab4);
+            this.gBoxrBtns.Controls.Add(this.radioButtonTab3);
+            this.gBoxrBtns.Controls.Add(this.radioButtonTab2);
+            this.gBoxrBtns.Controls.Add(this.radioButtonTab1);
+            this.gBoxrBtns.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gBoxrBtns.Location = new System.Drawing.Point(0, 0);
+            this.gBoxrBtns.Margin = new System.Windows.Forms.Padding(0);
+            this.gBoxrBtns.Name = "gBoxrBtns";
+            this.gBoxrBtns.Padding = new System.Windows.Forms.Padding(0);
+            this.gBoxrBtns.Size = new System.Drawing.Size(360, 44);
+            this.gBoxrBtns.TabIndex = 0;
+            this.gBoxrBtns.TabStop = false;
+            // 
+            // pnlRow1Col1
+            // 
+            this.pnlRow1Col1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRow1Col1.Location = new System.Drawing.Point(3, 3);
+            this.pnlRow1Col1.Name = "pnlRow1Col1";
+            this.pnlRow1Col1.Size = new System.Drawing.Size(55, 44);
+            this.pnlRow1Col1.TabIndex = 0;
+            // 
+            // pnlRow1Col8
+            // 
+            this.pnlRow1Col8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRow1Col8.Location = new System.Drawing.Point(430, 3);
+            this.pnlRow1Col8.Name = "pnlRow1Col8";
+            this.pnlRow1Col8.Size = new System.Drawing.Size(55, 44);
+            this.pnlRow1Col8.TabIndex = 7;
+            // 
+            // pnlRow1Col9
+            // 
+            this.pnlRow1Col9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRow1Col9.Location = new System.Drawing.Point(491, 3);
+            this.pnlRow1Col9.Name = "pnlRow1Col9";
+            this.pnlRow1Col9.Size = new System.Drawing.Size(55, 44);
+            this.pnlRow1Col9.TabIndex = 8;
+            // 
+            // pnlRow1Col10
+            // 
+            this.pnlRow1Col10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRow1Col10.Location = new System.Drawing.Point(552, 3);
+            this.pnlRow1Col10.Name = "pnlRow1Col10";
+            this.pnlRow1Col10.Size = new System.Drawing.Size(57, 44);
+            this.pnlRow1Col10.TabIndex = 9;
             // 
             // pnlPortfolioRow1Col7
             // 
             this.pnlPortfolioRow1Col7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPortfolioRow1Col7.Location = new System.Drawing.Point(621, 3);
             this.pnlPortfolioRow1Col7.Name = "pnlPortfolioRow1Col7";
-            this.pnlPortfolioRow1Col7.Size = new System.Drawing.Size(97, 88);
+            this.pnlPortfolioRow1Col7.Size = new System.Drawing.Size(97, 124);
             this.pnlPortfolioRow1Col7.TabIndex = 6;
             // 
             // pnlPortfolioRow1Col8
@@ -418,7 +523,7 @@
             this.pnlPortfolioRow1Col8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPortfolioRow1Col8.Location = new System.Drawing.Point(724, 3);
             this.pnlPortfolioRow1Col8.Name = "pnlPortfolioRow1Col8";
-            this.pnlPortfolioRow1Col8.Size = new System.Drawing.Size(97, 88);
+            this.pnlPortfolioRow1Col8.Size = new System.Drawing.Size(97, 124);
             this.pnlPortfolioRow1Col8.TabIndex = 7;
             // 
             // pnlPortfolioRow1Col9
@@ -426,221 +531,276 @@
             this.pnlPortfolioRow1Col9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPortfolioRow1Col9.Location = new System.Drawing.Point(827, 3);
             this.pnlPortfolioRow1Col9.Name = "pnlPortfolioRow1Col9";
-            this.pnlPortfolioRow1Col9.Size = new System.Drawing.Size(97, 88);
+            this.pnlPortfolioRow1Col9.Size = new System.Drawing.Size(97, 124);
             this.pnlPortfolioRow1Col9.TabIndex = 8;
             // 
             // pnlPortfolioRow1Col10
             // 
+            this.pnlPortfolioRow1Col10.Controls.Add(this.button4);
             this.pnlPortfolioRow1Col10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPortfolioRow1Col10.Location = new System.Drawing.Point(930, 3);
             this.pnlPortfolioRow1Col10.Name = "pnlPortfolioRow1Col10";
-            this.pnlPortfolioRow1Col10.Size = new System.Drawing.Size(97, 88);
+            this.pnlPortfolioRow1Col10.Size = new System.Drawing.Size(97, 124);
             this.pnlPortfolioRow1Col10.TabIndex = 9;
             // 
             // pnlPortfolioRow2Col7
             // 
             this.pnlPortfolioRow2Col7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPortfolioRow2Col7.Location = new System.Drawing.Point(621, 97);
+            this.pnlPortfolioRow2Col7.Location = new System.Drawing.Point(621, 133);
             this.pnlPortfolioRow2Col7.Name = "pnlPortfolioRow2Col7";
-            this.pnlPortfolioRow2Col7.Size = new System.Drawing.Size(97, 88);
+            this.pnlPortfolioRow2Col7.Size = new System.Drawing.Size(97, 124);
             this.pnlPortfolioRow2Col7.TabIndex = 16;
             // 
             // pnlPortfolioRow2Col8
             // 
             this.pnlPortfolioRow2Col8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPortfolioRow2Col8.Location = new System.Drawing.Point(724, 97);
+            this.pnlPortfolioRow2Col8.Location = new System.Drawing.Point(724, 133);
             this.pnlPortfolioRow2Col8.Name = "pnlPortfolioRow2Col8";
-            this.pnlPortfolioRow2Col8.Size = new System.Drawing.Size(97, 88);
+            this.pnlPortfolioRow2Col8.Size = new System.Drawing.Size(97, 124);
             this.pnlPortfolioRow2Col8.TabIndex = 17;
             // 
             // pnlPortfolioRow2Col9
             // 
             this.pnlPortfolioRow2Col9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPortfolioRow2Col9.Location = new System.Drawing.Point(827, 97);
+            this.pnlPortfolioRow2Col9.Location = new System.Drawing.Point(827, 133);
             this.pnlPortfolioRow2Col9.Name = "pnlPortfolioRow2Col9";
-            this.pnlPortfolioRow2Col9.Size = new System.Drawing.Size(97, 88);
+            this.pnlPortfolioRow2Col9.Size = new System.Drawing.Size(97, 124);
             this.pnlPortfolioRow2Col9.TabIndex = 18;
             // 
             // pnlPortfolioRow2Col10
             // 
             this.pnlPortfolioRow2Col10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPortfolioRow2Col10.Location = new System.Drawing.Point(930, 97);
+            this.pnlPortfolioRow2Col10.Location = new System.Drawing.Point(930, 133);
             this.pnlPortfolioRow2Col10.Name = "pnlPortfolioRow2Col10";
-            this.pnlPortfolioRow2Col10.Size = new System.Drawing.Size(97, 88);
+            this.pnlPortfolioRow2Col10.Size = new System.Drawing.Size(97, 124);
             this.pnlPortfolioRow2Col10.TabIndex = 19;
             // 
             // pnlPortfolioRow3Col1
             // 
             this.pnlPortfolioRow3Col1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPortfolioRow3Col1.Location = new System.Drawing.Point(3, 191);
+            this.pnlPortfolioRow3Col1.Location = new System.Drawing.Point(3, 263);
             this.pnlPortfolioRow3Col1.Name = "pnlPortfolioRow3Col1";
-            this.pnlPortfolioRow3Col1.Size = new System.Drawing.Size(97, 41);
+            this.pnlPortfolioRow3Col1.Size = new System.Drawing.Size(97, 61);
             this.pnlPortfolioRow3Col1.TabIndex = 20;
             // 
             // pnlPortfolioRow3Col2
             // 
             this.pnlPortfolioRow3Col2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPortfolioRow3Col2.Location = new System.Drawing.Point(106, 191);
+            this.pnlPortfolioRow3Col2.Location = new System.Drawing.Point(106, 263);
             this.pnlPortfolioRow3Col2.Name = "pnlPortfolioRow3Col2";
-            this.pnlPortfolioRow3Col2.Size = new System.Drawing.Size(97, 41);
+            this.pnlPortfolioRow3Col2.Size = new System.Drawing.Size(97, 61);
             this.pnlPortfolioRow3Col2.TabIndex = 21;
             // 
             // pnlPortfolioRow3Col3
             // 
             this.pnlPortfolioRow3Col3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPortfolioRow3Col3.Location = new System.Drawing.Point(209, 191);
+            this.pnlPortfolioRow3Col3.Location = new System.Drawing.Point(209, 263);
             this.pnlPortfolioRow3Col3.Name = "pnlPortfolioRow3Col3";
-            this.pnlPortfolioRow3Col3.Size = new System.Drawing.Size(97, 41);
+            this.pnlPortfolioRow3Col3.Size = new System.Drawing.Size(97, 61);
             this.pnlPortfolioRow3Col3.TabIndex = 22;
             // 
             // pnlPortfolioRow3Col4
             // 
             this.pnlPortfolioRow3Col4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPortfolioRow3Col4.Location = new System.Drawing.Point(312, 191);
+            this.pnlPortfolioRow3Col4.Location = new System.Drawing.Point(312, 263);
             this.pnlPortfolioRow3Col4.Name = "pnlPortfolioRow3Col4";
-            this.pnlPortfolioRow3Col4.Size = new System.Drawing.Size(97, 41);
+            this.pnlPortfolioRow3Col4.Size = new System.Drawing.Size(97, 61);
             this.pnlPortfolioRow3Col4.TabIndex = 23;
             // 
             // pnlPortfolioRow3Col5
             // 
             this.pnlPortfolioRow3Col5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPortfolioRow3Col5.Location = new System.Drawing.Point(415, 191);
+            this.pnlPortfolioRow3Col5.Location = new System.Drawing.Point(415, 263);
             this.pnlPortfolioRow3Col5.Name = "pnlPortfolioRow3Col5";
-            this.pnlPortfolioRow3Col5.Size = new System.Drawing.Size(97, 41);
+            this.pnlPortfolioRow3Col5.Size = new System.Drawing.Size(97, 61);
             this.pnlPortfolioRow3Col5.TabIndex = 24;
             // 
             // pnlPortfolioRow3Col6
             // 
             this.pnlPortfolioRow3Col6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPortfolioRow3Col6.Location = new System.Drawing.Point(518, 191);
+            this.pnlPortfolioRow3Col6.Location = new System.Drawing.Point(518, 263);
             this.pnlPortfolioRow3Col6.Name = "pnlPortfolioRow3Col6";
-            this.pnlPortfolioRow3Col6.Size = new System.Drawing.Size(97, 41);
+            this.pnlPortfolioRow3Col6.Size = new System.Drawing.Size(97, 61);
             this.pnlPortfolioRow3Col6.TabIndex = 25;
             // 
             // pnlPortfolioRow3Col7
             // 
             this.pnlPortfolioRow3Col7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPortfolioRow3Col7.Location = new System.Drawing.Point(621, 191);
+            this.pnlPortfolioRow3Col7.Location = new System.Drawing.Point(621, 263);
             this.pnlPortfolioRow3Col7.Name = "pnlPortfolioRow3Col7";
-            this.pnlPortfolioRow3Col7.Size = new System.Drawing.Size(97, 41);
+            this.pnlPortfolioRow3Col7.Size = new System.Drawing.Size(97, 61);
             this.pnlPortfolioRow3Col7.TabIndex = 26;
             // 
             // pnlPortfolioRow3Col8
             // 
             this.pnlPortfolioRow3Col8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPortfolioRow3Col8.Location = new System.Drawing.Point(724, 191);
+            this.pnlPortfolioRow3Col8.Location = new System.Drawing.Point(724, 263);
             this.pnlPortfolioRow3Col8.Name = "pnlPortfolioRow3Col8";
-            this.pnlPortfolioRow3Col8.Size = new System.Drawing.Size(97, 41);
+            this.pnlPortfolioRow3Col8.Size = new System.Drawing.Size(97, 61);
             this.pnlPortfolioRow3Col8.TabIndex = 27;
             // 
             // pnlPortfolioRow3Col9
             // 
             this.pnlPortfolioRow3Col9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPortfolioRow3Col9.Location = new System.Drawing.Point(827, 191);
+            this.pnlPortfolioRow3Col9.Location = new System.Drawing.Point(827, 263);
             this.pnlPortfolioRow3Col9.Name = "pnlPortfolioRow3Col9";
-            this.pnlPortfolioRow3Col9.Size = new System.Drawing.Size(97, 41);
+            this.pnlPortfolioRow3Col9.Size = new System.Drawing.Size(97, 61);
             this.pnlPortfolioRow3Col9.TabIndex = 28;
             // 
             // pnlPortfolioRow3Col10
             // 
             this.pnlPortfolioRow3Col10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPortfolioRow3Col10.Location = new System.Drawing.Point(930, 191);
+            this.pnlPortfolioRow3Col10.Location = new System.Drawing.Point(930, 263);
             this.pnlPortfolioRow3Col10.Name = "pnlPortfolioRow3Col10";
-            this.pnlPortfolioRow3Col10.Size = new System.Drawing.Size(97, 41);
+            this.pnlPortfolioRow3Col10.Size = new System.Drawing.Size(97, 61);
             this.pnlPortfolioRow3Col10.TabIndex = 29;
             // 
-            // trendLinePanel1
+            // lblHeaderSinglePriceData
             // 
-            this.trendLinePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trendLinePanel1.LabelText = "aa";
-            this.trendLinePanel1.Location = new System.Drawing.Point(0, 0);
-            this.trendLinePanel1.Name = "trendLinePanel1";
-            this.trendLinePanel1.Size = new System.Drawing.Size(251, 88);
-            this.trendLinePanel1.TabIndex = 0;
+            this.lblHeaderSinglePriceData.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblHeaderSinglePriceData.AutoSize = true;
+            this.lblHeaderSinglePriceData.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeaderSinglePriceData.Location = new System.Drawing.Point(431, 21);
+            this.lblHeaderSinglePriceData.Name = "lblHeaderSinglePriceData";
+            this.lblHeaderSinglePriceData.Size = new System.Drawing.Size(248, 25);
+            this.lblHeaderSinglePriceData.TabIndex = 0;
+            this.lblHeaderSinglePriceData.Text = "Tab4 Draft Portfolio Display";
             // 
-            // trendLinePanel2
+            // pnlHeaderSinglePriceData
             // 
-            this.trendLinePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trendLinePanel2.LabelText = "bb";
-            this.trendLinePanel2.Location = new System.Drawing.Point(0, 0);
-            this.trendLinePanel2.Name = "trendLinePanel2";
-            this.trendLinePanel2.Size = new System.Drawing.Size(251, 88);
-            this.trendLinePanel2.TabIndex = 0;
+            this.pnlHeaderSinglePriceData.BackColor = System.Drawing.Color.White;
+            this.pnlHeaderSinglePriceData.Controls.Add(this.lblHeaderSinglePriceData);
+            this.pnlHeaderSinglePriceData.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeaderSinglePriceData.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeaderSinglePriceData.Name = "pnlHeaderSinglePriceData";
+            this.pnlHeaderSinglePriceData.Size = new System.Drawing.Size(1050, 65);
+            this.pnlHeaderSinglePriceData.TabIndex = 12;
             // 
-            // trendLinePanel3
+            // button2
             // 
-            this.trendLinePanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trendLinePanel3.LabelText = "cc";
-            this.trendLinePanel3.Location = new System.Drawing.Point(0, 0);
-            this.trendLinePanel3.Name = "trendLinePanel3";
-            this.trendLinePanel3.Size = new System.Drawing.Size(251, 88);
-            this.trendLinePanel3.TabIndex = 0;
+            this.button2.Location = new System.Drawing.Point(5, 20);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // trendLinePanel4
+            // button3
             // 
-            this.trendLinePanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trendLinePanel4.LabelText = "dd";
-            this.trendLinePanel4.Location = new System.Drawing.Point(0, 0);
-            this.trendLinePanel4.Name = "trendLinePanel4";
-            this.trendLinePanel4.Size = new System.Drawing.Size(253, 88);
-            this.trendLinePanel4.TabIndex = 0;
+            this.button3.Location = new System.Drawing.Point(4, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // trendLinePanel5
+            // button4
             // 
-            this.trendLinePanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trendLinePanel5.LabelText = "ee";
-            this.trendLinePanel5.Location = new System.Drawing.Point(0, 0);
-            this.trendLinePanel5.Name = "trendLinePanel5";
-            this.trendLinePanel5.Size = new System.Drawing.Size(251, 88);
-            this.trendLinePanel5.TabIndex = 0;
+            this.button4.Location = new System.Drawing.Point(11, 45);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // trendLinePanel6
+            // radioButtonTab2
             // 
-            this.trendLinePanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trendLinePanel6.LabelText = "ff";
-            this.trendLinePanel6.Location = new System.Drawing.Point(0, 0);
-            this.trendLinePanel6.Name = "trendLinePanel6";
-            this.trendLinePanel6.Size = new System.Drawing.Size(251, 88);
-            this.trendLinePanel6.TabIndex = 0;
+            this.radioButtonTab2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonTab2.ColorMouseHovorOff = System.Drawing.Color.LightBlue;
+            this.radioButtonTab2.ColorMouseHovorOn = System.Drawing.Color.LightGray;
+            this.radioButtonTab2.ColourMouseClick = System.Drawing.Color.SteelBlue;
+            this.radioButtonTab2.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.radioButtonTab2.FlatAppearance.BorderSize = 90;
+            this.radioButtonTab2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.radioButtonTab2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.radioButtonTab2.ForeColor = System.Drawing.Color.Black;
+            this.radioButtonTab2.Location = new System.Drawing.Point(90, 11);
+            this.radioButtonTab2.Margin = new System.Windows.Forms.Padding(5);
+            this.radioButtonTab2.MinimumSize = new System.Drawing.Size(20, 30);
+            this.radioButtonTab2.Name = "radioButtonTab2";
+            this.radioButtonTab2.Padding = new System.Windows.Forms.Padding(10);
+            this.radioButtonTab2.Size = new System.Drawing.Size(75, 30);
+            this.radioButtonTab2.TabIndex = 1;
+            this.radioButtonTab2.TabStop = true;
+            this.radioButtonTab2.Text = "6 Months";
+            this.radioButtonTab2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButtonTab2.TextForeColor = System.Drawing.Color.Black;
+            this.radioButtonTab2.UseVisualStyleBackColor = true;
             // 
-            // trendLinePanel7
+            // radioButtonTab1
             // 
-            this.trendLinePanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trendLinePanel7.LabelText = "gg";
-            this.trendLinePanel7.Location = new System.Drawing.Point(0, 0);
-            this.trendLinePanel7.Name = "trendLinePanel7";
-            this.trendLinePanel7.Size = new System.Drawing.Size(251, 88);
-            this.trendLinePanel7.TabIndex = 0;
+            this.radioButtonTab1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonTab1.ColorMouseHovorOff = System.Drawing.Color.LightBlue;
+            this.radioButtonTab1.ColorMouseHovorOn = System.Drawing.Color.LightGray;
+            this.radioButtonTab1.ColourMouseClick = System.Drawing.Color.SteelBlue;
+            this.radioButtonTab1.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.radioButtonTab1.FlatAppearance.BorderSize = 90;
+            this.radioButtonTab1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.radioButtonTab1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.radioButtonTab1.ForeColor = System.Drawing.Color.Black;
+            this.radioButtonTab1.Location = new System.Drawing.Point(5, 11);
+            this.radioButtonTab1.Margin = new System.Windows.Forms.Padding(5);
+            this.radioButtonTab1.MinimumSize = new System.Drawing.Size(20, 30);
+            this.radioButtonTab1.Name = "radioButtonTab1";
+            this.radioButtonTab1.Padding = new System.Windows.Forms.Padding(10);
+            this.radioButtonTab1.Size = new System.Drawing.Size(75, 30);
+            this.radioButtonTab1.TabIndex = 0;
+            this.radioButtonTab1.TabStop = true;
+            this.radioButtonTab1.Text = "1 Month";
+            this.radioButtonTab1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButtonTab1.TextForeColor = System.Drawing.Color.Black;
+            this.radioButtonTab1.UseVisualStyleBackColor = true;
             // 
-            // trendLinePanel8
+            // radioButtonTab3
             // 
-            this.trendLinePanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trendLinePanel8.LabelText = "hh";
-            this.trendLinePanel8.Location = new System.Drawing.Point(0, 0);
-            this.trendLinePanel8.Name = "trendLinePanel8";
-            this.trendLinePanel8.Size = new System.Drawing.Size(253, 88);
-            this.trendLinePanel8.TabIndex = 0;
+            this.radioButtonTab3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonTab3.ColorMouseHovorOff = System.Drawing.Color.LightBlue;
+            this.radioButtonTab3.ColorMouseHovorOn = System.Drawing.Color.LightGray;
+            this.radioButtonTab3.ColourMouseClick = System.Drawing.Color.SteelBlue;
+            this.radioButtonTab3.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.radioButtonTab3.FlatAppearance.BorderSize = 90;
+            this.radioButtonTab3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.radioButtonTab3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.radioButtonTab3.ForeColor = System.Drawing.Color.Black;
+            this.radioButtonTab3.Location = new System.Drawing.Point(175, 11);
+            this.radioButtonTab3.Margin = new System.Windows.Forms.Padding(5);
+            this.radioButtonTab3.MinimumSize = new System.Drawing.Size(20, 30);
+            this.radioButtonTab3.Name = "radioButtonTab3";
+            this.radioButtonTab3.Padding = new System.Windows.Forms.Padding(10);
+            this.radioButtonTab3.Size = new System.Drawing.Size(75, 30);
+            this.radioButtonTab3.TabIndex = 2;
+            this.radioButtonTab3.TabStop = true;
+            this.radioButtonTab3.Text = "1 Year";
+            this.radioButtonTab3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButtonTab3.TextForeColor = System.Drawing.Color.Black;
+            this.radioButtonTab3.UseVisualStyleBackColor = true;
             // 
-            // chart1
+            // radioButtonTab4
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chart1.Location = new System.Drawing.Point(0, 0);
-            this.chart1.Name = "chart1";
-            this.chart1.Size = new System.Drawing.Size(612, 182);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(4, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.radioButtonTab4.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonTab4.ColorMouseHovorOff = System.Drawing.Color.LightBlue;
+            this.radioButtonTab4.ColorMouseHovorOn = System.Drawing.Color.LightGray;
+            this.radioButtonTab4.ColourMouseClick = System.Drawing.Color.SteelBlue;
+            this.radioButtonTab4.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.radioButtonTab4.FlatAppearance.BorderSize = 90;
+            this.radioButtonTab4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.radioButtonTab4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.radioButtonTab4.ForeColor = System.Drawing.Color.Black;
+            this.radioButtonTab4.Location = new System.Drawing.Point(262, 11);
+            this.radioButtonTab4.Margin = new System.Windows.Forms.Padding(5);
+            this.radioButtonTab4.MinimumSize = new System.Drawing.Size(20, 30);
+            this.radioButtonTab4.Name = "radioButtonTab4";
+            this.radioButtonTab4.Padding = new System.Windows.Forms.Padding(10);
+            this.radioButtonTab4.Size = new System.Drawing.Size(75, 30);
+            this.radioButtonTab4.TabIndex = 3;
+            this.radioButtonTab4.TabStop = true;
+            this.radioButtonTab4.Text = "2 Years";
+            this.radioButtonTab4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButtonTab4.TextForeColor = System.Drawing.Color.Black;
+            this.radioButtonTab4.UseVisualStyleBackColor = true;
             // 
             // UC_Tab7
             // 
@@ -652,21 +812,21 @@
             this.Size = new System.Drawing.Size(1050, 640);
             this.tpnlInputsSinglePriceData.ResumeLayout(false);
             this.pnlInputsCol8.ResumeLayout(false);
+            this.pnlInputsCol9.ResumeLayout(false);
+            this.pnlInputsCol10.ResumeLayout(false);
             this.pnlContainerSinglePriceData.ResumeLayout(false);
             this.tlpTrendLines.ResumeLayout(false);
-            this.tlpTrendLinesRow1Col1.ResumeLayout(false);
-            this.tlpTrendLinesRow1Col2.ResumeLayout(false);
-            this.tlpTrendLinesRow1Col3.ResumeLayout(false);
-            this.tlpTrendLinesRow1Col4.ResumeLayout(false);
-            this.tlpTrendLinesRow2Col1.ResumeLayout(false);
-            this.tlpTrendLinesRow2Col2.ResumeLayout(false);
-            this.tlpTrendLinesRow2Col3.ResumeLayout(false);
-            this.tlpTrendLinesRow2Col4.ResumeLayout(false);
-            this.pnlHeaderSinglePriceData.ResumeLayout(false);
-            this.pnlHeaderSinglePriceData.PerformLayout();
             this.tlpPortfolioInformation.ResumeLayout(false);
             this.pnlPortfolioRow1Col1.ResumeLayout(false);
+            this.pnlTableDesign.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.pnlRow2Col1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.pnlRow1Col2.ResumeLayout(false);
+            this.gBoxrBtns.ResumeLayout(false);
+            this.pnlPortfolioRow1Col10.ResumeLayout(false);
+            this.pnlHeaderSinglePriceData.ResumeLayout(false);
+            this.pnlHeaderSinglePriceData.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -688,21 +848,13 @@
         private System.Windows.Forms.Panel pnlInputsCol10;
         private System.Windows.Forms.TableLayoutPanel tlpTrendLines;
         private System.Windows.Forms.Panel tlpTrendLinesRow1Col1;
-        private FormAssets.TrendLinePanel trendLinePanel1;
         private System.Windows.Forms.Panel tlpTrendLinesRow1Col2;
-        private FormAssets.TrendLinePanel trendLinePanel2;
         private System.Windows.Forms.Panel tlpTrendLinesRow1Col3;
-        private FormAssets.TrendLinePanel trendLinePanel3;
         private System.Windows.Forms.Panel tlpTrendLinesRow1Col4;
-        private FormAssets.TrendLinePanel trendLinePanel4;
         private System.Windows.Forms.Panel tlpTrendLinesRow2Col1;
-        private FormAssets.TrendLinePanel trendLinePanel5;
         private System.Windows.Forms.Panel tlpTrendLinesRow2Col2;
-        private FormAssets.TrendLinePanel trendLinePanel6;
         private System.Windows.Forms.Panel tlpTrendLinesRow2Col3;
-        private FormAssets.TrendLinePanel trendLinePanel7;
         private System.Windows.Forms.Panel tlpTrendLinesRow2Col4;
-        private FormAssets.TrendLinePanel trendLinePanel8;
         private System.Windows.Forms.TableLayoutPanel tlpPortfolioInformation;
         private System.Windows.Forms.Panel pnlPortfolioRow1Col1;
         private System.Windows.Forms.Panel pnlPortfolioRow1Col7;
@@ -724,6 +876,22 @@
         private System.Windows.Forms.Panel pnlPortfolioRow3Col9;
         private System.Windows.Forms.Panel pnlPortfolioRow3Col10;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel pnlTableDesign;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel pnlRow1Col1;
+        private System.Windows.Forms.Panel pnlRow1Col2;
+        private System.Windows.Forms.GroupBox gBoxrBtns;
+        private FormAssets.RadioButtonTab radioButtonTab2;
+        private FormAssets.RadioButtonTab radioButtonTab1;
+        private System.Windows.Forms.Panel pnlRow1Col8;
+        private System.Windows.Forms.Panel pnlRow1Col9;
+        private System.Windows.Forms.Panel pnlRow1Col10;
+        private System.Windows.Forms.Panel pnlRow2Col1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private FormAssets.RadioButtonTab radioButtonTab4;
+        private FormAssets.RadioButtonTab radioButtonTab3;
     }
 }

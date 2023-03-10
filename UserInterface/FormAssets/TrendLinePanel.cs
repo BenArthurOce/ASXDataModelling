@@ -32,17 +32,6 @@ namespace UserInterface.FormAssets
 
 
 
-
-
-
-
-
-
-
-
-
-
-
         private TableLayoutPanel tableLayoutPanel1;
         private Panel pnlTrendLineRow2Col1;
         //private Label lblASXcode;
@@ -143,24 +132,6 @@ namespace UserInterface.FormAssets
                 Color = Color.White
             };
 
-
-            List<KeyValuePair<double, double>> data = new List<KeyValuePair<double, double>>();
-            data.Add(new KeyValuePair<double, double>(1, 1));
-            data.Add(new KeyValuePair<double, double>(2, 5));
-            data.Add(new KeyValuePair<double, double>(3, 2));
-            data.Add(new KeyValuePair<double, double>(4, 6));
-            data.Add(new KeyValuePair<double, double>(5, 3));
-            data.Add(new KeyValuePair<double, double>(6, 5));
-            data.Add(new KeyValuePair<double, double>(7, 2));
-            data.Add(new KeyValuePair<double, double>(8, 3));
-            data.Add(new KeyValuePair<double, double>(9, 9));
-
-            foreach (KeyValuePair<double, double> keypair in data)
-            {
-                series.Points.AddXY(keypair.Key, keypair.Value);
-            }
-
-
             //creating display area
             var chartArea = new ChartArea("chartArea")
             {
@@ -183,10 +154,6 @@ namespace UserInterface.FormAssets
                 BackColor = Color.Black
             };
 
-            //creating chart control
-            //var chart = new Chart { Dock = DockStyle.Fill, BackColor = Color.Black };
-            //chart.ChartAreas.Add(chartArea);
-            //chart.Series.Add(series);
 
             chart1.ChartAreas.Add(chartArea);
             chart1.Series.Add(series);

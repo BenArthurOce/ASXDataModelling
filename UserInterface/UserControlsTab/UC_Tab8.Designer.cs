@@ -33,6 +33,7 @@
             this.pnlInputsRow1Col10 = new System.Windows.Forms.Panel();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.pnlInputsRow1Col2 = new System.Windows.Forms.Panel();
+            this.lblFilters = new System.Windows.Forms.Label();
             this.pnlInputsRow1Col8 = new System.Windows.Forms.Panel();
             this.lblAmountStart = new System.Windows.Forms.Label();
             this.pnlInputsRow1Col7 = new System.Windows.Forms.Panel();
@@ -69,15 +70,13 @@
             this.tpnlOutputsSinglePriceData = new System.Windows.Forms.TableLayoutPanel();
             this.pnlOutputsRow2Col1 = new System.Windows.Forms.Panel();
             this.pnlOutputsRow2Col2 = new System.Windows.Forms.Panel();
-            this.flPanelTransactions = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlOutputsRow1Col2 = new System.Windows.Forms.Panel();
-            this.lblHeaderTab8 = new System.Windows.Forms.Label();
-            this.pnlHeaderSinglePriceData = new System.Windows.Forms.Panel();
-            this.lblFilters = new System.Windows.Forms.Label();
             this.pnlOutputsRow3Col1 = new System.Windows.Forms.Panel();
             this.pnlOutputsRow3Col2 = new System.Windows.Forms.Panel();
-            this.pnlOutputsRow3Col3 = new System.Windows.Forms.Panel();
             this.btnNewTransaction = new System.Windows.Forms.Button();
+            this.pnlOutputsRow3Col3 = new System.Windows.Forms.Panel();
+            this.lblHeaderTab8 = new System.Windows.Forms.Label();
+            this.pnlHeaderSinglePriceData = new System.Windows.Forms.Panel();
             this.transactionPanelHeader1 = new UserInterface.FormAssets.TransactionPanelHeader();
             this.nTboxMinAmount = new UserInterface.FormAssets.NumericTextBox();
             this.nTboxMaxAmount = new UserInterface.FormAssets.NumericTextBox();
@@ -102,10 +101,9 @@
             this.pnlInputsRow2Col10.SuspendLayout();
             this.pnlContainerSinglePriceData.SuspendLayout();
             this.tpnlOutputsSinglePriceData.SuspendLayout();
-            this.pnlOutputsRow2Col2.SuspendLayout();
             this.pnlOutputsRow1Col2.SuspendLayout();
-            this.pnlHeaderSinglePriceData.SuspendLayout();
             this.pnlOutputsRow3Col2.SuspendLayout();
+            this.pnlHeaderSinglePriceData.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlOutputsRow1Col1
@@ -186,6 +184,16 @@
             this.pnlInputsRow1Col2.Name = "pnlInputsRow1Col2";
             this.pnlInputsRow1Col2.Size = new System.Drawing.Size(97, 29);
             this.pnlInputsRow1Col2.TabIndex = 11;
+            // 
+            // lblFilters
+            // 
+            this.lblFilters.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblFilters.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFilters.Location = new System.Drawing.Point(0, 0);
+            this.lblFilters.Name = "lblFilters";
+            this.lblFilters.Size = new System.Drawing.Size(97, 29);
+            this.lblFilters.TabIndex = 0;
+            this.lblFilters.Text = "Filters:";
             // 
             // pnlInputsRow1Col8
             // 
@@ -377,7 +385,6 @@
             this.dtpDateFrom.Size = new System.Drawing.Size(97, 20);
             this.dtpDateFrom.TabIndex = 0;
             this.dtpDateFrom.Tag = "0";
-            this.dtpDateFrom.ValueChanged += new System.EventHandler(this.dtpDateFrom_ValueChanged);
             // 
             // pnlInputsRow2Col4
             // 
@@ -401,7 +408,6 @@
             this.dtpDateTo.ShowCheckBox = true;
             this.dtpDateTo.Size = new System.Drawing.Size(97, 20);
             this.dtpDateTo.TabIndex = 0;
-            this.dtpDateTo.ValueChanged += new System.EventHandler(this.dtpDateTo_ValueChanged);
             // 
             // pnlInputsRow2Col5
             // 
@@ -493,7 +499,6 @@
             this.btnClear.TabIndex = 0;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // pnlOutputsRow1Col3
             // 
@@ -552,23 +557,12 @@
             // pnlOutputsRow2Col2
             // 
             this.pnlOutputsRow2Col2.BackColor = System.Drawing.Color.White;
-            this.pnlOutputsRow2Col2.Controls.Add(this.flPanelTransactions);
             this.pnlOutputsRow2Col2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlOutputsRow2Col2.Location = new System.Drawing.Point(56, 44);
             this.pnlOutputsRow2Col2.Margin = new System.Windows.Forms.Padding(5);
             this.pnlOutputsRow2Col2.Name = "pnlOutputsRow2Col2";
             this.pnlOutputsRow2Col2.Size = new System.Drawing.Size(917, 348);
             this.pnlOutputsRow2Col2.TabIndex = 15;
-            // 
-            // flPanelTransactions
-            // 
-            this.flPanelTransactions.AutoScroll = true;
-            this.flPanelTransactions.BackColor = System.Drawing.Color.White;
-            this.flPanelTransactions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flPanelTransactions.Location = new System.Drawing.Point(0, 0);
-            this.flPanelTransactions.Name = "flPanelTransactions";
-            this.flPanelTransactions.Size = new System.Drawing.Size(917, 348);
-            this.flPanelTransactions.TabIndex = 0;
             // 
             // pnlOutputsRow1Col2
             // 
@@ -579,6 +573,41 @@
             this.pnlOutputsRow1Col2.Name = "pnlOutputsRow1Col2";
             this.pnlOutputsRow1Col2.Size = new System.Drawing.Size(917, 29);
             this.pnlOutputsRow1Col2.TabIndex = 17;
+            // 
+            // pnlOutputsRow3Col1
+            // 
+            this.pnlOutputsRow3Col1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow3Col1.Location = new System.Drawing.Point(3, 400);
+            this.pnlOutputsRow3Col1.Name = "pnlOutputsRow3Col1";
+            this.pnlOutputsRow3Col1.Size = new System.Drawing.Size(45, 35);
+            this.pnlOutputsRow3Col1.TabIndex = 18;
+            // 
+            // pnlOutputsRow3Col2
+            // 
+            this.pnlOutputsRow3Col2.Controls.Add(this.btnNewTransaction);
+            this.pnlOutputsRow3Col2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow3Col2.Location = new System.Drawing.Point(54, 400);
+            this.pnlOutputsRow3Col2.Name = "pnlOutputsRow3Col2";
+            this.pnlOutputsRow3Col2.Size = new System.Drawing.Size(921, 35);
+            this.pnlOutputsRow3Col2.TabIndex = 19;
+            // 
+            // btnNewTransaction
+            // 
+            this.btnNewTransaction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewTransaction.Location = new System.Drawing.Point(810, 6);
+            this.btnNewTransaction.Name = "btnNewTransaction";
+            this.btnNewTransaction.Size = new System.Drawing.Size(108, 23);
+            this.btnNewTransaction.TabIndex = 0;
+            this.btnNewTransaction.Text = "New Transaction";
+            this.btnNewTransaction.UseVisualStyleBackColor = true;
+            // 
+            // pnlOutputsRow3Col3
+            // 
+            this.pnlOutputsRow3Col3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOutputsRow3Col3.Location = new System.Drawing.Point(981, 400);
+            this.pnlOutputsRow3Col3.Name = "pnlOutputsRow3Col3";
+            this.pnlOutputsRow3Col3.Size = new System.Drawing.Size(46, 35);
+            this.pnlOutputsRow3Col3.TabIndex = 20;
             // 
             // lblHeaderTab8
             // 
@@ -600,52 +629,6 @@
             this.pnlHeaderSinglePriceData.Name = "pnlHeaderSinglePriceData";
             this.pnlHeaderSinglePriceData.Size = new System.Drawing.Size(1050, 65);
             this.pnlHeaderSinglePriceData.TabIndex = 12;
-            // 
-            // lblFilters
-            // 
-            this.lblFilters.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFilters.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFilters.Location = new System.Drawing.Point(0, 0);
-            this.lblFilters.Name = "lblFilters";
-            this.lblFilters.Size = new System.Drawing.Size(97, 29);
-            this.lblFilters.TabIndex = 0;
-            this.lblFilters.Text = "Filters:";
-            // 
-            // pnlOutputsRow3Col1
-            // 
-            this.pnlOutputsRow3Col1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOutputsRow3Col1.Location = new System.Drawing.Point(3, 400);
-            this.pnlOutputsRow3Col1.Name = "pnlOutputsRow3Col1";
-            this.pnlOutputsRow3Col1.Size = new System.Drawing.Size(45, 35);
-            this.pnlOutputsRow3Col1.TabIndex = 18;
-            // 
-            // pnlOutputsRow3Col2
-            // 
-            this.pnlOutputsRow3Col2.Controls.Add(this.btnNewTransaction);
-            this.pnlOutputsRow3Col2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOutputsRow3Col2.Location = new System.Drawing.Point(54, 400);
-            this.pnlOutputsRow3Col2.Name = "pnlOutputsRow3Col2";
-            this.pnlOutputsRow3Col2.Size = new System.Drawing.Size(921, 35);
-            this.pnlOutputsRow3Col2.TabIndex = 19;
-            // 
-            // pnlOutputsRow3Col3
-            // 
-            this.pnlOutputsRow3Col3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOutputsRow3Col3.Location = new System.Drawing.Point(981, 400);
-            this.pnlOutputsRow3Col3.Name = "pnlOutputsRow3Col3";
-            this.pnlOutputsRow3Col3.Size = new System.Drawing.Size(46, 35);
-            this.pnlOutputsRow3Col3.TabIndex = 20;
-            // 
-            // btnNewTransaction
-            // 
-            this.btnNewTransaction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewTransaction.Location = new System.Drawing.Point(810, 6);
-            this.btnNewTransaction.Name = "btnNewTransaction";
-            this.btnNewTransaction.Size = new System.Drawing.Size(108, 23);
-            this.btnNewTransaction.TabIndex = 0;
-            this.btnNewTransaction.Text = "New Transaction";
-            this.btnNewTransaction.UseVisualStyleBackColor = true;
-            this.btnNewTransaction.Click += new System.EventHandler(this.btnNewTransaction_Click);
             // 
             // transactionPanelHeader1
             // 
@@ -681,45 +664,18 @@
             this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.transactionPanelHeader1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.transactionPanelHeader1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.transactionPanelHeader1.Location = new System.Drawing.Point(0, 0);
             this.transactionPanelHeader1.Margin = new System.Windows.Forms.Padding(0);
             this.transactionPanelHeader1.Name = "transactionPanelHeader1";
             this.transactionPanelHeader1.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.transactionPanelHeader1.RowCount = 1;
+            this.transactionPanelHeader1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.transactionPanelHeader1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.transactionPanelHeader1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.transactionPanelHeader1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.transactionPanelHeader1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.transactionPanelHeader1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.transactionPanelHeader1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.transactionPanelHeader1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.transactionPanelHeader1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -786,11 +742,10 @@
             this.pnlInputsRow2Col10.ResumeLayout(false);
             this.pnlContainerSinglePriceData.ResumeLayout(false);
             this.tpnlOutputsSinglePriceData.ResumeLayout(false);
-            this.pnlOutputsRow2Col2.ResumeLayout(false);
             this.pnlOutputsRow1Col2.ResumeLayout(false);
+            this.pnlOutputsRow3Col2.ResumeLayout(false);
             this.pnlHeaderSinglePriceData.ResumeLayout(false);
             this.pnlHeaderSinglePriceData.PerformLayout();
-            this.pnlOutputsRow3Col2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -810,7 +765,6 @@
         private System.Windows.Forms.Label lblHeaderTab8;
         private System.Windows.Forms.Panel pnlHeaderSinglePriceData;
         private System.Windows.Forms.Panel pnlOutputsRow2Col2;
-        private System.Windows.Forms.FlowLayoutPanel flPanelTransactions;
         private System.Windows.Forms.Panel pnlOutputsRow2Col1;
         private System.Windows.Forms.Panel pnlOutputsRow1Col2;
         private FormAssets.TransactionPanelHeader transactionPanelHeader1;

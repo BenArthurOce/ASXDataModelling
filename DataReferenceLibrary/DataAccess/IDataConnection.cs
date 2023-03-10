@@ -1,6 +1,5 @@
 ﻿using DataReferenceLibrary.Models;
 using DataReferenceLibrary.Models2;
-using DataReferenceLibrary.StoredProcs;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -38,7 +37,10 @@ namespace DataReferenceLibrary.DataAccess
         /////////////////////////////////////
         ///////TAB - PORTFILIO ON DAY///////
         ////////////////////////////////////
-        List<spQueryPortfolioItemsForCertainDate> spQUERY_PortfolioValue(string InputPortfolioName, int InputEndDate);
+
+        IEnumerable<xShareHolding> spGetShareHoldingsFromWarehouse(string InputPortfolioName, int StartDate, int EndDate);
+
+
 
 
         ///////////////////////////////////////

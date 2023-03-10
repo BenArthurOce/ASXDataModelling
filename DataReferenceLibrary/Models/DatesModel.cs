@@ -8,10 +8,8 @@ namespace DataReferenceLibrary.Models2
 {
     public class DatesModel
     {
-        public DatesModel() { }
         public int Id { get; set; }
         public int DateKey { get; set; }
-        public DateTime DateId { get; set; }
         public long DayInt { get; set; }
         public decimal DayInt00 { get; set; }
         public string DayOrdinal { get; set; }

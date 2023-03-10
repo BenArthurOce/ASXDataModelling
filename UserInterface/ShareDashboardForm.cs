@@ -32,7 +32,8 @@ namespace UserInterface
 
 
 
-        private void radioButtonTab1_MouseClick(object sender, MouseEventArgs e)
+
+        private void radioButtonTab1_CheckedChanged(object sender, EventArgs e)
         {
             if (!panelContainer.Controls.Contains(UC_Tab1.Instance))
             {
@@ -44,7 +45,7 @@ namespace UserInterface
                 UC_Tab1.Instance.BringToFront();
         }
 
-        private void radioButtonTab2_MouseClick(object sender, MouseEventArgs e)
+        private void radioButtonTab2_CheckedChanged(object sender, EventArgs e)
         {
             if (!panelContainer.Controls.Contains(UC_Tab2.Instance))
             {
@@ -56,8 +57,7 @@ namespace UserInterface
                 UC_Tab2.Instance.BringToFront();
         }
 
-        
-        private void radioButtonTab3_MouseClick(object sender, MouseEventArgs e)
+        private void radioButtonTab3_CheckedChanged(object sender, EventArgs e)
         {
             if (!panelContainer.Controls.Contains(UC_Tab3.Instance))
             {
@@ -68,9 +68,8 @@ namespace UserInterface
             else
                 UC_Tab3.Instance.BringToFront();
         }
-        
 
-        private void radioButtonTab4_MouseClick(object sender, MouseEventArgs e)
+        private void radioButtonTab4_CheckedChanged(object sender, EventArgs e)
         {
             if (!panelContainer.Controls.Contains(UC_Tab4.Instance))
             {
@@ -82,7 +81,7 @@ namespace UserInterface
                 UC_Tab4.Instance.BringToFront();
         }
 
-        private void radioButtonTab5_MouseClick(object sender, MouseEventArgs e)
+        private void radioButtonTab5_CheckedChanged(object sender, EventArgs e)
         {
             if (!panelContainer.Controls.Contains(UC_Tab5.Instance))
             {
@@ -94,9 +93,7 @@ namespace UserInterface
                 UC_Tab5.Instance.BringToFront();
         }
 
-
-        
-        private void radioButtonTab6_MouseClick(object sender, MouseEventArgs e)
+        private void radioButtonTab6_CheckedChanged(object sender, EventArgs e)
         {
             if (!panelContainer.Controls.Contains(UC_Tab7.Instance))
             {
@@ -108,21 +105,7 @@ namespace UserInterface
                 UC_Tab7.Instance.BringToFront();
         }
 
-        /*
-        private void radioButtonTab6_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (!panelContainer.Controls.Contains(UC_Tac7.Instance))
-            {
-                panelContainer.Controls.Add(UC_Tac7.Instance);
-                UC_Tac7.Instance.Dock = DockStyle.Fill;
-                UC_Tac7.Instance.BringToFront();
-            }
-            else
-                UC_Tac7.Instance.BringToFront();
-        }
-        */
-
-        private void radioButtonTab8_MouseClick(object sender, MouseEventArgs e)
+        private void radioButtonTab7_CheckedChanged(object sender, EventArgs e)
         {
             if (!panelContainer.Controls.Contains(UC_Tab8.Instance))
             {
@@ -133,7 +116,5 @@ namespace UserInterface
             else
                 UC_Tab8.Instance.BringToFront();
         }
-
-
     }
 }

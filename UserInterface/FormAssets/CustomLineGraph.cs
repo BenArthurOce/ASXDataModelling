@@ -183,11 +183,6 @@ namespace UserInterface.FormAssets
             this.radioButtonTab1.ColorMouseHovorOff = System.Drawing.Color.LightBlue;
             this.radioButtonTab1.ColorMouseHovorOn = System.Drawing.Color.LightGray;
             this.radioButtonTab1.ColourMouseClick = System.Drawing.Color.SteelBlue;
-            this.radioButtonTab1.DefaultBoarderColor = System.Drawing.Color.Red;
-            this.radioButtonTab1.DefaultBoarderWidth = 90;
-            this.radioButtonTab1.DefaultMinHeight = 70;
-            this.radioButtonTab1.DefaultMinWidth = 90;
-            this.radioButtonTab1.DisplayText = "";
             this.radioButtonTab1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radioButtonTab1.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.radioButtonTab1.FlatAppearance.BorderSize = 90;
@@ -211,11 +206,6 @@ namespace UserInterface.FormAssets
             this.radioButtonTab2.ColorMouseHovorOff = System.Drawing.Color.LightBlue;
             this.radioButtonTab2.ColorMouseHovorOn = System.Drawing.Color.LightGray;
             this.radioButtonTab2.ColourMouseClick = System.Drawing.Color.SteelBlue;
-            this.radioButtonTab2.DefaultBoarderColor = System.Drawing.Color.Red;
-            this.radioButtonTab2.DefaultBoarderWidth = 90;
-            this.radioButtonTab2.DefaultMinHeight = 70;
-            this.radioButtonTab2.DefaultMinWidth = 90;
-            this.radioButtonTab2.DisplayText = "";
             this.radioButtonTab2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radioButtonTab2.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.radioButtonTab2.FlatAppearance.BorderSize = 90;
@@ -239,11 +229,6 @@ namespace UserInterface.FormAssets
             this.radioButtonTab3.ColorMouseHovorOff = System.Drawing.Color.LightBlue;
             this.radioButtonTab3.ColorMouseHovorOn = System.Drawing.Color.LightGray;
             this.radioButtonTab3.ColourMouseClick = System.Drawing.Color.SteelBlue;
-            this.radioButtonTab3.DefaultBoarderColor = System.Drawing.Color.Red;
-            this.radioButtonTab3.DefaultBoarderWidth = 90;
-            this.radioButtonTab3.DefaultMinHeight = 70;
-            this.radioButtonTab3.DefaultMinWidth = 90;
-            this.radioButtonTab3.DisplayText = "";
             this.radioButtonTab3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radioButtonTab3.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.radioButtonTab3.FlatAppearance.BorderSize = 90;
@@ -267,11 +252,6 @@ namespace UserInterface.FormAssets
             this.radioButtonTab4.ColorMouseHovorOff = System.Drawing.Color.LightBlue;
             this.radioButtonTab4.ColorMouseHovorOn = System.Drawing.Color.LightGray;
             this.radioButtonTab4.ColourMouseClick = System.Drawing.Color.SteelBlue;
-            this.radioButtonTab4.DefaultBoarderColor = System.Drawing.Color.Red;
-            this.radioButtonTab4.DefaultBoarderWidth = 90;
-            this.radioButtonTab4.DefaultMinHeight = 70;
-            this.radioButtonTab4.DefaultMinWidth = 90;
-            this.radioButtonTab4.DisplayText = "";
             this.radioButtonTab4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radioButtonTab4.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.radioButtonTab4.FlatAppearance.BorderSize = 90;

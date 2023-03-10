@@ -47,10 +47,15 @@ namespace UserInterface.Forms
             WireUpLists();
             if (!IsNewTransaction == true && transaction != null)
             {
+                string dateString = transaction.Date.ToString("####/##/##"); // Convert yyyymmdd to a string in the format "yyyy/MM/dd"
+                DateTime date = DateTime.ParseExact(dateString, "yyyy/MM/dd", System.Globalization.CultureInfo.InvariantCulture);
+
+
                 this.transactionModel = transaction; // Use the passed transaction to initialize fields
                                                      // set form fields to the values in the transaction object
                 tBoxContractNote.Text = transaction.ContractNote;
                 tBoxASXCode.Text = transaction.TradingEntityId.ASXCode;
+                dtpDate.Value = date;
                 cboxType.Text = transaction.TradingTransactionTypeId.Name;
                 nTBoxQuantity.Text = transaction.Quantity.ToString();
                 nTBoxUnitPrice.Text = transaction.UnitPrice.ToString();

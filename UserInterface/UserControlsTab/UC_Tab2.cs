@@ -1,6 +1,5 @@
 ﻿using DataReferenceLibrary.DataAccess;
 using DataReferenceLibrary;
-using DataReferenceLibrary.StoredProcs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DataReferenceLibrary.StoredProcs;
 using DataReferenceLibrary.Models;
 using DataReferenceLibrary.Models2;
 
@@ -55,42 +53,49 @@ namespace UserInterface.UserControlsTab
                 return;
             }
 
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ASXCode", typeof(string));
+            dt.Columns.Add("SharesOwned", typeof(int));
+            dt.Columns.Add("CostBase", typeof(decimal));
+            dt.Columns.Add("CostPrice", typeof(decimal));
+            dt.Columns.Add("CurrentPrice", typeof(decimal));
+            dt.Columns.Add("MarketValue", typeof(decimal));
+            dt.Columns.Add("ProfitLoss", typeof(decimal));
+            dt.Columns.Add("ProfitLossP", typeof(decimal));
+            dt.Columns.Add("WeightP", typeof(decimal));
+
+
+            //TODO - Ensure date is the input box.
+
             string InputPortfolioName = cBoxPortfolio.Text;
             int InputEndDate = Int32.Parse(dtpDate.Value.ToString("yyyyMMdd"));
+            int finalDatePossible = GlobalConfig.Connection.spGETLIST_MostRecentPriceData();
 
-            List<spQueryPortfolioItemsForCertainDate> sql_request = GlobalConfig.Connection.spQUERY_PortfolioValue(InputPortfolioName, InputEndDate);
-            PopulatePortfolioGrid(sql_request);   
-        }
 
-        private void PopulatePortfolioGrid(List<spQueryPortfolioItemsForCertainDate> sql_request)
-        {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("ASXCode",       typeof(string));
-            dt.Columns.Add("SharesOwned",   typeof(int));
-            dt.Columns.Add("CostBase",      typeof(decimal));
-            dt.Columns.Add("CostPrice",     typeof(decimal));
-            dt.Columns.Add("CurrentPrice",  typeof(decimal));
-            dt.Columns.Add("MarketValue",   typeof(decimal));
-            dt.Columns.Add("ProfitLoss",    typeof(decimal));
-            dt.Columns.Add("ProfitLossP",   typeof(decimal));
-            dt.Columns.Add("WeightP",       typeof(decimal));
+            IEnumerable<xShareHolding> sql_results;
+            sql_results = GlobalConfig.Connection.spGetShareHoldingsFromWarehouse(InputPortfolioName, InputEndDate, finalDatePossible);
 
-            foreach (spQueryPortfolioItemsForCertainDate result in sql_request)
+
+            List<xShareHolding> filteredHoldings = sql_results
+                                        .Where(t => t.Date == InputEndDate).ToList();
+
+
+            foreach (xShareHolding shareholding in filteredHoldings)
             {
                 dt.Rows.Add(
-                    result.ASXCode,
-                    result.SharesOwned,
-                    result.CostBase,
-                    result.CostPrice,
-                    result.CurrentPrice,
-                    result.MarketValue,
-                    result.ProfitLoss,
-                    result.ProfitLossP,
-                    result.WeightP
+                    shareholding.TradingEntityModel.ASXCode,
+                    shareholding.SharesOwned,
+                    shareholding.CostBase,
+                    shareholding.CostPerShare,
+                    shareholding.CurrentPrice,
+                    shareholding.MarketValue,
+                    shareholding.ProfitLoss,
+                    shareholding.ProfitLossPct,
+                    shareholding.WeightPct
                         );
             }
             dgvPortfolioItems.DataSource = dt;
-           
         }
+
     }
 }
