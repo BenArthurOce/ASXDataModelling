@@ -18,6 +18,7 @@ using System.Windows.Media.Effects;
 using DataReferenceLibrary.Models2;
 using System.IO;
 using System.Windows.Media;
+using System.Web.Util;
 
 namespace UserInterface.UserControlsTab
 {
@@ -67,7 +68,10 @@ namespace UserInterface.UserControlsTab
 
             // Read SQL Query
             IEnumerable<zFullEODPriceModel> sql_result;
-            sql_result = GlobalConfig.Connection.spQUERY_PricesOnYears(ASXCode, YearRequest);
+            sql_result = GlobalConfig.Connection.spQUERY_SharePriceHistorySingle(ASXCode);
+
+            // Extract Relevant Years
+            IEnumerable<zFullEODPriceModel> filteredPriceModel = sql_result.Where(p => p.DatesModel.YearCalendar >= YearRequest && p.DatesModel.YearCalendar <= YearRequest + 1);
 
 
             // Check that the ASX code exists
@@ -78,13 +82,13 @@ namespace UserInterface.UserControlsTab
             dgvLeftPrices.Rows.Clear(); // Clear the rows collection
 
             //Prepare Column Headers
-            PrepareColumnHeaders(sql_result);
+            PrepareColumnHeaders(filteredPriceModel);
 
             // Prepare Rows
             PrepareRows();
 
             // Input the sql results into the datagridview
-            InputData(sql_result);
+            InputData(filteredPriceModel);
 
             // Obtain the Mean and the Standard Deviation of the values
             var tempValues = CalculateMeanAndDeviation();

@@ -51,6 +51,11 @@ namespace UserInterface.UserControlsTab
         private void btnGenerate_Click(object sender, EventArgs e)
         {
 
+            //TODO - If a TrendLine is not used, it needs to be invisible or something
+            //TODO - Radiobuttons to give different scope of date
+            //TODO - Numbers for Y Axis on Portfolio Value
+
+
             // ==============================================
             // RUN SQL QUERY
             // ==============================================
@@ -63,9 +68,10 @@ namespace UserInterface.UserControlsTab
 
 
             // Run Query to get standings
-            IEnumerable<xShareHolding> sql_results;
-            sql_results = GlobalConfig.Connection.spGetShareHoldingsFromWarehouse(cBoxPortfolio.Text, outputDateInt, finalDatePossible);
+            IEnumerable<ShareHolding> sql_results;
+            sql_results = GlobalConfig.Connection.spQUERY_dwPortfolioStandings(cBoxPortfolio.Text, outputDateInt, finalDatePossible);
 
+            //TODO - Fix var
             var sumsByDate = sql_results.GroupBy(t => t.Date)
                                          .Select(g => new {
                                              Date = g.Key
@@ -140,15 +146,17 @@ namespace UserInterface.UserControlsTab
 
             // Step 3 - Using that list of ASX codes, get relevant price data
             IEnumerable<zFullEODPriceModel> sql_query;
-            sql_query = GlobalConfig.Connection.spQUERY_SharePricesOneMonth(asxCodesList);
+            sql_query = GlobalConfig.Connection.spQUERY_SharePriceHistoryMultiple(asxCodesList);
 
+            // Get the date value that is 30 days prior to the final record date
+            DateTime date2 = DateTime.ParseExact(finalDatePossible.ToString(), "yyyyMMdd", null);
+            DateTime newDate2 = date2.AddDays(-30);
+            int outputDateInt2 = int.Parse(newDate2.ToString("yyyyMMdd"));
 
             // Step 4 - Loop
-            foreach (var pair in asxCodesList.Select((name, index) => new { Name = name, Index = index }))
+            for (int i = 0; i < asxCodesList.Count; i++)
             {
-
-                // Step 4a - Use LinQ to obtain the price data for that ASX code
-                IEnumerable<zFullEODPriceModel> filtered_prices = sql_query.Where(item => item.TradingEntityModel.ASXCode == asxCodesList[pair.Index]);
+                IEnumerable<zFullEODPriceModel> filtered_prices = sql_query.Where(p => p.TradingEntityModel.ASXCode == asxCodesList[i] && p.DatesModel.DateKey >= outputDateInt2 && p.DatesModel.DateKey <= finalDatePossible);
 
                 // Step 4b - If there are less than 5 prices in the results, skip it
                 if (filtered_prices.Count() <= 5)
@@ -157,9 +165,11 @@ namespace UserInterface.UserControlsTab
                 }
                 else
                 {
-                    TrendLineUpdateData(trendLinePanels[pair.Index], filtered_prices, pair.Name);
+                    TrendLineUpdateData(trendLinePanels[i], filtered_prices, asxCodesList[i]);
                 }
+
             }
+
         }
 
 

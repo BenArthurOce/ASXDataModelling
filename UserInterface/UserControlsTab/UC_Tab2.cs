@@ -27,7 +27,6 @@ namespace UserInterface.UserControlsTab
                 return _instance;
             }
         }
-        //TODO - Introduce a date time picker and create code to convert to YYYYMMDD int
         //TODO - Format Cells based on profit/loss
         //TODO - Introduce a new tab that can query multiple prices at once
 
@@ -65,22 +64,20 @@ namespace UserInterface.UserControlsTab
             dt.Columns.Add("WeightP", typeof(decimal));
 
 
-            //TODO - Ensure date is the input box.
-
             string InputPortfolioName = cBoxPortfolio.Text;
             int InputEndDate = Int32.Parse(dtpDate.Value.ToString("yyyyMMdd"));
             int finalDatePossible = GlobalConfig.Connection.spGETLIST_MostRecentPriceData();
 
 
-            IEnumerable<xShareHolding> sql_results;
-            sql_results = GlobalConfig.Connection.spGetShareHoldingsFromWarehouse(InputPortfolioName, InputEndDate, finalDatePossible);
+            IEnumerable<ShareHolding> sql_results;
+            sql_results = GlobalConfig.Connection.spQUERY_dwPortfolioStandings(InputPortfolioName, InputEndDate, finalDatePossible);
 
 
-            List<xShareHolding> filteredHoldings = sql_results
+            List<ShareHolding> filteredHoldings = sql_results
                                         .Where(t => t.Date == InputEndDate).ToList();
 
 
-            foreach (xShareHolding shareholding in filteredHoldings)
+            foreach (ShareHolding shareholding in filteredHoldings)
             {
                 dt.Rows.Add(
                     shareholding.TradingEntityModel.ASXCode,

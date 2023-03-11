@@ -27,6 +27,12 @@ namespace UserInterface
             //
 
             //Stock Codes need to recognise when they have changed names. WPL into WDS happened 2022-05-24 this is a good example
+            //Adding and removing Individuals from Portfolios
+            //Users, User Access
+            //Find button for locating correct ASX code
+            //Detailed Transaction Filter From (one exists but i removed it due to how hard it was to make it work.)
+            //When a transaction is modified, the datawarehouse must modify too
+            //The delete buttons on the transaction panels need to work
 
 
             // Start the Reference Library

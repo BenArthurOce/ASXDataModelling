@@ -73,9 +73,6 @@ namespace UserInterface.UserControlsTab
         //TODO - Line up header panel correctly - padding doesnt work when window is resized
 
 
-        //TODO - Sector is now missing from the Transaction Panel. I changed "SectorName" to "Name" in the model. It has to do with that.
-
-
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
@@ -93,7 +90,7 @@ namespace UserInterface.UserControlsTab
 
 
             // Leave code if the SQL query returns an error and returns null
-            IEnumerable<zFullPortfolioModel> sql_results = QueryPortfolioTransactions();
+            IEnumerable<PortfolioModel> sql_results = QueryPortfolioTransactions();
             if (sql_results == null)
             {
                 MessageBox.Show("The SQL Query returned null before filters. Please check that your query / standardprocedure is correct");
@@ -102,7 +99,7 @@ namespace UserInterface.UserControlsTab
 
 
             // Current sql_results are all the portfolios with all the transactions. Only obtain the one portfolio
-            zFullPortfolioModel selected_portfolio = sql_results.FirstOrDefault(portfolio => portfolio.Name == cBoxPortfolio.Text);
+            PortfolioModel selected_portfolio = sql_results.FirstOrDefault(portfolio => portfolio.Name == cBoxPortfolio.Text);
 
 
             // Filter the transactions based on the controls on the transaction tab
@@ -136,9 +133,9 @@ namespace UserInterface.UserControlsTab
 
 
 
-        private IEnumerable<zFullPortfolioModel> QueryPortfolioTransactions()
+        private IEnumerable<PortfolioModel> QueryPortfolioTransactions()
         {
-            IEnumerable<zFullPortfolioModel> sql_results;
+            IEnumerable<PortfolioModel> sql_results;
             sql_results = GlobalConfig.Connection.spQUERY_PortfoliosIndividualsTransactions();
             return sql_results;
         }

@@ -11,6 +11,6 @@ namespace DataReferenceLibrary.Models2
 
         public IndividualModel IndividualId { get; set; }
 
-        public zFullPortfolioModel PortfolioId { get; set; }
+        public PortfolioModel PortfolioId { get; set; }
     }
 }

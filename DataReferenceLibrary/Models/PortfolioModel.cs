@@ -16,9 +16,9 @@ namespace DataReferenceLibrary.Models2
 
         public bool isDeleted { get; set; }
 
-        public List <TradingTransactionModel> ShareTransactions { get; set; }
-
         public List <IndividualModel> Individuals { get; set; }
+
+        public List<TradingTransactionModel> Transactions { get; set; }
 
         public string DropDownBoxDisplay
         {

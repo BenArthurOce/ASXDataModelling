@@ -31,14 +31,15 @@ namespace DataReferenceLibrary.DataAccess
         ///////////////////////////////
         ///////TAB - PRICE QUERY///////
         ///////////////////////////////
-        IEnumerable<zFullEODPriceModel> spQUERY_PricesOnYears(string ASXCode, int YearRequest);
+        IEnumerable<zFullEODPriceModel> spQUERY_SharePriceHistorySingle(string inputASXCode);
+
 
 
         /////////////////////////////////////
         ///////TAB - PORTFILIO ON DAY///////
         ////////////////////////////////////
 
-        IEnumerable<xShareHolding> spGetShareHoldingsFromWarehouse(string InputPortfolioName, int StartDate, int EndDate);
+        IEnumerable<ShareHolding> spQUERY_dwPortfolioStandings(string InputPortfolioName, int StartDate, int EndDate);
 
 
 
@@ -47,7 +48,7 @@ namespace DataReferenceLibrary.DataAccess
         ///////TAB - SHARE TRANSACTIONS///////
         //////////////////////////////////////
 
-        IEnumerable<zFullPortfolioModel> spQUERY_PortfoliosIndividualsTransactions();
+        IEnumerable<PortfolioModel> spQUERY_PortfoliosIndividualsTransactions();
 
 
         TradingTransactionModel spINSERTDATA_TradingTransaction(TradingTransactionModel model);
@@ -59,20 +60,14 @@ namespace DataReferenceLibrary.DataAccess
         ///////TAB - PORTFOLIO MOVEMENTS///////
         //////////////////////////////////////
 
-        List<ASXEODPriceModel> spQUERY_SharePricesSixMonths();
+        IEnumerable<zFullEODPriceModel> spQUERY_SharePriceHistoryMultiple(List<string> inputASXCodeList);
 
-        List<ASXEODPriceModel> spQUERY_SharePricesOneMonth(string ASXCode);
-
-        IEnumerable<zFullEODPriceModel> spQUERY_SharePricesOneMonth(List<string> ASXCodeList);
 
         //////////////////////////////////
         ///////TAB - NOTEPAD UPLOAD///////
         //////////////////////////////////
         List<ASXEODPriceModel> spINSERTDATA_ASXEODPrice(DataTable dt);
         DocumentUploadHistoryModel spINSERTDATA_DocumentUploadRecord(DocumentUploadHistoryModel model);
-
-
-
 
         TradingTransactionTypeModel CreateTransactionType(TradingTransactionTypeModel model);
     }

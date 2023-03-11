@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlHeaderSinglePriceData = new System.Windows.Forms.Panel();
             this.lblHeaderSinglePriceData = new System.Windows.Forms.Label();
             this.pnlContainerSinglePriceData = new System.Windows.Forms.Panel();
@@ -259,8 +259,8 @@
             this.dgvLeftPrices.Location = new System.Drawing.Point(0, 0);
             this.dgvLeftPrices.Name = "dgvLeftPrices";
             this.dgvLeftPrices.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvLeftPrices.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvLeftPrices.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLeftPrices.Size = new System.Drawing.Size(994, 417);
             this.dgvLeftPrices.TabIndex = 0;
             // 

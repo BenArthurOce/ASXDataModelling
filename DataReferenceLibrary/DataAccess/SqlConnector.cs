@@ -77,12 +77,12 @@ namespace DataReferenceLibrary.DataAccess
         ///////////////////////////////
         ///////TAB - PRICE QUERY///////
         ///////////////////////////////
-        public IEnumerable<zFullEODPriceModel> spQUERY_PricesOnYears(string ASXCode, int YearRequest)
+        public IEnumerable<zFullEODPriceModel> spQUERY_SharePriceHistorySingle(string inputASXCode)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 var output_priceData = connection.Query<zFullEODPriceModel, TradingEntityModel, TradingSectorModel, DatesModel, zFullEODPriceModel>
-                    ("dbo.spQUERY_PricesOnYears @ASXCode, @Year",
+                    ("dbo.spQUERY_SharePriceHistorySingle @in_ASXCode",
                     (prices, tradingEntity, tradingSector, dates) =>
                     {
                         prices.TradingEntityModel = tradingEntity;
@@ -90,7 +90,7 @@ namespace DataReferenceLibrary.DataAccess
                         tradingEntity.TradingSectorId = tradingSector;
                         return prices;
                     },
-                    new { ASXCode = ASXCode, Year = YearRequest },
+                    new { in_ASXCode = inputASXCode },
                     splitOn: "Id"
                     );
                 return output_priceData;
@@ -104,23 +104,22 @@ namespace DataReferenceLibrary.DataAccess
         ////////////////////////////////////
 
 
-        public IEnumerable<xShareHolding> spGetShareHoldingsFromWarehouse(string InputPortfolioName, int StartDate, int EndDate)
+        public IEnumerable<ShareHolding> spQUERY_dwPortfolioStandings(string inputPortfolioName, int inputStartDate, int inputEndDate)
         {
 
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
-                var output_portfolioStandings = connection.Query<xShareHolding, PortfolioModel2, ConnectorIndividualsPortfolios, IndividualModel, TradingEntityModel, TradingSectorModel, xShareHolding>
-                    ("dbo.spQUERY_dwPortfolioStandings4 @in_PortfolioName, @in_StartDate, @in_EndDate",
+                var output_portfolioStandings = connection.Query<ShareHolding, PortfolioModel, ConnectorIndividualsPortfolios, IndividualModel, TradingEntityModel, TradingSectorModel, ShareHolding>
+                    ("dbo.spQUERY_dwPortfolioStandings @in_PortfolioName, @in_StartDate, @in_EndDate",
                     (holding, portfolio, connector, individual, entity, sector) =>
                     {
-
                         holding.PortfolioModel = portfolio;
                         holding.TradingEntityModel = entity;
                         entity.TradingSectorId = sector;
 
                         return holding;
                     },
-                    new { in_PortfolioName = InputPortfolioName, in_StartDate = StartDate, in_EndDate = EndDate },
+                    new { in_PortfolioName = inputPortfolioName, in_StartDate = inputStartDate, in_EndDate = inputEndDate },
                     splitOn: "Id"
                     );
                 return output_portfolioStandings;
@@ -133,15 +132,15 @@ namespace DataReferenceLibrary.DataAccess
         ///////TAB - SHARE TRANSACTIONS///////
         //////////////////////////////////////
       
-        public IEnumerable<zFullPortfolioModel> spQUERY_PortfoliosIndividualsTransactions()
+        public IEnumerable<PortfolioModel> spQUERY_PortfoliosIndividualsTransactions()
         {
 
-            var portfolio_list = new List<zFullPortfolioModel>();
+            var portfolio_list = new List<PortfolioModel>();
 
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
 
-                var output_portfolios = connection.Query<zFullPortfolioModel, ConnectorIndividualsPortfolios, IndividualModel, TradingTransactionModel, TradingTransactionTypeModel, TradingEntityModel, TradingSectorModel, zFullPortfolioModel>
+                var output_portfolios = connection.Query<PortfolioModel, ConnectorIndividualsPortfolios, IndividualModel, TradingTransactionModel, TradingTransactionTypeModel, TradingEntityModel, TradingSectorModel, PortfolioModel>
                     ("dbo.spQUERY_PortfoliosIndividualsTransactions",
                     (portfolio, connector, individual, transaction, transtype, company, sector) =>
                     {
@@ -252,43 +251,21 @@ namespace DataReferenceLibrary.DataAccess
         ///////TAB - PORTFOLIO MOVEMENTS///////
         //////////////////////////////////////
 
-        public List<ASXEODPriceModel> spQUERY_SharePricesSixMonths()
-        {
-            //TODO - Add date range
-            //TODO - Add ASX Code variable
-            List<ASXEODPriceModel> output;
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
-            {
-                output = connection.Query<ASXEODPriceModel>("dbo.spQUERY_SharePricesSixMonths").ToList();
-            }
-            return output;
-        }
 
-        public List<ASXEODPriceModel> spQUERY_SharePricesOneMonth(string ASXCode)
+        public IEnumerable<zFullEODPriceModel> spQUERY_SharePriceHistoryMultiple(List<string> inputASXCodeList)
         {
-            //TODO - Add date range
-            List<ASXEODPriceModel> output;
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
-            {
-                output = connection.Query<ASXEODPriceModel>("dbo.spQUERY_SharePricesOneMonth @in_ASXCode", new { in_ASXCode = ASXCode }).ToList();
-            }
-            return output;
-        }
 
-        public IEnumerable<zFullEODPriceModel> spQUERY_SharePricesOneMonth(List<string> ASXCodeList)
-        {
             var table = new DataTable();
             table.Columns.Add("Code", typeof(string));
-            foreach (var code in ASXCodeList)
+            foreach (var code in inputASXCodeList)
             {
                 table.Rows.Add(code);
             }
 
-
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 var output_priceData = connection.Query<zFullEODPriceModel, TradingEntityModel, TradingSectorModel, DatesModel, zFullEODPriceModel>
-                    ("dbo.spQUERY_SharePricesOneMonth @in_ASXCodeList",
+                    ("dbo.spQUERY_SharePriceHistoryMultiple @in_ASXCodeList",
                     (prices, tradingEntity, tradingSector, dates) =>
                     {
                         prices.TradingEntityModel = tradingEntity;
@@ -302,6 +279,7 @@ namespace DataReferenceLibrary.DataAccess
                 return output_priceData;
             }
         }
+
 
 
 

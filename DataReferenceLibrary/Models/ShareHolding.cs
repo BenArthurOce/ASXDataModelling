@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataReferenceLibrary.Models
 {
-    public class xShareHolding
+    public class ShareHolding
     {
 
         public int Id { get; set; }
@@ -23,9 +23,8 @@ namespace DataReferenceLibrary.Models
         public decimal ProfitLossPct { get; set; }
         public decimal WeightPct { get; set; }
 
-        public PortfolioModel2 PortfolioModel { get; set; }
-
-        
+        public PortfolioModel PortfolioModel { get; set; }
+    
         public TradingEntityModel TradingEntityModel { get; set; }
 
 

@@ -68,11 +68,9 @@
             this.pnlOutputsRow1Col8 = new System.Windows.Forms.Panel();
             this.pnlOutputsRow1Col1 = new System.Windows.Forms.Panel();
             this.pnlOutputsRow1Col2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocumentsQueued)).BeginInit();
             this.pnlHeaderUploadPriceData.SuspendLayout();
             this.tpnlInputs.SuspendLayout();
-            this.pnlInputsRow1Col7.SuspendLayout();
             this.pnlInputsRow1Col6.SuspendLayout();
             this.pnlInputsRow1Col5.SuspendLayout();
             this.pnlInputsRow1Col2.SuspendLayout();
@@ -227,7 +225,6 @@
             // 
             // pnlInputsRow1Col7
             // 
-            this.pnlInputsRow1Col7.Controls.Add(this.button1);
             this.pnlInputsRow1Col7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlInputsRow1Col7.Location = new System.Drawing.Point(640, 10);
             this.pnlInputsRow1Col7.Margin = new System.Windows.Forms.Padding(10);
@@ -506,16 +503,6 @@
             this.pnlOutputsRow1Col2.Size = new System.Drawing.Size(610, 153);
             this.pnlOutputsRow1Col2.TabIndex = 11;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(7, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "TestButton";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // UC_Tab5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,7 +517,6 @@
             this.pnlHeaderUploadPriceData.ResumeLayout(false);
             this.pnlHeaderUploadPriceData.PerformLayout();
             this.tpnlInputs.ResumeLayout(false);
-            this.pnlInputsRow1Col7.ResumeLayout(false);
             this.pnlInputsRow1Col6.ResumeLayout(false);
             this.pnlInputsRow1Col5.ResumeLayout(false);
             this.pnlInputsRow1Col2.ResumeLayout(false);
@@ -585,6 +571,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.Label lblFilesSuccessfullyImported;
-        private System.Windows.Forms.Button button1;
     }
 }

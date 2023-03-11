@@ -118,18 +118,6 @@
     <Compile Include="UserControlsTab\UC_Tab4.Designer.cs">
       <DependentUpon>UC_Tab4.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlsTab\UC_Tab7.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlsTab\UC_Tab7.Designer.cs">
-      <DependentUpon>UC_Tab7.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlsTab\UC_Tab8.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlsTab\UC_Tab8.Designer.cs">
-      <DependentUpon>UC_Tab8.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControlsTab\UC_Tab1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -174,12 +162,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlsTab\UC_Tab4.resx">
       <DependentUpon>UC_Tab4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlsTab\UC_Tab7.resx">
-      <DependentUpon>UC_Tab7.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlsTab\UC_Tab8.resx">
-      <DependentUpon>UC_Tab8.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlsTab\UC_Tab1.resx">
       <DependentUpon>UC_Tab1.cs</DependentUpon>

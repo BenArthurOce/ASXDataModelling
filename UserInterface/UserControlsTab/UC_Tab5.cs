@@ -104,14 +104,8 @@ namespace UserInterface.UserControlsTab
 
         private bool DoesRecordAlreadyExistInDGV(string DocumentFileName)
         {
-            foreach (DataGridViewRow row in dgvDocumentsQueued.Rows)
-            {
-                if (row.Cells[0].Value.ToString() == DocumentFileName)
-                {
-                    return true;
-                }
-            }
-                return false;
+            return dgvDocumentsQueued.Rows.Cast<DataGridViewRow>()
+                                         .Any(row => row.Cells[0].Value.ToString() == DocumentFileName);
         }
 
         private void OpenFileDialogIntoDGVQueued(string filename)
@@ -138,11 +132,11 @@ namespace UserInterface.UserControlsTab
         private void btnSubmitFiles_Click(object sender, EventArgs e)
         {
 
+            DataTable dt = new DataTable();
             for (int i = dgvDocumentsQueued.Rows.Count - 1; i >= 0; i--)
             {
                 
                 // Create a Datatable from the notepad
-                DataTable dt = new DataTable();
                 string filePath = dgvDocumentsQueued.Rows[i].Cells[0].Value.ToString();
                 dt = CreateDataTableFromNotePad(filePath);
 
@@ -150,7 +144,7 @@ namespace UserInterface.UserControlsTab
                 DocumentUploadHistoryModel model = new DocumentUploadHistoryModel(
                       dgvDocumentsQueued.Rows[i].Cells[0].Value.ToString() //FilePath
                     , dgvDocumentsQueued.Rows[i].Cells[1].Value.ToString() //FileName
-                    , DateTime.Now                  //DateTimeUploaded
+                    , DateTime.Now                                          //DateTimeUploaded
                     , (long)dgvDocumentsQueued.Rows[i].Cells[3].Value      //FileSizeBytes
                     , (long)dgvDocumentsQueued.Rows[i].Cells[4].Value      //RowsInFile
                     );
@@ -228,10 +222,6 @@ namespace UserInterface.UserControlsTab
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
-        {           
-            
-        }
 
 
     }  

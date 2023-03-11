@@ -115,7 +115,6 @@ namespace UserInterface.Forms
         private void btnFilterAddSector_Click(object sender, EventArgs e)
         {
             /*
-            //TODO - Populate ComboBox
             if (string.IsNullOrWhiteSpace(cboxFilterSector.Text))
             {
                 return;
@@ -288,9 +287,9 @@ namespace UserInterface.Forms
 
             // first, get a list of data to try on
             string InputPortfolioName = "Bens Stock Portfolio";
-            IEnumerable<zFullPortfolioModel> allPortfolios;
+            IEnumerable<PortfolioModel> allPortfolios;
             allPortfolios = GlobalConfig.Connection.spQUERY_PortfoliosIndividualsTransactions();
-            zFullPortfolioModel myPortfolio = allPortfolios.FirstOrDefault(p => p.Name == InputPortfolioName);
+            PortfolioModel myPortfolio = allPortfolios.FirstOrDefault(p => p.Name == InputPortfolioName);
 
             //Transaction List
             List<TradingTransactionModel> myTransactions;
