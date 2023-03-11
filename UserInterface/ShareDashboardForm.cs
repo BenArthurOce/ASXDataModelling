@@ -93,28 +93,5 @@ namespace UserInterface
                 UC_Tab5.Instance.BringToFront();
         }
 
-        private void radioButtonTab6_CheckedChanged(object sender, EventArgs e)
-        {
-            if (!panelContainer.Controls.Contains(UC_Tab7.Instance))
-            {
-                panelContainer.Controls.Add(UC_Tab7.Instance);
-                UC_Tab7.Instance.Dock = DockStyle.Fill;
-                UC_Tab7.Instance.BringToFront();
-            }
-            else
-                UC_Tab7.Instance.BringToFront();
-        }
-
-        private void radioButtonTab7_CheckedChanged(object sender, EventArgs e)
-        {
-            if (!panelContainer.Controls.Contains(UC_Tab8.Instance))
-            {
-                panelContainer.Controls.Add(UC_Tab8.Instance);
-                UC_Tab8.Instance.Dock = DockStyle.Fill;
-                UC_Tab8.Instance.BringToFront();
-            }
-            else
-                UC_Tab8.Instance.BringToFront();
-        }
     }
 }
